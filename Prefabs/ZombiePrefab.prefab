@@ -1,0 +1,88 @@
+{
+  "RootObject": {
+    "Id": "23334c0d-e1b1-448c-a879-2c762762f062",
+    "Name": "zombieprefab",
+    "Tags": "bad",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "bad",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "Badguy",
+        "body": {
+          "_type": "component",
+          "go": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "characterController": {
+          "_type": "component",
+          "go": "23334c0d-e1b1-448c-a879-2c762762f062",
+          "component_type": "CharacterController"
+        },
+        "citizenAnimationHelper": {
+          "_type": "component",
+          "go": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "Speed": 350
+      }
+    ],
+    "Children": [
+      {
+        "Id": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+        "Name": "body",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 341,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "default",
+            "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "BodyWeight": 1,
+            "EyeSource": null,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "IkLeftFoot": null,
+            "IkLeftHand": null,
+            "IkRightFoot": null,
+            "IkRightHand": null,
+            "LookAt": null,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "go": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

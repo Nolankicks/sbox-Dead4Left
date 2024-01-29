@@ -69,5 +69,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, mp5.ammo, mp5.fullAmmo, manager.Score, manager.HighScore, manager.Leaderboard);
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, mp5.ammo, mp5.fullAmmo, manager.Score, manager.HighScore);
 }

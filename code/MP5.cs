@@ -43,7 +43,7 @@ public sealed class MP5 : Component
 		var attachment = gun.GetAttachment( "muzzle" );
 		
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
-		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Forward * 8000).Run();
+		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Forward * 8000).WithoutTags("player").Run();
 		if (tr.Hit)
 		{
 			ammo -= 1;
@@ -56,6 +56,7 @@ public sealed class MP5 : Component
 			{
 				tr.GameObject.Parent.Destroy();
 				manager.GetScore();
+				fullAmmo += 15;
 			}
 		}
 	}

@@ -8,13 +8,15 @@ public sealed class Badguy : Component
 {
 	[Property] public SkinnedModelRenderer body { get; set; }
 	[Property] public CitizenAnimationHelper citizenAnimationHelper { get; set; }
-	[Property] public PlayerController controller { get; set; }
+	PlayerController controller => Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+
 	public Vector3 target;
 	public Vector3 WishVelocity;
 	[Property] public float Speed { get; set; }
 	[Property] public CharacterController characterController { get; set; }
 	TimeSince timeSinceHit = 0;
-	[Property] public HealthManager healthManager { get; set; }
+	HealthManager healthManager => Scene.GetAllComponents<HealthManager>().FirstOrDefault();
+	MP5 mP5 => Scene.GetAllComponents<MP5>().FirstOrDefault();
 	
 	protected override void OnStart()
 	{
@@ -86,9 +88,10 @@ public sealed class Badguy : Component
 		if (tr.Hit && tr.GameObject.Tags.Has("player"))
         {
            
-            if (timeSinceHit > 2)
+            if (timeSinceHit > 1)
             {
-            	healthManager.health -= 10;
+            	healthManager.health -= 25;
+				
                	timeSinceHit = 0;
 			   	
 			   citizenAnimationHelper.Target.Set("b_attack", true);
