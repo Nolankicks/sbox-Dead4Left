@@ -399,6 +399,7 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
