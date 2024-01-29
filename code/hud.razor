@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">@mp5.ammo / @mp5.fullAmmo</div>
+	<div class="center">
+		<div class="crosshair"></div>
+	</div>
+</root>
+
+@code
+{
+	[Property] public MP5 mp5 { get; set; }
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, mp5.ammo, mp5.fullAmmo );
+}

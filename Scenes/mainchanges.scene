@@ -1,0 +1,472 @@
+{
+  "Id": "50280d61-6888-4d72-945e-4df8c043f414",
+  "GameObjects": [
+    {
+      "Id": "d6608e68-f32d-4084-aa30-38ec30460952",
+      "Name": "Map",
+      "Position": "149.995,149.995,-212.125",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "facepunch.flatgrass",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+      "Name": "Player",
+      "Position": "0,-640,0",
+      "Tags": "player",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "player",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "PlayerController",
+          "AbleToCrouch": false,
+          "AirControl": 0.1,
+          "animationHelper": {
+            "_type": "component",
+            "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "body": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
+          "camera": {
+            "_type": "component",
+            "go": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
+            "component_type": "CameraComponent"
+          },
+          "CrouchSpeed": 90,
+          "distance": 0,
+          "eye": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+          "GroundControl": 4,
+          "JumpForce": 400,
+          "MaxForce": 50,
+          "RunSpeed": 320,
+          "Speed": 160
+        },
+        {
+          "__type": "MP5",
+          "ammo": 30,
+          "decalGo": "prefabs/decal_bullet_default.prefab",
+          "eye": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+          "fullAmmo": 60,
+          "gun": {
+            "_type": "component",
+            "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "gunSound": "sounds/toolgun-attack-001.sound",
+          "impact": "prefabs/impact_default (1).prefab"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
+          "Name": "body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "BodyGroups": 341,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "ShadowsOnly",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "CitizenAnimationHelper",
+              "BodyWeight": 1,
+              "EyeSource": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "Height": 1,
+              "IkLeftFoot": null,
+              "IkLeftHand": null,
+              "IkRightFoot": null,
+              "IkRightHand": null,
+              "LookAt": null,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
+                "component_type": "SkinnedModelRenderer"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "Children": [
+            {
+              "Id": "74eaed69-bbd2-4ef3-8f1a-b3b3224fbfe1",
+              "Name": "ViewModel",
+              "Position": "25.45679,-14.13141,-6.953747",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "CameraComponent",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 60,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "light,viewmodel",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                },
+                {
+                  "__type": "Viewmodel"
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "5dfffc40-da60-46d4-85d9-159d82bbc004",
+                  "Name": "gun",
+                  "Position": "0,0,0",
+                  "Tags": "viewmodel",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "SkinnedModelRenderer",
+                      "BodyGroups": 11,
+                      "BoneMergeTarget": null,
+                      "CreateBoneObjects": false,
+                      "MaterialGroup": null,
+                      "MaterialOverride": null,
+                      "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+                      "RenderType": "Off",
+                      "Tint": "1,1,1,1"
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "Id": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
+                      "Name": "arms",
+                      "Position": "0,0,0",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "SkinnedModelRenderer",
+                          "BodyGroups": 21,
+                          "BoneMergeTarget": {
+                            "_type": "component",
+                            "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
+                            "component_type": "SkinnedModelRenderer"
+                          },
+                          "CreateBoneObjects": false,
+                          "MaterialGroup": null,
+                          "MaterialOverride": null,
+                          "Model": "models/first_person/first_person_arms.vmdl",
+                          "RenderType": "Off",
+                          "Tint": "1,1,1,1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "779a499a-7ef9-4dec-ac4d-ef39df98903d",
+          "Name": "Collider",
+          "Position": "0,0,32",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SphereCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Radius": 25,
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
+      "Name": "Camera",
+      "Position": "536.8515,-1118.535,64.04124",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "Id": "c7c624de-6f61-4f6c-8373-2072e3b1a9dd",
+      "Name": "Cube",
+      "Position": "216.2742,-1077.942,24",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "8f6a65a0-8e65-433d-a7b6-7bcff328d46c",
+      "Name": "Cube (1)",
+      "Position": "216.2742,-1176,24",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "573f012e-3b81-436c-8d04-37fa441108d9",
+      "Name": "Cube (2)",
+      "Position": "216.2742,-1128,72",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "f75bf00f-8c48-4fcd-b6bd-6c0dbba22e26",
+      "Name": "Screen",
+      "Position": "595.8925,-1136.792,37.96595",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "hud",
+          "mp5": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "MP5"
+          },
+          "MyStringValue": "Hello World!"
+        },
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ]
+    },
+    {
+      "Id": "e4749128-8973-4a77-a83f-94116e8b971b",
+      "Name": "BadGuy",
+      "Position": "-4.31727,-769.7234,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "bad",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "Badguy",
+          "body": {
+            "_type": "component",
+            "go": "e8263e2a-05ab-4375-942a-5842b3d6abdd",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "characterController": {
+            "_type": "component",
+            "go": "e4749128-8973-4a77-a83f-94116e8b971b",
+            "component_type": "CharacterController"
+          },
+          "citizenAnimationHelper": {
+            "_type": "component",
+            "go": "e8263e2a-05ab-4375-942a-5842b3d6abdd",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "controller": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "PlayerController"
+          },
+          "Speed": 200
+        }
+      ],
+      "Children": [
+        {
+          "Id": "e8263e2a-05ab-4375-942a-5842b3d6abdd",
+          "Name": "body",
+          "Position": "324.3173,-350.2766,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "BodyGroups": 341,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "CitizenAnimationHelper",
+              "BodyWeight": 1,
+              "EyeSource": null,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "Height": 1,
+              "IkLeftFoot": null,
+              "IkLeftHand": null,
+              "IkRightFoot": null,
+              "IkRightHand": null,
+              "LookAt": null,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "go": "e8263e2a-05ab-4375-942a-5842b3d6abdd",
+                "component_type": "SkinnedModelRenderer"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "5ecdd961-5070-4e32-aeaa-34651f514fc0",
+      "Name": "Ammo Pickup",
+      "Position": "387.1092,-1215.342,0",
+      "Scale": "5,5,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "AmmoPickup"
+        },
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/items/ammo.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "37.09996,14.89999,45.00006",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "testground",
+  "Description": "",
+  "__references": [
+    "facepunch.v_mp5",
+    "fish.shotgun-ammo"
+  ]
+}

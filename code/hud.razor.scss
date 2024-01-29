@@ -1,0 +1,49 @@
+hud
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+
+	.title
+	{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: 75px;
+		font-family: Poppins;
+		color: #000000;
+	}
+
+	.center {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.crosshair {
+		position: absolute;
+		border-radius: 50%;
+		background-color: white;
+		opacity: 0.3;
+		transition: transform 0.05s ease-in-out;
+		width: 4px;
+		height: 4px;
+	}
+	
+	&.hitmarker {
+		.crosshair {
+			background-color: red;
+			transition: transform 0.05s ease-in-out;
+			transform: scale( 2 );
+		}
+	}
+}
