@@ -20,7 +20,7 @@
     {
       "Id": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
       "Name": "Player",
-      "Position": "0,-640,0",
+      "Position": "0.00000007493481,-640,-3.965218",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -128,7 +128,7 @@
             {
               "Id": "74eaed69-bbd2-4ef3-8f1a-b3b3224fbfe1",
               "Name": "ViewModel",
-              "Position": "14.36663,-14.13141,-7.91713",
+              "Position": "14.36663,-8.321533,-4.160728",
               "Enabled": true,
               "Components": [
                 {
@@ -223,7 +223,7 @@
     {
       "Id": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
       "Name": "Camera",
-      "Position": "536.8515,-1118.535,64.04124",
+      "Position": "0.00000007493481,-640,60.03478",
       "Tags": "maincamera",
       "Enabled": true,
       "Components": [

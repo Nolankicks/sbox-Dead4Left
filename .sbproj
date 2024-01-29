@@ -26,7 +26,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/mainchanges.scene",
+    "StartupScene": "scenes/finalmain.scene",
     "ProjectTemplate": null,
     "MapStartupScene": null,
     "LaunchMode": "Normal"
