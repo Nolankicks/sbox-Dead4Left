@@ -11,6 +11,7 @@ public sealed class MP5 : Component
 	[Property] public GameObject decalGo { get; set; }
 	[Property] public float ammo { get; set; } = 30;
 	[Property] public float fullAmmo { get; set; } = 60;
+	public TimeSince timeSinceShoot = 0;
 	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
 	bool ableToShoot;
 	bool reloading;
@@ -31,10 +32,12 @@ public sealed class MP5 : Component
 	protected override void OnFixedUpdate()
 	{
 		
-		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3)
+		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
 		{
+
 			Shoot();
 			gun.Set("b_attack", true);
+			timeSinceShoot = 0;
 		}
 
 	}

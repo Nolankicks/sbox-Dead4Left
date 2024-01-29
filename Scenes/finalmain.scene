@@ -68,7 +68,7 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "50178157-6b17-4108-a469-eb6aa00de7a6",
+            "go": "7b0d4a43-087b-4ad8-bde2-3cfcc810c7a2",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -84,7 +84,7 @@
           "gunSound": "sounds/toolgun-attack-001.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "9600621d-ec97-4fcf-8d74-2f8743b99a82",
+            "go": "ff1e5e7a-a6e8-479c-b516-246d26ca9191",
             "prefab": "prefabs/impact_default (1).prefab"
           }
         },
@@ -375,35 +375,6 @@
       ]
     },
     {
-      "Id": "5ecdd961-5070-4e32-aeaa-34651f514fc0",
-      "Name": "Ammo Pickup",
-      "Position": "387.1092,-1215.342,0",
-      "Scale": "5,5,5",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "AmmoPickup"
-        },
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/items/ammo.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "37.09996,14.89999,45.00006",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
       "Id": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
       "Name": "Manager",
       "Position": "513.08,-143.3373,112.5343",
@@ -411,7 +382,7 @@
       "Components": [
         {
           "__type": "Manager",
-          "endScene": "scenes/mainchanges.scene"
+          "endScene": "scenes/finalmain.scene"
         }
       ]
     },
@@ -425,7 +396,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "70935b5d-94cb-45cb-b48d-d0bd15cad395",
+            "go": "4fe9dbff-c1f8-41c2-b971-4d8b2a805654",
             "prefab": "prefabs/zombieprefab.prefab"
           }
         }
@@ -1176,9 +1147,8 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-29T10:59:27.4283477-05:00",
+  "LastSaved": "2024-01-29T15:49:26.3796217-05:00",
   "__references": [
-    "facepunch.v_mp5",
-    "fish.shotgun-ammo"
+    "facepunch.v_mp5"
   ]
 }
