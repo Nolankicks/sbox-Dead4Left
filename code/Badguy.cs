@@ -8,6 +8,7 @@ public sealed class Badguy : Component
 {
 	[Property] public SkinnedModelRenderer body { get; set; }
 	[Property] public CitizenAnimationHelper citizenAnimationHelper { get; set; }
+	[Property] public SoundEvent hitSound { get; set; }
 	PlayerController controller => Scene.GetAllComponents<PlayerController>().FirstOrDefault();
 
 	public Vector3 target;
@@ -91,7 +92,7 @@ public sealed class Badguy : Component
             if (timeSinceHit > 2.5f)
             {
             	healthManager.health -= 25;
-				
+				Sound.Play(hitSound, tr.GameObject.Transform.Position);
                	timeSinceHit = 0;
 			   	
 			   citizenAnimationHelper.Target.Set("b_attack", true);
@@ -99,5 +100,6 @@ public sealed class Badguy : Component
             
         }
 	}
+	
 }
 

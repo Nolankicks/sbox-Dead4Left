@@ -8,7 +8,7 @@ public sealed class HealthManager : Component
 	{
 		if (health <= 0)
 		{
-			manager.GameEnd();
+			manager.EndGame();
 		}
 	}
 }

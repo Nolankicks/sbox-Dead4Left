@@ -36,4 +36,5 @@ public sealed class ZombieSpawner : Component
 		
 		
 	}
+
 }

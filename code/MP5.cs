@@ -8,6 +8,7 @@ public sealed class MP5 : Component
 	[Property] public GameObject impact { get; set; }
 	[Property] public GameObject eye { get; set; }
 	[Property] public SoundEvent gunSound { get; set; }
+	[Property] public SoundEvent reloadSound { get; set; }
 	[Property] public GameObject decalGo { get; set; }
 	[Property] public float ammo { get; set; } = 30;
 	[Property] public float fullAmmo { get; set; } = 60;
@@ -19,6 +20,10 @@ public sealed class MP5 : Component
 	
 	protected override void OnUpdate()
 	{
+		if (fullAmmo < 0)
+		{
+			fullAmmo = 0;
+		}
 		
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
 		{
@@ -26,6 +31,7 @@ public sealed class MP5 : Component
 			fullAmmo -= 30;
 			ammo = 30;
 			timeSinceReload = 1;
+			Sound.Play(reloadSound, GameObject.Transform.Position);
 		}
 
 	}
@@ -52,13 +58,13 @@ public sealed class MP5 : Component
 			ammo -= 1;
 			Log.Info(tr.GameObject);
 			impact.Clone(tr.HitPosition);
-			Sound.Play(gunSound, tr.HitPosition);
+			Sound.Play(gunSound, GameObject.Transform.Position);
 			var decal = decalGo.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal, Vector3.Random), Random.Shared.Float(0.8f, 1.2f)));
 			decal.SetParent( tr.GameObject );
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Parent.Destroy();
-				manager.GetScore();
+				manager.AddScore();
 				fullAmmo += 15;
 			}
 		}

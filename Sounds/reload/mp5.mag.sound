@@ -1,0 +1,13 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 70,
+  "SelectionMode": "Forward",
+  "Sounds": [
+    "sounds/reload/mp5.mag.vsnd",
+    "sounds/reload/mp5.mag.load.vsnd",
+    "sounds/reload/mp5.move.vsnd"
+  ],
+  "__references": []
+}

@@ -1,0 +1,13 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 140,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/smg1_shoot1.vsnd",
+    "sounds/smg1_shoot2.vsnd",
+    "sounds/smg1_shoot3.vsnd"
+  ],
+  "__references": []
+}

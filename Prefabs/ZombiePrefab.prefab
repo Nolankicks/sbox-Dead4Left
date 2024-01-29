@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "323bc0a1-da96-4ac0-adaa-497696fc8734",
+    "Id": "f5464354-24cd-44f1-b051-c6d11aa5814a",
     "Name": "zombieprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -18,25 +18,30 @@
         "__type": "Badguy",
         "body": {
           "_type": "component",
-          "go": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
+          "go": "7920ad78-4c65-4d8e-b0e9-88806bfb95cf",
           "component_type": "SkinnedModelRenderer"
         },
         "characterController": {
           "_type": "component",
-          "go": "323bc0a1-da96-4ac0-adaa-497696fc8734",
+          "go": "f5464354-24cd-44f1-b051-c6d11aa5814a",
           "component_type": "CharacterController"
         },
         "citizenAnimationHelper": {
           "_type": "component",
-          "go": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
+          "go": "7920ad78-4c65-4d8e-b0e9-88806bfb95cf",
           "component_type": "CitizenAnimationHelper"
         },
+        "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "Speed": 300
+      },
+      {
+        "__type": "PlayerFootsteps",
+        "Source": null
       }
     ],
     "Children": [
       {
-        "Id": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
+        "Id": "7920ad78-4c65-4d8e-b0e9-88806bfb95cf",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -66,7 +71,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
+              "go": "7920ad78-4c65-4d8e-b0e9-88806bfb95cf",
               "component_type": "SkinnedModelRenderer"
             }
           },

@@ -68,7 +68,7 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "7b0d4a43-087b-4ad8-bde2-3cfcc810c7a2",
+            "go": "2e023482-ce05-4ceb-b620-d22fd6b570b2",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -81,12 +81,13 @@
             "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
             "component_type": "SkinnedModelRenderer"
           },
-          "gunSound": "sounds/toolgun-attack-001.sound",
+          "gunSound": "sounds/smg1_shoot.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "ff1e5e7a-a6e8-479c-b516-246d26ca9191",
+            "go": "4903cd0d-3a2d-4c2d-8b29-92fc6a1b7b8f",
             "prefab": "prefabs/impact_default (1).prefab"
-          }
+          },
+          "reloadSound": "sounds/reload/mp5.mag.sound"
         },
         {
           "__type": "HealthManager",
@@ -266,81 +267,6 @@
       ]
     },
     {
-      "Id": "c7c624de-6f61-4f6c-8373-2072e3b1a9dd",
-      "Name": "Cube",
-      "Position": "216.2742,-1077.942,24",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "8f6a65a0-8e65-433d-a7b6-7bcff328d46c",
-      "Name": "Cube (1)",
-      "Position": "216.2742,-1176,24",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "573f012e-3b81-436c-8d04-37fa441108d9",
-      "Name": "Cube (2)",
-      "Position": "216.2742,-1128,72",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
       "Id": "f75bf00f-8c48-4fcd-b6bd-6c0dbba22e26",
       "Name": "Screen",
       "Position": "595.8925,-1136.792,37.96595",
@@ -382,7 +308,9 @@
       "Components": [
         {
           "__type": "Manager",
-          "endScene": "scenes/finalmain.scene"
+          "ableToInput": false,
+          "menuScene": "scenes/finalmain.scene",
+          "testBool": false
         }
       ]
     },
@@ -396,7 +324,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "4fe9dbff-c1f8-41c2-b971-4d8b2a805654",
+            "go": "6fa22247-d940-474e-a78b-2f7aedc51d1f",
             "prefab": "prefabs/zombieprefab.prefab"
           }
         }
@@ -430,6 +358,114 @@
       "Id": "1cd1813a-dd2f-42c0-bcd9-7dcd76906a3e",
       "Name": "Spawns (7)",
       "Position": "-224,261.0264,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "6bd2d08e-8dff-4aeb-a4d2-ff4f336e6af6",
+      "Name": "Spawns (55)",
+      "Position": "-320,128,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "9b72f795-a242-448f-afeb-02bc531b89d6",
+      "Name": "Spawns (58)",
+      "Position": "-320,1280,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "7c520d62-41f6-4c4a-b6a8-42b86943249e",
+      "Name": "Spawns (61)",
+      "Position": "-320,1184,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "08574ec7-1b1d-4567-b8ae-a79bae161e81",
+      "Name": "Spawns (56)",
+      "Position": "-416,128,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "d3f31c9c-5775-4580-bf8a-9817a550b185",
+      "Name": "Spawns (59)",
+      "Position": "-416,1280,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "a2fd77b5-f6af-4cf1-a0aa-afb8e2611b58",
+      "Name": "Spawns (62)",
+      "Position": "-416,1184,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "18eeb665-f059-42e7-a6af-54751c162ec6",
+      "Name": "Spawns (57)",
+      "Position": "-480,128,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "44ba1416-b1e0-4abd-bc75-e08353860b91",
+      "Name": "Spawns (60)",
+      "Position": "-480,1280,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "84a2e140-5328-4b17-83c8-7bb50f573dd5",
+      "Name": "Spawns (63)",
+      "Position": "-480,1184,0",
       "Enabled": true,
       "Components": [
         {
@@ -1147,7 +1183,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-29T15:49:26.3796217-05:00",
+  "LastSaved": "2024-01-29T16:42:23.8848291-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
