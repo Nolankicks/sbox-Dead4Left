@@ -70,6 +70,14 @@
           },
           "gunSound": "sounds/toolgun-attack-001.sound",
           "impact": "prefabs/impact_default (1).prefab"
+        },
+        {
+          "__type": "HealthManager",
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          }
         }
       ],
       "Children": [
@@ -326,6 +334,11 @@
         },
         {
           "__type": "hud",
+          "healthManager": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "HealthManager"
+          },
           "manager": {
             "_type": "component",
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
@@ -378,14 +391,28 @@
             "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
             "component_type": "PlayerController"
           },
+          "healthManager": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "HealthManager"
+          },
           "Speed": 200
+        },
+        {
+          "__type": "CapsuleCollider",
+          "End": "0,0,50.58449",
+          "IsTrigger": false,
+          "Radius": 25,
+          "Start": "0,0,0",
+          "Static": false,
+          "Surface": null
         }
       ],
       "Children": [
         {
           "Id": "e8263e2a-05ab-4375-942a-5842b3d6abdd",
           "Name": "body",
-          "Position": "324.3173,97.72339,0",
+          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -398,13 +425,6 @@
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "ModelCollider",
-              "IsTrigger": false,
-              "Model": "models/citizen/citizen.vmdl",
-              "Static": false,
-              "Surface": null
             },
             {
               "__type": "CitizenAnimationHelper",

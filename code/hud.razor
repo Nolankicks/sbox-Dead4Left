@@ -3,9 +3,8 @@
 @inherits PanelComponent
 
 <root>
-	<div class="title">@mp5.ammo / @mp5.fullAmmo
-		
-	</div>
+	<div class="title">@mp5.ammo / @mp5.fullAmmo</div>
+	<div class="health">Health: @healthManager.health</div>
 	
 	<div class="center">
 		<div class="crosshair"></div>
@@ -49,6 +48,7 @@
 	[Property] public MP5 mp5 { get; set; }
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	[Property] public Manager manager { get; set; }
+	[Property] public HealthManager healthManager { get; set; }
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
     {
         return entry.Me ? "me" : "";

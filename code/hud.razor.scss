@@ -5,10 +5,22 @@ hud
 	left: 0;
 	right: 0;
 	bottom: 0;
-	font-family: ;
+	font-family: Poppins;
 	font-size: 24px;
 	color: white;
 	text-shadow: 0 0 8px black;
+	
+	.health {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		font-size: 75px;
+		height: 32px;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
 
 	.title
 	{
