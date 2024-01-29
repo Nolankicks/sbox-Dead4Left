@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "23334c0d-e1b1-448c-a879-2c762762f062",
+    "Id": "323bc0a1-da96-4ac0-adaa-497696fc8734",
     "Name": "zombieprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -18,25 +18,25 @@
         "__type": "Badguy",
         "body": {
           "_type": "component",
-          "go": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+          "go": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
           "component_type": "SkinnedModelRenderer"
         },
         "characterController": {
           "_type": "component",
-          "go": "23334c0d-e1b1-448c-a879-2c762762f062",
+          "go": "323bc0a1-da96-4ac0-adaa-497696fc8734",
           "component_type": "CharacterController"
         },
         "citizenAnimationHelper": {
           "_type": "component",
-          "go": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+          "go": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
           "component_type": "CitizenAnimationHelper"
         },
-        "Speed": 350
+        "Speed": 300
       }
     ],
     "Children": [
       {
-        "Id": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+        "Id": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -66,7 +66,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "a46b2300-3a72-4db2-aaea-e1183cb8f6c4",
+              "go": "ee4ca9e0-b476-43b3-ad34-8f9764e8aff7",
               "component_type": "SkinnedModelRenderer"
             }
           },

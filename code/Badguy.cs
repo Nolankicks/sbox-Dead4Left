@@ -88,7 +88,7 @@ public sealed class Badguy : Component
 		if (tr.Hit && tr.GameObject.Tags.Has("player"))
         {
            
-            if (timeSinceHit > 1)
+            if (timeSinceHit > 2.5f)
             {
             	healthManager.health -= 25;
 				
