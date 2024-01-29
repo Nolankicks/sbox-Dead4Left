@@ -12,6 +12,8 @@ public sealed class MP5 : Component
 	[Property] public GameObject decalGo { get; set; }
 	[Property] public float ammo { get; set; } = 30;
 	[Property] public float fullAmmo { get; set; } = 60;
+	[Property] public float ShootDamage { get; set; } = 10;
+	[Property] public GameObject zombieRagdoll { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
 	bool ableToShoot;
@@ -66,7 +68,19 @@ public sealed class MP5 : Component
 				tr.GameObject.Parent.Destroy();
 				manager.AddScore();
 				fullAmmo += 15;
+				
 			}
+			var damage = new DamageInfo( ShootDamage, GameObject, GameObject );
+			
+		if ( tr.Body is not null )
+		{
+			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0,200 ) );
+		}
+
+		foreach ( var damageable in tr.GameObject.Components.GetAll<IDamageable>() )
+		{
+			damageable.OnDamage( damage );
+		}
 		}
 	}
 }
