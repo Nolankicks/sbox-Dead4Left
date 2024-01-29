@@ -78,9 +78,10 @@ public sealed class PlayerController : Component
 			bodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
 
 		}
-			else
+			if (IsFirstPerson)
 			{
-				bodyRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+				var renderMode = ModelRenderer.ShadowRenderType.On;
+				if (!IsProxy) renderMode = ModelRenderer.ShadowRenderType.ShadowsOnly;
 				camera.FieldOfView = 90;
 			}
 			camera.Transform.Position = camPos;

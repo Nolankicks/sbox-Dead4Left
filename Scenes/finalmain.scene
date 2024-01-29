@@ -42,7 +42,10 @@
             "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
             "component_type": "CitizenAnimationHelper"
           },
-          "body": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
+          "body": {
+            "_type": "gameobject",
+            "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc"
+          },
           "camera": {
             "_type": "component",
             "go": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
@@ -50,7 +53,10 @@
           },
           "CrouchSpeed": 90,
           "distance": 0,
-          "eye": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+          "eye": {
+            "_type": "gameobject",
+            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+          },
           "GroundControl": 4,
           "JumpForce": 400,
           "MaxForce": 50,
@@ -60,8 +66,15 @@
         {
           "__type": "MP5",
           "ammo": 30,
-          "decalGo": "prefabs/decal_bullet_default.prefab",
-          "eye": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+          "decalGo": {
+            "_type": "gameobject",
+            "go": "50178157-6b17-4108-a469-eb6aa00de7a6",
+            "prefab": "prefabs/decal_bullet_default.prefab"
+          },
+          "eye": {
+            "_type": "gameobject",
+            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+          },
           "fullAmmo": 60,
           "gun": {
             "_type": "component",
@@ -69,7 +82,11 @@
             "component_type": "SkinnedModelRenderer"
           },
           "gunSound": "sounds/toolgun-attack-001.sound",
-          "impact": "prefabs/impact_default (1).prefab"
+          "impact": {
+            "_type": "gameobject",
+            "go": "9600621d-ec97-4fcf-8d74-2f8743b99a82",
+            "prefab": "prefabs/impact_default (1).prefab"
+          }
         },
         {
           "__type": "HealthManager",
@@ -101,7 +118,10 @@
             {
               "__type": "CitizenAnimationHelper",
               "BodyWeight": 1,
-              "EyeSource": "d9354293-c556-4ba8-92a6-e70b06ee7385",
+              "EyeSource": {
+                "_type": "gameobject",
+                "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+              },
               "EyesWeight": 1,
               "HeadWeight": 1,
               "Height": 1,
@@ -403,7 +423,11 @@
       "Components": [
         {
           "__type": "ZombieSpawner",
-          "ZombiePrefab": "prefabs/zombieprefab.prefab"
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "go": "70935b5d-94cb-45cb-b48d-d0bd15cad395",
+            "prefab": "prefabs/zombieprefab.prefab"
+          }
         }
       ]
     },
@@ -1152,6 +1176,7 @@
   },
   "Title": "testground",
   "Description": "",
+  "LastSaved": "2024-01-29T10:57:07.3512568-05:00",
   "__references": [
     "facepunch.v_mp5",
     "fish.shotgun-ammo"
