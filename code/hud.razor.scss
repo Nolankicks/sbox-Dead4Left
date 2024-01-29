@@ -5,11 +5,10 @@ hud
 	left: 0;
 	right: 0;
 	bottom: 0;
-
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
-	border-radius: 20px;
+	font-family: ;
+	font-size: 24px;
+	color: white;
+	text-shadow: 0 0 8px black;
 
 	.title
 	{
@@ -46,4 +45,105 @@ hud
 			transform: scale( 2 );
 		}
 	}
+	> .left
+	{
+		position: absolute;
+		top: 0;
+		left: 32px;
+		width: 450px;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		gap: 64px;
+
+		> div
+		{
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		> .score
+		{
+			font-size: 42px;
+			min-height: 256px;
+			gap: 16px;
+			width: 100%;
+
+			div
+			{
+				flex-direction: column;
+				align-items: center;
+
+				p
+				{
+					font-size: 64px;
+				}
+			}
+
+			.highscore
+			{
+				font-size: 32px;
+
+				p
+				{
+					font-size: 48px;
+				}
+			}
+		
+		}
+
+		> .leaderboard
+		{
+			h1
+			{
+				font-size: 42px;
+			}
+
+			> .entries
+			{
+				flex-direction: column;
+				align-items: center;
+				width: 85%;
+
+				.entry
+				{
+					justify-content: space-between;
+					gap: 8px;
+					width: 100%;
+					padding: 4px 8px;
+
+					.rank
+					{
+						justify-content: flex-end;
+					}
+
+					.name
+					{
+						flex-grow: 1;
+						gap: 8px;
+
+						image
+						{
+							width: 32px;
+							height: 32px;
+						}
+
+						label
+						{
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							max-width: 200px;
+						}
+					}
+
+					&.me
+					{
+						background-color: rgba( white, 0.1 );
+					}
+				}
+			}
+		}
+	}
+
 }

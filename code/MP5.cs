@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Sandbox;
 
 public sealed class MP5 : Component
@@ -10,6 +11,7 @@ public sealed class MP5 : Component
 	[Property] public GameObject decalGo { get; set; }
 	[Property] public float ammo { get; set; } = 30;
 	[Property] public float fullAmmo { get; set; } = 60;
+	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
 	bool ableToShoot;
 	bool reloading;
 	public TimeSince timeSinceReload = 3;
@@ -53,6 +55,7 @@ public sealed class MP5 : Component
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Parent.Destroy();
+				manager.GetScore();
 			}
 		}
 	}

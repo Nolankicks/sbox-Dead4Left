@@ -9,7 +9,7 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "facepunch.flatgrass",
+          "MapName": "facepunch.construct23",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
@@ -318,20 +318,25 @@
       "Enabled": true,
       "Components": [
         {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
           "__type": "hud",
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          },
           "mp5": {
             "_type": "component",
             "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
             "component_type": "MP5"
           },
           "MyStringValue": "Hello World!"
-        },
-        {
-          "__type": "ScreenPanel",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
         }
       ]
     },
@@ -380,7 +385,7 @@
         {
           "Id": "e8263e2a-05ab-4375-942a-5842b3d6abdd",
           "Name": "body",
-          "Position": "324.3173,-350.2766,0",
+          "Position": "324.3173,97.72339,0",
           "Enabled": true,
           "Components": [
             {
@@ -450,6 +455,18 @@
           "Scale": "37.09996,14.89999,45.00006",
           "Static": false,
           "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+      "Name": "Manager",
+      "Position": "513.08,-143.3373,112.5343",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Manager",
+          "endScene": "scenes/mainchanges.scene"
         }
       ]
     }

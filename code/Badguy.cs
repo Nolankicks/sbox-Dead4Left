@@ -14,6 +14,7 @@ public sealed class Badguy : Component
 	[Property] public float Speed { get; set; }
 	[Property] public CharacterController characterController { get; set; }
 	TimeSince timeSinceHit = 0;
+	[Property] public HealthManager healthManager { get; set; }
 	
 	protected override void OnStart()
 	{
@@ -38,7 +39,7 @@ public sealed class Badguy : Component
 	}
 	void UpdateMovement()
 	{
-		
+		var gravity = Scene.PhysicsWorld.Gravity;
 		characterController.ApplyFriction(GetFriction());
 
 		if (characterController.IsOnGround)
@@ -47,7 +48,16 @@ public sealed class Badguy : Component
 			characterController.Velocity = characterController.Velocity.WithZ(0);
 			body.Transform.Rotation = Rotation.LookAt(characterController.Velocity.WithZ(0), Vector3.Up);
 		}
+		else
+		{
+			characterController.Velocity += gravity * Time.Delta * 0.5f;
+		}
 		characterController.Move();
+
+		if (!characterController.IsOnGround)
+		{
+			characterController.Velocity += gravity * Time.Delta * 0.5f;
+		}
 	}
 	float GetFriction()
 	{
@@ -78,7 +88,7 @@ public sealed class Badguy : Component
            
             if (timeSinceHit > 2)
             {
-            	
+            	healthManager.health -= 10;
                	timeSinceHit = 0;
 			   	
 			   citizenAnimationHelper.Target.Set("b_attack", true);
