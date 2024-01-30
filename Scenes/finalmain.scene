@@ -61,6 +61,7 @@
           "JumpForce": 400,
           "MaxForce": 50,
           "MaxHealth": 100,
+          "respawnScene": "scenes/finalmain.scene",
           "RunSpeed": 320,
           "Speed": 160
         },
@@ -69,7 +70,7 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "7216a920-f2c6-4867-872d-9cae92958384",
+            "go": "6c963f64-30db-4437-b767-cb2893462bed",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -85,7 +86,7 @@
           "gunSound": "sounds/smg1_shoot.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "2abbd9b7-0d48-47f7-ac4f-b352fd6ebe69",
+            "go": "2de26821-3a45-426a-a3cf-2f0df4f11477",
             "prefab": "prefabs/impact_default (1).prefab"
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
@@ -285,7 +286,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "67489f56-aa1b-4f15-8ec3-086bc5116f09",
+            "go": "88d38917-ca17-47be-a9a8-0a87ee64f61a",
             "prefab": "prefabs/zombieprefab.prefab"
           }
         }
@@ -1152,6 +1153,25 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
+        },
+        {
+          "__type": "hud",
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          },
+          "mp5": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "MP5"
+          },
+          "MyStringValue": "Hello World!",
+          "playerController": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "PlayerController"
+          }
         }
       ]
     }
@@ -1167,7 +1187,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-29T20:52:45.8193358-05:00",
+  "LastSaved": "2024-01-30T09:28:34.9267161-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

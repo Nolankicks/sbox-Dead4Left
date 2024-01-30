@@ -23,6 +23,7 @@ public sealed class PlayerController : Component, IHealthComponent
 	[Property] public float MaxForce { get; set; } = 50;
 	[Property] public float JumpForce { get; set; } = 400;
 	[Property] public GameObject eye { get; set; }
+	[Property] public SceneFile respawnScene { get; set; }
 	
 	[Property] public bool AbleToCrouch;
 	public bool IsCrouching = false;
@@ -206,19 +207,18 @@ public sealed class PlayerController : Component, IHealthComponent
 	}
 	public void TakeDamage(float damage)
 	{
-		if (Health != 0)
-		{
+		
 		Health -= damage;
-		}
+		
 		Log.Info(Health);
 
-		if (Health <= 0)
+		if (Health < 0)
 		{
 			Health = 0;
 		}
 		if (Health == 0)
 		{
-			
+			GameManager.ActiveScene.Load(respawnScene);
 		}
 }
 }
