@@ -5,11 +5,12 @@ using Sandbox;
 using Sandbox.Citizen;
 namespace Kicks;
 
-public sealed class PlayerController : Component
+public sealed class PlayerController : Component, IHealthComponent
 {
 
 	[Property] public GameObject body { get; set; }
 	public Vector3 WishVelocity = Vector3.Zero;
+	
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public float distance { get; set; } = 100;
 	[Property] public float GroundControl { get; set; } = 4;
