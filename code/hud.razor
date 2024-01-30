@@ -1,10 +1,12 @@
+﻿@using System
+@using System.Linq
 @using Sandbox;
-@using Sandbox.UI;
 @inherits PanelComponent
+@namespace Kicks
 
 <root>
 	<div class="title">@mp5.ammo / @mp5.fullAmmo</div>
-	<div class="health">Health: @healthManager.health</div>
+	<div class="health">Health: @LocalPlayer.Health</div>
 	
 	<div class="center">
 		<div class="crosshair"></div>
@@ -48,15 +50,14 @@
 	[Property] public MP5 mp5 { get; set; }
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	[Property] public Manager manager { get; set; }
-	[Property] public HealthManager healthManager { get; set; }
+	[Property] public PlayerController LocalPlayer { get; set; }
+	
+
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
     {
         return entry.Me ? "me" : "";
     }
-	protected override void OnUpdate()
-	{
-		
-	}
+
 
 	string AvatarTexture(Sandbox.Services.Leaderboards.Entry entry)
     {
@@ -66,5 +67,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, mp5.ammo, mp5.fullAmmo, manager.Score, manager.HighScore);
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, mp5.ammo, mp5.fullAmmo, manager.Score, manager.HighScore, LocalPlayer.Health);
 }
