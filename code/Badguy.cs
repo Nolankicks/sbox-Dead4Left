@@ -10,7 +10,7 @@ public sealed class Badguy : Component
 	[Property] public CitizenAnimationHelper citizenAnimationHelper { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	PlayerController controller => Scene.GetAllComponents<PlayerController>().FirstOrDefault();
-
+	
 	public Vector3 target;
 	public Vector3 WishVelocity;
 	[Property] public float Speed { get; set; }

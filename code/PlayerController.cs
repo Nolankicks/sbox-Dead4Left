@@ -5,6 +5,7 @@ using Sandbox;
 using Sandbox.Citizen;
 namespace Kicks;
 
+
 public sealed class PlayerController : Component, IHealthComponent
 {
 
