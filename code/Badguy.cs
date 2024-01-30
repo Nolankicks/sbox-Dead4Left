@@ -16,7 +16,7 @@ public sealed class Badguy : Component
 	[Property] public float Speed { get; set; }
 	[Property] public CharacterController characterController { get; set; }
 	TimeSince timeSinceHit = 0;
-	HealthManager healthManager => Scene.GetAllComponents<HealthManager>().FirstOrDefault();
+	
 	MP5 mP5 => Scene.GetAllComponents<MP5>().FirstOrDefault();
 	
 	protected override void OnStart()
@@ -91,10 +91,10 @@ public sealed class Badguy : Component
            
             if (timeSinceHit > 2.5f)
             {
-            	healthManager.health -= 25;
+            	//healthManager.health -= 25;
 				Sound.Play(hitSound, tr.GameObject.Transform.Position);
                	timeSinceHit = 0;
-			   	
+			   	controller.TakeDamage(25);
 			   citizenAnimationHelper.Target.Set("b_attack", true);
             }
             

@@ -5,11 +5,13 @@ using Sandbox;
 using Sandbox.Citizen;
 namespace Kicks;
 
-public sealed class PlayerController : Component
+public sealed class PlayerController : Component, IHealthComponent
 {
 
 	[Property] public GameObject body { get; set; }
 	public Vector3 WishVelocity = Vector3.Zero;
+	[Sync, Property] public float MaxHealth { get; private set; } = 100f;
+	[Sync] public float Health { get; private set; } = 100f;
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public float distance { get; set; } = 100;
 	[Property] public float GroundControl { get; set; } = 4;
@@ -20,6 +22,7 @@ public sealed class PlayerController : Component
 	[Property] public float MaxForce { get; set; } = 50;
 	[Property] public float JumpForce { get; set; } = 400;
 	[Property] public GameObject eye { get; set; }
+	
 	[Property] public bool AbleToCrouch;
 	public bool IsCrouching = false;
 	public bool IsSprinting = false;
@@ -200,6 +203,20 @@ public sealed class PlayerController : Component
 
 
 	}
-	
+	public void TakeDamage(float damage)
+	{
+		Health -= damage;
+		Log.Info(Health);
+
+		if (Health <= 0)
+		{
+			Health = 0;
+		}
+		if (Health == 0)
+		{
+			
+		}
 }
+}
+
 
