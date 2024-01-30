@@ -1156,6 +1156,11 @@
         },
         {
           "__type": "hud",
+          "LocalPlayer": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "PlayerController"
+          },
           "manager": {
             "_type": "component",
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
@@ -1166,12 +1171,7 @@
             "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
             "component_type": "MP5"
           },
-          "MyStringValue": "Hello World!",
-          "playerController": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "PlayerController"
-          }
+          "MyStringValue": "Hello World!"
         }
       ]
     }
@@ -1187,7 +1187,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-30T09:28:34.9267161-05:00",
+  "LastSaved": "2024-01-30T11:53:13.2061392-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

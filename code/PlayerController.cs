@@ -24,6 +24,7 @@ public sealed class PlayerController : Component, IHealthComponent
 	[Property] public float JumpForce { get; set; } = 400;
 	[Property] public GameObject eye { get; set; }
 	[Property] public SceneFile respawnScene { get; set; }
+	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
 	
 	[Property] public bool AbleToCrouch;
 	public bool IsCrouching = false;
@@ -218,7 +219,7 @@ public sealed class PlayerController : Component, IHealthComponent
 		}
 		if (Health == 0)
 		{
-			GameManager.ActiveScene.Load(respawnScene);
+			manager.EndGame();
 		}
 }
 }
