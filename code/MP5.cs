@@ -4,6 +4,7 @@ using Sandbox;
 
 public sealed class MP5 : Component
 {
+	
 	[Property] public SkinnedModelRenderer gun { get; set; }
 	[Property] public GameObject impact { get; set; }
 	[Property] public GameObject eye { get; set; }
@@ -14,6 +15,7 @@ public sealed class MP5 : Component
 	[Property] public float fullAmmo { get; set; } = 60;
 	[Property] public float ShootDamage { get; set; } = 10;
 	[Property] public GameObject zombieRagdoll { get; set; }
+	[Property] public GameObject zombieParticle { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
 	bool ableToShoot;
@@ -68,7 +70,7 @@ public sealed class MP5 : Component
 				tr.GameObject.Parent.Destroy();
 				manager.AddScore();
 				fullAmmo += 15;
-				
+				zombieParticle.Clone(tr.HitPosition);
 			}
 			var damage = new DamageInfo( ShootDamage, GameObject, GameObject );
 			

@@ -1,0 +1,100 @@
+{
+  "RootObject": {
+    "Id": "113b212d-ba28-4329-b916-645b11c2b586",
+    "Name": "bloodparticle",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "LegacyParticleSystem",
+        "ControlPoints": [],
+        "Looped": false,
+        "Particles": "particles/impact.flesh.bloodpuff.vpcf",
+        "PlaybackSpeed": 1
+      },
+      {
+        "__type": "StartActionComponent",
+        "Action": {
+          "Kind": "Action",
+          "Version": 3,
+          "Variables": [
+            {
+              "Name": "_this",
+              "Type": "Sandbox.Game/Sandbox.Component",
+              "Default": {
+                "_type": "component",
+                "go": "113b212d-ba28-4329-b916-645b11c2b586",
+                "component_type": "StartActionComponent"
+              }
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "scene.getobject",
+              "UserData": {
+                "Position": "64,192"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_name": "Destroy",
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "576,64"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "288,-16"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 3,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 3,
+              "DstId": 3,
+              "DstName": "seconds"
+            }
+          ],
+          "UserData": {
+            "Title": "Action",
+            "id": "f887452d-b163-4f87-8402-8386b8a4f8ff",
+            "ReferencedComponentTypes": []
+          }
+        }
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

@@ -12,7 +12,7 @@
           "MapName": "facepunch.construct23",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
-          "UseMapFromLaunch": false
+          "UseMapFromLaunch": true
         }
       ],
       "Children": []
@@ -70,7 +70,7 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "6c963f64-30db-4437-b767-cb2893462bed",
+            "go": "dd49f11a-4f0c-4ce9-a2f9-69f711adfb2f",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -86,11 +86,16 @@
           "gunSound": "sounds/smg1_shoot.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "2de26821-3a45-426a-a3cf-2f0df4f11477",
+            "go": "716c81a3-b48d-4593-b589-60bb6a03fcca",
             "prefab": "prefabs/impact_default (1).prefab"
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
           "ShootDamage": 10,
+          "zombieParticle": {
+            "_type": "gameobject",
+            "go": "806f23d1-3efa-4b07-bde4-9679a06f57e0",
+            "prefab": "prefabs/bloodparticle.prefab"
+          },
           "zombieRagdoll": null
         }
       ],
@@ -286,7 +291,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "88d38917-ca17-47be-a9a8-0a87ee64f61a",
+            "go": "8fe023c9-ff18-4deb-9699-85574f5c2b18",
             "prefab": "prefabs/zombieprefab.prefab"
           }
         }
@@ -1187,7 +1192,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-30T11:53:13.2061392-05:00",
+  "LastSaved": "2024-01-30T18:33:44.7801008-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

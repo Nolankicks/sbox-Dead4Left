@@ -10,13 +10,11 @@ public sealed class Badguy : Component
 	[Property] public CitizenAnimationHelper citizenAnimationHelper { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	PlayerController controller => Scene.GetAllComponents<PlayerController>().FirstOrDefault();
-	
 	public Vector3 target;
 	public Vector3 WishVelocity;
 	[Property] public float Speed { get; set; }
 	[Property] public CharacterController characterController { get; set; }
 	TimeSince timeSinceHit = 0;
-	
 	MP5 mP5 => Scene.GetAllComponents<MP5>().FirstOrDefault();
 	
 	protected override void OnStart()
