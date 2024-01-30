@@ -68,7 +68,7 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "b0162d7b-7269-4774-a65d-cf46df776303",
+            "go": "fb10d23f-0101-4b52-9fa9-476df89a2835",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -84,7 +84,7 @@
           "gunSound": "sounds/smg1_shoot.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "bcfd3a70-ff60-4cee-8cfe-8baf9d40466c",
+            "go": "45cafebf-a8f1-4349-a10b-fc633952e549",
             "prefab": "prefabs/impact_default (1).prefab"
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
@@ -326,7 +326,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "f8fef24c-d86c-43fa-a7a6-14251810b8d2",
+            "go": "15c7ebeb-e082-4c17-9560-eb4fd95925bf",
             "prefab": "prefabs/zombieprefab.prefab"
           }
         }
@@ -1185,7 +1185,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-29T20:06:57.449072-05:00",
+  "LastSaved": "2024-01-29T17:09:39.2487366-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
