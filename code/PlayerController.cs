@@ -206,7 +206,10 @@ public sealed class PlayerController : Component, IHealthComponent
 	}
 	public void TakeDamage(float damage)
 	{
+		if (Health != 0)
+		{
 		Health -= damage;
+		}
 		Log.Info(Health);
 
 		if (Health <= 0)
