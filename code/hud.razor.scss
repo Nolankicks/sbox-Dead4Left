@@ -21,6 +21,8 @@ hud
 		align-items: flex-start;
 		justify-content: flex-end;
 	}
+	
+
 
 	.title
 	{
@@ -30,6 +32,15 @@ hud
 		font-size: 75px;
 		font-family: Poppins;
 		color: #000000;
+	}
+	.title2
+	{
+		position: absolute;
+		bottom: 0;
+		right: 325;
+		font-size: 75px;
+		font-family: Poppins;
+		color: #ee6969;
 	}
 
 	.center {
