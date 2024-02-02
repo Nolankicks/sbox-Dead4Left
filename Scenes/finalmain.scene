@@ -135,6 +135,9 @@
                 "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
                 "component_type": "SkinnedModelRenderer"
               }
+            },
+            {
+              "__type": "NavMeshController"
             }
           ]
         },
@@ -1181,25 +1184,104 @@
       "Position": "-192,-704,0",
       "Tags": "bad",
       "Enabled": true,
-      "__Prefab": "prefabs/zombieprefab.prefab"
-    },
-    {
-      "Id": "5e9f97da-8e4e-49b4-8ca5-d2e3e1fe8ce4",
-      "Name": "Navmesh Controller",
-      "Position": "-260.769,-456.9795,55.26385",
-      "Enabled": true,
       "Components": [
         {
-          "__type": "NavMeshController",
-          "AttractAgents": false,
-          "ClosestEdge": false,
-          "ClosestPoint": false,
-          "Path": false,
-          "RandomPoint": false,
-          "Target": {
-            "_type": "gameobject",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421"
+          "__type": "CharacterController",
+          "__enabled": false,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "bad",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "Badguy",
+          "__enabled": false,
+          "body": {
+            "_type": "component",
+            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "characterController": {
+            "_type": "component",
+            "go": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
+            "component_type": "CharacterController"
+          },
+          "citizenAnimationHelper": {
+            "_type": "component",
+            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
+          "Speed": 300
+        },
+        {
+          "__type": "PlayerFootsteps",
+          "Source": {
+            "_type": "component",
+            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+            "component_type": "SkinnedModelRenderer"
           }
+        },
+        {
+          "__type": "NavMeshAgent",
+          "Acceleration": 300,
+          "Height": 64,
+          "MaxSpeed": 500,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true
+        },
+        {
+          "__type": "NavMeshController"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+          "Name": "body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "BodyGroups": 341,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "CitizenAnimationHelper",
+              "BodyWeight": 1,
+              "EyeSource": null,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "Height": 1,
+              "IkLeftFoot": null,
+              "IkLeftHand": null,
+              "IkRightFoot": null,
+              "IkRightHand": null,
+              "LookAt": null,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         }
       ]
     }
@@ -1227,7 +1309,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T15:35:52.3173453-05:00",
+  "LastSaved": "2024-02-02T16:39:58.9853045-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

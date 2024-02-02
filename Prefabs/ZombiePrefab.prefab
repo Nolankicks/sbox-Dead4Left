@@ -7,6 +7,7 @@
     "Components": [
       {
         "__type": "CharacterController",
+        "__enabled": false,
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 64,
@@ -47,10 +48,13 @@
         "__type": "NavMeshAgent",
         "Acceleration": 50,
         "Height": 64,
-        "MaxSpeed": 120,
+        "MaxSpeed": 500,
         "Radius": 16,
         "Separation": 0.25,
         "UpdatePosition": true
+      },
+      {
+        "__type": "NavMeshController"
       }
     ],
     "Children": [
