@@ -70,7 +70,6 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "10b27758-0ab4-4c30-9f5f-67a7a48bc530",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -86,14 +85,12 @@
           "gunSound": "sounds/smg1_shoot.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "f65e7c59-4e89-4542-a676-f2e8ab7bb15a",
             "prefab": "prefabs/impact_default (1).prefab"
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
           "ShootDamage": 10,
           "zombieParticle": {
             "_type": "gameobject",
-            "go": "ecf26b6d-17c7-4e16-b45d-3ed5b51ce588",
             "prefab": "prefabs/bloodparticle.prefab"
           },
           "zombieRagdoll": null
@@ -290,7 +287,6 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "13980db3-7bf1-43fd-930e-4037716941e3",
             "prefab": "prefabs/zombieprefab.prefab"
           }
         }
@@ -1186,6 +1182,26 @@
       "Tags": "bad",
       "Enabled": true,
       "__Prefab": "prefabs/zombieprefab.prefab"
+    },
+    {
+      "Id": "5e9f97da-8e4e-49b4-8ca5-d2e3e1fe8ce4",
+      "Name": "Navmesh Controller",
+      "Position": "-260.769,-456.9795,55.26385",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NavMeshController",
+          "AttractAgents": false,
+          "ClosestEdge": false,
+          "ClosestPoint": false,
+          "Path": false,
+          "RandomPoint": false,
+          "Target": {
+            "_type": "gameobject",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421"
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1211,7 +1227,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T12:00:45.0828892-05:00",
+  "LastSaved": "2024-02-02T15:35:52.3173453-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
