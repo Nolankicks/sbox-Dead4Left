@@ -16,6 +16,7 @@
       },
       {
         "__type": "Badguy",
+        "__enabled": false,
         "body": {
           "_type": "component",
           "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
@@ -41,6 +42,15 @@
           "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
           "component_type": "SkinnedModelRenderer"
         }
+      },
+      {
+        "__type": "NavMeshAgent",
+        "Acceleration": 50,
+        "Height": 64,
+        "MaxSpeed": 120,
+        "Radius": 16,
+        "Separation": 0.25,
+        "UpdatePosition": true
       }
     ],
     "Children": [
