@@ -1226,7 +1226,7 @@
         },
         {
           "__type": "NavMeshAgent",
-          "Acceleration": 300,
+          "Acceleration": 100,
           "Height": 64,
           "MaxSpeed": 500,
           "Radius": 16,
@@ -1309,7 +1309,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T16:39:58.9853045-05:00",
+  "LastSaved": "2024-02-02T16:59:06.2410882-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

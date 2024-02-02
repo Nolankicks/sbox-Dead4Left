@@ -17,22 +17,19 @@ public sealed class NavMeshController : Component
 		_destination = playerController.Transform.Position;
 	}
 
-
-
-
 	protected override void OnUpdate()
 	{
 		_destination = playerController.Transform.Position;
 		
 		if ( timeSinceUpdate > 1 && agent != null)
 		{
-			
 			timeSinceUpdate = 0;
-
 			agent.MoveTo( _destination );
-			
-		
-        
 		}
-	}
+		if (Vector3.DistanceBetween(_destination, GameObject.Transform.Position) < 200 && agent != null)
+		{
+			Log.Info("Reached Destination");
+		}
 }
+}
+
