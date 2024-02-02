@@ -138,6 +138,7 @@
             },
             {
               "__type": "NavMeshController",
+              "animationHelper": null,
               "body": null
             }
           ]
@@ -1236,9 +1237,33 @@
         },
         {
           "__type": "NavMeshController",
+          "animationHelper": {
+            "_type": "component",
+            "go": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
+            "component_type": "CitizenAnimationHelper"
+          },
           "body": {
             "_type": "gameobject",
             "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c"
+          }
+        },
+        {
+          "__type": "CitizenAnimationHelper",
+          "BodyWeight": 1,
+          "EyeSource": null,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "IkLeftFoot": null,
+          "IkLeftHand": null,
+          "IkRightFoot": null,
+          "IkRightHand": null,
+          "LookAt": null,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+            "component_type": "SkinnedModelRenderer"
           }
         }
       ],
@@ -1314,7 +1339,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T17:15:18.2691913-05:00",
+  "LastSaved": "2024-02-02T17:29:48.7689925-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
