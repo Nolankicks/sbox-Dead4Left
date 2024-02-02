@@ -137,7 +137,8 @@
               }
             },
             {
-              "__type": "NavMeshController"
+              "__type": "NavMeshController",
+              "body": null
             }
           ]
         },
@@ -1234,7 +1235,11 @@
           "UpdatePosition": true
         },
         {
-          "__type": "NavMeshController"
+          "__type": "NavMeshController",
+          "body": {
+            "_type": "gameobject",
+            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c"
+          }
         }
       ],
       "Children": [
@@ -1309,7 +1314,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T16:59:06.2410882-05:00",
+  "LastSaved": "2024-02-02T17:15:18.2691913-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
