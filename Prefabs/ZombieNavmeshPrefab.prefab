@@ -1,8 +1,7 @@
 {
   "RootObject": {
-    "Id": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
-    "Name": "zombieprefab",
-    "Position": "-192,-704,0",
+    "Id": "c7960b1e-e000-417f-9df3-40f8eca72b02",
+    "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
     "Components": [
@@ -10,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -31,7 +30,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "c2250d35-4b3d-4cc7-827b-5382a5a11a66"
+          "go": "4df0f212-ece8-4d5e-b168-8b14cd4c289e"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -44,7 +43,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -52,25 +51,28 @@
         "__type": "Zombie",
         "animationHelper": {
           "_type": "component",
-          "go": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
+          "go": "c7960b1e-e000-417f-9df3-40f8eca72b02",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c"
+          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1"
         },
         "eyes": {
           "_type": "gameobject",
-          "go": "c2250d35-4b3d-4cc7-827b-5382a5a11a66"
+          "go": "4df0f212-ece8-4d5e-b168-8b14cd4c289e"
         },
-        "hitSound": "sounds/impacts/impact-bullet-flesh.sound"
+        "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
+        "ragdollGameObject": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
       }
     ],
     "Children": [
       {
-        "Id": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+        "Id": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
         "Name": "body",
-        "Position": "0,0,0",
         "Enabled": true,
         "Components": [
           {
@@ -99,7 +101,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
+              "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -113,7 +115,7 @@
         ]
       },
       {
-        "Id": "c2250d35-4b3d-4cc7-827b-5382a5a11a66",
+        "Id": "4df0f212-ece8-4d5e-b168-8b14cd4c289e",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true

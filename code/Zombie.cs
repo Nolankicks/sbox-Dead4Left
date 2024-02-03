@@ -8,6 +8,7 @@ public sealed class Zombie : Component
 	[Property] public GameObject body { get; set; }
 	[Property] public GameObject eyes { get; set; }
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
+	[Property] public GameObject ragdollGameObject { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	private NavMeshAgent agent;
 	private PlayerController playerController;
@@ -42,5 +43,9 @@ public sealed class Zombie : Component
 		}
 
 	}
-	
+	protected override void OnDestroy()
+	{
+		var ragdoll = ragdollGameObject.Clone(GameObject.Transform.Position, GameObject.Transform.Rotation);
+	}
+
 }
