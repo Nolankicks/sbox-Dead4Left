@@ -70,7 +70,6 @@
           "ammo": 30,
           "decalGo": {
             "_type": "gameobject",
-            "go": "b190f11a-9f58-4e15-b692-5cbac4d70ce0",
             "prefab": "prefabs/decal_bullet_default.prefab"
           },
           "eye": {
@@ -86,17 +85,18 @@
           "gunSound": "sounds/smg1_shoot.sound",
           "impact": {
             "_type": "gameobject",
-            "go": "cfadb1cf-ada6-4bd2-ac62-7067eab5afb6",
             "prefab": "prefabs/impact_default (1).prefab"
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
           "ShootDamage": 10,
           "zombieParticle": {
             "_type": "gameobject",
-            "go": "27448c40-2684-41c3-9900-ae1e6c4116df",
             "prefab": "prefabs/bloodparticle.prefab"
           },
-          "zombieRagdoll": null
+          "zombieRagdoll": {
+            "_type": "gameobject",
+            "prefab": "prefabs/ragdoll.prefab"
+          }
         }
       ],
       "Children": [
@@ -138,6 +138,9 @@
                 "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
                 "component_type": "SkinnedModelRenderer"
               }
+            },
+            {
+              "__type": "NavMeshController"
             }
           ]
         },
@@ -276,7 +279,7 @@
         {
           "__type": "Manager",
           "ableToInput": false,
-          "menuScene": "scenes/finalmain.scene",
+          "menuScene": "scenes/dead4leftmenu.scene",
           "testBool": false
         }
       ]
@@ -291,8 +294,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "go": "37d870a4-3042-4d69-adf3-50b5455dd6d6",
-            "prefab": "prefabs/zombieprefab.prefab"
+            "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
         }
       ]
@@ -1188,11 +1190,23 @@
     "NetworkFrequency": 30,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-01-30T19:12:52.2786229-05:00",
+  "LastSaved": "2024-02-02T20:48:42.2995785-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

@@ -1,65 +1,77 @@
 {
   "RootObject": {
-    "Id": "ec6a1826-b04e-48c2-b047-1a8d17d42680",
-    "Name": "zombieprefab",
+    "Id": "c7960b1e-e000-417f-9df3-40f8eca72b02",
+    "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
     "Components": [
       {
-        "__type": "CharacterController",
-        "__enabled": false,
-        "Acceleration": 10,
-        "GroundAngle": 45,
-        "Height": 64,
-        "IgnoreLayers": "bad",
-        "Radius": 16,
-        "StepHeight": 18
-      },
-      {
-        "__type": "Badguy",
-        "__enabled": false,
-        "body": {
-          "_type": "component",
-          "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "characterController": {
-          "_type": "component",
-          "go": "ec6a1826-b04e-48c2-b047-1a8d17d42680",
-          "component_type": "CharacterController"
-        },
-        "citizenAnimationHelper": {
-          "_type": "component",
-          "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
-          "component_type": "CitizenAnimationHelper"
-        },
-        "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
-        "Speed": 300
-      },
-      {
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
           "component_type": "SkinnedModelRenderer"
         }
       },
       {
         "__type": "NavMeshAgent",
-        "Acceleration": 50,
+        "Acceleration": 500,
         "Height": 64,
-        "MaxSpeed": 500,
+        "MaxSpeed": 300,
         "Radius": 16,
         "Separation": 0.25,
         "UpdatePosition": true
       },
       {
         "__type": "NavMeshController"
+      },
+      {
+        "__type": "CitizenAnimationHelper",
+        "BodyWeight": 1,
+        "EyeSource": {
+          "_type": "gameobject",
+          "go": "4df0f212-ece8-4d5e-b168-8b14cd4c289e"
+        },
+        "EyesWeight": 1,
+        "HeadWeight": 1,
+        "Height": 1,
+        "IkLeftFoot": null,
+        "IkLeftHand": null,
+        "IkRightFoot": null,
+        "IkRightHand": null,
+        "LookAt": null,
+        "LookAtEnabled": false,
+        "Target": {
+          "_type": "component",
+          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "Zombie",
+        "animationHelper": {
+          "_type": "component",
+          "go": "c7960b1e-e000-417f-9df3-40f8eca72b02",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "body": {
+          "_type": "gameobject",
+          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1"
+        },
+        "eyes": {
+          "_type": "gameobject",
+          "go": "4df0f212-ece8-4d5e-b168-8b14cd4c289e"
+        },
+        "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
+        "ragdollGameObject": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
       }
     ],
     "Children": [
       {
-        "Id": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+        "Id": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -89,7 +101,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+              "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -103,20 +115,10 @@
         ]
       },
       {
-        "Id": "b07a7a3f-df52-4f7c-a1e7-c7cef4880c88",
-        "Name": "collider",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "CapsuleCollider",
-            "End": "0,0,50.40118",
-            "IsTrigger": false,
-            "Radius": 25,
-            "Start": "0,0,0",
-            "Static": false,
-            "Surface": null
-          }
-        ]
+        "Id": "4df0f212-ece8-4d5e-b168-8b14cd4c289e",
+        "Name": "eye",
+        "Position": "0,0,64",
+        "Enabled": true
       }
     ]
   },
