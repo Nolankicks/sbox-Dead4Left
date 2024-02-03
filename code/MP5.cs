@@ -71,6 +71,7 @@ public sealed class MP5 : Component
 				manager.AddScore();
 				fullAmmo += 15;
 				zombieParticle.Clone(tr.HitPosition);
+				zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
 			}
 			var damage = new DamageInfo( ShootDamage, GameObject, GameObject );
 			

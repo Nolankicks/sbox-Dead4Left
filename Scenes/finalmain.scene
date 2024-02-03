@@ -93,7 +93,10 @@
             "_type": "gameobject",
             "prefab": "prefabs/bloodparticle.prefab"
           },
-          "zombieRagdoll": null
+          "zombieRagdoll": {
+            "_type": "gameobject",
+            "prefab": "prefabs/ragdoll.prefab"
+          }
         }
       ],
       "Children": [
@@ -1203,7 +1206,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T20:07:49.8455264-05:00",
+  "LastSaved": "2024-02-02T20:33:33.5852106-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

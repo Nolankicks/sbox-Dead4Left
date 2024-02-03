@@ -13,6 +13,7 @@ public sealed class Zombie : Component
 	private NavMeshAgent agent;
 	private PlayerController playerController;
 	public TimeSince timeSinceHit = 0;
+	
 	protected override void OnAwake()
 	{
 		agent = Components.Get<NavMeshAgent>();
@@ -43,12 +44,6 @@ public sealed class Zombie : Component
 		}
 
 	}
-	protected override void OnDestroy()
-	{
-		if (GameObject is not null)
-		{
-		var ragdoll = ragdollGameObject.Clone(GameObject.Transform.Position, GameObject.Transform.Rotation);
-		}
-	}
+
 
 }
