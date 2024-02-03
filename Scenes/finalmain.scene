@@ -1188,16 +1188,6 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "CharacterController",
-          "__enabled": false,
-          "Acceleration": 10,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "bad",
-          "Radius": 16,
-          "StepHeight": 18
-        },
-        {
           "__type": "Badguy",
           "__enabled": false,
           "body": {
@@ -1228,9 +1218,9 @@
         },
         {
           "__type": "NavMeshAgent",
-          "Acceleration": 100,
+          "Acceleration": 500,
           "Height": 64,
-          "MaxSpeed": 500,
+          "MaxSpeed": 300,
           "Radius": 16,
           "Separation": 0.25,
           "UpdatePosition": true
@@ -1250,7 +1240,10 @@
         {
           "__type": "CitizenAnimationHelper",
           "BodyWeight": 1,
-          "EyeSource": null,
+          "EyeSource": {
+            "_type": "gameobject",
+            "go": "c2250d35-4b3d-4cc7-827b-5382a5a11a66"
+          },
           "EyesWeight": 1,
           "HeadWeight": 1,
           "Height": 1,
@@ -1312,6 +1305,12 @@
               "Surface": null
             }
           ]
+        },
+        {
+          "Id": "c2250d35-4b3d-4cc7-827b-5382a5a11a66",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true
         }
       ]
     }
@@ -1339,7 +1338,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T17:29:48.7689925-05:00",
+  "LastSaved": "2024-02-02T19:11:52.2318125-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
