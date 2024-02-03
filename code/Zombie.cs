@@ -35,7 +35,7 @@ public sealed class Zombie : Component
 	{
 		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 50).Run();
 
-		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f)
+		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
 		{
 			playerController.TakeDamage(15);
 			animationHelper.Target.Set("b_attack", true);

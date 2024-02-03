@@ -3,8 +3,10 @@
 @inherits PanelComponent
 
 <root>
-	<div class="title">@MyStringValue</div>
-	
+	<div class="title">Play again?</div>
+	<button @onclick=@PlayAgain>Yes</button>
+	<button @onclick=@Exit>No</button>
+	<div class="note">Note: There will be errors when playing again due to a bug, ignore them, they will not stop your from playing</div>
 </root>
 
 @code
@@ -12,12 +14,13 @@
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	[Property] public SceneFile gameScene { get; set; }
-	protected override void OnUpdate()
+	void PlayAgain()
 	{
-		if (Input.Pressed("attack1"))
-		{
-			GameManager.ActiveScene.Load(gameScene);
-		}
+		GameManager.ActiveScene.Load(gameScene);
+	}
+	void Exit()
+	{
+		Game.Close();
 	}
 
 

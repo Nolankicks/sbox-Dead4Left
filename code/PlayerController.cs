@@ -24,7 +24,7 @@ public sealed class PlayerController : Component, IHealthComponent
 	[Property] public float JumpForce { get; set; } = 400;
 	[Property] public GameObject eye { get; set; }
 	[Property] public SceneFile respawnScene { get; set; }
-	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
+	private Manager manager;
 	
 	[Property] public bool AbleToCrouch;
 	public bool IsCrouching = false;
@@ -37,9 +37,12 @@ public sealed class PlayerController : Component, IHealthComponent
 	private ModelRenderer bodyRenderer;
 	protected override void OnAwake()
 	{
+		if (GameObject is not null)
+		{
 		controller = Components.Get<CharacterController>();
-		
+		manager = Scene.GetAllComponents<Manager>().FirstOrDefault();
 		bodyRenderer = body.Components.Get<ModelRenderer>();
+		}
 	}
 	protected override void OnUpdate()
 	{

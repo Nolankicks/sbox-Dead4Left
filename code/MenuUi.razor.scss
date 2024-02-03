@@ -5,16 +5,61 @@ MenuUi
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #444;
+	background-color: #1f1b1b;
 	justify-content: center;
 	align-items: center;
 	font-weight: bold;
 	border-radius: 20px;
-
+    pointer-events: all;
 	.title
 	{
-		font-size: 25px;
+		font-size: 85px;
 		font-family: Poppins;
 		color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
 	}
+    .note
+    {
+        font-size: 20px;
+        font-family: Poppins;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    button
+{
+    padding: 30px 10px;
+    color: #aaa;
+    background-color: #444;
+    margin: 12px;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 7px;
+    flex-direction: column;
+    max-width:  300px;
+    flex-grow: 1;
+	text-align: center;
+    .title
+    {
+        font-size: 19px;
+        font-family: Poppins;
+        font-weight: bold;
+    }
+
+    &:hover
+    {
+        opacity: 1;
+        background-color: #3555d2;
+        color: #fff;
+    }
+
+    &:active
+    {
+        background-color: #fff;
+        color: #666;
+    }
+}
 }
