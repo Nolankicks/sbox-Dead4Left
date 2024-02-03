@@ -1193,11 +1193,7 @@
             "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
             "component_type": "SkinnedModelRenderer"
           },
-          "characterController": {
-            "_type": "component",
-            "go": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
-            "component_type": "CharacterController"
-          },
+          "characterController": null,
           "citizenAnimationHelper": {
             "_type": "component",
             "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
@@ -1255,8 +1251,14 @@
             "go": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
             "component_type": "CitizenAnimationHelper"
           },
-          "body": null,
-          "eyes": null
+          "body": {
+            "_type": "gameobject",
+            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c"
+          },
+          "eyes": {
+            "_type": "gameobject",
+            "go": "c2250d35-4b3d-4cc7-827b-5382a5a11a66"
+          }
         }
       ],
       "Children": [
@@ -1337,7 +1339,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T19:21:35.6302232-05:00",
+  "LastSaved": "2024-02-02T19:39:07.4623539-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
