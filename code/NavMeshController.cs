@@ -34,7 +34,7 @@ public sealed class NavMeshController : Component
 			agent.MoveTo( _destination );
 			
 		}
-		if (Vector3.DistanceBetween(_destination, GameObject.Transform.Position) < 150 && agent != null)
+		if (Vector3.DistanceBetween(_destination, GameObject.Transform.Position) < 160 && agent != null)
 		{
 			agent.Stop();
 			Log.Info("Stopped");
