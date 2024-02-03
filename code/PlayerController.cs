@@ -216,6 +216,7 @@ public sealed class PlayerController : Component, IHealthComponent
 		if (Health < 0)
 		{
 			Health = 0;
+			manager.EndGame();
 		}
 		if (Health == 0)
 		{

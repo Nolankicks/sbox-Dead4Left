@@ -285,12 +285,13 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/zombieprefab.prefab"
+            "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
         }
       ]
@@ -1177,143 +1178,6 @@
           "MyStringValue": "Hello World!"
         }
       ]
-    },
-    {
-      "Id": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
-      "Name": "zombieprefab",
-      "Position": "-192,-704,0",
-      "Tags": "bad",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Badguy",
-          "__enabled": false,
-          "body": {
-            "_type": "component",
-            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "characterController": null,
-          "citizenAnimationHelper": {
-            "_type": "component",
-            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
-          "Speed": 300
-        },
-        {
-          "__type": "PlayerFootsteps",
-          "Source": {
-            "_type": "component",
-            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
-            "component_type": "SkinnedModelRenderer"
-          }
-        },
-        {
-          "__type": "NavMeshAgent",
-          "Acceleration": 500,
-          "Height": 64,
-          "MaxSpeed": 300,
-          "Radius": 16,
-          "Separation": 0.25,
-          "UpdatePosition": true
-        },
-        {
-          "__type": "NavMeshController"
-        },
-        {
-          "__type": "CitizenAnimationHelper",
-          "BodyWeight": 1,
-          "EyeSource": {
-            "_type": "gameobject",
-            "go": "c2250d35-4b3d-4cc7-827b-5382a5a11a66"
-          },
-          "EyesWeight": 1,
-          "HeadWeight": 1,
-          "Height": 1,
-          "IkLeftFoot": null,
-          "IkLeftHand": null,
-          "IkRightFoot": null,
-          "IkRightHand": null,
-          "LookAt": null,
-          "LookAtEnabled": false,
-          "Target": {
-            "_type": "component",
-            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
-            "component_type": "SkinnedModelRenderer"
-          }
-        },
-        {
-          "__type": "Zombie",
-          "animationHelper": {
-            "_type": "component",
-            "go": "ad3e6e88-ec04-4ebb-a143-05709014b6b1",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "body": {
-            "_type": "gameobject",
-            "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c"
-          },
-          "eyes": {
-            "_type": "gameobject",
-            "go": "c2250d35-4b3d-4cc7-827b-5382a5a11a66"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "Id": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
-          "Name": "body",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "SkinnedModelRenderer",
-              "BodyGroups": 341,
-              "BoneMergeTarget": null,
-              "CreateBoneObjects": false,
-              "MaterialGroup": "default",
-              "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
-              "Model": "models/citizen/citizen.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "CitizenAnimationHelper",
-              "BodyWeight": 1,
-              "EyeSource": null,
-              "EyesWeight": 1,
-              "HeadWeight": 1,
-              "Height": 1,
-              "IkLeftFoot": null,
-              "IkLeftHand": null,
-              "IkRightFoot": null,
-              "IkRightHand": null,
-              "LookAt": null,
-              "LookAtEnabled": false,
-              "Target": {
-                "_type": "component",
-                "go": "acb3b1ec-daa0-4460-900d-cf2d3daba65c",
-                "component_type": "SkinnedModelRenderer"
-              }
-            },
-            {
-              "__type": "ModelCollider",
-              "IsTrigger": false,
-              "Model": "models/citizen/citizen.vmdl",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "c2250d35-4b3d-4cc7-827b-5382a5a11a66",
-          "Name": "eye",
-          "Position": "0,0,64",
-          "Enabled": true
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -1339,7 +1203,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T19:39:07.4623539-05:00",
+  "LastSaved": "2024-02-02T20:00:46.5836022-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
