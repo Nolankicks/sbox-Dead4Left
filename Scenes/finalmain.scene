@@ -27,6 +27,7 @@
         {
           "__type": "CharacterController",
           "Acceleration": 10,
+          "Bounciness": 0.3,
           "GroundAngle": 45,
           "Height": 64,
           "IgnoreLayers": "player",
@@ -89,6 +90,11 @@
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
           "ShootDamage": 10,
+          "weapon": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Weapon"
+          },
           "zombieParticle": {
             "_type": "gameobject",
             "prefab": "prefabs/bloodparticle.prefab"
@@ -97,6 +103,12 @@
             "_type": "gameobject",
             "prefab": "prefabs/ragdoll.prefab"
           }
+        },
+        {
+          "__type": "Weapon",
+          "Inventory": [
+            "weapon_SMG"
+          ]
         }
       ],
       "Children": [
@@ -186,14 +198,34 @@
                   "Components": [
                     {
                       "__type": "SkinnedModelRenderer",
-                      "BodyGroups": 11,
+                      "BodyGroups": 3,
                       "BoneMergeTarget": null,
                       "CreateBoneObjects": false,
                       "MaterialGroup": null,
                       "MaterialOverride": null,
-                      "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+                      "Model": null,
                       "RenderType": "Off",
                       "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ViewModelManager",
+                      "armRender": {
+                        "_type": "component",
+                        "go": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
+                        "component_type": "SkinnedModelRenderer"
+                      },
+                      "fistsModel": null,
+                      "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+                      "weapon": {
+                        "_type": "component",
+                        "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+                        "component_type": "Weapon"
+                      },
+                      "weaponRender": {
+                        "_type": "component",
+                        "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
+                        "component_type": "SkinnedModelRenderer"
+                      }
                     }
                   ],
                   "Children": [
@@ -288,7 +320,6 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -316,7 +347,6 @@
       "Id": "c0b7eb0d-4ea2-456a-8c56-5dce2633edd0",
       "Name": "Spawns",
       "Position": "351.3584,-1619.118,416.8017",
-      "Enabled": true,
       "Children": [
         {
           "Id": "bed661cb-8eaa-4cf3-a57b-e3c94590c4d0",
@@ -1180,6 +1210,37 @@
           },
           "MyStringValue": "Hello World!"
         }
+      ],
+      "Children": [
+        {
+          "Id": "ed0f0a77-cb40-4994-986e-e12c94f40ee9",
+          "Name": "Invin",
+          "Position": "135.1738,208.5749,166.0796",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Inventory",
+              "weaponData": {
+                "_type": "component",
+                "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+                "component_type": "Weapon"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "f78ecdbb-4875-44b6-80ad-024d4c4a9515",
+          "Name": "Health",
+          "Position": "135.1738,208.5749,166.0796",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "healthui",
+              "__enabled": false,
+              "MyStringValue": "Hello World!"
+            }
+          ]
+        }
       ]
     }
   ],
@@ -1206,7 +1267,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-02T20:53:18.7112009-05:00",
+  "LastSaved": "2024-02-04T17:37:05.0546494-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

@@ -1,0 +1,44 @@
+Inventory
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	font-size: 24px;
+
+	.title
+	{
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+
+	}
+	> .hotbar
+	{
+		position: absolute;
+		bottom: 32px;
+		width: 100%;
+		z-index: 1;
+		gap: 8px;
+		justify-content: center;
+		align-items: flex-end;
+		> .slot
+		{
+			width: 92px;
+			height: 92px;
+			background-color: #1d1d1d;
+			border-radius: 16px;
+			transition: all 0.2s ease;
+			
+			&.active
+			{
+				background-color: #4e4e4e;
+				width: 128px;
+				height: 128px;
+				
+			}
+		}
+	}
+}

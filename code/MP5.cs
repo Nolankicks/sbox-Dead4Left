@@ -16,6 +16,7 @@ public sealed class MP5 : Component
 	[Property] public float ShootDamage { get; set; } = 10;
 	[Property] public GameObject zombieRagdoll { get; set; }
 	[Property] public GameObject zombieParticle { get; set; }
+	[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
 	bool ableToShoot;
@@ -41,15 +42,12 @@ public sealed class MP5 : Component
 	}
 	protected override void OnFixedUpdate()
 	{
-		
-		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
+		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1 && weapon.ActiveSlot == 0)
 		{
-
 			Shoot();
 			gun.Set("b_attack", true);
 			timeSinceShoot = 0;
 		}
-
 	}
 	void Shoot()
 	{

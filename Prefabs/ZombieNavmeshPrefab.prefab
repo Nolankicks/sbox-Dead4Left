@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "c7960b1e-e000-417f-9df3-40f8eca72b02",
+    "Id": "172fbcc3-145f-4fad-91e7-6178b2d858c9",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
+          "go": "13e85569-7a91-4bec-bc34-c27e8791c327",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -17,7 +17,7 @@
         "__type": "NavMeshAgent",
         "Acceleration": 500,
         "Height": 64,
-        "MaxSpeed": 300,
+        "MaxSpeed": 1000,
         "Radius": 16,
         "Separation": 0.25,
         "UpdatePosition": true
@@ -30,7 +30,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "4df0f212-ece8-4d5e-b168-8b14cd4c289e"
+          "go": "e8baec92-078e-47ef-86aa-f4f2eec4b29c"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -43,7 +43,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
+          "go": "13e85569-7a91-4bec-bc34-c27e8791c327",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -51,16 +51,16 @@
         "__type": "Zombie",
         "animationHelper": {
           "_type": "component",
-          "go": "c7960b1e-e000-417f-9df3-40f8eca72b02",
+          "go": "172fbcc3-145f-4fad-91e7-6178b2d858c9",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1"
+          "go": "13e85569-7a91-4bec-bc34-c27e8791c327"
         },
         "eyes": {
           "_type": "gameobject",
-          "go": "4df0f212-ece8-4d5e-b168-8b14cd4c289e"
+          "go": "e8baec92-078e-47ef-86aa-f4f2eec4b29c"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "ragdollGameObject": {
@@ -71,7 +71,7 @@
     ],
     "Children": [
       {
-        "Id": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
+        "Id": "13e85569-7a91-4bec-bc34-c27e8791c327",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -101,7 +101,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "7f4c889f-52e5-4768-a1e9-bad730c4e5d1",
+              "go": "13e85569-7a91-4bec-bc34-c27e8791c327",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -115,7 +115,7 @@
         ]
       },
       {
-        "Id": "4df0f212-ece8-4d5e-b168-8b14cd4c289e",
+        "Id": "e8baec92-078e-47ef-86aa-f4f2eec4b29c",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true

@@ -1,0 +1,30 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	
+
+	<div class="hotbar">
+		@for(int i=0; i<weaponData.Slots; i++ )
+		{
+			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
+				@if(i < weaponData.Inventory.Count)
+				{
+					<p>@weaponData.Inventory[i]</p>
+				}
+				
+			</div>
+				
+			
+		}
+	</div>
+</root>
+
+@code
+{
+	[Property] public Weapon weaponData { get; set; }
+	
+
+	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot );
+}

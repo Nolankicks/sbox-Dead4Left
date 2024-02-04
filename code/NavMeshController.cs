@@ -9,12 +9,13 @@ public sealed class NavMeshController : Component
 	
 	public NavMeshAgent agent;
 	private Vector3 _destination;
-	public CharacterController playerController;
+	public PlayerController playerController;
+	public Vector3 testVector = new Vector3(0,0,0);
 	RealTimeSince timeSinceUpdate = 0;
 	protected override void OnAwake()
 	{
 		agent = Components.Get<NavMeshAgent>();
-		playerController = Scene.GetAllComponents<CharacterController>().FirstOrDefault();
+		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
 		_destination = playerController.Transform.Position;
 	}
 	
@@ -25,22 +26,11 @@ public sealed class NavMeshController : Component
 
 	protected override void OnFixedUpdate()
 	{
-		
-		
 		GameObject.Transform.Rotation = Rotation.LookAt(_destination - GameObject.Transform.Position);
 		if ( timeSinceUpdate > 0.1 && agent != null)
 		{
 			timeSinceUpdate = 0;
 			agent.MoveTo( _destination );
-			
 		}
-		if (Vector3.DistanceBetween(_destination, GameObject.Transform.Position) < 150 && agent != null)
-		{
-			agent.Stop();
-			Log.Info("Stopped");
-			
-			
-		}
-		
 	}
 }
