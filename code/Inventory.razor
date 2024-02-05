@@ -8,18 +8,22 @@
 	<div class="hotbar">
 		@for(int i=0; i<weaponData.Slots; i++ )
 		{
-
+				
 				//<img class="img" src="@image">
 			
 			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
+
 				@if(i < weaponData.Inventory.Count)
 				{
 					//<p>@weaponData.Inventory[i]</p>
 
-					<img class="icon @((weaponData.ActiveSlot == i) ? "active" : "")"  src="@image">
+					
 					
 				}
-
+				 @if (i == 0)
+    			{
+       			 <img class="icon" src="@image" />
+    			}
 				
 			</div>
 				
