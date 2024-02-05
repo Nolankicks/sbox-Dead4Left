@@ -16,26 +16,25 @@
 				@if(i < weaponData.Inventory.Count)
 				{
 					//<p>@weaponData.Inventory[i]</p>
-
+					<img class="img" src="@weaponData.InventoryImages[i]">
 					
 					
 				}
-				 @if (i == 0)
-    			{
-       			 <img class="icon" src="@image" />
-    			}
+
 				
 			</div>
 				
 			
 		}
+
 	</div>
+	
 </root>
 
 @code
 {
 	[Property] public Weapon weaponData { get; set; }
-	[Property] public Image image { get; set; }
+	[Property] public Texture image { get; set; }
 
 	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages );
 }

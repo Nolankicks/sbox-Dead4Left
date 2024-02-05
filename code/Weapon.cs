@@ -11,7 +11,7 @@ public sealed class Weapon : Component
 		"weapon_SMG"
 	};
 	
-	[Property] public List<string> InventoryImages {get; set;} = new List<string>()
+	[Property] public List<Texture> InventoryImages {get; set;} = new List<Texture>()
 	{
 
 	};
@@ -19,7 +19,7 @@ public sealed class Weapon : Component
 	public int ActiveSlot = 0;
 	public int Slots => 9;
 	public int Img => 9;
-	
+
 	protected override void OnUpdate()
 	{
 		if (Input.MouseWheel.y != 0)

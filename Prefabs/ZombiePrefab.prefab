@@ -1,14 +1,14 @@
 {
   "RootObject": {
-    "Id": "ec6a1826-b04e-48c2-b047-1a8d17d42680",
+    "Id": "8af3b034-e572-4c92-8cfd-8bb93d16c83c",
     "Name": "zombieprefab",
     "Tags": "bad",
     "Enabled": true,
     "Components": [
       {
         "__type": "CharacterController",
-        "__enabled": false,
         "Acceleration": 10,
+        "Bounciness": 0.3,
         "GroundAngle": 45,
         "Height": 64,
         "IgnoreLayers": "bad",
@@ -17,20 +17,19 @@
       },
       {
         "__type": "Badguy",
-        "__enabled": false,
         "body": {
           "_type": "component",
-          "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+          "go": "6b96a76c-68d4-4ca4-901e-81a6a9d5e5c4",
           "component_type": "SkinnedModelRenderer"
         },
         "characterController": {
           "_type": "component",
-          "go": "ec6a1826-b04e-48c2-b047-1a8d17d42680",
+          "go": "8af3b034-e572-4c92-8cfd-8bb93d16c83c",
           "component_type": "CharacterController"
         },
         "citizenAnimationHelper": {
           "_type": "component",
-          "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+          "go": "6b96a76c-68d4-4ca4-901e-81a6a9d5e5c4",
           "component_type": "CitizenAnimationHelper"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
@@ -40,12 +39,13 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+          "go": "6b96a76c-68d4-4ca4-901e-81a6a9d5e5c4",
           "component_type": "SkinnedModelRenderer"
         }
       },
       {
         "__type": "NavMeshAgent",
+        "__enabled": false,
         "Acceleration": 50,
         "Height": 64,
         "MaxSpeed": 500,
@@ -54,12 +54,13 @@
         "UpdatePosition": true
       },
       {
-        "__type": "NavMeshController"
+        "__type": "NavMeshController",
+        "__enabled": false
       }
     ],
     "Children": [
       {
-        "Id": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+        "Id": "6b96a76c-68d4-4ca4-901e-81a6a9d5e5c4",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -89,7 +90,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "5ab713c3-ce44-46d3-91cb-d1ba8675d0bc",
+              "go": "6b96a76c-68d4-4ca4-901e-81a6a9d5e5c4",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -103,7 +104,7 @@
         ]
       },
       {
-        "Id": "b07a7a3f-df52-4f7c-a1e7-c7cef4880c88",
+        "Id": "f9670ca3-af4e-4422-a4cb-c638d565c3b1",
         "Name": "collider",
         "Enabled": true,
         "Components": [
