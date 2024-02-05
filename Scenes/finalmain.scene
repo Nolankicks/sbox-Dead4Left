@@ -111,7 +111,8 @@
           ],
           "InventoryImages": [
             "assets/w_mp5.vmdl_c.vtex"
-          ]
+          ],
+          "WeaponImage": null
         }
       ],
       "Children": [
@@ -1185,7 +1186,7 @@
     },
     {
       "Id": "95d0ed5a-dabd-4a96-9d6a-763be21a6384",
-      "Name": "Screen",
+      "Name": "Hud",
       "Position": "864.4384,-1762.456,529.336",
       "Enabled": true,
       "Components": [
@@ -1248,6 +1249,24 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "03474b9a-0b4d-4a94-8268-6450370022da",
+      "Name": "PauseMenu",
+      "Position": "567.8364,-715.5804,72.48148",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "PauseMenu"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1273,7 +1292,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-04T20:03:44.874007-05:00",
+  "LastSaved": "2024-02-04T21:36:06.3280605-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

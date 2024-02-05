@@ -1,0 +1,57 @@
+PauseMenu
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(black, 0.8);
+	pointer-events: all;
+	color: white;
+	text-stroke: 16px black;
+	font-family: Poppins;
+	font-size: 64px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transform: scale(1);
+	transition: opacity 0.2s ease;
+	> h2
+	{
+		font-size: 128px;
+		font-weight: bolder;
+	}
+
+	> .options
+	{
+		flex-direction: column;
+		align-items: center;
+		gap: 32px;
+		
+		> .button
+		{
+			border-radius: 16px;
+			background-color: black;
+			color: white(116, 116, 116);
+			padding: 8px;
+			transition: all 0.1s ease;
+			&:hover
+			{
+				background-color: rgb(41, 41, 41);
+				transform: scale(1.1);
+				sound-in: ui.button.over;
+			}
+
+			&:active
+			{
+				sound-in: ui.button.press;
+			}
+
+		}
+	}
+
+	&.hide
+	{
+		opacity: 0;
+	}
+}
