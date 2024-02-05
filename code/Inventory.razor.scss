@@ -31,6 +31,7 @@ Inventory
 			background-color: #1d1d1d;
 			border-radius: 16px;
 			transition: all 0.2s ease;
+
 			
 			&.active
 			{
@@ -39,6 +40,27 @@ Inventory
 				height: 128px;
 				
 			}
+
+			> .icon
+			{
+				z-index: 9999;
+				position: absolute;
+				width: 92;
+				height: 92;
+				transition: all 0.2s ease;
+				&.active
+			{
+				
+				width: 128px;
+				height: 128px;
+				
+			}
+
+			}
+
 		}
 	}
+	
+
+
 }

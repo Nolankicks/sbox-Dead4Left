@@ -214,7 +214,7 @@
                         "go": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
                         "component_type": "SkinnedModelRenderer"
                       },
-                      "fistsModel": null,
+                      "fistsModel": "models/first_person_arms.vmdl",
                       "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
                       "weapon": {
                         "_type": "component",
@@ -1267,7 +1267,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-04T17:37:05.0546494-05:00",
+  "LastSaved": "2024-02-04T18:22:47.2823955-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

@@ -8,11 +8,18 @@
 	<div class="hotbar">
 		@for(int i=0; i<weaponData.Slots; i++ )
 		{
+
+				//<img class="img" src="@image">
+			
 			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
 				@if(i < weaponData.Inventory.Count)
 				{
-					<p>@weaponData.Inventory[i]</p>
+					//<p>@weaponData.Inventory[i]</p>
+
+					<img class="icon @((weaponData.ActiveSlot == i) ? "active" : "")"  src="@image">
+					
 				}
+
 				
 			</div>
 				
@@ -24,7 +31,7 @@
 @code
 {
 	[Property] public Weapon weaponData { get; set; }
-	
+	[Property] public Image image { get; set; }
 
-	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot );
+	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages );
 }
