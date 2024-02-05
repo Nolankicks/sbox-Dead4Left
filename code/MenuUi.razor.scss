@@ -5,61 +5,58 @@ MenuUi
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #1f1b1b;
+	background-color: rgb(238, 78, 78)
+	pointer-events: all;
+	color: white;
+	text-stroke: 16px black;
+	font-family: Poppins;
+	font-size: 64px;
 	justify-content: center;
 	align-items: center;
-	font-weight: bold;
-	border-radius: 20px;
-    pointer-events: all;
-	.title
+	flex-direction: column;
+	transform: scale(1);
+	transition: opacity 0.2s ease;
+    .h2
+    {
+       
+        font-weight: bolder;
+        font-size: 128px;
+    }
+   
+    .center
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        pointer-events: all;
+        .button
+        {
+            border-radius: 16px;
+            background-color: black;
+            color: white(116, 116, 116);
+            padding: 8px;
+            transition: all 0.1s ease;
+            align-items: center;
+            flex-direction: column;
+            
+            &:hover
+            {
+                background-color: rgb(41, 41, 41);
+                transform: scale(1.1);
+                sound-in: ui.button.over;
+            }
+    
+            &:active
+            {
+                sound-in: ui.button.press;
+            }
+    
+        }
+    }
+    &.hide
 	{
-		font-size: 85px;
-		font-family: Poppins;
-		color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
+		opacity: 0;
 	}
-    .note
-    {
-        font-size: 20px;
-        font-family: Poppins;
-        color: #fff;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-    button
-{
-    padding: 30px 10px;
-    color: #aaa;
-    background-color: #444;
-    margin: 12px;
-    cursor: pointer;
-    opacity: 1;
-    border-radius: 7px;
-    flex-direction: column;
-    max-width:  300px;
-    flex-grow: 1;
-	text-align: center;
-    .title
-    {
-        font-size: 19px;
-        font-family: Poppins;
-        font-weight: bold;
-    }
-
-    &:hover
-    {
-        opacity: 1;
-        background-color: #3555d2;
-        color: #fff;
-    }
-
-    &:active
-    {
-        background-color: #fff;
-        color: #666;
-    }
+    
 }
-}
+

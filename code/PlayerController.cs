@@ -62,7 +62,14 @@ public sealed class PlayerController : Component, IHealthComponent
 		var tartetOffeset = Vector3.Zero;
 		if (IsCrouching) tartetOffeset += Vector3.Down * 32f;
 		CurrentOffset = Vector3.Lerp(CurrentOffset, tartetOffeset, Time.Delta * 10f);
-		
+		if (Health == 0)
+		{
+			manager.EndGame();
+		}
+		if (Health < 0)
+		{
+			Health = 0;
+		}
 
 
 		if (camera is not null)
@@ -216,15 +223,7 @@ public sealed class PlayerController : Component, IHealthComponent
 		
 		Log.Info(Health);
 
-		if (Health < 0)
-		{
-			Health = 0;
-			manager.EndGame();
-		}
-		if (Health == 0)
-		{
-			manager.EndGame();
-		}
+		
 }
 }
 

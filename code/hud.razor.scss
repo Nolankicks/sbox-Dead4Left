@@ -177,14 +177,14 @@ hud
 	.newleft
 	{
 		position: absolute;
-		font-size: 64;
+		font-size: 54;
 		color: rgb(253, 99, 99);
 		bottom: 0;
 		left: 0;
 		font-weight: bolder;
 		text-stroke: 16px black;
 		backdrop-filter: blur( 24px );
-		padding: 5;
+		padding: 2.5px;
 		border-radius: 16px;
 		gap: 16px;
 		> .text

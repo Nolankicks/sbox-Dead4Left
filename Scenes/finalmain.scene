@@ -111,8 +111,7 @@
           ],
           "InventoryImages": [
             "assets/w_mp5.vmdl_c.vtex"
-          ],
-          "WeaponImage": null
+          ]
         }
       ],
       "Children": [
@@ -315,7 +314,22 @@
         {
           "__type": "Manager",
           "ableToInput": false,
+          "deadMenu": {
+            "_type": "component",
+            "go": "adf87049-1bf3-4949-96dd-286b30f78022",
+            "component_type": "MenuUi"
+          },
           "menuScene": "scenes/dead4leftmenu.scene",
+          "pauseMenu": {
+            "_type": "component",
+            "go": "03474b9a-0b4d-4a94-8268-6450370022da",
+            "component_type": "PauseMenu"
+          },
+          "playerController": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "PlayerController"
+          },
           "testBool": false
         }
       ]
@@ -324,6 +338,7 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -1266,6 +1281,32 @@
           "__type": "PauseMenu"
         }
       ]
+    },
+    {
+      "Id": "adf87049-1bf3-4949-96dd-286b30f78022",
+      "Name": "DeadMenu",
+      "Position": "1432.275,-2478.037,601.8175",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MenuUi",
+          "gameScene": "scenes/finalmain.scene",
+          "manager": null,
+          "MyStringValue": "Hello World!",
+          "player": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "PlayerController"
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1291,7 +1332,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-05T13:49:04.0057564-05:00",
+  "LastSaved": "2024-02-05T16:39:52.5534123-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

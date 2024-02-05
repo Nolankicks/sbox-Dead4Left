@@ -31,7 +31,7 @@ public sealed class Weapon : Component
 			ActiveSlot = Slots - 1;
 		}
 		
-		Log.Info(ActiveSlot);
+		
 	}
 }
 

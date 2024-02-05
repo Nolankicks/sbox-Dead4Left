@@ -6,7 +6,7 @@ using Sandbox.Citizen;
 public sealed class Zombie : Component
 {
 	[Property] public GameObject body { get; set; }
-	[Property] public GameObject eyes { get; set; }
+	[Property] public GameObject eye { get; set; }
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public GameObject ragdollGameObject { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
@@ -29,7 +29,7 @@ public sealed class Zombie : Component
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		UpdateAnimtions();
 		Trace();
-		if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 175f && agent != null  && playerController != null && GameObject != null)
+		if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 175f)
 		{
 			agent.Stop();
 			Log.Info("Stopped");
@@ -42,8 +42,7 @@ public sealed class Zombie : Component
 	
 	protected override void OnFixedUpdate()
 	{
-		body.Transform.Rotation = Rotation.LookAt(playerController.Transform.Position - body.Transform.Position);
-		
+	 	var bodyRot = body.Transform.Rotation = Rotation.LookAt(playerController.Transform.Position - body.Transform.Position);
 	}
 
 	void UpdateAnimtions()

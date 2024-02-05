@@ -17,15 +17,12 @@
 @code
 {
 	public bool IsPaused { get; set; }
-
 	protected override void OnUpdate()
 	{
 		if (Input.EscapePressed)
 		{
 			IsPaused = !IsPaused;
 		}
-
-		Scene.TimeScale = IsPaused ? 0 : 1;
 	}
 
 	void OnResume()

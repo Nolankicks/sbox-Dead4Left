@@ -1,12 +1,19 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
+@namespace Kicks
 
-<root>
-	<div class="title">Play again?</div>
-	<button @onclick=@PlayAgain>Yes</button>
-	<button @onclick=@Exit>No</button>
-	<div class="note">Note: There will be errors when playing again due to a bug, ignore them, they will not stop your from playing</div>
+<root class=@(IsDead ? "" : "hide")>
+	<div class="h2">YOU DIED</div>
+<div class="center">
+	<div class=button onclick=@PlayAgain>
+		Play Again?
+	</div>
+	<div class="button" onclick=@Exit>
+		Quit?
+	</div>
+	
+</div>
 </root>
 
 @code
@@ -14,18 +21,29 @@
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	[Property] public SceneFile gameScene { get; set; }
+	public bool IsDead {get; set;}
+	[Property] public PlayerController player { get; set; }
+	[Property] public Manager manager { get; set; }
+
+        protected override void OnAwake()
+        {
+            IsDead = false;
+        }
+
 	void PlayAgain()
 	{
 		GameManager.ActiveScene.Load(gameScene);
+		Log.Info("play again");
 	}
 	void Exit()
 	{
 		Game.Close();
 	}
 
+	
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, IsDead );
 }

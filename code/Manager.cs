@@ -4,6 +4,7 @@ using Microsoft.VisualBasic;
 using Sandbox;
 using Sandbox.UI;
 using System.Linq;
+using Kicks;
 
 public sealed class Manager : Component
 {
@@ -14,8 +15,9 @@ public sealed class Manager : Component
 	[Property] public bool testBool {get; set;}
 	[Property] public bool ableToInput { get; set; } = false;
 	public bool ShouldAddScore { get; set; } = false;
-	
-	
+	[Property] public MenuUi deadMenu { get; set; }
+	[Property] public PauseMenu pauseMenu { get; set; }
+	[Property] public PlayerController playerController { get; set; }
 
 
 
@@ -35,7 +37,23 @@ public sealed class Manager : Component
 			AddScore();
 			ShouldAddScore = false;
 		}
-		
+		if (pauseMenu.IsPaused || deadMenu.IsDead)
+		{
+			Scene.TimeScale = 0;
+		}
+		else
+		{
+			Scene.TimeScale = 1;
+		}
+		if (playerController.Health <= 0)
+		{
+			EndGame();
+		}
+		if (playerController.Health < 0)
+		{
+			playerController.Health = 0;
+		}
+
 
 
 		if (!Playing && Input.Pressed("Jump"))
@@ -49,8 +67,7 @@ public sealed class Manager : Component
 
 	public void StartGame()
 	{
-		if ( Playing ) return;
-
+		
 
 		Playing = true;
 		Score = 0;
@@ -60,11 +77,9 @@ public sealed class Manager : Component
 
 	public void EndGame()
 	{
-		if ( !Playing ) return;
-
 		Playing = false;
+		deadMenu.IsDead = true;
 		Sandbox.Services.Stats.SetValue( "zombieskilled", Score );
-		GameManager.ActiveScene.Load(menuScene);
 	}
 
 	
