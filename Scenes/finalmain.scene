@@ -324,7 +324,6 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -1292,7 +1291,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-04T21:36:06.3280605-05:00",
+  "LastSaved": "2024-02-05T13:49:04.0057564-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
