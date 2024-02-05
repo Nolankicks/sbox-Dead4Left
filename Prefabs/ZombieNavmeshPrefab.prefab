@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "172fbcc3-145f-4fad-91e7-6178b2d858c9",
+    "Id": "d3e1edc3-1a85-4d29-b225-2273aac75e9e",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "13e85569-7a91-4bec-bc34-c27e8791c327",
+          "go": "77948449-6724-4935-948d-d77f93487ef2",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -17,20 +17,17 @@
         "__type": "NavMeshAgent",
         "Acceleration": 500,
         "Height": 64,
-        "MaxSpeed": 1000,
+        "MaxSpeed": 400,
         "Radius": 16,
-        "Separation": 0.25,
+        "Separation": 1,
         "UpdatePosition": true
-      },
-      {
-        "__type": "NavMeshController"
       },
       {
         "__type": "CitizenAnimationHelper",
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "e8baec92-078e-47ef-86aa-f4f2eec4b29c"
+          "go": "3a8fad15-dc99-4e45-b411-f20c98dec63e"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -43,7 +40,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "13e85569-7a91-4bec-bc34-c27e8791c327",
+          "go": "77948449-6724-4935-948d-d77f93487ef2",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -51,16 +48,16 @@
         "__type": "Zombie",
         "animationHelper": {
           "_type": "component",
-          "go": "172fbcc3-145f-4fad-91e7-6178b2d858c9",
+          "go": "d3e1edc3-1a85-4d29-b225-2273aac75e9e",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "13e85569-7a91-4bec-bc34-c27e8791c327"
+          "go": "77948449-6724-4935-948d-d77f93487ef2"
         },
         "eyes": {
           "_type": "gameobject",
-          "go": "e8baec92-078e-47ef-86aa-f4f2eec4b29c"
+          "go": "3a8fad15-dc99-4e45-b411-f20c98dec63e"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "ragdollGameObject": {
@@ -71,7 +68,7 @@
     ],
     "Children": [
       {
-        "Id": "13e85569-7a91-4bec-bc34-c27e8791c327",
+        "Id": "77948449-6724-4935-948d-d77f93487ef2",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -101,7 +98,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "13e85569-7a91-4bec-bc34-c27e8791c327",
+              "go": "77948449-6724-4935-948d-d77f93487ef2",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -115,7 +112,7 @@
         ]
       },
       {
-        "Id": "e8baec92-078e-47ef-86aa-f4f2eec4b29c",
+        "Id": "3a8fad15-dc99-4e45-b411-f20c98dec63e",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true

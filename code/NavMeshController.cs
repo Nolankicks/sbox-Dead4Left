@@ -16,7 +16,7 @@ public sealed class NavMeshController : Component
 	{
 		agent = Components.Get<NavMeshAgent>();
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
-		_destination = playerController.Transform.Position;
+		//_destination = playerController.Transform.Position;
 	}
 	
 	protected override void OnUpdate()

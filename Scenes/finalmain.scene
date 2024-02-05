@@ -109,8 +109,9 @@
           "Inventory": [
             "weapon_SMG"
           ],
-          "InventoryImages": [],
-          "WeaponImage": null
+          "InventoryImages": [
+            "assets/w_mp5.vmdl_c.vtex"
+          ]
         }
       ],
       "Children": [
@@ -328,7 +329,7 @@
           "__type": "ZombieSpawner",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/zombieprefab.prefab"
+            "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
         }
       ]
@@ -350,6 +351,7 @@
       "Id": "c0b7eb0d-4ea2-456a-8c56-5dce2633edd0",
       "Name": "Spawns",
       "Position": "351.3584,-1619.118,416.8017",
+      "Enabled": true,
       "Children": [
         {
           "Id": "bed661cb-8eaa-4cf3-a57b-e3c94590c4d0",
@@ -1271,7 +1273,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-04T19:34:08.3345519-05:00",
+  "LastSaved": "2024-02-04T20:03:44.874007-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

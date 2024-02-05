@@ -13,19 +13,39 @@ public sealed class Zombie : Component
 	private NavMeshAgent agent;
 	private PlayerController playerController;
 	public TimeSince timeSinceHit = 0;
-	
+	private Vector3 target;
 	protected override void OnAwake()
 	{
 		agent = Components.Get<NavMeshAgent>();
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+		
 	}
 	protected override void OnUpdate()
 	{
+
+		target = playerController.Transform.Position;
+		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		UpdateAnimtions();
 		Trace();
+		if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 175f && agent != null  && playerController != null && GameObject != null)
+		{
+			agent.Stop();
+			Log.Info("Stopped");
+		}
+		else
+		{
+			agent.MoveTo(playerController.Transform.Position);
+		}
 	}
+	
+	protected override void OnFixedUpdate()
+	{
+		body.Transform.Rotation = Rotation.LookAt(playerController.Transform.Position - body.Transform.Position);
+		
+	}
+
 	void UpdateAnimtions()
 	{
 		animationHelper.WithWishVelocity(agent.WishVelocity);
@@ -33,7 +53,7 @@ public sealed class Zombie : Component
 	}
 	void Trace()
 	{
-		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 50).Run();
+		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 75).Run();
 
 		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
 		{

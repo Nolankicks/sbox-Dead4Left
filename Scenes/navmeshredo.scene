@@ -1,0 +1,46 @@
+{
+  "Id": "0afca847-204a-49a2-a01a-bdbf3df61f5a",
+  "GameObjects": [
+    {
+      "Id": "1d11f940-9f6c-4f13-a904-f4c7205b24a5",
+      "Name": "Map",
+      "Position": "149.995,149.995,-212.125",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "facepunch.flatgrass",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "navmeshredo",
+  "Description": "",
+  "LastSaved": "2024-02-04T19:46:17.6167051-05:00",
+  "__references": []
+}
