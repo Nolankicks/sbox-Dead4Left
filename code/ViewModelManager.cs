@@ -9,6 +9,7 @@ public sealed class ViewModelManager : Component
 	[Property] Model fistsModel { get; set; }
 	[Property] Weapon weapon { get; set; }
 	private Vector3 cameraStartPos;
+	[Property] public AnimationGraph animationGraph { get; set; }
 	private CameraComponent viewModelCamera;
 	public Model blankModel;
 	protected override void OnAwake()
@@ -27,8 +28,9 @@ public sealed class ViewModelManager : Component
 		}
 		else
 		{
-			weaponRender.Model = fistsModel;
-			armRender.Enabled = false;
+			armRender.SceneModel.AnimationGraph = animationGraph;
+			armRender.BoneMergeTarget = null;
+			weaponRender.Enabled = false;
 			viewModelCamera.GameObject.Transform.LocalPosition = new Vector3(15, 0, -5);
 		}
 
