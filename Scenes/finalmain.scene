@@ -111,6 +111,7 @@
             "assets/w_mp5.vmdl_c.vtex",
             "assets/w_spaghellim4.vmdl_c.vtex"
           ],
+          "WeaponImage": null,
           "Weapons": [
             "weapon_smg"
           ]
@@ -134,7 +135,7 @@
         },
         {
           "__type": "Shotgun",
-          "ammo": 30,
+          "ammo": 6,
           "decalGo": {
             "_type": "gameobject",
             "prefab": "prefabs/decal_bullet_default.prefab"
@@ -143,7 +144,7 @@
             "_type": "gameobject",
             "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
           },
-          "fullAmmo": 60,
+          "fullAmmo": 12,
           "gun": {
             "_type": "component",
             "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
@@ -158,11 +159,6 @@
             "_type": "component",
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
             "component_type": "Manager"
-          },
-          "mp5": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "MP5"
           },
           "reloadSound": "sounds/reload/mp5.mag.sound",
           "weapon": {
@@ -1389,42 +1385,6 @@
           }
         }
       ]
-    },
-    {
-      "Id": "d8cf7f43-f703-474b-96f4-91f4e473498b",
-      "Name": "Trigger",
-      "Position": "-21.62283,-758.0557,24",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickUpTrigger",
-          "pickupSound": "sounds/pickup.sound",
-          "SpawnShotgun": true,
-          "SpawnSmg": false,
-          "weapon": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Weapon"
-          }
-        },
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": null,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -1450,7 +1410,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-06T17:24:58.2651173-05:00",
+  "LastSaved": "2024-02-06T18:38:47.905388-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"

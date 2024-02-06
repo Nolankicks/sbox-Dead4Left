@@ -4,7 +4,7 @@
 @namespace Kicks
 
 <root>
-	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_mp5") 
+	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg") 
 	{
 	<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
 	}
@@ -12,6 +12,7 @@
 	{
 	<div class="ammo">@shotgun.ammo / @shotgun.fullAmmo</div>
 	}
+
 	<div class="newleft">
 		<div class="text">
 			<div class="icon">heart_broken</div> @LocalPlayer.Health
@@ -79,5 +80,8 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, mp5.ammo, mp5.fullAmmo, manager.Score, manager.HighScore, LocalPlayer.Health);
+	protected override int BuildHash() 
+	{
+	return System.HashCode.Combine( mp5.ammo, manager.Score, manager.HighScore, weapon.ActiveSlot, shotgun.ammo, manager.HighScore, LocalPlayer.Health, weapon.Inventory);
+	}
 }

@@ -10,40 +10,56 @@ public sealed class Shotgun : Component
 	[Property] public Manager manager { get; set; }
 	[Property] public GameObject zombieRagdoll { get; set; }
 	[Property] public GameObject zombieParticle { get; set; }
-	[Property] public MP5 mp5 { get; set; }
-	[Property] public float ammo { get; set; } = 30;
-	[Property] public float fullAmmo { get; set; } = 60;
+	[Property] public float ammo { get; set; } = 6;
+	[Property] public float fullAmmo { get; set; } = 12;
 	[Property] public Weapon weapon { get; set; }
 	[Property] public SkinnedModelRenderer gun { get; set; }
 	[Property] public SoundEvent reloadSound { get; set; }
 	public TimeSince timeSinceShoot = 0;
+	public int timesShoot = 0;
 	public TimeSince timeSinceReload = 3;
+	
 	protected override void OnUpdate()
 	{
-		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun" && Input.Pressed("attack1"))
+		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun" && Input.Pressed("attack1") && timeSinceReload > 1 && ammo != 0)
 		{
-			Trace();
+			for (int i = 0; i < 3; i++)
+			{
+				Trace();
+			}
 			gun.Set("b_attack", true);
+			ammo -= 1;
+			timesShoot += 1;
 		}
+
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
 		{
 			gun.Set("b_reload", true);
-			fullAmmo -= 30;
-			ammo = 30;
+			fullAmmo -= timesShoot;
+			ammo = 4;
 			timeSinceReload = 1;
 			Sound.Play(reloadSound, GameObject.Transform.Position);
+		}
+		if (fullAmmo < 0)
+		{
+			fullAmmo = 0;
+		}
+		if (ammo < 0)
+		{
+			ammo = 0;
 		}
 
 	}
 
 	void Trace()
 	{
-		var tr = Scene.Trace.Ray(eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Forward * 1000)
+		var tr = Scene.Trace.Ray(eye.Transform.Position, eye.Transform.Position * Random.Shared.Float(0.4f, 1.4f) + eye.Transform.Rotation.Forward * 8000)
 			.WithoutTags("player")
 			.Run();
 
 			if (tr.Hit)
 			{
+				
 			Log.Info(tr.GameObject);
 			impact.Clone(tr.HitPosition);
 			Sound.Play(gunSound, GameObject.Transform.Position);
