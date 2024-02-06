@@ -18,11 +18,14 @@
 <div class="leaderboard">
 			@if(manager.Leaderboard is not null)
 			{
+				<div class="header">LEADERBOARD</div>
 					@foreach(var entry in manager.Leaderboard.Entries)
 					{
 				<div class="entry @IsMe(entry)">
 				<div class="ranking">@entry.Rank</div>
+				<p></p>
 				<div class="name">@entry.DisplayName</div>
+				<p></p>
 				<div class="score">@entry.FormattedValue</div>
 				<image class="image" texture=@AvatarTexture(entry)/>
 				</div>		

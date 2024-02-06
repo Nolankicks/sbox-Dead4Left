@@ -22,6 +22,18 @@ MenuUi
         font-weight: bolder;
         font-size: 128px;
     }
+    .h1
+    {
+         text-stroke: 24px black;
+        font-weight: bolder;
+        font-size: 128px;
+    }
+    .header
+    {
+        font-size: 54px;
+        font-weight: bolder;
+        text-stroke: 12px black;
+    }
    
     .center
     {
@@ -79,11 +91,14 @@ MenuUi
 
         > .leaderboard
         {
+            flex-direction: column;
+            margin: auto;
+            
             .entry
             {
                 flex-direction: row;
                 align-items: center;
-                gap: 16px;
+                gap: 4px;
                 margin: 16px;
                 .name
                 {

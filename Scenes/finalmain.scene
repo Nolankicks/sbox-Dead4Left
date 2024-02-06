@@ -1315,7 +1315,6 @@
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
             "component_type": "Manager"
           },
-          "MyStringValue": "Hello World!",
           "player": {
             "_type": "component",
             "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
@@ -1348,7 +1347,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-05T17:44:06.6828513-05:00",
+  "LastSaved": "2024-02-05T21:30:02.0651658-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
