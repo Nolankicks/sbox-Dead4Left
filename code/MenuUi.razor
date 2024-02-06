@@ -16,17 +16,22 @@
 </div>
 <div class="left">
 <div class="leaderboard">
-	@foreach(var entry in manager.Leaderboard.Entries)
-	{
-			<div class="entry @IsMe(entry)">
+			@if(manager.Leaderboard is not null)
+			{
+					@foreach(var entry in manager.Leaderboard.Entries)
+					{
+				<div class="entry @IsMe(entry)">
 				<div class="ranking">@entry.Rank</div>
 				<div class="name">@entry.DisplayName</div>
 				<div class="score">@entry.FormattedValue</div>
 				<image class="image" texture=@AvatarTexture(entry)/>
-			</div>		
-	}
+				</div>		
+					}
+			}
+		</div>
 </div>
 </div>
+
 
 
 

@@ -1,6 +1,5 @@
-﻿@using System
-@using System.Linq
-@using Sandbox;
+﻿@using Sandbox;
+@using Sandbox.UI;
 @inherits PanelComponent
 @namespace Kicks
 
@@ -54,7 +53,7 @@
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	[Property] public Manager manager { get; set; }
 	[Property] public PlayerController LocalPlayer { get; set; }
-	
+	public int i = 0;
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
     {
