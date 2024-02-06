@@ -4,9 +4,10 @@ public sealed class Fist : Component
 {
 	[Property] public GameObject eye { get; set; }
 	[Property] public SkinnedModelRenderer arms { get; set; }
+	[Property] public Weapon weapon { get; set; }
 	protected override void OnUpdate()
 	{
-		if (Input.Pressed("attack1"))
+		if (Input.Pressed("attack1") && weapon.ActiveSlot != 0)
 		{
 			Trace();
 			arms.Set("b_attack", true);

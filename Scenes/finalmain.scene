@@ -111,8 +111,7 @@
           ],
           "InventoryImages": [
             "assets/w_mp5.vmdl_c.vtex"
-          ],
-          "WeaponImage": null
+          ]
         },
         {
           "__type": "Fist",
@@ -124,6 +123,11 @@
           "eye": {
             "_type": "gameobject",
             "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+          },
+          "weapon": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Weapon"
           }
         }
       ],
@@ -1349,7 +1353,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-06T10:33:16.3034937-05:00",
+  "LastSaved": "2024-02-06T10:36:40.4878817-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]
