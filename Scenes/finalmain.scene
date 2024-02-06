@@ -133,7 +133,51 @@
           }
         },
         {
-          "__type": "Shotgun"
+          "__type": "Shotgun",
+          "ammo": 30,
+          "decalGo": {
+            "_type": "gameobject",
+            "prefab": "prefabs/decal_bullet_default.prefab"
+          },
+          "eye": {
+            "_type": "gameobject",
+            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+          },
+          "fullAmmo": 60,
+          "gun": {
+            "_type": "component",
+            "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "gunSound": "sounds/toolgun-attack-001.sound",
+          "impact": {
+            "_type": "gameobject",
+            "prefab": "prefabs/impact_default (1).prefab"
+          },
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          },
+          "mp5": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "MP5"
+          },
+          "reloadSound": "sounds/reload/mp5.mag.sound",
+          "weapon": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Weapon"
+          },
+          "zombieParticle": {
+            "_type": "gameobject",
+            "prefab": "prefabs/bloodparticle.prefab"
+          },
+          "zombieRagdoll": {
+            "_type": "gameobject",
+            "prefab": "prefabs/ragdoll.prefab"
+          }
         }
       ],
       "Children": [
@@ -1253,7 +1297,17 @@
             "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
             "component_type": "MP5"
           },
-          "MyStringValue": "Hello World!"
+          "MyStringValue": "Hello World!",
+          "shotgun": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Shotgun"
+          },
+          "weapon": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Weapon"
+          }
         }
       ],
       "Children": [
@@ -1339,29 +1393,12 @@
     {
       "Id": "d8cf7f43-f703-474b-96f4-91f4e473498b",
       "Name": "Trigger",
-      "Position": "-21.62283,-758.0557,89.70478",
+      "Position": "-21.62283,-758.0557,24",
       "Enabled": true,
       "Components": [
         {
           "__type": "PickUpTrigger",
-          "SpawnShotgun": false,
-          "SpawnSmg": false,
-          "weapon": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Weapon"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "7449f6c8-8459-44e9-a6ec-19701074e865",
-      "Name": "Trigger (1)",
-      "Position": "-112.3407,-758.0557,16",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PickUpTrigger",
+          "pickupSound": "sounds/pickup.sound",
           "SpawnShotgun": true,
           "SpawnSmg": false,
           "weapon": {
@@ -1371,14 +1408,6 @@
           }
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        },
-        {
           "__type": "ModelRenderer",
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
@@ -1386,6 +1415,14 @@
           "Model": null,
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
         }
       ]
     }
@@ -1413,7 +1450,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-06T16:56:50.6403953-05:00",
+  "LastSaved": "2024-02-06T17:24:58.2651173-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"

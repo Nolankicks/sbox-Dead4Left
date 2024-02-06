@@ -4,7 +4,14 @@
 @namespace Kicks
 
 <root>
+	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_mp5") 
+	{
 	<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
+	}
+	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun") 
+	{
+	<div class="ammo">@shotgun.ammo / @shotgun.fullAmmo</div>
+	}
 	<div class="newleft">
 		<div class="text">
 			<div class="icon">heart_broken</div> @LocalPlayer.Health
@@ -53,6 +60,8 @@
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 	[Property] public Manager manager { get; set; }
 	[Property] public PlayerController LocalPlayer { get; set; }
+	[Property] public Weapon weapon { get; set; }
+	[Property] public Shotgun shotgun { get; set; }
 	public int i = 0;
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
