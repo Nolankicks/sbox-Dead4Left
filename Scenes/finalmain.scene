@@ -112,6 +112,18 @@
           "InventoryImages": [
             "assets/w_mp5.vmdl_c.vtex"
           ]
+        },
+        {
+          "__type": "Fist",
+          "arms": {
+            "_type": "component",
+            "go": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "eye": {
+            "_type": "gameobject",
+            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+          }
         }
       ],
       "Children": [
@@ -1298,7 +1310,11 @@
         {
           "__type": "MenuUi",
           "gameScene": "scenes/finalmain.scene",
-          "manager": null,
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          },
           "MyStringValue": "Hello World!",
           "player": {
             "_type": "component",
@@ -1332,7 +1348,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-05T16:39:52.5534123-05:00",
+  "LastSaved": "2024-02-05T17:44:06.6828513-05:00",
   "__references": [
     "facepunch.v_mp5"
   ]

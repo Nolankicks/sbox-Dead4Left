@@ -8,7 +8,7 @@ MenuUi
 	background-color: rgb(238, 78, 78)
 	pointer-events: all;
 	color: white;
-	text-stroke: 16px black;
+	text-stroke: 8px black;
 	font-family: Poppins;
 	font-size: 64px;
 	justify-content: center;
@@ -18,7 +18,7 @@ MenuUi
 	transition: opacity 0.2s ease;
     .h2
     {
-       
+       text-stroke: px black;
         font-weight: bolder;
         font-size: 128px;
     }
@@ -58,5 +58,94 @@ MenuUi
 		opacity: 0;
 	}
     
+    .left
+    {
+        position: absolute;
+		top: 0;
+		left: 32px;
+		width: 450px;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		gap: 64px;
+        align-items: center;
+        
+        > div
+		{
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+        > .leaderboard
+        {
+            .entry
+            {
+                flex-direction: row;
+                align-items: center;
+                gap: 16px;
+                margin: 16px;
+                .name
+                {
+                    font-size: 32px;
+                }
+                .ranking
+                {
+                    font-size: 32px;
+                }
+                .score
+                {
+                    font-size: 32px;
+                }
+                .image
+                {
+                    width: 64;
+                    height: 64;
+                    border-radius: 16px;
+                    
+                }
+                &.me
+					{
+						background-color: rgba( white, 0.1 );
+                        padding: 16px;
+                        border-radius: 16px;
+					}
+            }
+        }
+
+    .right
+    {
+        position: absolute;
+        top: 0;
+        right: 32px;
+        width: 450px;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      
+        > .score
+		{
+            
+			font-size: 42px;
+			min-height: 256px;
+			gap: 16px;
+			width: 100%;
+			font-weight: bolder;
+			text-stroke: 16px black;
+
+            div
+			{
+				flex-direction: column;
+				align-items: center;
+				
+				p
+				{
+					font-size: 64px;
+				}
+			}
+    }
+}
+}
 }
 
