@@ -13,16 +13,14 @@
 			
 			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
 
-				@if(i < weaponData.Inventory.Count)
-				{
-					<img class="img" src="@weaponData.InventoryImages[i]">
-					
-					
-					
-				}
-
-					
-				
+					@if(weaponData.Inventory[i] == "weapon_smg")
+					{
+						<img class="img" src="@weaponData.InventoryImages[0]">
+					}
+					@if(weaponData.Inventory[i] == "weapon_shotgun")
+					{
+						<img class="img" src="@weaponData.InventoryImages[1]">
+					}
 				
 			</div>
 				
@@ -38,5 +36,5 @@
 	[Property] public Weapon weaponData { get; set; }
 	[Property] public Texture image { get; set; }
 
-	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages );
+	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages, weaponData.Slots, weaponData.Inventory );
 }

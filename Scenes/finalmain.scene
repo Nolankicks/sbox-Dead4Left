@@ -106,11 +106,13 @@
         },
         {
           "__type": "Weapon",
-          "Inventory": [
-            "weapon_SMG"
-          ],
+          "HasShotgun": false,
           "InventoryImages": [
-            "assets/w_mp5.vmdl_c.vtex"
+            "assets/w_mp5.vmdl_c.vtex",
+            "assets/w_spaghellim4.vmdl_c.vtex"
+          ],
+          "Weapons": [
+            "weapon_smg"
           ]
         },
         {
@@ -129,6 +131,9 @@
             "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
             "component_type": "Weapon"
           }
+        },
+        {
+          "__type": "Shotgun"
         }
       ],
       "Children": [
@@ -229,7 +234,6 @@
                     },
                     {
                       "__type": "ViewModelManager",
-                      "animationGraph": "models/first_person/first_person_arms_punching.vanmgrph",
                       "armRender": {
                         "_type": "component",
                         "go": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
@@ -237,6 +241,9 @@
                       },
                       "fistsModel": "models/first_person_arms.vmdl",
                       "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+                      "normalGraph": "models/first_person/first_person_arms_base.vanmgrph",
+                      "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph",
+                      "shotgunModel": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
                       "weapon": {
                         "_type": "component",
                         "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
@@ -1328,6 +1335,59 @@
           }
         }
       ]
+    },
+    {
+      "Id": "d8cf7f43-f703-474b-96f4-91f4e473498b",
+      "Name": "Trigger",
+      "Position": "-21.62283,-758.0557,89.70478",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickUpTrigger",
+          "SpawnShotgun": false,
+          "SpawnSmg": false,
+          "weapon": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Weapon"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "7449f6c8-8459-44e9-a6ec-19701074e865",
+      "Name": "Trigger (1)",
+      "Position": "-112.3407,-758.0557,16",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PickUpTrigger",
+          "SpawnShotgun": true,
+          "SpawnSmg": false,
+          "weapon": {
+            "_type": "component",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "component_type": "Weapon"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": null,
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1353,8 +1413,9 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-06T10:36:40.4878817-05:00",
+  "LastSaved": "2024-02-06T16:56:50.6403953-05:00",
   "__references": [
-    "facepunch.v_mp5"
+    "facepunch.v_mp5",
+    "facepunch.v_spaghellim4"
   ]
 }
