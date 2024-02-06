@@ -5,7 +5,8 @@ MenuUi
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgb(238, 78, 78)
+	background: linear-gradient(red, rgb(252, 162, 162));
+    
 	pointer-events: all;
 	color: white;
 	text-stroke: 8px black;
@@ -16,6 +17,7 @@ MenuUi
 	flex-direction: column;
 	transform: scale(1);
 	transition: opacity 0.2s ease;
+    text-shadow: 0 0 8px black;
     .h2
     {
        text-stroke: px black;
