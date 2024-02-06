@@ -22,6 +22,8 @@ public sealed class ViewModelManager : Component
 	{
 		if (weapon.ActiveSlot == 0)
 		{
+			weaponRender.Enabled = true;
+			armRender.BoneMergeTarget = weaponRender;
 			weaponRender.Model = mp5Model;
 			armRender.Enabled = true;
 			viewModelCamera.Transform.LocalPosition = cameraStartPos;
