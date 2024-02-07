@@ -111,6 +111,7 @@
             "assets/w_mp5.vmdl_c.vtex",
             "assets/w_spaghellim4.vmdl_c.vtex"
           ],
+          "WeaponImage": null,
           "Weapons": [
             "weapon_smg"
           ]
@@ -1423,7 +1424,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-07T18:09:43.0709438-05:00",
+  "LastSaved": "2024-02-07T18:26:15.5706367-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"
