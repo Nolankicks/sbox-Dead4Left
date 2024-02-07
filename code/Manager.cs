@@ -23,7 +23,7 @@ public sealed class Manager : Component
 
 	public Sandbox.Services.Leaderboards.Board Leaderboard;
 
-	protected override void OnStart()
+	protected override void OnAwake()
 	{
 		StartGame();
 
@@ -54,7 +54,7 @@ public sealed class Manager : Component
 			playerController.Health = 0;
 		}
 
-
+		
 
 		if (!Playing && Input.Pressed("Jump"))
 		{
@@ -79,7 +79,11 @@ public sealed class Manager : Component
 	{
 		Playing = false;
 		deadMenu.IsDead = true;
-		Sandbox.Services.Stats.SetValue( "zombieskilled", Score );
+		
+	
+
+
+		FetchLeaderboardInfo()
 	}
 
 	

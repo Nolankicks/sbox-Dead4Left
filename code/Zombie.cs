@@ -28,7 +28,7 @@ public sealed class Zombie : Component
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		UpdateAnimtions();
 		Trace();
-		if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 150f)
+		if (Vector3.DistanceBetween(target, GameObject.Transform.Position ) < 150f)
 		{
 			agent.Stop();
 			Log.Info("Stopped");
