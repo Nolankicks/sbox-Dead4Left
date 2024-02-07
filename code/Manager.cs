@@ -81,9 +81,10 @@ public sealed class Manager : Component
 		deadMenu.IsDead = true;
 		
 	
+	Sandbox.Services.Stats.SetValue( "zombieskill", Score );
 
+		FetchLeaderboardInfo();
 
-		FetchLeaderboardInfo()
 	}
 
 	
