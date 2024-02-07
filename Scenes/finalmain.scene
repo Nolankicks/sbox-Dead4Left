@@ -111,7 +111,6 @@
             "assets/w_mp5.vmdl_c.vtex",
             "assets/w_spaghellim4.vmdl_c.vtex"
           ],
-          "WeaponImage": null,
           "Weapons": [
             "weapon_smg"
           ]
@@ -250,7 +249,15 @@
                   "ZNear": 10
                 },
                 {
-                  "__type": "Viewmodel"
+                  "__type": "Viewmodel",
+                  "arms": {
+                    "_type": "gameobject",
+                    "go": "5dfffc40-da60-46d4-85d9-159d82bbc004"
+                  },
+                  "eye": {
+                    "_type": "gameobject",
+                    "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
+                  }
                 }
               ],
               "Children": [
@@ -1410,7 +1417,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-06T18:38:47.905388-05:00",
+  "LastSaved": "2024-02-06T19:08:13.494101-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"
