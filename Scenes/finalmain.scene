@@ -1392,6 +1392,12 @@
           }
         }
       ]
+    },
+    {
+      "Id": "c42b0486-2aec-4c80-8b9a-f946b9e81ec9",
+      "Name": "Object",
+      "Position": "-217.8054,-667.487,108.5697",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -1417,7 +1423,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-06T19:08:13.494101-05:00",
+  "LastSaved": "2024-02-07T16:55:42.8633922-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"

@@ -93,7 +93,7 @@ hud
 			gap: 16px;
 			width: 100%;
 			font-weight: bolder;
-			text-stroke: 16px black;
+			text-stroke: 8px black;
 			div
 			{
 				flex-direction: column;
@@ -123,7 +123,7 @@ hud
 			{
 				font-size: 42px;
 				font-weight: bolder;
-				text-stroke: 16px black;
+				text-stroke: 8px black;
 			}
 
 			> .entries

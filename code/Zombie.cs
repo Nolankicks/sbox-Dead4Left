@@ -18,18 +18,17 @@ public sealed class Zombie : Component
 	{
 		agent = Components.Get<NavMeshAgent>();
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
-		
 	}
 	protected override void OnUpdate()
 	{
 
-		target = playerController.Transform.Position;
+		var target = playerController.Transform.Position;
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		UpdateAnimtions();
 		Trace();
-		if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 175f)
+		if (Vector3.DistanceBetween(target, GameObject.Transform.Position) < 150f)
 		{
 			agent.Stop();
 			Log.Info("Stopped");
@@ -42,13 +41,17 @@ public sealed class Zombie : Component
 	
 	protected override void OnFixedUpdate()
 	{
-	 	var bodyRot = body.Transform.Rotation = Rotation.LookAt(playerController.Transform.Position - body.Transform.Position);
+
+		
 	}
 
 	void UpdateAnimtions()
 	{
+		var bodyRot = body.Transform.Rotation.Angles();
 		animationHelper.WithWishVelocity(agent.WishVelocity);
 		animationHelper.WithVelocity(agent.Velocity);
+		var targetRot = Rotation.LookAt(playerController.GameObject.Transform.Position.WithZ(Transform.Position.z) - body.Transform.Position);
+		body.Transform.Rotation = Rotation.Slerp(body.Transform.Rotation, targetRot, Time.Delta * 5.0f);
 	}
 	void Trace()
 	{

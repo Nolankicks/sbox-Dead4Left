@@ -32,7 +32,7 @@ public sealed class Shotgun : Component
 			timesShoot += 1;
 		}
 
-		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
+		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30 && weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun")
 		{
 			gun.Set("b_reload", true);
 			fullAmmo -= timesShoot;

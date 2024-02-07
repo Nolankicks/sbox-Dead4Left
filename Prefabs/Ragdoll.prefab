@@ -1,8 +1,7 @@
 {
   "RootObject": {
-    "Id": "cb9669d3-5b2e-4f40-ae6f-e2b5a6f1b9a1",
-    "Name": "ZombieRagdoll",
-    "Position": "377.1048,-1900.982,639.4165",
+    "Id": "a6ea8bf9-3755-45ab-9216-6bf0856edc75",
+    "Name": "ragdoll",
     "Enabled": true,
     "Components": [
       {
@@ -22,12 +21,93 @@
         "Model": "models/citizen/citizen.vmdl",
         "Renderer": {
           "_type": "component",
-          "go": "cb9669d3-5b2e-4f40-ae6f-e2b5a6f1b9a1",
+          "go": "a6ea8bf9-3755-45ab-9216-6bf0856edc75",
           "component_type": "SkinnedModelRenderer"
         },
         "RigidbodyFlags": 0
+      },
+      {
+        "__type": "UpdateActionComponent",
+        "Action": {
+          "Kind": "Action",
+          "Version": 3,
+          "Variables": [
+            {
+              "Name": "_this",
+              "Type": "Sandbox.Game/Sandbox.Component",
+              "Default": {
+                "_type": "component",
+                "go": "a6ea8bf9-3755-45ab-9216-6bf0856edc75",
+                "component_type": "UpdateActionComponent"
+              }
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "240,64"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "scene.getobject",
+              "UserData": {
+                "Position": "176,192"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Destroy"
+              },
+              "UserData": {
+                "Position": "512,80"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 10,
+              "DstId": 1,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            }
+          ],
+          "UserData": {
+            "Title": "Action",
+            "id": "f3b3408e-3f46-4d6e-9912-f8138fcb11d1",
+            "ReferencedComponentTypes": []
+          }
+        }
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
