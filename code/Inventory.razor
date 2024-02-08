@@ -1,7 +1,8 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
-
+@namespace Kicks
+@using System.Linq;
 <root>
 	
 
@@ -21,20 +22,23 @@
 					{
 						<img class="img" src="@weaponData.InventoryImages[1]">
 					}
-				
 			</div>
-				
-			
 		}
-
 	</div>
 	
 </root>
 
 @code
 {
-	[Property] public Weapon weaponData { get; set; }
-	[Property] public Texture image { get; set; }
+	public static Weapon weaponData => GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault( x => !x.IsProxy);
 
-	protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages, weaponData.Slots, weaponData.Inventory );
+	//private Weapon weaponData;
+
+        protected override void OnAwake()
+        {
+         
+			
+        }
+
+        protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages, weaponData.Slots, weaponData.Inventory );
 }

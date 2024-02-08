@@ -22,7 +22,6 @@
       "Name": "Player",
       "Position": "0.00000007493481,-640,-3.965218",
       "Tags": "player",
-      "Enabled": true,
       "Components": [
         {
           "__type": "CharacterController",
@@ -230,7 +229,6 @@
               "Id": "74eaed69-bbd2-4ef3-8f1a-b3b3224fbfe1",
               "Name": "ViewModel",
               "Position": "13.23832,-8.321533,-4.160728",
-              "Enabled": true,
               "Components": [
                 {
                   "__type": "CameraComponent",
@@ -266,7 +264,6 @@
                   "Name": "gun",
                   "Position": "0,0,0",
                   "Tags": "viewmodel",
-                  "Enabled": true,
                   "Components": [
                     {
                       "__type": "SkinnedModelRenderer",
@@ -308,7 +305,6 @@
                       "Id": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
                       "Name": "arms",
                       "Position": "0,0,0",
-                      "Enabled": true,
                       "Components": [
                         {
                           "__type": "SkinnedModelRenderer",
@@ -349,31 +345,31 @@
               "Surface": null
             }
           ]
-        }
-      ]
-    },
-    {
-      "Id": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
-      "Name": "Camera",
-      "Position": "0.00000007493481,-640,60.03478",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "Components": [
+        },
         {
-          "__type": "CameraComponent",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 90,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
+          "Id": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
+          "Name": "Camera",
+          "Position": "0,0,64",
+          "Tags": "maincamera",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 90,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
         }
       ]
     },
@@ -396,11 +392,6 @@
             "_type": "component",
             "go": "03474b9a-0b4d-4a94-8268-6450370022da",
             "component_type": "PauseMenu"
-          },
-          "playerController": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "PlayerController"
           },
           "testBool": false
         }
@@ -1284,33 +1275,7 @@
           "ZIndex": 100
         },
         {
-          "__type": "hud",
-          "LocalPlayer": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "PlayerController"
-          },
-          "manager": {
-            "_type": "component",
-            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
-            "component_type": "Manager"
-          },
-          "mp5": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "MP5"
-          },
-          "MyStringValue": "Hello World!",
-          "shotgun": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Shotgun"
-          },
-          "weapon": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Weapon"
-          }
+          "__type": "hud"
         }
       ],
       "Children": [
@@ -1318,18 +1283,7 @@
           "Id": "ed0f0a77-cb40-4994-986e-e12c94f40ee9",
           "Name": "Invin",
           "Position": "135.1738,208.5749,166.0796",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Inventory",
-              "image": "assets/w_mp5.vmdl_c.vtex",
-              "weaponData": {
-                "_type": "component",
-                "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-                "component_type": "Weapon"
-              }
-            }
-          ]
+          "Enabled": true
         },
         {
           "Id": "f78ecdbb-4875-44b6-80ad-024d4c4a9515",
@@ -1398,6 +1352,28 @@
       "Name": "Object",
       "Position": "-217.8054,-667.487,108.5697",
       "Enabled": true
+    },
+    {
+      "Id": "9da7fc2b-d440-4f81-94b9-0a0ab9d5874c",
+      "Name": "NetworkManager",
+      "Position": "111.7583,-1848.591,895.1108",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkHelper",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "c0b7eb0d-4ea2-456a-8c56-5dce2633edd0"
+            }
+          ],
+          "StartServer": true
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1423,7 +1399,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-07T21:25:08.5900786-05:00",
+  "LastSaved": "2024-02-08T14:21:04.0541496-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"

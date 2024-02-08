@@ -2,7 +2,7 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 @namespace Kicks
-
+@using System.Linq;
 <root>
 	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg") 
 	{
@@ -15,7 +15,7 @@
 
 	<div class="newleft">
 		<div class="text">
-			<div class="icon">heart_broken</div> @LocalPlayer.Health
+			<div class="icon">heart_broken</div> 
 		</div>
 		</div>
 	<div class="center">
@@ -57,13 +57,21 @@
 
 @code
 {
-	[Property] public MP5 mp5 { get; set; }
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
-	[Property] public Manager manager { get; set; }
-	[Property] public PlayerController LocalPlayer { get; set; }
-	[Property] public Weapon weapon { get; set; }
-	[Property] public Shotgun shotgun { get; set; }
 	public int i = 0;
+	public static  MP5 mp5;
+	public static  Manager manager;
+	public static  PlayerController LocalPlayer;
+	public static  Weapon weapon;
+	public static  Shotgun shotgun;
+
+	protected override void OnStart()
+	{
+		mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
+		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
+		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		shotgun = GameManager.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
+	}
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
     {
@@ -82,6 +90,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine( mp5.ammo, manager.Score, manager.HighScore, weapon.ActiveSlot, shotgun.ammo, manager.HighScore, LocalPlayer.Health, weapon.Inventory);
+	return System.HashCode.Combine( mp5.ammo, manager.Score, manager.HighScore, weapon.ActiveSlot, shotgun.ammo, manager.HighScore, weapon.Inventory);
 	}
 }

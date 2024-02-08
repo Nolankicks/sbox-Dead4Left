@@ -91,8 +91,14 @@ public sealed class PlayerController : Component, IHealthComponent
 			{
 				camPos = camTrace.EndPosition;
 			}
+			if (!IsProxy)
+			{
 			bodyRenderer.RenderType = ModelRenderer.ShadowRenderType.On;
-
+			}
+			else
+			{
+				bodyRenderer.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+			}
 		}
 			if (IsFirstPerson)
 			{

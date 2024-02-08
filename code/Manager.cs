@@ -17,8 +17,8 @@ public sealed class Manager : Component
 	public bool ShouldAddScore { get; set; } = false;
 	[Property] public MenuUi deadMenu { get; set; }
 	[Property] public PauseMenu pauseMenu { get; set; }
-	[Property] public PlayerController playerController { get; set; }
-
+	//[Property] public PlayerController playerController { get; set; }
+	public PlayerController playerController => GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 
 
 	public Sandbox.Services.Leaderboards.Board Leaderboard;
