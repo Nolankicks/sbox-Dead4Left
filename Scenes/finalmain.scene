@@ -111,7 +111,6 @@
             "assets/w_mp5.vmdl_c.vtex",
             "assets/w_spaghellim4.vmdl_c.vtex"
           ],
-          "WeaponImage": null,
           "Weapons": [
             "weapon_smg"
           ]
@@ -392,7 +391,7 @@
             "go": "adf87049-1bf3-4949-96dd-286b30f78022",
             "component_type": "MenuUi"
           },
-          "menuScene": "scenes/dead4leftmenu.scene",
+          "menuScene": null,
           "pauseMenu": {
             "_type": "component",
             "go": "03474b9a-0b4d-4a94-8268-6450370022da",
@@ -1424,7 +1423,7 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-07T18:26:15.5706367-05:00",
+  "LastSaved": "2024-02-07T21:25:08.5900786-05:00",
   "__references": [
     "facepunch.v_mp5",
     "facepunch.v_spaghellim4"

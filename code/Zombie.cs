@@ -27,16 +27,26 @@ public sealed class Zombie : Component
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		UpdateAnimtions();
-		Trace();
 		if (Vector3.DistanceBetween(target, GameObject.Transform.Position ) < 150f)
 		{
 			agent.Stop();
-			Log.Info("Stopped");
+
 		}
 		else
 		{
 			agent.MoveTo(playerController.Transform.Position);
 		}
+
+		if (playerController.Transform.Position.z > GameObject.Transform.Position.z + 50)
+		{
+			UpwardTrace();
+		}
+		else
+		{
+			NormalTrace();
+		}
+
+
 	}
 	
 	protected override void OnFixedUpdate()
@@ -53,16 +63,31 @@ public sealed class Zombie : Component
 		var targetRot = Rotation.LookAt(playerController.GameObject.Transform.Position.WithZ(Transform.Position.z) - body.Transform.Position);
 		body.Transform.Rotation = Rotation.Slerp(body.Transform.Rotation, targetRot, Time.Delta * 5.0f);
 	}
-	void Trace()
+	void NormalTrace()
 	{
 		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 75).Run();
 
 		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
 		{
-			playerController.TakeDamage(15);
+			playerController.TakeDamage(25);
 			animationHelper.Target.Set("b_attack", true);
 			timeSinceHit = 0;
 			Sound.Play(hitSound);
+		}
+
+	}
+
+	void UpwardTrace()
+	{
+		var tr = Scene.Trace.Ray(eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Up * 50).Run();
+
+		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
+		{
+			playerController.TakeDamage(25);
+			animationHelper.Target.Set("b_attack", true);
+			timeSinceHit = 0;
+			Sound.Play(hitSound);
+			Log.Info("Hit");
 		}
 
 	}

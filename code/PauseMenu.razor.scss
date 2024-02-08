@@ -30,11 +30,16 @@ PauseMenu
 		
 		> .button
 		{
-			border-radius: 16px;
-			background-color: black;
+			border-radius: 64px;
+			background-color: black
 			color: white(116, 116, 116);
 			padding: 8px;
+			width: 512px;
 			transition: all 0.1s ease;
+			justify-content: center;
+			align-items: center;
+			font-size: 64px;
+			
 			&:hover
 			{
 				background-color: rgb(41, 41, 41);
