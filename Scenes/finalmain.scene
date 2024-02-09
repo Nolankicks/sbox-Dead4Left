@@ -985,11 +985,7 @@
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
             "component_type": "Manager"
           },
-          "player": {
-            "_type": "component",
-            "go": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
-            "component_type": "PlayerController"
-          }
+          "player": null
         }
       ]
     },
@@ -1005,12 +1001,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
-          "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "c0b7eb0d-4ea2-456a-8c56-5dce2633edd0"
-            }
-          ],
+          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -1064,6 +1055,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-08T20:04:40.7344214-05:00",
+  "LastSaved": "2024-02-08T22:07:36.4869854-05:00",
   "__references": []
 }

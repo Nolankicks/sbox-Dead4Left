@@ -48,8 +48,8 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "MenuUi",
-              "gameScene": "scenes/finalmain.scene",
+              "__type": "JoinMenu",
+              "GameScene": "scenes/finalmain.scene",
               "MyStringValue": "Hello World!"
             }
           ]
@@ -80,6 +80,6 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-02-02T20:46:25.5097196-05:00",
+  "LastSaved": "2024-02-08T22:00:04.8735081-05:00",
   "__references": []
 }

@@ -12,6 +12,7 @@
 		<div class="left">
 			<h1>LOBBY-LIST</h1>
 		<div class="inner">
+			<div class="button" @onclick=@CreateLobby>CreateLobby</div>
 	@foreach (var lobby in list)
 	{
 		
@@ -83,8 +84,8 @@
 
 	void CreateLobby()
 	{
-GameManager.ActiveScene.Load(GameScene);
-}
+	GameManager.ActiveScene.Load(GameScene);
+	}
 
 
 	/// <summary>

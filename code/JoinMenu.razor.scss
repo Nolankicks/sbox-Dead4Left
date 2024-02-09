@@ -7,8 +7,11 @@ JoinMenu
 	bottom: 0;
 	font-family: Poppins;
 	font-size: 24px;
-	.left
-	{
+	.left {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
 		position: absolute;
 		top : 0;
 		left: 32px;
@@ -18,13 +21,11 @@ JoinMenu
 		border-radius: 32px;
 		padding: 32px;
 		pointer-events: all;
-
-		h1
-		{
-			font-size: 64px;
-			font-weight: bolder;
-
-		}
+	  
+		h1 {
+		  font-size: 64px; 
+			}
+	  
 		.inner
 		{
 			background-color: pink;
