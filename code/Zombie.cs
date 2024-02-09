@@ -11,18 +11,27 @@ public sealed class Zombie : Component
 	[Property] public GameObject ragdollGameObject { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	private NavMeshAgent agent;
-	private PlayerController playerController;
 	public TimeSince timeSinceHit = 0;
 	private Vector3 target;
-	protected override void OnAwake()
+	private PlayerController playerController;
+	protected override void OnStart()
 	{
 		agent = Components.Get<NavMeshAgent>();
-		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+		
 	}
 	protected override void OnUpdate()
 	{
+		var playerControllers = Scene.GetAllComponents<PlayerController>().ToArray();
+		
+		foreach(var playerController in playerControllers)
+		{
+			target = playerController.Transform.Position;
+		}
 
-		var target = playerController.Transform.Position;
+		
+	
+
+
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
@@ -65,9 +74,9 @@ public sealed class Zombie : Component
 	}
 	void NormalTrace()
 	{
-		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 75).Run();
+		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 75).WithTag("player").Run();
 
-		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
+		if (tr.Hit && timeSinceHit > 1.0f && GameObject is not null)
 		{
 			playerController.TakeDamage(25);
 			animationHelper.Target.Set("b_attack", true);

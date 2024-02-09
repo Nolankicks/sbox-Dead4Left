@@ -6,10 +6,12 @@ using Sandbox.Citizen;
 namespace Kicks;
 
 
-public sealed class PlayerController : Component, IHealthComponent
+public sealed class PlayerController : Component, IHealthComponent, IScoreComponent
 {
 	[Sync] public float Health { get; set; } = 100;
 	[Sync] public float MaxHealth { get; set; } = 100;
+	[Sync] public long Score { get; set; } = 0;
+	[Sync] public long HighScore { get; set; } = 0;
 	[Property] public float CrouchSpeed { get; set; } = 64.0f;
 	[Property] public float WalkSpeed { get; set; } = 190f;
 	[Property] public float RunSpeed { get; set; } = 190f;
@@ -225,6 +227,11 @@ public sealed class PlayerController : Component, IHealthComponent
 		Log.Info(Health);
 
 		
+}
+
+public void AddScore(long AddScore)
+{
+	Score += AddScore;
 }
 }
 

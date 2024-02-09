@@ -18,33 +18,22 @@ public sealed class Manager : Component
 	[Property] public MenuUi deadMenu { get; set; }
 	[Property] public PauseMenu pauseMenu { get; set; }
 	//[Property] public PlayerController playerController { get; set; }
-	public PlayerController playerController => GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	PlayerController playerController;
 
 
 	public Sandbox.Services.Leaderboards.Board Leaderboard;
 
+	protected override void OnStart()
+	{
+		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnAwake()
 	{
 		StartGame();
-
-
 	}
 
 	protected override void OnUpdate()
 	{
-		if (ShouldAddScore)
-		{
-			AddScore();
-			ShouldAddScore = false;
-		}
-		if (pauseMenu.IsPaused || deadMenu.IsDead)
-		{
-			Scene.TimeScale = 0;
-		}
-		else
-		{
-			Scene.TimeScale = 1;
-		}
 		if (playerController.Health <= 0)
 		{
 			EndGame();
@@ -53,16 +42,8 @@ public sealed class Manager : Component
 		{
 			playerController.Health = 0;
 		}
-
 		
-
-		if (!Playing && Input.Pressed("Jump"))
-		{
-			StartGame();
-		}
-		
-		
-
+		ProcessScore();
 	}
 
 	public void StartGame()
@@ -78,22 +59,20 @@ public sealed class Manager : Component
 	public void EndGame()
 	{
 		Playing = false;
-		deadMenu.IsDead = true;
-		
+		//deadMenu.IsDead = true;
+		Sandbox.Services.Stats.SetValue( "zombieskilled", playerController.Score );
 	
-	Sandbox.Services.Stats.SetValue( "zombieskilled", Score );
+	
 
 		
 
 	}
 
 	
-	public void AddScore()
+	public void ProcessScore()
 	{
 		
-		var score = 0;
-		Score += 5;
-		Score += score;
+		Score = playerController.Score;
 		if ( Score > HighScore ) HighScore = Score;
 	}
 

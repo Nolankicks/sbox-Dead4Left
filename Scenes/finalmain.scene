@@ -5,6 +5,7 @@
       "Id": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
       "Name": "Manager",
       "Position": "513.08,-143.3373,112.5343",
+      "Enabled": true,
       "Components": [
         {
           "__type": "Manager",
@@ -28,6 +29,7 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -891,6 +893,7 @@
       "Id": "95d0ed5a-dabd-4a96-9d6a-763be21a6384",
       "Name": "Hud",
       "Position": "864.4384,-1762.456,529.336",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ScreenPanel",
@@ -931,24 +934,6 @@
       ]
     },
     {
-      "Id": "03474b9a-0b4d-4a94-8268-6450370022da",
-      "Name": "PauseMenu",
-      "Position": "567.8364,-715.5804,72.48148",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ScreenPanel",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
-        },
-        {
-          "__type": "PauseMenu"
-        }
-      ]
-    },
-    {
       "Id": "adf87049-1bf3-4949-96dd-286b30f78022",
       "Name": "DeadMenu",
       "Position": "1432.275,-2478.037,601.8175",
@@ -968,8 +953,7 @@
             "_type": "component",
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
             "component_type": "Manager"
-          },
-          "player": null
+          }
         }
       ]
     },
@@ -1055,6 +1039,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-09T12:15:24.1012704-05:00",
+  "LastSaved": "2024-02-09T14:33:34.8286543-05:00",
   "__references": []
 }

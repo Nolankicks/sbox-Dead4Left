@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Kicks;
 using Sandbox;
 
 public sealed class Shotgun : Component
@@ -18,7 +20,11 @@ public sealed class Shotgun : Component
 	public TimeSince timeSinceShoot = 0;
 	public int timesShoot = 0;
 	public TimeSince timeSinceReload = 3;
-	
+	public PlayerController playerController;
+	protected override void OnStart()
+	{
+		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnUpdate()
 	{
 		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun" && Input.Pressed("attack1") && timeSinceReload > 1 && ammo != 0)
@@ -68,7 +74,7 @@ public sealed class Shotgun : Component
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Parent.Destroy();
-				manager.AddScore();
+				playerController.AddScore(5);
 				zombieParticle.Clone(tr.HitPosition);
 				zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
 			}

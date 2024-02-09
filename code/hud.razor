@@ -9,8 +9,10 @@
 	<div class="newleft">
 		<div class="text">
 			<div class="icon">heart_broken</div>
+			@LocalPlayer.Health
 		</div>
 		</div>
+		<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
 	<div class="center">
 		<div class="crosshair"></div>
 	</div>
@@ -18,7 +20,7 @@
 		<div class="score">
 			<div class="score">
 				<h1>Score:</h1>
-				<p>@($"{manager.Score:n0}")</p>
+				<p>@($"{LocalPlayer.Score:n0}")</p>
 			</div>
 			<div class="highscore">
 				<h1>Highscore:</h1>
@@ -59,11 +61,11 @@
 	[Property] public Manager manager { get; set; }
 	protected override void OnStart()
 	{
-		//mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
+		mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
 		
 		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
-		//weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-		//shotgun = GameManager.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		shotgun = GameManager.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
 	}
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
@@ -83,6 +85,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine( manager.HighScore, manager.HighScore);
+	return System.HashCode.Combine(manager.HighScore, manager.Score, LocalPlayer.Health);
 	}
 }

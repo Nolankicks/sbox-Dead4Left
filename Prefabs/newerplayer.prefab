@@ -1,8 +1,9 @@
 {
   "RootObject": {
-    "Id": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
-    "Name": "Player",
-    "Position": "-366.4729,-562.8694,316.6835",
+    "Id": "cdef5e18-5ae0-4ab0-bad5-74ed2516eee5",
+    "Name": "newerplayer",
+    "Tags": "player",
+    "Enabled": true,
     "Components": [
       {
         "__type": "CharacterController",
@@ -18,18 +19,18 @@
         "__type": "PlayerController",
         "animationHelper": {
           "_type": "component",
-          "go": "407be84f-ca6b-4348-ad3b-3fced4fdf149",
+          "go": "ffec355a-676d-457b-b473-3bdcd99c1132",
           "component_type": "CitizenAnimationHelper"
         },
         "controller": {
           "_type": "component",
-          "go": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
+          "go": "cdef5e18-5ae0-4ab0-bad5-74ed2516eee5",
           "component_type": "CharacterController"
         },
         "CrouchSpeed": 64,
         "eye": {
           "_type": "gameobject",
-          "go": "5f598a93-f2b2-443a-b823-29264f3b2fcc"
+          "go": "835b7e22-fd16-4861-92c5-434c0a6eac31"
         },
         "RunSpeed": 190,
         "SprintSpeed": 320,
@@ -52,12 +53,12 @@
         },
         "eye": {
           "_type": "gameobject",
-          "go": "5f598a93-f2b2-443a-b823-29264f3b2fcc"
+          "go": "835b7e22-fd16-4861-92c5-434c0a6eac31"
         },
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "f1ceb0b6-0cd6-4546-ae89-2b713d793dc7",
+          "go": "444db29b-53e4-4dfc-a5fa-b5f7d18d740e",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -65,22 +66,22 @@
           "_type": "gameobject",
           "prefab": "prefabs/impact_default (1).prefab"
         },
-        "reloadSound": null,
+        "reloadSound": "sounds/reload/mp5.mag.sound",
         "ShootDamage": 10,
-        "weapon": {
-          "_type": "component",
-          "go": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
-          "component_type": "Weapon"
+        "zombieParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
         },
-        "zombieParticle": null,
-        "zombieRagdoll": null
+        "zombieRagdoll": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
       }
     ],
     "Children": [
       {
-        "Id": "407be84f-ca6b-4348-ad3b-3fced4fdf149",
+        "Id": "ffec355a-676d-457b-b473-3bdcd99c1132",
         "Name": "body",
-        "Position": "0,0,0",
         "Enabled": true,
         "Components": [
           {
@@ -109,20 +110,20 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "407be84f-ca6b-4348-ad3b-3fced4fdf149",
+              "go": "ffec355a-676d-457b-b473-3bdcd99c1132",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "5f598a93-f2b2-443a-b823-29264f3b2fcc",
+        "Id": "835b7e22-fd16-4861-92c5-434c0a6eac31",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "f1ceb0b6-0cd6-4546-ae89-2b713d793dc7",
+        "Id": "444db29b-53e4-4dfc-a5fa-b5f7d18d740e",
         "Name": "gun",
         "Position": "-304.1145,-704.5192,404.2592",
         "Enabled": true,
@@ -137,6 +138,22 @@
             "Model": null,
             "RenderType": "On",
             "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "81832d02-fa79-41e9-82da-f2c9708440e9",
+        "Name": "collider",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "CapsuleCollider",
+            "End": "0,0,64",
+            "IsTrigger": false,
+            "Radius": 25,
+            "Start": "0,0,0",
+            "Static": false,
+            "Surface": null
           }
         ]
       }

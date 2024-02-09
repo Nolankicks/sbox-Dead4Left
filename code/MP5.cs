@@ -19,16 +19,22 @@ public sealed class MP5 : Component
 	[Property] public float ShootDamage { get; set; } = 10;
 	[Property] public GameObject zombieRagdoll { get; set; }
 	[Property] public GameObject zombieParticle { get; set; }
-	[Property] public Weapon weapon { get; set; }
+	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
-	Manager manager => Scene.GetAllComponents<Manager>().FirstOrDefault();
-	bool ableToShoot;
-	bool reloading;
-	public TimeSince timeSinceReload = 3;
+	Manager manager;
+	Weapon weapon;
+	PlayerController player;
 	protected override void OnStart()
 	{
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
+		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 	}
+	bool ableToShoot;
+	bool reloading;
+	public TimeSince timeSinceReload = 3;
+
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
@@ -76,7 +82,7 @@ public sealed class MP5 : Component
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Parent.Destroy();
-				manager.AddScore();
+				player.AddScore(5);
 				fullAmmo += 15;
 				zombieParticle.Clone(tr.HitPosition);
 				zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
