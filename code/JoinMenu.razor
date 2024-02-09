@@ -8,29 +8,39 @@
 @inherits PanelComponent
 
 <root>
-
-		<div class="left">
+<root>
+<div class="left">
 			<h1>LOBBY-LIST</h1>
 		<div class="inner">
-			<div class="button" @onclick=@CreateLobby>CreateLobby</div>
-	@foreach (var lobby in list)
-	{
-		
-		  <div class="button" onclick=@(() => OpenLobby( lobby ) )>
-			<div class="title">
-				@lobby.Name
-			</div>	
-			<div class="name">
-				@lobby.Members / @lobby.MaxMembers
-			</div>
+		<div class="button" onclick=@CreateLobby>Create Lobby</div>
+		@if (refreshing)
+		{
+			<div>Refreshing...</div>
+		}
+
+        else if (list.Count == 0)
+        {
+            <div>No lobbies were found</div>
+        }
+        else
+        {
+           @foreach (var lobby in list)
+		{
+		<div class="button" onclick=@(() => OpenLobby( lobby ) )>
+		<div class="title">
+		@lobby.Name
+		</div>	
+		<div class="name">
+		@lobby.Members / @lobby.MaxMembers
 		</div>
-			
-
-
-	}
+		</div>
+		}
+    }
+    </div>
 	</div>
 	</div>
 </root>
+
 
 @code
 {
