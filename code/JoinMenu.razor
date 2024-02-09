@@ -8,25 +8,24 @@
 @inherits PanelComponent
 
 <root>
-<root>
 <div class="left">
 			<h1>LOBBY-LIST</h1>
 		<div class="inner">
 		<div class="button" onclick=@CreateLobby>Create Lobby</div>
-		@if (refreshing)
+		@if (IsRefreshing)
 		{
 			<div>Refreshing...</div>
 		}
 
-        else if (list.Count == 0)
+        else if (List.Count == 0)
         {
             <div>No lobbies were found</div>
         }
         else
         {
-           @foreach (var lobby in list)
+           @foreach (var lobby in List)
 		{
-		<div class="button" onclick=@(() => OpenLobby( lobby ) )>
+		<div class="button" onclick=@( () => OpenLobby( lobby ) )>
 		<div class="title">
 		@lobby.Name
 		</div>	
@@ -46,46 +45,31 @@
 {
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
-	public bool refreshing;
+
 	[Property] public SceneFile GameScene { get; set; }
-	 List<LobbyInformation> list = new();
+		private bool IsRefreshing { get; set; }
+	private List<LobbyInformation> List { get; set; } = new();
 		protected override void OnUpdate()
 		{
 		Assert.True(GameObject.IsValid());
 
         _ = RefreshLobbyList();
 		}
-		async Task RefreshLobbyList()
-    {
-        bool isFirst = true;
-        while ( true )
-        {
-            refreshing = true;
-            StateHasChanged();
+		private async Task RefreshLobbyList()
+	{
+		while ( true )
+		{
+			IsRefreshing = true;
+			StateHasChanged();
 
-            list = await GameNetworkSystem.QueryLobbies();
+			List = await GameNetworkSystem.QueryLobbies();
 
-            if(isFirst)
-            {
-                list = list.OrderBy( x => x.Members ).ToList();
-                if(list.Count == 0)
-                {
+			IsRefreshing = false;
+			StateHasChanged();
 
-                }
-                else if(list.Count == 1)
-                {
-                    GameNetworkSystem.Connect( list[0].LobbyId );
-                }
-            }
-
-            refreshing = false;
-            StateHasChanged();
-
-            await Task.DelayRealtimeSeconds( 2.0f );
-
-            isFirst = false;
-        }
-    }
+			await Task.DelayRealtimeSeconds( 5f );
+		}
+	}
 
     void OpenLobby( LobbyInformation lobby )
     {
@@ -101,5 +85,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue, list.Count, refreshing);
+	protected override int BuildHash() => System.HashCode.Combine(RealTime.Now);
 }
