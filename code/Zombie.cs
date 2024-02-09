@@ -20,9 +20,12 @@ public sealed class Zombie : Component
 		agent = Components.Get<NavMeshAgent>();
 		
 	}
+	protected override void OnAwake()
+	{
+		
+	}
 	protected override void OnUpdate()
 	{
-
 		var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
 		var random = Game.Random.FromList(playerControllers);
 		if (random is not null)
@@ -35,6 +38,7 @@ public sealed class Zombie : Component
 		}
 		
 		
+
 
 		
 	
@@ -51,7 +55,7 @@ public sealed class Zombie : Component
 		}
 		else
 		{
-			agent.MoveTo(playerController.Transform.Position);
+			agent.MoveTo(target);
 		}
 
 		if (playerController.Transform.Position.z > GameObject.Transform.Position.z + 50)

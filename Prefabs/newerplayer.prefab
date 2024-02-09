@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "cdef5e18-5ae0-4ab0-bad5-74ed2516eee5",
+    "Id": "c870baca-427f-4320-8f12-52bbb13c5642",
     "Name": "newerplayer",
     "Tags": "player",
     "Enabled": true,
@@ -19,18 +19,18 @@
         "__type": "PlayerController",
         "animationHelper": {
           "_type": "component",
-          "go": "ffec355a-676d-457b-b473-3bdcd99c1132",
+          "go": "7db575ca-277d-4dd7-9e31-722eaa15bb45",
           "component_type": "CitizenAnimationHelper"
         },
         "controller": {
           "_type": "component",
-          "go": "cdef5e18-5ae0-4ab0-bad5-74ed2516eee5",
+          "go": "c870baca-427f-4320-8f12-52bbb13c5642",
           "component_type": "CharacterController"
         },
         "CrouchSpeed": 64,
         "eye": {
           "_type": "gameobject",
-          "go": "835b7e22-fd16-4861-92c5-434c0a6eac31"
+          "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
         },
         "RunSpeed": 190,
         "SprintSpeed": 320,
@@ -39,7 +39,10 @@
       {
         "__type": "Weapon",
         "HasShotgun": false,
-        "InventoryImages": [],
+        "InventoryImages": [
+          "assets/w_mp5.vmdl_c.vtex",
+          "assets/w_spaghellim4.vmdl_c.vtex"
+        ],
         "Weapons": [
           "weapon_smg"
         ]
@@ -47,19 +50,22 @@
       {
         "__type": "MP5",
         "ammo": 30,
-        "body": null,
+        "body": {
+          "_type": "gameobject",
+          "go": "7db575ca-277d-4dd7-9e31-722eaa15bb45"
+        },
         "decalGo": {
           "_type": "gameobject",
           "prefab": "prefabs/decal_bullet_default.prefab"
         },
         "eye": {
           "_type": "gameobject",
-          "go": "835b7e22-fd16-4861-92c5-434c0a6eac31"
+          "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
         },
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "444db29b-53e4-4dfc-a5fa-b5f7d18d740e",
+          "go": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -77,11 +83,28 @@
           "_type": "gameobject",
           "prefab": "prefabs/ragdoll.prefab"
         }
+      },
+      {
+        "__type": "Fist",
+        "arms": {
+          "_type": "component",
+          "go": "80173032-0bf0-4365-99e1-24bc9d0ddc81",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "eye": {
+          "_type": "gameobject",
+          "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
+        },
+        "weapon": {
+          "_type": "component",
+          "go": "c870baca-427f-4320-8f12-52bbb13c5642",
+          "component_type": "Weapon"
+        }
       }
     ],
     "Children": [
       {
-        "Id": "ffec355a-676d-457b-b473-3bdcd99c1132",
+        "Id": "7db575ca-277d-4dd7-9e31-722eaa15bb45",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -111,39 +134,20 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "ffec355a-676d-457b-b473-3bdcd99c1132",
+              "go": "7db575ca-277d-4dd7-9e31-722eaa15bb45",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "835b7e22-fd16-4861-92c5-434c0a6eac31",
+        "Id": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "444db29b-53e4-4dfc-a5fa-b5f7d18d740e",
-        "Name": "gun",
-        "Position": "-304.1145,-704.5192,404.2592",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "SkinnedModelRenderer",
-            "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": null,
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": null,
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "81832d02-fa79-41e9-82da-f2c9708440e9",
+        "Id": "bd94782d-cc90-47dc-a2b4-143cc75a8b39",
         "Name": "collider",
         "Enabled": true,
         "Components": [
@@ -157,11 +161,80 @@
             "Surface": null
           }
         ]
+      },
+      {
+        "Id": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+        "Name": "gun",
+        "Position": "5,-5,64",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 11,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ViewModelManager",
+            "armRender": {
+              "_type": "component",
+              "go": "80173032-0bf0-4365-99e1-24bc9d0ddc81",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "eye": {
+              "_type": "gameobject",
+              "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
+            },
+            "fistsModel": "models/first_person/first_person_arms.vmdl",
+            "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "normalGraph": "models/first_person/first_person_arms_base.vanmgrph",
+            "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph",
+            "shotgunModel": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
+            "weaponRender": {
+              "_type": "component",
+              "go": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ],
+        "Children": [
+          {
+            "Id": "80173032-0bf0-4365-99e1-24bc9d0ddc81",
+            "Name": "arms",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "BodyGroups": 21,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "go": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/first_person/first_person_arms.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "facepunch.v_mp5",
+    "facepunch.v_spaghellim4"
+  ]
 }

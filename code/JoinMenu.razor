@@ -1,45 +1,43 @@
+@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Threading.Tasks
 @using Sandbox;
-@using Sandbox.UI;
-@using Sandbox.Network;
-@using Sandbox.Diagnostics;
-@using System.Collections.Generic;
-@using System.Threading.Tasks;
-@using System.Linq;
+@using Sandbox.Network
 @inherits PanelComponent
 
 <root>
-<div class="left">
-			<h1>LOBBY-LIST</h1>
+	<div class="left">
+		<h1>LOBBY-LIST</h1>
 		<div class="inner">
-		<div class="button" onclick=@CreateLobby>
-		<div class="title">Create Lobby</div>
+			<div class="button" onclick=@CreateLobby>
+				<div class="title">Create Lobby</div>
+			</div>
+			@if (IsRefreshing)
+			{
+				<div>Refreshing...</div>
+			}
+			else if (List.Count == 0)
+			{
+				<div>No lobbies were found</div>
+			}
+			else
+			{
+				@foreach (var lobby in List)
+				{
+					<div class="button" onclick=@( () => OpenLobby( lobby ) )>
+						<div class="title">
+							@lobby.Name
+						</div>	
+						<div class="name">
+							@lobby.Members / @lobby.MaxMembers
+						</div>
+					</div>
+				}
+			}
 		</div>
-		@if (IsRefreshing)
-		{
-			<div>Refreshing...</div>
-		}
-
-        else if (List.Count == 0)
-        {
-            <div>No lobbies were found</div>
-        }
-        else
-        {
-           @foreach (var lobby in List)
-		{
-		<div class="button" onclick=@( () => OpenLobby( lobby ) )>
-		<div class="title">
-		@lobby.Name
-		</div>	
-		<div class="name">
-		@lobby.Members / @lobby.MaxMembers
-		</div>
-		</div>
-		}
-    }
-    </div>
 	</div>
-	</div>
+	
 </root>
 
 
@@ -51,20 +49,25 @@
 	[Property] public SceneFile GameScene { get; set; }
 		private bool IsRefreshing { get; set; }
 	private List<LobbyInformation> List { get; set; } = new();
-		protected override void OnUpdate()
-		{
-		Assert.True(GameObject.IsValid());
+		protected override void OnEnabled()
+	{
+		base.OnEnabled();
+		
+		_ = RefreshLobbyList();
+	}
 
-        _ = RefreshLobbyList();
-		}
-		private async Task RefreshLobbyList()
+	protected override void OnUpdate()
+	{
+		
+	}
+	private async Task RefreshLobbyList()
 	{
 		while ( true )
 		{
 			IsRefreshing = true;
 			StateHasChanged();
 
-			List = await GameNetworkSystem.QueryLobbies();
+			List = await Networking.QueryLobbies();
 
 			IsRefreshing = false;
 			StateHasChanged();
@@ -89,3 +92,4 @@
 	/// </summary>
 	protected override int BuildHash() => System.HashCode.Combine(RealTime.Now);
 }
+

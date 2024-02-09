@@ -30,9 +30,14 @@
 
 @code
 {
-	public static Weapon weaponData => GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault( x => !x.IsProxy);
+	public static Weapon weaponData;
 
-	//private Weapon weaponData;
+        protected override void OnStart()
+        {
+            weaponData = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+        }
+
+        //private Weapon weaponData;
 
         protected override void OnAwake()
         {
@@ -40,5 +45,5 @@
 			
         }
 
-        protected override int BuildHash() => System.HashCode.Combine( weaponData, weaponData.ActiveSlot, weaponData.InventoryImages, weaponData.Slots, weaponData.Inventory );
+        protected override int BuildHash() => System.HashCode.Combine( weaponData.ActiveSlot, weaponData.Inventory, weaponData.InventoryImages, weaponData.Slots );
 }

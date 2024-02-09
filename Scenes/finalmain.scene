@@ -912,7 +912,12 @@
           "Id": "ed0f0a77-cb40-4994-986e-e12c94f40ee9",
           "Name": "Invin",
           "Position": "135.1738,208.5749,166.0796",
-          "Enabled": true
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Inventory"
+            }
+          ]
         },
         {
           "Id": "f78ecdbb-4875-44b6-80ad-024d4c4a9515",
@@ -1035,6 +1040,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-09T14:35:52.5968173-05:00",
+  "LastSaved": "2024-02-09T16:02:50.7781816-05:00",
   "__references": []
 }

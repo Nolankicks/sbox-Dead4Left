@@ -25,6 +25,7 @@ public sealed class Weapon : Component
 	[Property] public bool HasShotgun {get; set;} = false;
 	protected override void OnAwake()
 	{
+		if (IsProxy) return;
 		for (int i = 0; i < Inventory.Length; i++)
 		{
 			Inventory[i] = "weapon_fists";
@@ -41,6 +42,7 @@ public sealed class Weapon : Component
 	}
 	protected override void OnUpdate()
 	{
+		if (IsProxy) return;
 		if (Input.MouseWheel.y != 0)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;

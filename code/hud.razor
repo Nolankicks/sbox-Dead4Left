@@ -85,6 +85,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine(manager.HighScore, manager.Score, LocalPlayer.Health);
+	return System.HashCode.Combine(LocalPlayer.Score, LocalPlayer.Health, mp5.ammo);
 	}
 }
