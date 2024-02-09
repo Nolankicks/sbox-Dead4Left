@@ -1,0 +1,149 @@
+{
+  "RootObject": {
+    "Id": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
+    "Name": "Player",
+    "Position": "-366.4729,-562.8694,316.6835",
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "PlayerController",
+        "animationHelper": {
+          "_type": "component",
+          "go": "407be84f-ca6b-4348-ad3b-3fced4fdf149",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "controller": {
+          "_type": "component",
+          "go": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
+          "component_type": "CharacterController"
+        },
+        "CrouchSpeed": 64,
+        "eye": {
+          "_type": "gameobject",
+          "go": "5f598a93-f2b2-443a-b823-29264f3b2fcc"
+        },
+        "RunSpeed": 190,
+        "SprintSpeed": 320,
+        "WalkSpeed": 190
+      },
+      {
+        "__type": "Weapon",
+        "HasShotgun": false,
+        "InventoryImages": [],
+        "Weapons": [
+          "weapon_smg"
+        ]
+      },
+      {
+        "__type": "MP5",
+        "ammo": 30,
+        "decalGo": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal_bullet_default.prefab"
+        },
+        "eye": {
+          "_type": "gameobject",
+          "go": "5f598a93-f2b2-443a-b823-29264f3b2fcc"
+        },
+        "fullAmmo": 60,
+        "gun": {
+          "_type": "component",
+          "go": "f1ceb0b6-0cd6-4546-ae89-2b713d793dc7",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "gunSound": "sounds/smg1_shoot.sound",
+        "impact": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact_default (1).prefab"
+        },
+        "reloadSound": null,
+        "ShootDamage": 10,
+        "weapon": {
+          "_type": "component",
+          "go": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
+          "component_type": "Weapon"
+        },
+        "zombieParticle": null,
+        "zombieRagdoll": null
+      }
+    ],
+    "Children": [
+      {
+        "Id": "407be84f-ca6b-4348-ad3b-3fced4fdf149",
+        "Name": "body",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 341,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "ShadowsOnly",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "BodyWeight": 1,
+            "EyeSource": null,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "IkLeftFoot": null,
+            "IkLeftHand": null,
+            "IkRightFoot": null,
+            "IkRightHand": null,
+            "LookAt": null,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "go": "407be84f-ca6b-4348-ad3b-3fced4fdf149",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ]
+      },
+      {
+        "Id": "5f598a93-f2b2-443a-b823-29264f3b2fcc",
+        "Name": "eye",
+        "Position": "0,0,64",
+        "Enabled": true
+      },
+      {
+        "Id": "f1ceb0b6-0cd6-4546-ae89-2b713d793dc7",
+        "Name": "gun",
+        "Position": "-304.1145,-704.5192,404.2592",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": null,
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

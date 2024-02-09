@@ -15,6 +15,7 @@ public sealed class ZombieSpawner : Component
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Random.Shared.FromArray( spawnPoints ).Transform.World;
 		var zombie = ZombiePrefab.Clone( randomSpawnPoint );
+		zombie.Network.Spawn();
 
 	}
 

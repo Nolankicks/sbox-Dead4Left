@@ -4,18 +4,11 @@
 @namespace Kicks
 @using System.Linq;
 <root>
-	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg") 
-	{
-	<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
-	}
-	@if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun") 
-	{
-	<div class="ammo">@shotgun.ammo / @shotgun.fullAmmo</div>
-	}
+	
 
 	<div class="newleft">
 		<div class="text">
-			<div class="icon">heart_broken</div> 
+			<div class="icon">heart_broken</div>
 		</div>
 		</div>
 	<div class="center">
@@ -59,18 +52,18 @@
 {
 	public int i = 0;
 	public static  MP5 mp5;
-	public static  Manager manager;
+	//public static  Manager manager;
 	public static  PlayerController LocalPlayer;
 	public static  Weapon weapon;
 	public static  Shotgun shotgun;
-
+	[Property] public Manager manager { get; set; }
 	protected override void OnStart()
 	{
-		mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
-		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
+		//mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
+		
 		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
-		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-		shotgun = GameManager.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
+		//weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		//shotgun = GameManager.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
 	}
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
@@ -90,6 +83,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine( mp5.ammo, manager.Score, manager.HighScore, weapon.ActiveSlot, shotgun.ammo, manager.HighScore, weapon.Inventory);
+	return System.HashCode.Combine( manager.HighScore, manager.HighScore);
 	}
 }

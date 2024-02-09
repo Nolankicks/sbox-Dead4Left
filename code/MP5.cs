@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Kicks;
 using Sandbox;
 
 public sealed class MP5 : Component
@@ -7,7 +8,9 @@ public sealed class MP5 : Component
 	
 	[Property] public SkinnedModelRenderer gun { get; set; }
 	[Property] public GameObject impact { get; set; }
+	//[Property] public GameObject body { get; set; }
 	[Property] public GameObject eye { get; set; }
+	private PlayerController playerController;
 	[Property] public SoundEvent gunSound { get; set; }
 	[Property] public SoundEvent reloadSound { get; set; }
 	[Property] public GameObject decalGo { get; set; }
@@ -22,9 +25,13 @@ public sealed class MP5 : Component
 	bool ableToShoot;
 	bool reloading;
 	public TimeSince timeSinceReload = 3;
-	
+	protected override void OnStart()
+	{
+		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnUpdate()
 	{
+		if (IsProxy) return;
 		if (fullAmmo < 0)
 		{
 			fullAmmo = 0;
@@ -42,6 +49,7 @@ public sealed class MP5 : Component
 	}
 	protected override void OnFixedUpdate()
 	{
+		if (IsProxy) return;
 		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1 && weapon.ActiveSlot == 0)
 		{
 			Shoot();
@@ -54,7 +62,8 @@ public sealed class MP5 : Component
 		var attachment = gun.GetAttachment( "muzzle" );
 		
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
-		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Forward * 8000).WithoutTags("player").Run();
+		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();
+		
 		if (tr.Hit)
 		{
 			ammo -= 1;
@@ -63,6 +72,7 @@ public sealed class MP5 : Component
 			Sound.Play(gunSound, GameObject.Transform.Position);
 			var decal = decalGo.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal, Vector3.Random), Random.Shared.Float(0.8f, 1.2f)));
 			decal.SetParent( tr.GameObject );
+			decal.NetworkSpawn();
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Parent.Destroy();

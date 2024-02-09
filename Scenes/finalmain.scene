@@ -18,366 +18,9 @@
       "Children": []
     },
     {
-      "Id": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-      "Name": "Player",
-      "Position": "0.00000007493481,-640,-3.965218",
-      "Tags": "player",
-      "Components": [
-        {
-          "__type": "CharacterController",
-          "Acceleration": 10,
-          "Bounciness": 0.3,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "player",
-          "Radius": 16,
-          "StepHeight": 18
-        },
-        {
-          "__type": "PlayerController",
-          "AbleToCrouch": false,
-          "AirControl": 0.1,
-          "animationHelper": {
-            "_type": "component",
-            "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "body": {
-            "_type": "gameobject",
-            "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc"
-          },
-          "camera": {
-            "_type": "component",
-            "go": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
-            "component_type": "CameraComponent"
-          },
-          "CrouchSpeed": 90,
-          "distance": 0,
-          "eye": {
-            "_type": "gameobject",
-            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
-          },
-          "GroundControl": 4,
-          "JumpForce": 400,
-          "MaxForce": 50,
-          "MaxHealth": 100,
-          "respawnScene": "scenes/finalmain.scene",
-          "RunSpeed": 320,
-          "Speed": 160
-        },
-        {
-          "__type": "MP5",
-          "ammo": 30,
-          "decalGo": {
-            "_type": "gameobject",
-            "prefab": "prefabs/decal_bullet_default.prefab"
-          },
-          "eye": {
-            "_type": "gameobject",
-            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
-          },
-          "fullAmmo": 60,
-          "gun": {
-            "_type": "component",
-            "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "gunSound": "sounds/smg1_shoot.sound",
-          "impact": {
-            "_type": "gameobject",
-            "prefab": "prefabs/impact_default (1).prefab"
-          },
-          "reloadSound": "sounds/reload/mp5.mag.sound",
-          "ShootDamage": 10,
-          "weapon": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Weapon"
-          },
-          "zombieParticle": {
-            "_type": "gameobject",
-            "prefab": "prefabs/bloodparticle.prefab"
-          },
-          "zombieRagdoll": {
-            "_type": "gameobject",
-            "prefab": "prefabs/ragdoll.prefab"
-          }
-        },
-        {
-          "__type": "Weapon",
-          "HasShotgun": false,
-          "InventoryImages": [
-            "assets/w_mp5.vmdl_c.vtex",
-            "assets/w_spaghellim4.vmdl_c.vtex"
-          ],
-          "Weapons": [
-            "weapon_smg"
-          ]
-        },
-        {
-          "__type": "Fist",
-          "arms": {
-            "_type": "component",
-            "go": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "eye": {
-            "_type": "gameobject",
-            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
-          },
-          "weapon": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Weapon"
-          }
-        },
-        {
-          "__type": "Shotgun",
-          "ammo": 6,
-          "decalGo": {
-            "_type": "gameobject",
-            "prefab": "prefabs/decal_bullet_default.prefab"
-          },
-          "eye": {
-            "_type": "gameobject",
-            "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
-          },
-          "fullAmmo": 12,
-          "gun": {
-            "_type": "component",
-            "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "gunSound": "sounds/toolgun-attack-001.sound",
-          "impact": {
-            "_type": "gameobject",
-            "prefab": "prefabs/impact_default (1).prefab"
-          },
-          "manager": {
-            "_type": "component",
-            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
-            "component_type": "Manager"
-          },
-          "reloadSound": "sounds/reload/mp5.mag.sound",
-          "weapon": {
-            "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-            "component_type": "Weapon"
-          },
-          "zombieParticle": {
-            "_type": "gameobject",
-            "prefab": "prefabs/bloodparticle.prefab"
-          },
-          "zombieRagdoll": {
-            "_type": "gameobject",
-            "prefab": "prefabs/ragdoll.prefab"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "Id": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
-          "Name": "body",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "SkinnedModelRenderer",
-              "BodyGroups": 341,
-              "BoneMergeTarget": null,
-              "CreateBoneObjects": false,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/citizen/citizen.vmdl",
-              "RenderType": "ShadowsOnly",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "CitizenAnimationHelper",
-              "BodyWeight": 1,
-              "EyeSource": {
-                "_type": "gameobject",
-                "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
-              },
-              "EyesWeight": 1,
-              "HeadWeight": 1,
-              "Height": 1,
-              "IkLeftFoot": null,
-              "IkLeftHand": null,
-              "IkRightFoot": null,
-              "IkRightHand": null,
-              "LookAt": null,
-              "LookAtEnabled": false,
-              "Target": {
-                "_type": "component",
-                "go": "f7a552b0-ab1a-4dec-8b44-5bb8e42b73dc",
-                "component_type": "SkinnedModelRenderer"
-              }
-            },
-            {
-              "__type": "NavMeshController"
-            }
-          ]
-        },
-        {
-          "Id": "d9354293-c556-4ba8-92a6-e70b06ee7385",
-          "Name": "eye",
-          "Position": "0,0,64",
-          "Enabled": true,
-          "Children": [
-            {
-              "Id": "74eaed69-bbd2-4ef3-8f1a-b3b3224fbfe1",
-              "Name": "ViewModel",
-              "Position": "13.23832,-8.321533,-4.160728",
-              "Components": [
-                {
-                  "__type": "CameraComponent",
-                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
-                  "ClearFlags": "All",
-                  "FieldOfView": 60,
-                  "IsMainCamera": true,
-                  "Orthographic": false,
-                  "OrthographicHeight": 1204,
-                  "Priority": 1,
-                  "RenderExcludeTags": "",
-                  "RenderTags": "light,viewmodel",
-                  "TargetEye": "None",
-                  "Viewport": "0,0,1,1",
-                  "ZFar": 10000,
-                  "ZNear": 10
-                },
-                {
-                  "__type": "Viewmodel",
-                  "arms": {
-                    "_type": "gameobject",
-                    "go": "5dfffc40-da60-46d4-85d9-159d82bbc004"
-                  },
-                  "eye": {
-                    "_type": "gameobject",
-                    "go": "d9354293-c556-4ba8-92a6-e70b06ee7385"
-                  }
-                }
-              ],
-              "Children": [
-                {
-                  "Id": "5dfffc40-da60-46d4-85d9-159d82bbc004",
-                  "Name": "gun",
-                  "Position": "0,0,0",
-                  "Tags": "viewmodel",
-                  "Components": [
-                    {
-                      "__type": "SkinnedModelRenderer",
-                      "BodyGroups": 3,
-                      "BoneMergeTarget": null,
-                      "CreateBoneObjects": false,
-                      "MaterialGroup": null,
-                      "MaterialOverride": null,
-                      "Model": null,
-                      "RenderType": "Off",
-                      "Tint": "1,1,1,1"
-                    },
-                    {
-                      "__type": "ViewModelManager",
-                      "armRender": {
-                        "_type": "component",
-                        "go": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
-                        "component_type": "SkinnedModelRenderer"
-                      },
-                      "fistsModel": "models/first_person_arms.vmdl",
-                      "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
-                      "normalGraph": "models/first_person/first_person_arms_base.vanmgrph",
-                      "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph",
-                      "shotgunModel": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
-                      "weapon": {
-                        "_type": "component",
-                        "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
-                        "component_type": "Weapon"
-                      },
-                      "weaponRender": {
-                        "_type": "component",
-                        "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
-                        "component_type": "SkinnedModelRenderer"
-                      }
-                    }
-                  ],
-                  "Children": [
-                    {
-                      "Id": "d31e109a-a45e-4c63-9e82-34c65153c9a6",
-                      "Name": "arms",
-                      "Position": "0,0,0",
-                      "Components": [
-                        {
-                          "__type": "SkinnedModelRenderer",
-                          "BodyGroups": 21,
-                          "BoneMergeTarget": {
-                            "_type": "component",
-                            "go": "5dfffc40-da60-46d4-85d9-159d82bbc004",
-                            "component_type": "SkinnedModelRenderer"
-                          },
-                          "CreateBoneObjects": false,
-                          "MaterialGroup": null,
-                          "MaterialOverride": null,
-                          "Model": "models/first_person/first_person_arms.vmdl",
-                          "RenderType": "Off",
-                          "Tint": "1,1,1,1"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Id": "779a499a-7ef9-4dec-ac4d-ef39df98903d",
-          "Name": "Collider",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "CapsuleCollider",
-              "End": "0,0,59.7607",
-              "IsTrigger": false,
-              "Radius": 25,
-              "Start": "0,0,0",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "df5a984e-9268-4bb3-a8da-bfc611fe375a",
-          "Name": "Camera",
-          "Position": "0,0,64",
-          "Tags": "maincamera",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "CameraComponent",
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 90,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 10
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Id": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
       "Name": "Manager",
       "Position": "513.08,-143.3373,112.5343",
-      "Enabled": true,
       "Components": [
         {
           "__type": "Manager",
@@ -401,7 +44,6 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -1265,7 +907,6 @@
       "Id": "95d0ed5a-dabd-4a96-9d6a-763be21a6384",
       "Name": "Hud",
       "Position": "864.4384,-1762.456,529.336",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ScreenPanel",
@@ -1275,7 +916,12 @@
           "ZIndex": 100
         },
         {
-          "__type": "hud"
+          "__type": "hud",
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          }
         }
       ],
       "Children": [
@@ -1341,17 +987,11 @@
           },
           "player": {
             "_type": "component",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421",
+            "go": "073a8b08-0009-4af9-8525-c2a7bcb87f38",
             "component_type": "PlayerController"
           }
         }
       ]
-    },
-    {
-      "Id": "c42b0486-2aec-4c80-8b9a-f946b9e81ec9",
-      "Name": "Object",
-      "Position": "-217.8054,-667.487,108.5697",
-      "Enabled": true
     },
     {
       "Id": "9da7fc2b-d440-4f81-94b9-0a0ab9d5874c",
@@ -1363,7 +1003,7 @@
           "__type": "NetworkHelper",
           "PlayerPrefab": {
             "_type": "gameobject",
-            "go": "378f3e3c-becc-4cbc-8e94-62b3c09db421"
+            "prefab": "prefabs/newerplayer.prefab"
           },
           "SpawnPoints": [
             {
@@ -1372,6 +1012,31 @@
             }
           ],
           "StartServer": true
+        }
+      ]
+    },
+    {
+      "Id": "8e0592f3-ac29-4e74-8abe-92ea15fd88aa",
+      "Name": "Camera",
+      "Position": "-366.4729,-562.8694,380.6835",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 90,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
         }
       ]
     }
@@ -1399,9 +1064,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-08T14:21:04.0541496-05:00",
-  "__references": [
-    "facepunch.v_mp5",
-    "facepunch.v_spaghellim4"
-  ]
+  "LastSaved": "2024-02-08T20:04:40.7344214-05:00",
+  "__references": []
 }
