@@ -2,13 +2,15 @@ using System;
 using System.Linq;
 using Kicks;
 using Sandbox;
+using Sandbox.Citizen;
 
 public sealed class MP5 : Component
 {
 	
 	[Property] public SkinnedModelRenderer gun { get; set; }
+	CitizenAnimationHelper animationHelper;
 	[Property] public GameObject impact { get; set; }
-	//[Property] public GameObject body { get; set; }
+	[Property] public GameObject body { get; set; }
 	[Property] public GameObject eye { get; set; }
 	private PlayerController playerController;
 	[Property] public SoundEvent gunSound { get; set; }
@@ -26,10 +28,12 @@ public sealed class MP5 : Component
 	PlayerController player;
 	protected override void OnStart()
 	{
+		animationHelper = GameObject.Components.GetInDescendantsOrSelf<CitizenAnimationHelper>();
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Pistol;
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -61,6 +65,7 @@ public sealed class MP5 : Component
 			Shoot();
 			gun.Set("b_attack", true);
 			timeSinceShoot = 0;
+			animationHelper.Target.Set("b_attack", true);
 		}
 	}
 	void Shoot()

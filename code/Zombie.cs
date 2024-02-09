@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Kicks;
 using Sandbox;
@@ -21,12 +22,19 @@ public sealed class Zombie : Component
 	}
 	protected override void OnUpdate()
 	{
-		var playerControllers = Scene.GetAllComponents<PlayerController>().ToArray();
-		
-		foreach(var playerController in playerControllers)
+
+		var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
+		var random = Game.Random.FromList(playerControllers);
+		if (random is not null)
 		{
-			target = playerController.Transform.Position;
+			target = random.Transform.Position;
 		}
+		else
+		{
+			return;
+		}
+		
+		
 
 		
 	

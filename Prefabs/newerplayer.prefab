@@ -47,6 +47,7 @@
       {
         "__type": "MP5",
         "ammo": 30,
+        "body": null,
         "decalGo": {
           "_type": "gameobject",
           "prefab": "prefabs/decal_bullet_default.prefab"

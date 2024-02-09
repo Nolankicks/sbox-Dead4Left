@@ -16,11 +16,7 @@
             "component_type": "MenuUi"
           },
           "menuScene": null,
-          "pauseMenu": {
-            "_type": "component",
-            "go": "03474b9a-0b4d-4a94-8268-6450370022da",
-            "component_type": "PauseMenu"
-          },
+          "pauseMenu": null,
           "testBool": false
         }
       ]
@@ -1039,6 +1035,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-09T14:33:34.8286543-05:00",
+  "LastSaved": "2024-02-09T14:35:52.5968173-05:00",
   "__references": []
 }
