@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Sandbox;
 
@@ -8,7 +9,7 @@ public sealed class ViewModelManager : Component
 	[Property] Model mp5Model { get; set; }
 	[Property] Model shotgunModel { get; set; }
 	[Property] Model fistsModel { get; set; }
-	[Property] Weapon weapon { get; set; }
+	private Weapon weapon;
 	private Vector3 cameraStartPos;
 	[Property] public AnimationGraph punchGraph { get; set; }
 	[Property] public AnimationGraph normalGraph { get; set; }
@@ -16,24 +17,16 @@ public sealed class ViewModelManager : Component
 	public Model blankModel;
 	protected override void OnAwake()
 	{
-		viewModelCamera = Components.GetInParent<CameraComponent>();
+		viewModelCamera = Components.Get<CameraComponent>();
 		cameraStartPos = viewModelCamera.GameObject.Transform.LocalPosition;
 	}
-
+	protected override void OnStart()
+	{
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnUpdate()
 	{
-		if (weapon.Inventory[weapon.ActiveSlot] != "weapon_smg" && weapon.Inventory[weapon.ActiveSlot] != "weapon_shotgun")
-		{
-			ShowFists();
-		}
-		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg")
-		{
-			ShowSmg();
-		}
-		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun")
-		{
-			ShowShotgun();
-		}
+		
 
 
 		

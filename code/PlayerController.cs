@@ -8,8 +8,8 @@ namespace Kicks;
 
 public sealed class PlayerController : Component, IHealthComponent
 {
-	public float Health { get; set; } = 100;
-	public float MaxHealth { get; set; } = 100;
+	[Sync] public float Health { get; set; } = 100;
+	[Sync] public float MaxHealth { get; set; } = 100;
 	[Property] public float CrouchSpeed { get; set; } = 64.0f;
 	[Property] public float WalkSpeed { get; set; } = 190f;
 	[Property] public float RunSpeed { get; set; } = 190f;

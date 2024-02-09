@@ -2,22 +2,6 @@
   "Id": "4cbc9382-ab89-4b47-9809-090673b10281",
   "GameObjects": [
     {
-      "Id": "d6608e68-f32d-4084-aa30-38ec30460952",
-      "Name": "Map",
-      "Position": "149.995,149.995,-212.125",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "MapInstance",
-          "MapName": "facepunch.construct23",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
-          "UseMapFromLaunch": true
-        }
-      ],
-      "Children": []
-    },
-    {
       "Id": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
       "Name": "Manager",
       "Position": "513.08,-143.3373,112.5343",
@@ -1030,6 +1014,22 @@
           "ZNear": 10
         }
       ]
+    },
+    {
+      "Id": "01400c95-53a2-4685-bc8b-db36eed082c9",
+      "Name": "Map",
+      "Position": "-577.6392,475.2825,111.3377",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "facepunch.construct23",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -1055,6 +1055,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-08T22:07:36.4869854-05:00",
+  "LastSaved": "2024-02-09T12:15:24.1012704-05:00",
   "__references": []
 }
