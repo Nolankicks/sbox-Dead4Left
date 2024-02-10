@@ -4,7 +4,7 @@
 @namespace Kicks
 @using System.Linq;
 <root>
-	
+	@if (weaponData is null) return;
 
 	<div class="hotbar">
 		@for(int i=0; i<weaponData.Slots; i++ )

@@ -7,7 +7,6 @@ using Sandbox.Citizen;
 public sealed class MP5 : Component
 {
 	
-	[Property] public SkinnedModelRenderer gun { get; set; }
 	CitizenAnimationHelper animationHelper;
 	[Property] public GameObject impact { get; set; }
 	[Property] public GameObject body { get; set; }
@@ -49,7 +48,6 @@ public sealed class MP5 : Component
 		
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
 		{
-			gun.Set("b_reload", true);
 			fullAmmo -= 30;
 			ammo = 30;
 			timeSinceReload = 1;
@@ -63,14 +61,12 @@ public sealed class MP5 : Component
 		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1 && weapon.ActiveSlot == 0)
 		{
 			Shoot();
-			gun.Set("b_attack", true);
 			timeSinceShoot = 0;
 			animationHelper.Target.Set("b_attack", true);
 		}
 	}
 	void Shoot()
 	{
-		var attachment = gun.GetAttachment( "muzzle" );
 		
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
 		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();

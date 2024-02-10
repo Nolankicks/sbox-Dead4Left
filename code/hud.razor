@@ -4,7 +4,10 @@
 @namespace Kicks
 @using System.Linq;
 <root>
-	
+	@if (LocalPlayer == null)
+	{
+		return;
+	}
 
 	<div class="newleft">
 		<div class="text">

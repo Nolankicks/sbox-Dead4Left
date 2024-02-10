@@ -954,11 +954,11 @@
       "Components": [
         {
           "__type": "NetworkHelper",
-          "menuScene": "scenes/dead4leftmenu.scene",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
+          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -1028,6 +1028,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-10T16:29:22.1770167-05:00",
+  "LastSaved": "2024-02-10T17:00:18.325178-05:00",
   "__references": []
 }

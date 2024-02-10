@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "e016a03c-3090-42cc-9304-47377820aed5",
+    "Id": "8a6c05d1-cce0-4b45-9d87-30cb0e4acfdc",
     "Name": "newerplayer",
     "Tags": "player",
     "Networked": true,
@@ -20,18 +20,18 @@
         "__type": "PlayerController",
         "animationHelper": {
           "_type": "component",
-          "go": "0db6c335-9579-484c-be0d-fe33cd246bc5",
+          "go": "0569124c-6e8c-487d-ac97-b83845d185f9",
           "component_type": "CitizenAnimationHelper"
         },
         "controller": {
           "_type": "component",
-          "go": "e016a03c-3090-42cc-9304-47377820aed5",
+          "go": "8a6c05d1-cce0-4b45-9d87-30cb0e4acfdc",
           "component_type": "CharacterController"
         },
         "CrouchSpeed": 64,
         "eye": {
           "_type": "gameobject",
-          "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
+          "go": "36cf1e87-0c62-430f-9b13-99eb45a7ad09"
         },
         "RunSpeed": 190,
         "SprintSpeed": 320,
@@ -53,7 +53,7 @@
         "ammo": 30,
         "body": {
           "_type": "gameobject",
-          "go": "0db6c335-9579-484c-be0d-fe33cd246bc5"
+          "go": "0569124c-6e8c-487d-ac97-b83845d185f9"
         },
         "decalGo": {
           "_type": "gameobject",
@@ -61,14 +61,9 @@
         },
         "eye": {
           "_type": "gameobject",
-          "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
+          "go": "36cf1e87-0c62-430f-9b13-99eb45a7ad09"
         },
         "fullAmmo": 60,
-        "gun": {
-          "_type": "component",
-          "go": "16af62f3-6601-4d16-97a4-efdac65b83b4",
-          "component_type": "SkinnedModelRenderer"
-        },
         "gunSound": "sounds/smg1_shoot.sound",
         "impact": {
           "_type": "gameobject",
@@ -89,23 +84,23 @@
         "__type": "Fist",
         "arms": {
           "_type": "component",
-          "go": "788b9315-690f-46d4-99e4-6af71dbba183",
+          "go": "6b841976-693e-4a8e-914e-d67af7c3529a",
           "component_type": "SkinnedModelRenderer"
         },
         "eye": {
           "_type": "gameobject",
-          "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
+          "go": "36cf1e87-0c62-430f-9b13-99eb45a7ad09"
         },
         "weapon": {
           "_type": "component",
-          "go": "e016a03c-3090-42cc-9304-47377820aed5",
+          "go": "8a6c05d1-cce0-4b45-9d87-30cb0e4acfdc",
           "component_type": "Weapon"
         }
       }
     ],
     "Children": [
       {
-        "Id": "0db6c335-9579-484c-be0d-fe33cd246bc5",
+        "Id": "0569124c-6e8c-487d-ac97-b83845d185f9",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -135,20 +130,20 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "0db6c335-9579-484c-be0d-fe33cd246bc5",
+              "go": "0569124c-6e8c-487d-ac97-b83845d185f9",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6",
+        "Id": "36cf1e87-0c62-430f-9b13-99eb45a7ad09",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "89a2f13f-b007-48db-bc7d-32d55d087bf2",
+        "Id": "10a54cc8-9494-462d-9049-5dd77d98d1a3",
         "Name": "collider",
         "Enabled": true,
         "Components": [
@@ -162,82 +157,11 @@
             "Surface": null
           }
         ]
-      },
-      {
-        "Id": "16af62f3-6601-4d16-97a4-efdac65b83b4",
-        "Name": "gun",
-        "Position": "5,-5,64",
-        "Networked": true,
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "SkinnedModelRenderer",
-            "BodyGroups": 11,
-            "BoneMergeTarget": null,
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ViewModelManager",
-            "armRender": {
-              "_type": "component",
-              "go": "788b9315-690f-46d4-99e4-6af71dbba183",
-              "component_type": "SkinnedModelRenderer"
-            },
-            "eye": {
-              "_type": "gameobject",
-              "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
-            },
-            "fistsModel": "models/first_person/first_person_arms.vmdl",
-            "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
-            "normalGraph": "models/first_person/first_person_arms_base.vanmgrph",
-            "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph",
-            "shotgunModel": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
-            "weaponRender": {
-              "_type": "component",
-              "go": "16af62f3-6601-4d16-97a4-efdac65b83b4",
-              "component_type": "SkinnedModelRenderer"
-            }
-          }
-        ],
-        "Children": [
-          {
-            "Id": "788b9315-690f-46d4-99e4-6af71dbba183",
-            "Name": "arms",
-            "Position": "0,0,0",
-            "Networked": true,
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "SkinnedModelRenderer",
-                "BodyGroups": 21,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "go": "16af62f3-6601-4d16-97a4-efdac65b83b4",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "MaterialGroup": null,
-                "MaterialOverride": null,
-                "Model": "models/first_person/first_person_arms.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
-          }
-        ]
       }
     ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.v_mp5",
-    "facepunch.v_spaghellim4"
-  ]
+  "__references": []
 }
