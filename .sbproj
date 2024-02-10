@@ -26,7 +26,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/finalmain.scene",
+    "StartupScene": "scenes/dead4leftmenu.scene",
     "ProjectTemplate": null,
     "MapStartupScene": null,
     "LaunchMode": "Normal"

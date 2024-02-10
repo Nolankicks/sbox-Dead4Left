@@ -1,0 +1,149 @@
+JoinMenu
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	font-size: 32px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	.left {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		position: absolute;
+		top : 0;
+		left: 32px;
+		width: 612px;
+		height: 100%;
+		background-color: rgb(65, 26, 31);
+		border-radius: 32px;
+		padding: 32px;
+		pointer-events: all;
+	  
+		h1 {
+		  font-size: 64px;
+		  font-weight: bolder;
+		  color: white;
+		 text-stroke: 16px black;
+			}
+	  
+		.inner
+		{
+			background-color: rgb(65, 26, 31);
+			flex-grow: 100;
+			flex-direction: column;
+			align-items: center;
+			gap: 32px;
+			.button
+			{
+				border-radius: 16px;
+				width: 500px;
+				height: 100px;
+				align-items: center;
+				background-color: rgb(153, 32, 52);
+				padding: 32px;
+				transition: all 0.1s ease;
+				
+				.title
+				{
+					font-weight: bolder;
+					font-size: 42;
+				}
+				.name
+				{
+					position: absolute;
+					right: 32px;
+					font-size: 42px;
+					
+				}
+
+				&:hover
+				{
+					background-color: rgb(104, 39, 39);
+					transform: scale(1.1);
+				}
+			}
+
+	}
+
+
+}
+.text
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	.title
+	{
+		font-size: 64px;
+		font-weight: bolder;
+		color: white;
+		text-stroke: 16px black;
+	}
+	.subtitle
+	{
+		font-size: 32px;
+		color: white;
+		text-stroke: 8px black;
+	}
+	.button
+	{
+		border-radius: 16px;
+		width: 500px;
+		height: 100px;
+		align-items: center;
+		background-color: rgb(153, 32, 52);
+		padding: 32px;
+		transition: all 0.1s ease;
+		.title
+		{
+			font-weight: bolder;
+			font-size: 42;
+		}
+		.name
+		{
+			position: absolute;
+			right: 32px;
+			font-size: 42px;
+		}
+		&:hover
+		{
+			background-color: rgb(104, 39, 39);
+			transform: scale(1.1);
+		}
+	}
+}
+	.maintext
+	{
+		font-size: 120px;
+		font-weight: bolder;
+		color: white;
+		text-stroke: 16px black;
+		flex-direction: row;
+		margin: 10px;
+		position: absolute;
+		top: 240px;
+		> .normal
+		{
+			margin: 10px;
+		}
+		> .red
+		{
+			color: red;
+			margin: 10px;
+		}
+	}
+
+}

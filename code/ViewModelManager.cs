@@ -1,4 +1,7 @@
+using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
+using Kicks;
 using Sandbox;
 
 public sealed class ViewModelManager : Component
@@ -8,35 +11,48 @@ public sealed class ViewModelManager : Component
 	[Property] Model mp5Model { get; set; }
 	[Property] Model shotgunModel { get; set; }
 	[Property] Model fistsModel { get; set; }
-	[Property] Weapon weapon { get; set; }
-	private Vector3 cameraStartPos;
+	[Property] public GameObject eye { get; set; }
+	private Weapon weapon;
+	private Vector3 StartPos;
 	[Property] public AnimationGraph punchGraph { get; set; }
 	[Property] public AnimationGraph normalGraph { get; set; }
-	private CameraComponent viewModelCamera;
+	PlayerController playerController;
 	public Model blankModel;
 	protected override void OnAwake()
 	{
-		viewModelCamera = Components.GetInParent<CameraComponent>();
-		cameraStartPos = viewModelCamera.GameObject.Transform.LocalPosition;
+		StartPos = GameObject.Transform.LocalPosition;
+		
 	}
-
+	protected override void OnStart()
+	{
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnUpdate()
 	{
-		if (weapon.Inventory[weapon.ActiveSlot] != "weapon_smg" && weapon.Inventory[weapon.ActiveSlot] != "weapon_shotgun")
+		
+		var eyeRot = eye.Transform.LocalRotation;
+		GameObject.Transform.Rotation = playerController.EyeAngles;
+
+		if (weapon.Inventory[weapon.ActiveSlot] != "weapon_smg")
 		{
 			ShowFists();
 		}
-		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg")
+		else
 		{
 			ShowSmg();
 		}
-		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_shotgun")
+		foreach(var arms in GameObject.Components.GetAll<ModelRenderer>(FindMode.EverythingInSelfAndDescendants))
 		{
-			ShowShotgun();
+			if (IsProxy)
+			{
+				GameObject.Enabled = false;
+			}
+			else
+			{
+				GameObject.Enabled = true;
+			}
 		}
-
-
-		
 	}
 	void ShowSmg()
 	{
@@ -45,24 +61,16 @@ public sealed class ViewModelManager : Component
 			armRender.BoneMergeTarget = weaponRender;
 			weaponRender.Model = mp5Model;
 			armRender.Enabled = true;
-			viewModelCamera.Transform.LocalPosition = cameraStartPos;
-
+			GameObject.Transform.LocalPosition = StartPos;
 	}
 
 	void ShowFists()
 	{
 		armRender.SceneModel.AnimationGraph = punchGraph;
-			armRender.BoneMergeTarget = null;
-			weaponRender.Enabled = false;
-			viewModelCamera.GameObject.Transform.LocalPosition = new Vector3(15, 0, -5);
+		armRender.BoneMergeTarget = null;
+		weaponRender.Enabled = false;
+		GameObject.Transform.LocalPosition = new Vector3(StartPos.x, 0, StartPos.z - 2);
 	}
 
-	void ShowShotgun()
-	{
-			weaponRender.Enabled = true;
-			armRender.BoneMergeTarget = weaponRender;
-			weaponRender.Model = shotgunModel;
-			armRender.Enabled = true;
-			viewModelCamera.Transform.LocalPosition = cameraStartPos;
-	}
+	
 }

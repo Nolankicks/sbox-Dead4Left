@@ -1,0 +1,101 @@
+@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Threading.Tasks
+@using Sandbox;
+@using Sandbox.Network
+@inherits PanelComponent
+
+<root>
+	<div class="left">
+		<h1>LOBBY-LIST</h1>
+		<div class="inner">
+			<div class="button" onclick=@CreateLobby>
+				<div class="title">Create Lobby</div>
+			</div>
+			@if (IsRefreshing)
+			{
+				<div>Refreshing please wait...</div>
+			}
+			else if (List.Count == 0)
+			{
+				<div>No lobbies were found</div>
+			}
+			else
+			{
+				@foreach (var lobby in List)
+				{
+					<div class="button" onclick=@( () => OpenLobby( lobby ) )>
+						<div class="title">
+							@lobby.Name
+						</div>	
+						<div class="name">
+							@lobby.Members / @lobby.MaxMembers
+						</div>
+					</div>
+				}
+			}
+		</div>
+	</div>
+
+	<div class="MainText">
+		<div class="normal">DEAD</div>
+		<div class="red">4</div>
+		<div class="normal">LEFT</div>
+	</div>
+	
+</root>
+
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	[Property] public SceneFile GameScene { get; set; }
+		private bool IsRefreshing { get; set; }
+	private List<LobbyInformation> List { get; set; } = new();
+		protected override void OnEnabled()
+	{
+		base.OnEnabled();
+		
+		_ = RefreshLobbyList();
+	}
+
+	protected override void OnUpdate()
+	{
+		
+	}
+	private async Task RefreshLobbyList()
+	{
+		while ( true )
+		{
+			IsRefreshing = true;
+			StateHasChanged();
+
+			List = await Networking.QueryLobbies();
+
+			IsRefreshing = false;
+			StateHasChanged();
+
+			await Task.DelayRealtimeSeconds( 5f );
+		}
+	}
+
+    void OpenLobby( LobbyInformation lobby )
+    {
+        GameNetworkSystem.Connect( lobby.LobbyId );
+    }
+
+	void CreateLobby()
+	{
+	GameManager.ActiveScene.Load(GameScene);
+	}
+
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(RealTime.Now);
+}
+

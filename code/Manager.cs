@@ -5,6 +5,8 @@ using Sandbox;
 using Sandbox.UI;
 using System.Linq;
 using Kicks;
+using Sandbox.Network;
+using System;
 
 public sealed class Manager : Component
 {
@@ -17,34 +19,24 @@ public sealed class Manager : Component
 	public bool ShouldAddScore { get; set; } = false;
 	[Property] public MenuUi deadMenu { get; set; }
 	[Property] public PauseMenu pauseMenu { get; set; }
-	[Property] public PlayerController playerController { get; set; }
-
+	[Property] public GameObject ragdoll { get; set; }
+	//[Property] public PlayerController playerController { get; set; }
+	PlayerController playerController;
 
 
 	public Sandbox.Services.Leaderboards.Board Leaderboard;
 
+	protected override void OnStart()
+	{
+		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnAwake()
 	{
 		StartGame();
-
-
 	}
 
 	protected override void OnUpdate()
 	{
-		if (ShouldAddScore)
-		{
-			AddScore();
-			ShouldAddScore = false;
-		}
-		if (pauseMenu.IsPaused || deadMenu.IsDead)
-		{
-			Scene.TimeScale = 0;
-		}
-		else
-		{
-			Scene.TimeScale = 1;
-		}
 		if (playerController.Health <= 0)
 		{
 			EndGame();
@@ -53,16 +45,8 @@ public sealed class Manager : Component
 		{
 			playerController.Health = 0;
 		}
-
 		
-
-		if (!Playing && Input.Pressed("Jump"))
-		{
-			StartGame();
-		}
-		
-		
-
+		ProcessScore();
 	}
 
 	public void StartGame()
@@ -78,22 +62,20 @@ public sealed class Manager : Component
 	public void EndGame()
 	{
 		Playing = false;
-		deadMenu.IsDead = true;
-		
-	
-	Sandbox.Services.Stats.SetValue( "zombieskilled", Score );
+		//deadMenu.IsDead = true;
+		Sandbox.Services.Stats.SetValue( "zombieskilled", playerController.Score );
+		Log.Info( "Disconnected from server" );
+		Respawn();
 
 		
 
 	}
 
 	
-	public void AddScore()
+	public void ProcessScore()
 	{
 		
-		var score = 0;
-		Score += 5;
-		Score += score;
+		Score = playerController.Score;
 		if ( Score > HighScore ) HighScore = Score;
 	}
 
@@ -110,5 +92,12 @@ public sealed class Manager : Component
 			}
 		}
 	}
-
+	void Respawn()
+	{
+		playerController.Score = 0;
+		playerController.Health = 100;
+		var Spawns = GameManager.ActiveScene.GetAllComponents<SpawnPoint>().ToArray();
+		var randomSpawnPoint = Random.Shared.FromArray(Spawns);
+		playerController.Transform.Position = randomSpawnPoint.Transform.Position;
+	}
 }
