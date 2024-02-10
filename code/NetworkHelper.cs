@@ -90,13 +90,13 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 		{
 			if (player.SteamId == (long)previousHost.SteamId)
 			{
-				GameManager.ActiveScene.Load(menuScene);
-				Log.Info("Host has left, returning to menu");
-			}
-			else
-			{
-				break;
+				player.GameObject.Destroy();
 			}
 		}
+
+		Host = Connections.FirstOrDefault(x => x.SteamId == (ulong)Game.SteamId);
+		HostSteamId = (long)Game.SteamId;
+
+		Log.Info("You are now the host!");
 	}
 }
