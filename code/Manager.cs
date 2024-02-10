@@ -37,6 +37,7 @@ public sealed class Manager : Component
 
 	protected override void OnUpdate()
 	{
+		if (playerController is null) return;
 		if (playerController.Health <= 0)
 		{
 			EndGame();

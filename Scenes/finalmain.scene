@@ -919,19 +919,6 @@
               "__type": "Inventory"
             }
           ]
-        },
-        {
-          "Id": "f78ecdbb-4875-44b6-80ad-024d4c4a9515",
-          "Name": "Health",
-          "Position": "135.1738,208.5749,166.0796",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "healthui",
-              "__enabled": false,
-              "MyStringValue": "Hello World!"
-            }
-          ]
         }
       ]
     },
@@ -1041,6 +1028,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-09T22:44:53.1836943-05:00",
+  "LastSaved": "2024-02-10T16:29:22.1770167-05:00",
   "__references": []
 }

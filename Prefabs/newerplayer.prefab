@@ -1,8 +1,9 @@
 {
   "RootObject": {
-    "Id": "c870baca-427f-4320-8f12-52bbb13c5642",
+    "Id": "e016a03c-3090-42cc-9304-47377820aed5",
     "Name": "newerplayer",
     "Tags": "player",
+    "Networked": true,
     "Enabled": true,
     "Components": [
       {
@@ -19,18 +20,18 @@
         "__type": "PlayerController",
         "animationHelper": {
           "_type": "component",
-          "go": "7db575ca-277d-4dd7-9e31-722eaa15bb45",
+          "go": "0db6c335-9579-484c-be0d-fe33cd246bc5",
           "component_type": "CitizenAnimationHelper"
         },
         "controller": {
           "_type": "component",
-          "go": "c870baca-427f-4320-8f12-52bbb13c5642",
+          "go": "e016a03c-3090-42cc-9304-47377820aed5",
           "component_type": "CharacterController"
         },
         "CrouchSpeed": 64,
         "eye": {
           "_type": "gameobject",
-          "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
+          "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
         },
         "RunSpeed": 190,
         "SprintSpeed": 320,
@@ -52,7 +53,7 @@
         "ammo": 30,
         "body": {
           "_type": "gameobject",
-          "go": "7db575ca-277d-4dd7-9e31-722eaa15bb45"
+          "go": "0db6c335-9579-484c-be0d-fe33cd246bc5"
         },
         "decalGo": {
           "_type": "gameobject",
@@ -60,12 +61,12 @@
         },
         "eye": {
           "_type": "gameobject",
-          "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
+          "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
         },
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+          "go": "16af62f3-6601-4d16-97a4-efdac65b83b4",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -88,23 +89,23 @@
         "__type": "Fist",
         "arms": {
           "_type": "component",
-          "go": "80173032-0bf0-4365-99e1-24bc9d0ddc81",
+          "go": "788b9315-690f-46d4-99e4-6af71dbba183",
           "component_type": "SkinnedModelRenderer"
         },
         "eye": {
           "_type": "gameobject",
-          "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
+          "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
         },
         "weapon": {
           "_type": "component",
-          "go": "c870baca-427f-4320-8f12-52bbb13c5642",
+          "go": "e016a03c-3090-42cc-9304-47377820aed5",
           "component_type": "Weapon"
         }
       }
     ],
     "Children": [
       {
-        "Id": "7db575ca-277d-4dd7-9e31-722eaa15bb45",
+        "Id": "0db6c335-9579-484c-be0d-fe33cd246bc5",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -134,20 +135,20 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "7db575ca-277d-4dd7-9e31-722eaa15bb45",
+              "go": "0db6c335-9579-484c-be0d-fe33cd246bc5",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea",
+        "Id": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "bd94782d-cc90-47dc-a2b4-143cc75a8b39",
+        "Id": "89a2f13f-b007-48db-bc7d-32d55d087bf2",
         "Name": "collider",
         "Enabled": true,
         "Components": [
@@ -163,9 +164,10 @@
         ]
       },
       {
-        "Id": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+        "Id": "16af62f3-6601-4d16-97a4-efdac65b83b4",
         "Name": "gun",
         "Position": "5,-5,64",
+        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -183,12 +185,12 @@
             "__type": "ViewModelManager",
             "armRender": {
               "_type": "component",
-              "go": "80173032-0bf0-4365-99e1-24bc9d0ddc81",
+              "go": "788b9315-690f-46d4-99e4-6af71dbba183",
               "component_type": "SkinnedModelRenderer"
             },
             "eye": {
               "_type": "gameobject",
-              "go": "90d68cc7-bbd7-4c13-ab4f-411751e8b9ea"
+              "go": "ebc4468f-2b98-4d42-9e36-e5ee376b25b6"
             },
             "fistsModel": "models/first_person/first_person_arms.vmdl",
             "mp5Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -197,16 +199,17 @@
             "shotgunModel": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
             "weaponRender": {
               "_type": "component",
-              "go": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+              "go": "16af62f3-6601-4d16-97a4-efdac65b83b4",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ],
         "Children": [
           {
-            "Id": "80173032-0bf0-4365-99e1-24bc9d0ddc81",
+            "Id": "788b9315-690f-46d4-99e4-6af71dbba183",
             "Name": "arms",
             "Position": "0,0,0",
+            "Networked": true,
             "Enabled": true,
             "Components": [
               {
@@ -214,7 +217,7 @@
                 "BodyGroups": 21,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "go": "32e90b5d-f844-4eca-b2f7-a543ddb4784d",
+                  "go": "16af62f3-6601-4d16-97a4-efdac65b83b4",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,

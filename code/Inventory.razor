@@ -45,5 +45,5 @@
 			
         }
 
-        protected override int BuildHash() => System.HashCode.Combine( weaponData.ActiveSlot, weaponData.Inventory, weaponData.InventoryImages, weaponData.Slots );
+        protected override int BuildHash() => System.HashCode.Combine( weaponData?.ActiveSlot, weaponData?.Inventory, weaponData?.InventoryImages, weaponData?.Slots );
 }
