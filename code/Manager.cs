@@ -5,6 +5,8 @@ using Sandbox;
 using Sandbox.UI;
 using System.Linq;
 using Kicks;
+using Sandbox.Network;
+using System;
 
 public sealed class Manager : Component
 {
@@ -17,6 +19,7 @@ public sealed class Manager : Component
 	public bool ShouldAddScore { get; set; } = false;
 	[Property] public MenuUi deadMenu { get; set; }
 	[Property] public PauseMenu pauseMenu { get; set; }
+	[Property] public GameObject ragdoll { get; set; }
 	//[Property] public PlayerController playerController { get; set; }
 	PlayerController playerController;
 
@@ -61,8 +64,8 @@ public sealed class Manager : Component
 		Playing = false;
 		//deadMenu.IsDead = true;
 		Sandbox.Services.Stats.SetValue( "zombieskilled", playerController.Score );
-	
-	
+		Log.Info( "Disconnected from server" );
+		Respawn();
 
 		
 
@@ -89,5 +92,12 @@ public sealed class Manager : Component
 			}
 		}
 	}
-
+	void Respawn()
+	{
+		playerController.Score = 0;
+		playerController.Health = 100;
+		var Spawns = GameManager.ActiveScene.GetAllComponents<SpawnPoint>().ToArray();
+		var randomSpawnPoint = Random.Shared.FromArray(Spawns);
+		playerController.Transform.Position = randomSpawnPoint.Transform.Position;
+	}
 }

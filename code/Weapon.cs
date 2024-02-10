@@ -55,7 +55,6 @@ public sealed class Weapon : Component
 
 		if (Inventory[ActiveSlot] == "weapon_smg")
 		{
-			Log.Info("SMG");
 		}
 		if (HasShotgun)
 		{

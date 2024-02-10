@@ -15,8 +15,9 @@
             "go": "adf87049-1bf3-4949-96dd-286b30f78022",
             "component_type": "MenuUi"
           },
-          "menuScene": null,
+          "menuScene": "scenes/dead4leftmenu.scene",
           "pauseMenu": null,
+          "ragdoll": null,
           "testBool": false
         }
       ]
@@ -966,11 +967,11 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "menuScene": "scenes/dead4leftmenu.scene",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
-          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -1040,6 +1041,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-09T16:02:50.7781816-05:00",
+  "LastSaved": "2024-02-09T22:32:34.912707-05:00",
   "__references": []
 }

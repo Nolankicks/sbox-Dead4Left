@@ -7,6 +7,9 @@ JoinMenu
 	bottom: 0;
 	font-family: Poppins;
 	font-size: 32px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	.left {
 		display: flex;
 		flex-direction: column;
@@ -122,4 +125,25 @@ JoinMenu
 		}
 	}
 }
+	.maintext
+	{
+		font-size: 120px;
+		font-weight: bolder;
+		color: white;
+		text-stroke: 16px black;
+		flex-direction: row;
+		margin: 10px;
+		position: absolute;
+		top: 240px;
+		> .normal
+		{
+			margin: 10px;
+		}
+		> .red
+		{
+			color: red;
+			margin: 10px;
+		}
+	}
+
 }

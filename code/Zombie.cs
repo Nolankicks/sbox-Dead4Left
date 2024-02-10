@@ -14,51 +14,33 @@ public sealed class Zombie : Component
 	private NavMeshAgent agent;
 	public TimeSince timeSinceHit = 0;
 	private Vector3 target;
-	private PlayerController playerController;
+	private PlayerController targetPlayer;
 	protected override void OnStart()
 	{
+
+	}
+protected override void OnAwake()
+    {
 		agent = Components.Get<NavMeshAgent>();
-		
-	}
-	protected override void OnAwake()
-	{
-		
-	}
+        var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
+        targetPlayer = Game.Random.FromList(playerControllers); //you can pick it like this
+    }
 	protected override void OnUpdate()
 	{
-		var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
-		var random = Game.Random.FromList(playerControllers);
-		if (random is not null)
-		{
-			target = random.Transform.Position;
-		}
-		else
-		{
-			return;
-		}
-		
-		
 
-
-		
-	
-
-
-		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+		target = targetPlayer.Transform.Position;
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		UpdateAnimtions();
-		if (Vector3.DistanceBetween(target, GameObject.Transform.Position ) < 150f)
+		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, GameObject.Transform.Position ) < 150f)
 		{
 			agent.Stop();
-
 		}
 		else
 		{
 			agent.MoveTo(target);
 		}
-
-		if (playerController.Transform.Position.z > GameObject.Transform.Position.z + 50)
+		if (target.z > GameObject.Transform.Position.z + 50)
 		{
 			UpwardTrace();
 		}
@@ -66,8 +48,6 @@ public sealed class Zombie : Component
 		{
 			NormalTrace();
 		}
-
-
 	}
 	
 	protected override void OnFixedUpdate()
@@ -81,7 +61,7 @@ public sealed class Zombie : Component
 		var bodyRot = body.Transform.Rotation.Angles();
 		animationHelper.WithWishVelocity(agent.WishVelocity);
 		animationHelper.WithVelocity(agent.Velocity);
-		var targetRot = Rotation.LookAt(playerController.GameObject.Transform.Position.WithZ(Transform.Position.z) - body.Transform.Position);
+		var targetRot = Rotation.LookAt(target.WithZ(Transform.Position.z) - body.Transform.Position);
 		body.Transform.Rotation = Rotation.Slerp(body.Transform.Rotation, targetRot, Time.Delta * 5.0f);
 	}
 	void NormalTrace()
@@ -90,7 +70,7 @@ public sealed class Zombie : Component
 
 		if (tr.Hit && timeSinceHit > 1.0f && GameObject is not null)
 		{
-			playerController.TakeDamage(25);
+			targetPlayer.TakeDamage(25);
 			animationHelper.Target.Set("b_attack", true);
 			timeSinceHit = 0;
 			Sound.Play(hitSound);
@@ -104,7 +84,7 @@ public sealed class Zombie : Component
 
 		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
 		{
-			playerController.TakeDamage(25);
+			targetPlayer.TakeDamage(25);
 			animationHelper.Target.Set("b_attack", true);
 			timeSinceHit = 0;
 			Sound.Play(hitSound);

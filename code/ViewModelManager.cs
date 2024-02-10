@@ -46,12 +46,11 @@ public sealed class ViewModelManager : Component
 		{
 			if (IsProxy)
 			{
-				arms.RenderType = ModelRenderer.ShadowRenderType.Off;
+				GameObject.Enabled = false;
 			}
 			else
 			{
-				arms.RenderType = ModelRenderer.ShadowRenderType.On;
-				Log.Info("RenderType: " + arms.RenderType);
+				GameObject.Enabled = true;
 			}
 		}
 	}
