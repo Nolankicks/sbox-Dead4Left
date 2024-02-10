@@ -19,7 +19,6 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	[Property] public GameObject eye { get; set; }
 	[Property] public CharacterController controller { get; set; }
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
-	public static PlayerController Local => NetworkManager.Instance.Players.FirstOrDefault(x => x.SteamId == Game.SteamId);
 	[Sync] public long SteamId { get; set; }
 	[Sync] public bool Crouching { get; set; }
 	[Sync] public Angles EyeAngles { get; set; }

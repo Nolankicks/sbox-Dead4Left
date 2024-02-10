@@ -17,21 +17,18 @@ public sealed class Zombie : Component
 	private PlayerController targetPlayer;
 	protected override void OnStart()
 	{
-
-	}
-protected override void OnAwake()
-    {
 		agent = Components.Get<NavMeshAgent>();
         var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
         targetPlayer = Game.Random.FromList(playerControllers); //you can pick it like this
-    }
+	}
 	protected override void OnUpdate()
 	{
-
+		if (targetPlayer is not null)
+		{
 		target = targetPlayer.Transform.Position;
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
-		UpdateAnimtions();
+		
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, GameObject.Transform.Position ) < 150f)
 		{
 			agent.Stop();
@@ -48,6 +45,8 @@ protected override void OnAwake()
 		{
 			NormalTrace();
 		}
+	}
+	UpdateAnimtions();
 	}
 	
 	protected override void OnFixedUpdate()

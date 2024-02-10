@@ -30,7 +30,7 @@ public sealed class ViewModelManager : Component
 	}
 	protected override void OnUpdate()
 	{
-		
+		if (playerController is null) return;
 		var eyeRot = eye.Transform.LocalRotation;
 		GameObject.Transform.Rotation = playerController.EyeAngles;
 

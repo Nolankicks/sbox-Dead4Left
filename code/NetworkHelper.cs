@@ -86,17 +86,12 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 
 	public void OnBecameHost(Connection previousHost)
 	{
-		foreach (var player in Players)
-		{
-			if (player.SteamId == (long)previousHost.SteamId)
-			{
-				player.GameObject.Destroy();
-			}
-		}
+		DestroyServer();
+	}
 
-		Host = Connections.FirstOrDefault(x => x.SteamId == (ulong)Game.SteamId);
-		HostSteamId = (long)Game.SteamId;
-
-		Log.Info("You are now the host!");
+	[Broadcast]
+	public void DestroyServer()
+	{
+		GameManager.ActiveScene.Load(menuScene);
 	}
 }
