@@ -18,10 +18,16 @@
       },
       {
         "__type": "PlayerController",
+        "EyeHight": 64,
         "animationHelper": {
           "_type": "component",
           "go": "0569124c-6e8c-487d-ac97-b83845d185f9",
           "component_type": "CitizenAnimationHelper"
+        },
+        "body": {
+          "_type": "component",
+          "go": "0569124c-6e8c-487d-ac97-b83845d185f9",
+          "component_type": "SkinnedModelRenderer"
         },
         "controller": {
           "_type": "component",
@@ -39,7 +45,6 @@
       },
       {
         "__type": "Weapon",
-        "HasShotgun": false,
         "InventoryImages": [
           "assets/w_mp5.vmdl_c.vtex",
           "assets/w_spaghellim4.vmdl_c.vtex"

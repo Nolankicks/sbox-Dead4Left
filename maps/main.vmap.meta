@@ -1,0 +1,27 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "main",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "main",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.floor_grass_dirt_weed_blend_a#18756"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/main.vmap"
+      }
+    }
+  }
+}

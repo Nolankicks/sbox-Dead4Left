@@ -17,6 +17,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	[Property] public float RunSpeed { get; set; } = 190f;
 	[Property] public float SprintSpeed { get; set; } = 320f;
 	[Property] public GameObject eye { get; set; }
+	[Property] public SkinnedModelRenderer body { get; set; }
 	[Property] public CharacterController controller { get; set; }
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Sync] public long SteamId { get; set; }
@@ -24,7 +25,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	public bool WishCrouch;
-	public float EyeHight = 64;
+	[Property] public float EyeHight = 64;
 	protected override void OnUpdate()
 	{
 		if (!IsProxy)
@@ -41,8 +42,6 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	protected override void OnFixedUpdate()
 	{
 		if (IsProxy) return;
-
-		Crouch();
 		Movement();
 	}
 	private void MouseInput()
@@ -131,33 +130,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		return !tr.Hit;
 	}
 
-	public void Crouch()
-	{
-		WishCrouch = Input.Down("duck");
-
-		if (WishCrouch == Crouching) return;
-
-		if (WishCrouch)
-		{
-			controller.Height = 36;
-			Crouching = WishCrouch;
-
-			if (!controller.IsOnGround)
-			{
-				controller.MoveTo(Transform.Position += Vector3.Up * CrouchHeight, false);
-				Transform.ClearLerp();
-				EyeHight -= CrouchHeight;
-			}
-			if ( !WishCrouch )
-		{
-			if ( !CanUncrouch() ) return;
-
-			controller.Height = 64;
-			Crouching = WishCrouch;
-			return;
-		}
-		}
-	}
+	
 
 		private void UpdateCamera()
 	{
@@ -193,9 +166,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 
 		var renderMode = ModelRenderer.ShadowRenderType.On;
 		if ( !IsProxy ) renderMode = ModelRenderer.ShadowRenderType.ShadowsOnly;
-
 		animationHelper.Target.RenderType = renderMode;
-
 		foreach ( var clothing in animationHelper.Target.Components.GetAll<ModelRenderer>( FindMode.InChildren ) )
 		{
 			if ( !clothing.Tags.Has( "clothing" ) )

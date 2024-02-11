@@ -13,8 +13,8 @@ public sealed class ZombieSpawner : Component
 	void SpawnZombie()
 	{
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
-		var randomSpawnPoint = Random.Shared.FromArray( spawnPoints ).Transform.World;
-		var zombie = ZombiePrefab.Clone( randomSpawnPoint );
+		var spawnPoint = Scene.NavMesh.GetRandomPoint();
+		var zombie = ZombiePrefab.Clone( spawnPoint.HasValue ? spawnPoint.Value : Vector3.Zero );
 		zombie.Network.Spawn();
 
 	}
@@ -27,7 +27,7 @@ public sealed class ZombieSpawner : Component
 			var random = GetRandom();
 			GetRandom();
 
-			if (random >= 60f)
+			if (random >= 95f)
 			{
 				SpawnZombie();
 			}

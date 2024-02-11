@@ -1,7 +1,8 @@
 {
   "RootObject": {
-    "Id": "4de45a9b-b306-46ed-a12e-1783286b7ab4",
+    "Id": "ff1eb007-4452-44b6-9bac-92d18edeed9c",
     "Name": "mp5",
+    "Networked": true,
     "Enabled": true,
     "Components": [
       {

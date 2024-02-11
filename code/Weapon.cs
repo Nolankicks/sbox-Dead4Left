@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO.Pipes;
+using System.Linq;
 using Sandbox;
 using Sandbox.UI;
 
@@ -17,12 +18,21 @@ public sealed class Weapon : Component
 	{
 		"weapon_smg"
 	};
+	[Property] public List<Item> items {get; set;} = new List<Item>()
+	{
+		
+	};
 	
 	public int ActiveSlot = 0;
 	public int Slots => 9;
 	public int Img => 9;
 	public string[] Inventory = new string[9];
-	[Property] public bool HasShotgun {get; set;} = false;
+	ActiveWeapon activeWeapon;
+	protected override void OnStart()
+	{
+		
+		activeWeapon = GameManager.ActiveScene.GetAllComponents<ActiveWeapon>().FirstOrDefault( x => !x.IsProxy);
+	}
 	protected override void OnAwake()
 	{
 		if (IsProxy) return;
@@ -55,10 +65,11 @@ public sealed class Weapon : Component
 
 		if (Inventory[ActiveSlot] == "weapon_smg")
 		{
+			activeWeapon.Item = items[0];
 		}
-		if (HasShotgun)
+		else
 		{
-			Inventory[1] = "weapon_shotgun";
+			activeWeapon.Item = null;
 		}
 	}
 }
