@@ -9,8 +9,6 @@ public sealed class MP5 : Component
 	
 	CitizenAnimationHelper animationHelper;
 	[Property] public GameObject impact { get; set; }
-	[Property] public GameObject body { get; set; }
-	[Property] public GameObject eye { get; set; }
 	private PlayerController playerController;
 	[Property] public SoundEvent gunSound { get; set; }
 	[Property] public SoundEvent reloadSound { get; set; }
@@ -27,12 +25,13 @@ public sealed class MP5 : Component
 	PlayerController player;
 	protected override void OnStart()
 	{
+		//networking
 		animationHelper = GameObject.Components.GetInDescendantsOrSelf<CitizenAnimationHelper>();
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Pistol;
+		
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -40,6 +39,7 @@ public sealed class MP5 : Component
 
 	protected override void OnUpdate()
 	{
+
 		if (IsProxy) return;
 		if (fullAmmo < 0)
 		{
@@ -62,14 +62,13 @@ public sealed class MP5 : Component
 		{
 			Shoot();
 			timeSinceShoot = 0;
-			animationHelper.Target.Set("b_attack", true);
 		}
 	}
 	void Shoot()
 	{
-		
+		var eyePos = playerController.Transform.Position + Vector3.Up * 64;
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
-		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();
+		var tr = Scene.Trace.Ray( eyePos, eyePos + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();
 		
 		if (tr.Hit)
 		{

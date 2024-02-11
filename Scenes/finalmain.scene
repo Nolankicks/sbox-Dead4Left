@@ -26,7 +26,6 @@
       "Id": "8f36f42e-478b-4d2c-a740-58fc7d899163",
       "Name": "ZombieSpawner",
       "Position": "-9.349197,-872.8173,-12.33926",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -887,42 +886,6 @@
       ]
     },
     {
-      "Id": "95d0ed5a-dabd-4a96-9d6a-763be21a6384",
-      "Name": "Hud",
-      "Position": "864.4384,-1762.456,529.336",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ScreenPanel",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
-        },
-        {
-          "__type": "hud",
-          "manager": {
-            "_type": "component",
-            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
-            "component_type": "Manager"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "Id": "ed0f0a77-cb40-4994-986e-e12c94f40ee9",
-          "Name": "Invin",
-          "Position": "135.1738,208.5749,166.0796",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Inventory"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Id": "adf87049-1bf3-4949-96dd-286b30f78022",
       "Name": "DeadMenu",
       "Position": "1432.275,-2478.037,601.8175",
@@ -958,7 +921,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
-          "SpawnPoints": null,
+          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -1003,6 +966,38 @@
         }
       ],
       "Children": []
+    },
+    {
+      "Id": "ed0f0a77-cb40-4994-986e-e12c94f40ee9",
+      "Name": "Invin",
+      "Position": "999.6122,-1553.881,695.4156",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Inventory"
+        },
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "hud",
+          "manager": {
+            "_type": "component",
+            "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
+            "component_type": "Manager"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "3fc8b90b-970d-423e-aa0c-af5a2cdfd40e",
+      "Name": "Object",
+      "Position": "62.77576,-34.12747,181.88",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -1028,6 +1023,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-10T17:00:18.325178-05:00",
+  "LastSaved": "2024-02-10T19:10:43.2157125-05:00",
   "__references": []
 }

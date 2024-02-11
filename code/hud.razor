@@ -65,10 +65,8 @@
 	protected override void OnStart()
 	{
 		mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
-		
 		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-		shotgun = GameManager.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
 	}
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
@@ -88,6 +86,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health, mp5?.ammo);
+	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health, mp5?.ammo, mp5?.fullAmmo);
 	}
 }

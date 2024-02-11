@@ -1,0 +1,51 @@
+{
+  "RootObject": {
+    "Id": "4de45a9b-b306-46ed-a12e-1783286b7ab4",
+    "Name": "mp5",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "BodyGroups": 11,
+        "BoneMergeTarget": null,
+        "CreateBoneObjects": false,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "MP5",
+        "ammo": 30,
+        "decalGo": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal_bullet_default.prefab"
+        },
+        "fullAmmo": 60,
+        "gunSound": "sounds/smg1_shoot.sound",
+        "impact": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact_default (1).prefab"
+        },
+        "reloadSound": "sounds/reload/mp5.mag.load.sound",
+        "ShootDamage": 10,
+        "zombieParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
+        "zombieRagdoll": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.v_mp5"
+  ]
+}
