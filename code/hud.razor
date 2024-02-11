@@ -15,7 +15,11 @@
 			@LocalPlayer.Health
 		</div>
 		</div>
-		<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
+				@if (mp5 != null)
+				{
+				<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
+				}
+
 	<div class="center">
 		<div class="crosshair"></div>
 	</div>
@@ -62,14 +66,19 @@
 	public static  Weapon weapon;
 	public static  Shotgun shotgun;
 	[Property] public Manager manager { get; set; }
+	[Property] public bool IsVisible { get; set; } = false;
 	protected override void OnStart()
 	{
-		mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
+		
 		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 	}
+        protected override void OnUpdate()
+        {
+            mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
+        }
 
-	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
+        string IsMe(Sandbox.Services.Leaderboards.Entry entry)
     {
         return entry.Me ? "me" : "";
     }

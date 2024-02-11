@@ -1,0 +1,20 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "shaders/water.shader"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Material ----
+	TextureColor "materials/default/default_color.tga"
+	TextureTranslucency "[1.000000 1.000000 1.000000 0.000000]"
+
+	//---- Water ----
+	g_fPhase "6.000"
+	g_fScale "1.000"
+	g_fSpeed "2.000"
+	g_fSurfaceRoughness "0.040"
+	g_fWeight "1.000"
+}

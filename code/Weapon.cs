@@ -8,7 +8,7 @@ using Sandbox.UI;
 public sealed class Weapon : Component
 {
 	[Property] public Image WeaponImage {get; set;}
-
+	public bool HasViewModel;
 	
 	[Property] public List<Texture> InventoryImages {get; set;} = new List<Texture>()
 	{
@@ -30,7 +30,6 @@ public sealed class Weapon : Component
 	ActiveWeapon activeWeapon;
 	protected override void OnStart()
 	{
-		
 		activeWeapon = GameManager.ActiveScene.GetAllComponents<ActiveWeapon>().FirstOrDefault( x => !x.IsProxy);
 	}
 	protected override void OnAwake()
@@ -56,6 +55,8 @@ public sealed class Weapon : Component
 		if (Input.MouseWheel.y != 0)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
+			activeWeapon.weaponref.Destroy();
+			activeWeapon.NeedsChange = true;
 		}
 		if (ActiveSlot < 0)
 		{
@@ -70,6 +71,16 @@ public sealed class Weapon : Component
 		else
 		{
 			activeWeapon.Item = null;
+		}
+
+		if (Inventory[ActiveSlot] != "")
+		{
+			HasViewModel = true;
+		}
+
+		if (Inventory[ActiveSlot] == "")
+		{
+			activeWeapon.Item = items[1];
 		}
 	}
 }

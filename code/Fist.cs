@@ -4,27 +4,26 @@ using Sandbox;
 
 public sealed class Fist : Component
 {
-	[Property] public GameObject eye { get; set; }
-	[Property] public SkinnedModelRenderer arms { get; set; }
-	[Property] public Weapon weapon { get; set; }
+	public NetworkedViewmodel viewModel;
 	PlayerController playerController;
 
 	protected override void OnStart()
 	{
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		viewModel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
 	}
 	protected override void OnUpdate()
 	{
-		if (Input.Pressed("attack1") && weapon.ActiveSlot != 0)
+		if (Input.Pressed("attack1"))
 		{
 			Trace();
-			arms.Set("b_attack", true);
+			viewModel.arms.Set("b_attack", true);
 		}
 	}
 
 	void Trace()
 	{
-		var tr = Scene.Trace.Ray( eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Forward * 100).WithoutTags("player").Run();
+		var tr = Scene.Trace.Ray( playerController.Transform.Position, playerController.Transform.Position + playerController.EyeAngles.Forward * 100).WithoutTags("player").Run();
 
 		if (tr.Hit)
 		{

@@ -20,6 +20,7 @@ public sealed class MP5 : Component
 	[Property] public GameObject zombieParticle { get; set; }
 	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
+	public NetworkedViewmodel viewmodel;
 	Manager manager;
 	Weapon weapon;
 	PlayerController player;
@@ -31,7 +32,7 @@ public sealed class MP5 : Component
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-		
+		viewmodel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -58,7 +59,7 @@ public sealed class MP5 : Component
 	protected override void OnFixedUpdate()
 	{
 		if (IsProxy) return;
-		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1 && weapon.ActiveSlot == 0)
+		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
 		{
 			Shoot();
 			timeSinceShoot = 0;
@@ -72,20 +73,25 @@ public sealed class MP5 : Component
 		
 		if (tr.Hit)
 		{
+			var gun = viewmodel.gun;
+			gun.Set("b_attack", true);
 			ammo -= 1;
 			Log.Info(tr.GameObject);
-			impact.Clone(tr.HitPosition);
+			var impactClone = impact.Clone(tr.HitPosition);
 			Sound.Play(gunSound, GameObject.Transform.Position);
 			var decal = decalGo.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal, Vector3.Random), Random.Shared.Float(0.8f, 1.2f)));
 			decal.SetParent( tr.GameObject );
 			decal.NetworkSpawn();
+			impactClone.NetworkSpawn();
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Parent.Destroy();
 				player.AddScore(5);
 				fullAmmo += 15;
-				zombieParticle.Clone(tr.HitPosition);
-				zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
+				var zombieParticleClone = zombieParticle.Clone(tr.HitPosition);
+				var zombieRagdollClone = zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
+				zombieParticleClone.NetworkSpawn();
+				zombieRagdollClone.NetworkSpawn();
 			}
 			var damage = new DamageInfo( ShootDamage, GameObject, GameObject );
 			

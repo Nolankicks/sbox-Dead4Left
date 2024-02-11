@@ -24,6 +24,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	[Sync] public bool Crouching { get; set; }
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
+	[Property] public Weapon weapon { get; set; }
 	public bool WishCrouch;
 	[Property] public float EyeHight = 64;
 	protected override void OnUpdate()
@@ -72,7 +73,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		// air friction
 		return 0.2f;
 	}
-
+	public RealTimeSince jumpTime;
 	private void Movement()
 	{
 		if (controller is null) return;
@@ -82,9 +83,10 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		Vector3 halfgrav = Scene.PhysicsWorld.Gravity * Time.Delta * 0.5f;
 
 		WishVelocity = Input.AnalogMove;
-		if (Input.Pressed("jump"))
+		if (Input.Pressed("jump") && cc.IsOnGround)
 		{
 			cc.Punch(Vector3.Up * 300);
+			
 		}
 		if (!WishVelocity.IsNearlyZero())
 		{
@@ -105,6 +107,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		{
 			cc.Accelerate(WishVelocity);
 			cc.Velocity = controller.Velocity.WithZ(0);
+			jumpTime = 0;
 		}
 		else
 		{
@@ -136,7 +139,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	{
 		var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		if ( camera is null ) return;
-
+		
 		var targetEyeHeight = Crouching ? 28 : 64;
 		EyeHight = EyeHight.LerpTo( targetEyeHeight, RealTime.Delta * 10.0f );
 
@@ -144,7 +147,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 
 		// smooth view z, so when going up and down stairs or ducking, it's smooth af
 		
-
+		eye.Transform.Rotation = EyeAngles;
 		camera.Transform.Position = targetCameraPos;
 		camera.Transform.Rotation = EyeAngles;
 		camera.FieldOfView = Preferences.FieldOfView;
@@ -163,7 +166,6 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	{
 		if ( animationHelper is null )
 			return;
-
 		var renderMode = ModelRenderer.ShadowRenderType.On;
 		if ( !IsProxy ) renderMode = ModelRenderer.ShadowRenderType.ShadowsOnly;
 		animationHelper.Target.RenderType = renderMode;

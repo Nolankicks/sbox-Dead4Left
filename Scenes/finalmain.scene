@@ -81,11 +81,11 @@
       "Components": [
         {
           "__type": "NetworkHelper",
-          "menuScene": null,
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
+          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -149,11 +149,5790 @@
         },
         {
           "__type": "hud",
+          "IsVisible": false,
           "manager": {
             "_type": "component",
             "go": "1db4de54-55ee-4ac5-b67a-4ce08fad3e34",
             "component_type": "Manager"
           }
+        }
+      ]
+    },
+    {
+      "Id": "eebd66a1-601f-4c41-be8f-bafedd829d90",
+      "Name": "Spawns",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "8856e1b0-ef8f-4e97-948f-4c392397e423",
+          "Name": "Spawn",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "051a3b69-4672-4a14-af75-5c42a68a50f1",
+          "Name": "Spawn",
+          "Position": "0,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "dd44f78f-c4e9-4dca-aec2-fe27229eff38",
+          "Name": "Spawn",
+          "Position": "-96,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f3c8c297-7504-4325-9ce1-dc4bf0579e7e",
+          "Name": "Spawn",
+          "Position": "-96,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6856cf92-2b03-497c-8c48-551ec52db55e",
+          "Name": "Spawn",
+          "Position": "-192,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0eb1a9b1-8f65-43cf-bf57-769ea7914c51",
+          "Name": "Spawn",
+          "Position": "-192,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fde41b66-4e0f-4a51-a0e1-f290556ff2aa",
+          "Name": "Spawn",
+          "Position": "-320,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7ae47d93-272b-4a1d-9624-265cefd69548",
+          "Name": "Spawn",
+          "Position": "-320,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9df248ad-f8b9-4ca5-b1a5-86a5425dd94d",
+          "Name": "Spawn",
+          "Position": "-448,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "acdfead0-a870-4bbc-b65d-0c97e04c971f",
+          "Name": "Spawn",
+          "Position": "-448,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "54db8483-f3b0-4702-93a4-da297dd0d9aa",
+          "Name": "Spawn",
+          "Position": "-608,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "04afc89d-7d24-4166-acd6-821033b042a3",
+          "Name": "Spawn",
+          "Position": "-608,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "51b3e9f6-0ece-45e2-a45b-25da18c505ef",
+          "Name": "Spawn",
+          "Position": "-768,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d374273f-4011-402a-86f0-00043f40de41",
+          "Name": "Spawn",
+          "Position": "-768,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "826abdb6-5e0c-4d3d-ab7f-e29afb951d3c",
+          "Name": "Spawn",
+          "Position": "-960,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9e03730c-ba53-4f44-b3f2-ae9f6781b72b",
+          "Name": "Spawn",
+          "Position": "-960,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b1abc08e-175c-4058-beed-5661bbb5d652",
+          "Name": "Spawn",
+          "Position": "-1152,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "01229557-2799-4700-b36a-81f425a7b515",
+          "Name": "Spawn",
+          "Position": "-1152,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8c2504f9-fba5-40f1-ac1e-8ae9ae31f358",
+          "Name": "Spawn",
+          "Position": "-1344,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "93b31540-0df6-4caa-bb63-0e9697ef8d2e",
+          "Name": "Spawn",
+          "Position": "-1344,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "75f8ff6f-5e71-4065-961f-f091b80a822c",
+          "Name": "Spawn",
+          "Position": "-1504,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "79fd77b2-5a02-4131-91e1-bcdff0b697c2",
+          "Name": "Spawn",
+          "Position": "-1504,960,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "66c81855-f1d3-4ba0-b34b-1a778eab37c9",
+          "Name": "Spawn",
+          "Position": "0,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0197b0e0-c75d-4df4-b5f6-cec7eb44a51b",
+          "Name": "Spawn",
+          "Position": "0,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "36142e58-4f2d-46ef-924f-cb9b3445dcdf",
+          "Name": "Spawn",
+          "Position": "-96,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7f131513-9e66-47a4-a9cb-45a8fdae01cc",
+          "Name": "Spawn",
+          "Position": "-96,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4183ff4d-6c28-4e86-a66f-45d9ef842081",
+          "Name": "Spawn",
+          "Position": "-192,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "df6c487e-f080-477f-bd51-3636a16d8ba8",
+          "Name": "Spawn",
+          "Position": "-192,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "94f0e332-3b46-4b23-933e-01d9c37f8d0b",
+          "Name": "Spawn",
+          "Position": "-320,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f3beb7cc-8c63-4d36-ae2b-ee4b3a4d1882",
+          "Name": "Spawn",
+          "Position": "-320,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a0400c4d-e8c8-43a6-9fd5-f672561125d5",
+          "Name": "Spawn",
+          "Position": "-448,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "82ff3336-297e-45b5-984a-d3e9f0d6f22e",
+          "Name": "Spawn",
+          "Position": "-448,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "61c74faa-fd8a-4e08-9ff8-c9feca3d67f3",
+          "Name": "Spawn",
+          "Position": "-608,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b284038c-0a70-4eca-907d-16ed953d221c",
+          "Name": "Spawn",
+          "Position": "-608,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5b1c9c61-9c37-48ec-86b6-f4e4f4a157d9",
+          "Name": "Spawn",
+          "Position": "-768,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "135ce0ff-99d4-4789-8e9c-f54a2b1789d8",
+          "Name": "Spawn",
+          "Position": "-768,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "177e2340-c272-469b-b2f5-48784a697af5",
+          "Name": "Spawn",
+          "Position": "-960,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "391b3217-dcff-452a-8c60-e94bf4e29979",
+          "Name": "Spawn",
+          "Position": "-960,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1185e02d-8acc-4883-8eca-b1d1ffa48460",
+          "Name": "Spawn",
+          "Position": "-1152,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ac3f139f-7a0b-4cc7-b0f1-f5516c57c92d",
+          "Name": "Spawn",
+          "Position": "-1152,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c05b2fd2-bbcc-45ac-a5de-cb9de7d05ec3",
+          "Name": "Spawn",
+          "Position": "-1344,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a4178ee0-a4a2-415b-be3d-d91aaed8fe71",
+          "Name": "Spawn",
+          "Position": "-1344,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "cccd6f72-dc10-4201-afd6-082c937feca5",
+          "Name": "Spawn",
+          "Position": "-1504,64,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a717e568-6028-406b-bf21-404c8ed67352",
+          "Name": "Spawn",
+          "Position": "-1504,1024,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9005a0a4-3c36-404e-9f47-5e7ff86531e3",
+          "Name": "Spawn",
+          "Position": "0,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d52cf4f4-b61f-4e0d-ae83-af0654f26a14",
+          "Name": "Spawn",
+          "Position": "0,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a0d6bd79-b589-43cf-b963-405153b355aa",
+          "Name": "Spawn",
+          "Position": "-96,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3e0fd37a-9363-440d-a5cd-0a1fa1c5dfab",
+          "Name": "Spawn",
+          "Position": "-96,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c10979d4-0c2e-427c-8266-15129b4ea02d",
+          "Name": "Spawn",
+          "Position": "-192,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "80e0b942-7091-4980-9b73-e874c1bff62d",
+          "Name": "Spawn",
+          "Position": "-192,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "164c5a80-778f-4144-8142-eaaa82ddad54",
+          "Name": "Spawn",
+          "Position": "-320,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "23b62a3c-beba-46c1-b4b3-e76c7d3a9368",
+          "Name": "Spawn",
+          "Position": "-320,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "42d76928-d37d-493e-8990-5fd7ac7aa56b",
+          "Name": "Spawn",
+          "Position": "-448,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6ab6b49b-a795-4743-a3f7-0d59b9352e45",
+          "Name": "Spawn",
+          "Position": "-448,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7e9fa3b2-5f10-4360-aa96-f9518b44d4ec",
+          "Name": "Spawn",
+          "Position": "-608,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0a442199-53ad-49cc-8290-253ccf9f95eb",
+          "Name": "Spawn",
+          "Position": "-608,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1025ef5d-867d-45cc-8c61-94e9b62f4c3c",
+          "Name": "Spawn",
+          "Position": "-768,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e9e63056-dc6d-4d9e-b7f7-1dc488b26a20",
+          "Name": "Spawn",
+          "Position": "-768,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a29561ae-1d10-486d-8e12-1e0003a3df5e",
+          "Name": "Spawn",
+          "Position": "-960,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7f83987a-60d7-47dc-8265-49183dd33b5b",
+          "Name": "Spawn",
+          "Position": "-960,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "10d8e9d9-82a6-4375-9778-6e2d43de00ee",
+          "Name": "Spawn",
+          "Position": "-1152,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "880a6551-b353-4369-8373-df1221723614",
+          "Name": "Spawn",
+          "Position": "-1152,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8b1108d4-8781-4b75-bff6-8a27ae7794b1",
+          "Name": "Spawn",
+          "Position": "-1344,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "80f03fd4-6454-4c37-9cb9-3d9375d1d52a",
+          "Name": "Spawn",
+          "Position": "-1344,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fe751a3f-470a-4879-bca6-07a2e37c5170",
+          "Name": "Spawn",
+          "Position": "-1504,128,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7fddfa57-30c5-462c-92e4-131116843cbb",
+          "Name": "Spawn",
+          "Position": "-1504,1088,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2ff2a53b-21dd-4794-84fe-211abbbe5b88",
+          "Name": "Spawn",
+          "Position": "0,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a25690c5-beea-48af-b394-c9a622b2b747",
+          "Name": "Spawn",
+          "Position": "0,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d76e48b5-e57a-4dc9-8488-340ebd730882",
+          "Name": "Spawn",
+          "Position": "-96,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "dc1dc961-a6c1-46a3-946a-13b34f52578c",
+          "Name": "Spawn",
+          "Position": "-96,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c7d77c4a-2d66-45f5-a9fd-0d44e74e2d16",
+          "Name": "Spawn",
+          "Position": "-192,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4dd7406a-ef57-4f4c-a332-12c4c86118b7",
+          "Name": "Spawn",
+          "Position": "-192,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b43612a6-e8e9-41a1-a656-09af02903b10",
+          "Name": "Spawn",
+          "Position": "-320,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "55fef7d8-9bd4-4abe-aefa-556efa931327",
+          "Name": "Spawn",
+          "Position": "-320,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c7819518-80c0-4f34-aee9-b7581e526e85",
+          "Name": "Spawn",
+          "Position": "-448,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "cc2f7620-7136-495c-bc56-515b16003a75",
+          "Name": "Spawn",
+          "Position": "-448,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0bdef8ef-c1aa-44dd-826c-634314f642da",
+          "Name": "Spawn",
+          "Position": "-608,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9bee10d6-ca3d-4188-853d-71d3a6c67568",
+          "Name": "Spawn",
+          "Position": "-608,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4c064830-a16b-4f74-b543-93e4362f818f",
+          "Name": "Spawn",
+          "Position": "-768,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "274a7ee4-1fc5-4ba0-af5b-805f017f0221",
+          "Name": "Spawn",
+          "Position": "-768,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "45773cbe-4579-43df-9955-552cbd4c3a76",
+          "Name": "Spawn",
+          "Position": "-960,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "60df5e43-746a-42ef-99a8-58af965fd689",
+          "Name": "Spawn",
+          "Position": "-960,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3ce3e1f8-5224-4f9d-83ea-1506253a1a63",
+          "Name": "Spawn",
+          "Position": "-1152,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f075fdb1-a4e1-4fbb-91f6-8c27a4d2a5d3",
+          "Name": "Spawn",
+          "Position": "-1152,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "64fe19c3-a1a6-4cfa-bd05-1f031d5b97a8",
+          "Name": "Spawn",
+          "Position": "-1344,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "284d2b0f-d692-4512-b098-bff55cee3177",
+          "Name": "Spawn",
+          "Position": "-1344,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9c56f2c8-3b47-47ac-ab77-41c47932aab0",
+          "Name": "Spawn",
+          "Position": "-1504,192,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "91c91e1e-2f5f-4d92-b6d9-a196a6de25d8",
+          "Name": "Spawn",
+          "Position": "-1504,1152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a8fb7e08-1626-47a8-b038-319bf5361132",
+          "Name": "Spawn",
+          "Position": "0,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "31f764ad-b395-48f3-95dc-74b2af19b58a",
+          "Name": "Spawn",
+          "Position": "0,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2e10ad27-e1eb-42f8-ad1f-d70b31f0896d",
+          "Name": "Spawn",
+          "Position": "-96,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "bef67ec4-84ee-41a5-a75d-caae3e3b36eb",
+          "Name": "Spawn",
+          "Position": "-96,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5eaace4a-6485-4674-a02e-ea398f897874",
+          "Name": "Spawn",
+          "Position": "-192,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "941c5179-bad1-4671-825a-22784182ea8e",
+          "Name": "Spawn",
+          "Position": "-192,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8aee824c-086c-4fb4-ba67-79e771e44ca2",
+          "Name": "Spawn",
+          "Position": "-320,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f5bf65f6-f8b0-4800-a3e8-799d1b8a79d7",
+          "Name": "Spawn",
+          "Position": "-320,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "45b299df-6ea1-44cc-b856-06dd412bea40",
+          "Name": "Spawn",
+          "Position": "-448,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d6c8c57a-65e1-42db-882e-eac8b337ae42",
+          "Name": "Spawn",
+          "Position": "-448,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2703ee7e-f9dc-42f4-aca1-9a7f18b8688c",
+          "Name": "Spawn",
+          "Position": "-608,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3ebd17e2-0af4-4bdd-886b-3badfac0354d",
+          "Name": "Spawn",
+          "Position": "-608,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "01b4858d-4a88-48cb-889f-105fceb4bd46",
+          "Name": "Spawn",
+          "Position": "-768,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0a7c7832-ce21-4211-991a-cafaa4654b96",
+          "Name": "Spawn",
+          "Position": "-768,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8f52d776-b3fd-49d8-ba5f-8add269b3c9a",
+          "Name": "Spawn",
+          "Position": "-960,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "38ac4346-c566-498d-8cbe-76a0a605e2bf",
+          "Name": "Spawn",
+          "Position": "-960,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1138b231-e2a2-41e3-b5df-72d9ab5ec9d4",
+          "Name": "Spawn",
+          "Position": "-1152,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a211e314-2666-4aa9-9c62-1f7703ecee87",
+          "Name": "Spawn",
+          "Position": "-1152,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "32a0788d-31e8-4150-ab6c-46bd030a54c1",
+          "Name": "Spawn",
+          "Position": "-1344,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b9d9955f-1cda-4e94-ac71-cfbd74d15816",
+          "Name": "Spawn",
+          "Position": "-1344,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5872ae9a-845d-4184-bdaa-aa3e759c2235",
+          "Name": "Spawn",
+          "Position": "-1504,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ec46f773-b7bb-408b-98fa-bd5455ff448d",
+          "Name": "Spawn",
+          "Position": "-1504,1216,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "207c846e-9cf7-43ed-9ed9-1005622dd4dd",
+          "Name": "Spawn",
+          "Position": "0,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c80c869f-d0cc-4ad8-8c27-a63b5828cd47",
+          "Name": "Spawn",
+          "Position": "0,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d4cef5f4-1ed4-4c02-9997-965c74b55ba8",
+          "Name": "Spawn",
+          "Position": "-96,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fe89e853-e3b4-48e4-8317-19174c3734c7",
+          "Name": "Spawn",
+          "Position": "-96,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5f1e4fe5-3c57-4b91-ac4e-6dd1827618cc",
+          "Name": "Spawn",
+          "Position": "-192,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f7670fb4-fcc3-46ae-b261-25b7d27ce3f4",
+          "Name": "Spawn",
+          "Position": "-192,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6f5cd338-94b8-4260-ba11-6cea11ef9e9d",
+          "Name": "Spawn",
+          "Position": "-320,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6a534b53-5bdd-4062-a30a-41f8e50aa5ad",
+          "Name": "Spawn",
+          "Position": "-320,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "20d840cf-868c-4f49-a8e1-6ee122e344b6",
+          "Name": "Spawn",
+          "Position": "-448,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1b99a49d-8d16-4cdf-95d9-fe5333ee7bca",
+          "Name": "Spawn",
+          "Position": "-448,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "78c8d292-9021-4885-8965-0919c00f0e6f",
+          "Name": "Spawn",
+          "Position": "-608,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "af8d3d1b-1c93-4ab4-b53c-552a6c5a4964",
+          "Name": "Spawn",
+          "Position": "-608,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fd5bb15a-a062-40f8-a3a3-075cfc6d570c",
+          "Name": "Spawn",
+          "Position": "-768,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6653e12f-e942-492a-a418-dda9bb07ec20",
+          "Name": "Spawn",
+          "Position": "-768,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f2868e22-dc61-4cc1-8853-470929b94946",
+          "Name": "Spawn",
+          "Position": "-960,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b1daac22-658e-45d3-85b4-522088e27589",
+          "Name": "Spawn",
+          "Position": "-960,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f0c13a9a-1929-453e-8b49-5b28c8418448",
+          "Name": "Spawn",
+          "Position": "-1152,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "85bdf451-c062-4195-a7b5-e98408e536d9",
+          "Name": "Spawn",
+          "Position": "-1152,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "942bdc2c-df89-4d05-9e0b-58c8ef3ae9cf",
+          "Name": "Spawn",
+          "Position": "-1344,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "645fb5f2-05b5-4124-9b31-64738ccd64e5",
+          "Name": "Spawn",
+          "Position": "-1344,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c313ab28-12f3-46d4-baf2-6e63b2c4c99e",
+          "Name": "Spawn",
+          "Position": "-1504,320,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c5875df6-d734-4848-bfe8-9990a2052ca2",
+          "Name": "Spawn",
+          "Position": "-1504,1280,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5c0a7094-d1d5-40a4-8c38-81a92995cc65",
+          "Name": "Spawn",
+          "Position": "0,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "77ce5397-2094-4a4e-9443-fd8cf200694d",
+          "Name": "Spawn",
+          "Position": "0,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "123d702b-5303-48ec-b13d-b8e7e1c150fa",
+          "Name": "Spawn",
+          "Position": "-96,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b02b002e-2459-4d97-9ddc-620877ba707b",
+          "Name": "Spawn",
+          "Position": "-96,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ce3a2e96-9c63-42e5-988b-0797e9f4eeaa",
+          "Name": "Spawn",
+          "Position": "-192,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0420504e-b40d-4b17-bda9-1577e244e8ad",
+          "Name": "Spawn",
+          "Position": "-192,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5866081f-0c5b-4d39-842d-babf4600c62d",
+          "Name": "Spawn",
+          "Position": "-320,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2d9769fc-7291-4973-ad7c-9b9d130cedba",
+          "Name": "Spawn",
+          "Position": "-320,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "312429ee-1afc-4c10-8775-1293a4b03c30",
+          "Name": "Spawn",
+          "Position": "-448,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e7a33f40-2248-40a2-8885-ab122a4bd9df",
+          "Name": "Spawn",
+          "Position": "-448,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "abdefb64-f0f5-45b5-b770-3f1e32554c1c",
+          "Name": "Spawn",
+          "Position": "-608,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1ad44364-4d0d-439a-89ca-328055c7694e",
+          "Name": "Spawn",
+          "Position": "-608,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fe73653f-4243-4fc6-a132-ccec9264580c",
+          "Name": "Spawn",
+          "Position": "-768,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "562ac633-3143-4679-86d1-92709b5f626a",
+          "Name": "Spawn",
+          "Position": "-768,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7285594c-1909-4353-b50e-ef29e2e5577c",
+          "Name": "Spawn",
+          "Position": "-960,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "75257d9f-0389-4ff3-9f23-b373535be299",
+          "Name": "Spawn",
+          "Position": "-960,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c7cd9075-7dce-4115-b5b6-13e3cadf4f14",
+          "Name": "Spawn",
+          "Position": "-1152,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ea9b7f31-9d1d-43d7-877a-0613aae4f6ca",
+          "Name": "Spawn",
+          "Position": "-1152,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3b399af0-3af0-4ed9-bd90-366187156187",
+          "Name": "Spawn",
+          "Position": "-1344,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ff83bb48-5bfa-4b8b-bc3c-01543eea9e8f",
+          "Name": "Spawn",
+          "Position": "-1344,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3134a88d-569b-4f62-93f9-9bc19c1aa997",
+          "Name": "Spawn",
+          "Position": "-1504,384,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ef9d03ab-b402-4f2a-bc06-36ffe47ab032",
+          "Name": "Spawn",
+          "Position": "-1504,1344,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0343c5d0-4358-4268-82c8-2450fe64c314",
+          "Name": "Spawn",
+          "Position": "0,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "26f34a58-6bf0-4877-b8b5-ef6fba3ce032",
+          "Name": "Spawn",
+          "Position": "0,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e67a7799-367a-41de-9ac6-41474f324936",
+          "Name": "Spawn",
+          "Position": "-96,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "cbc39c08-e427-4403-b459-99d350a619d9",
+          "Name": "Spawn",
+          "Position": "-96,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "04f4f372-041b-4c88-9fa9-b265277dfd4e",
+          "Name": "Spawn",
+          "Position": "-192,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "23219ad9-281e-4386-b71e-6587b1459f9e",
+          "Name": "Spawn",
+          "Position": "-192,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "dfab7bfe-7b78-4492-84f0-c9ba76d1316f",
+          "Name": "Spawn",
+          "Position": "-320,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "30b2f9ee-5ee6-4b6f-867b-dc95dc880863",
+          "Name": "Spawn",
+          "Position": "-320,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a1c3788a-1e76-4f4d-b765-095cf3700cfc",
+          "Name": "Spawn",
+          "Position": "-448,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6ff2342b-7ec5-449c-9976-5f5cfd10577c",
+          "Name": "Spawn",
+          "Position": "-448,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "28b0da5b-44c6-4b61-b812-a6cf2c879f0e",
+          "Name": "Spawn",
+          "Position": "-608,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e1434cea-2120-4a79-9db2-9eb18ad00eb3",
+          "Name": "Spawn",
+          "Position": "-608,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c2f445e8-c771-4d3d-a829-0e189fb55c57",
+          "Name": "Spawn",
+          "Position": "-768,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "99f0afd2-24d1-497e-992b-1e6d5ce10b3f",
+          "Name": "Spawn",
+          "Position": "-768,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "502238f4-f857-41dc-84a0-5f763374f8ac",
+          "Name": "Spawn",
+          "Position": "-960,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2341ef06-36cb-4cd1-8a10-3fbb935d6705",
+          "Name": "Spawn",
+          "Position": "-960,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ec3e249d-86e3-415c-aa13-2f03c56f147b",
+          "Name": "Spawn",
+          "Position": "-1152,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2fe04885-5f34-4101-9146-18d61426e365",
+          "Name": "Spawn",
+          "Position": "-1152,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b616e85b-db20-41ee-99e2-6f138b100d1a",
+          "Name": "Spawn",
+          "Position": "-1344,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "31b74287-2438-4d15-b645-5baa656d1ffd",
+          "Name": "Spawn",
+          "Position": "-1344,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d42ea436-ec37-4318-8fd3-12e11e696f83",
+          "Name": "Spawn",
+          "Position": "-1504,448,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "58dc652e-6fdd-48c5-bf8b-6482898f6d75",
+          "Name": "Spawn",
+          "Position": "-1504,1408,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "df859fc4-f631-4e32-a7bd-b4070fb9003f",
+          "Name": "Spawn",
+          "Position": "0,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c4611a21-9a23-460f-a085-9245fbd2f35c",
+          "Name": "Spawn",
+          "Position": "0,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b8dd52e0-65bc-4e67-b4c4-08369b444110",
+          "Name": "Spawn",
+          "Position": "-96,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e48e3814-5d83-4802-87a3-7ee055afd0ac",
+          "Name": "Spawn",
+          "Position": "-96,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "95769f89-1c42-4494-864b-fdf338019916",
+          "Name": "Spawn",
+          "Position": "-192,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "423f749c-f100-408b-8f18-3b65bcb87b11",
+          "Name": "Spawn",
+          "Position": "-192,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d303d395-5ae7-44a4-9da5-526af76b727e",
+          "Name": "Spawn",
+          "Position": "-320,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7303daed-f30f-43ef-bc54-a6075beb54ff",
+          "Name": "Spawn",
+          "Position": "-320,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f5bb6381-9076-45d3-9316-5bedc90657e0",
+          "Name": "Spawn",
+          "Position": "-448,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d7fbc789-b60e-4194-b2cf-c4d49213e22c",
+          "Name": "Spawn",
+          "Position": "-448,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3559a3a0-f153-4ea5-abc8-87f53ff66897",
+          "Name": "Spawn",
+          "Position": "-608,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "29c6e7e8-00b4-47c0-ae81-8d6e1a0108be",
+          "Name": "Spawn",
+          "Position": "-608,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "90c60f01-6abf-4dba-8370-2022fe2512ed",
+          "Name": "Spawn",
+          "Position": "-768,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "73fd5052-8b56-4795-bab9-00c887dc1f42",
+          "Name": "Spawn",
+          "Position": "-768,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3a88cefc-44d6-4523-85c3-0ba22b9f1889",
+          "Name": "Spawn",
+          "Position": "-960,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4e821603-c5f2-4e9c-8224-252ff8d5ddc7",
+          "Name": "Spawn",
+          "Position": "-960,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b7ed7199-2147-4aba-b475-4f709e088f91",
+          "Name": "Spawn",
+          "Position": "-1152,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4f733ed6-fd76-4909-91fc-8e7dab27e1eb",
+          "Name": "Spawn",
+          "Position": "-1152,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a8c98488-2a8f-4bec-b0c6-7052ac50607d",
+          "Name": "Spawn",
+          "Position": "-1344,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e2aace9c-808e-4a35-908e-abe53d993aa5",
+          "Name": "Spawn",
+          "Position": "-1344,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4e0bf82d-5578-48a5-9fa1-4546a6ce1b73",
+          "Name": "Spawn",
+          "Position": "-1504,512,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b642d012-c194-4100-8d09-d187df6a2a60",
+          "Name": "Spawn",
+          "Position": "-1504,1472,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "623140d9-39f4-4a55-9411-e9cfb7c3adbd",
+          "Name": "Spawn",
+          "Position": "0,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "37c7f790-165f-4cf9-9809-2d9bd63d61a5",
+          "Name": "Spawn",
+          "Position": "0,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ba6c870d-3043-4368-a9ca-44b73b2ad2fb",
+          "Name": "Spawn",
+          "Position": "-96,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a6575ce5-91ca-48f5-8c17-c7ad97e0d606",
+          "Name": "Spawn",
+          "Position": "-96,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "85606945-9f07-42d0-9319-2236faf202ec",
+          "Name": "Spawn",
+          "Position": "-192,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a32e34bb-b920-4469-b468-4aa7c44dac17",
+          "Name": "Spawn",
+          "Position": "-192,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a389f05d-2c37-4de9-a0d1-62cc842affca",
+          "Name": "Spawn",
+          "Position": "-320,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4dd76135-e0f7-4e07-bb0f-64867088b636",
+          "Name": "Spawn",
+          "Position": "-320,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b970e95d-c5b8-4cf0-831b-550283a166e7",
+          "Name": "Spawn",
+          "Position": "-448,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "dcefa31f-d26c-4c4b-9191-57cd434a3127",
+          "Name": "Spawn",
+          "Position": "-448,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a4a2d632-e279-47d7-91d1-d117599ea2de",
+          "Name": "Spawn",
+          "Position": "-608,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "55e6185b-3c3c-44fc-8072-90c4722f0dc0",
+          "Name": "Spawn",
+          "Position": "-608,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "bc0b8293-f265-4dc4-b49e-3d81aee59519",
+          "Name": "Spawn",
+          "Position": "-768,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "13d067cd-ac92-4625-81c9-031876c5729d",
+          "Name": "Spawn",
+          "Position": "-768,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8967fca4-b4f9-49ec-92a9-47293859feee",
+          "Name": "Spawn",
+          "Position": "-960,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "323f6d1d-6721-41b8-b402-39d0e97e7337",
+          "Name": "Spawn",
+          "Position": "-960,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1338db18-92d7-47ad-a0ba-cb480412e829",
+          "Name": "Spawn",
+          "Position": "-1152,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a293f3b2-a5f4-4dd0-b81f-8c1a8db72ae1",
+          "Name": "Spawn",
+          "Position": "-1152,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4882d11e-35d7-4cb5-9122-3dc32af7834a",
+          "Name": "Spawn",
+          "Position": "-1344,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4bd7423b-e7f6-4ee2-9b6a-b20a2a079bba",
+          "Name": "Spawn",
+          "Position": "-1344,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a889483a-3823-49a4-b2b2-3e0d51f8198b",
+          "Name": "Spawn",
+          "Position": "-1504,576,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d1147594-7277-4fc6-8429-eae5fc880b67",
+          "Name": "Spawn",
+          "Position": "-1504,1536,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5c7c5e2e-bc26-4005-aa08-dc16edfc1ab1",
+          "Name": "Spawn",
+          "Position": "0,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "794a9271-16ee-40dc-a1cb-12647baab2a3",
+          "Name": "Spawn",
+          "Position": "0,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f7768462-7307-4470-b94e-fc0615ac4dcb",
+          "Name": "Spawn",
+          "Position": "-96,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5f2ae8ba-1593-40b5-b23f-73ec738b8778",
+          "Name": "Spawn",
+          "Position": "-96,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "516b203d-f726-4670-8581-3034b2b6e542",
+          "Name": "Spawn",
+          "Position": "-192,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a7c842bf-f7c0-438d-916d-687cf66799f3",
+          "Name": "Spawn",
+          "Position": "-192,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "562a6b9c-c199-40dc-bdb3-a8a7a5ece611",
+          "Name": "Spawn",
+          "Position": "-320,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "de128108-5b3b-4422-aefc-712ee4bf3e74",
+          "Name": "Spawn",
+          "Position": "-320,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "799a78c2-d909-44d3-9d54-878fef001cc5",
+          "Name": "Spawn",
+          "Position": "-448,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0288e709-e4e4-495c-9c44-b79ff92a7f0d",
+          "Name": "Spawn",
+          "Position": "-448,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "15d564b8-8e99-4a62-bf04-2ae1a193fe13",
+          "Name": "Spawn",
+          "Position": "-608,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "53be89d1-5730-4316-93df-44531fc6183e",
+          "Name": "Spawn",
+          "Position": "-608,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d9704eb9-c658-40a4-adf3-0917b1defcdd",
+          "Name": "Spawn",
+          "Position": "-768,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "29cc0f5d-16f3-449a-a740-04b9b3d00419",
+          "Name": "Spawn",
+          "Position": "-768,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3b774409-16d6-4e5c-a325-15853f8143c6",
+          "Name": "Spawn",
+          "Position": "-960,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "23234e6c-e4c4-4be7-9af6-f60d2d0d8cb3",
+          "Name": "Spawn",
+          "Position": "-960,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6bf70968-6279-4082-a77d-7d207378f3fa",
+          "Name": "Spawn",
+          "Position": "-1152,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3083bbff-3759-4060-8b6f-9d376c5f9ee2",
+          "Name": "Spawn",
+          "Position": "-1152,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0f03e2e9-9d0d-4d27-87b8-768ccabedf78",
+          "Name": "Spawn",
+          "Position": "-1344,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "53e480a4-2fbb-4157-aa28-4dd7b4280a30",
+          "Name": "Spawn",
+          "Position": "-1344,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "39a8d913-6009-4024-8635-2f02ac3f40c9",
+          "Name": "Spawn",
+          "Position": "-1504,640,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "de88ac08-9737-4005-852c-a19e9f24e9f8",
+          "Name": "Spawn",
+          "Position": "-1504,1600,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "31db17d1-29ef-459c-875b-4582cc5188ee",
+          "Name": "Spawn",
+          "Position": "0,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "957166de-59b0-4f2a-a85f-1ea199673607",
+          "Name": "Spawn",
+          "Position": "0,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "54c45876-9d0a-44d1-bf42-64d404bbd473",
+          "Name": "Spawn",
+          "Position": "-96,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d9442f28-2a4b-44dc-8f4c-7377a5724716",
+          "Name": "Spawn",
+          "Position": "-96,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1a764286-5a4b-46b0-b3f0-fcddc19e8f16",
+          "Name": "Spawn",
+          "Position": "-192,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "96104844-73be-4f2f-bbd5-5e221258fba1",
+          "Name": "Spawn",
+          "Position": "-192,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "36fb1e1c-1d97-4bfc-9a0a-5ea247e332b7",
+          "Name": "Spawn",
+          "Position": "-320,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "aeef6128-e4cb-4022-abda-f9333ec7ab7e",
+          "Name": "Spawn",
+          "Position": "-320,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "89201986-3b3f-483e-8d78-027b6fed8690",
+          "Name": "Spawn",
+          "Position": "-448,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "bcdefb0d-ae4a-4193-b781-ba38fbae3252",
+          "Name": "Spawn",
+          "Position": "-448,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "904587e6-563a-4371-9f9d-06abf49bcf75",
+          "Name": "Spawn",
+          "Position": "-608,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7b06398f-6316-4680-baa7-5dd3fd9ca43b",
+          "Name": "Spawn",
+          "Position": "-608,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "733d1139-5316-4013-9f26-bc6a292e5cee",
+          "Name": "Spawn",
+          "Position": "-768,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d0f477eb-63eb-4120-9676-a22e67b1d462",
+          "Name": "Spawn",
+          "Position": "-768,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b8b01c85-e75a-470d-a86e-8c784902dbbc",
+          "Name": "Spawn",
+          "Position": "-960,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ea0aed1d-90d2-4035-b3f9-ee8816e2199d",
+          "Name": "Spawn",
+          "Position": "-960,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1d332f56-a77e-49d8-9ce8-7848c5e6e6e1",
+          "Name": "Spawn",
+          "Position": "-1152,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6e3188b5-bc0b-45fe-88ad-594f42e5d360",
+          "Name": "Spawn",
+          "Position": "-1152,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f525ed80-a87b-45d9-9a21-d5f23521563a",
+          "Name": "Spawn",
+          "Position": "-1344,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "dc5469b1-0ffb-44fd-bb90-054a104f22e5",
+          "Name": "Spawn",
+          "Position": "-1344,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "efb82e15-0a28-4deb-aed0-183559a36e3f",
+          "Name": "Spawn",
+          "Position": "-1504,704,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f6757a84-2846-4ab9-b863-008a033ee6ef",
+          "Name": "Spawn",
+          "Position": "-1504,1664,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ad375754-3e22-41c3-98d8-7391bd66bc3a",
+          "Name": "Spawn",
+          "Position": "0,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c979c16f-3da1-47bf-a6b9-0358c15f7a61",
+          "Name": "Spawn",
+          "Position": "0,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "11db9324-3498-4ab6-b061-6859e2814a2d",
+          "Name": "Spawn",
+          "Position": "-96,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c13687d7-9672-4f75-acb4-0c597f78735c",
+          "Name": "Spawn",
+          "Position": "-96,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "178325bc-8327-44ce-9c79-6ab1bf036607",
+          "Name": "Spawn",
+          "Position": "-192,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c95f9ee3-0720-4523-90a1-0038fbd8afdb",
+          "Name": "Spawn",
+          "Position": "-192,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "cdbc2359-3926-408e-a2cb-28345d10227a",
+          "Name": "Spawn",
+          "Position": "-320,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d4ef0682-1a05-420c-b66f-deb844350bf3",
+          "Name": "Spawn",
+          "Position": "-320,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9f3afa34-cd7c-461f-b1ae-6e1504ccce1b",
+          "Name": "Spawn",
+          "Position": "-448,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "49feedf4-46ff-4de2-8309-fafd4bdeefa4",
+          "Name": "Spawn",
+          "Position": "-448,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "474f2b95-64a9-45e2-a6cc-858005834b82",
+          "Name": "Spawn",
+          "Position": "-608,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "25cbe65d-4f14-4609-af3d-22bab3d05ca4",
+          "Name": "Spawn",
+          "Position": "-608,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4ac7b6d9-f771-4c06-a913-8bdca2fc6d60",
+          "Name": "Spawn",
+          "Position": "-768,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9aeff304-4f0f-4817-9829-cf12c7a7e510",
+          "Name": "Spawn",
+          "Position": "-768,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a59c3182-e9d6-4a79-8193-bef156deb257",
+          "Name": "Spawn",
+          "Position": "-960,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3efd4159-7423-4e63-a64e-c1c39a91a4ca",
+          "Name": "Spawn",
+          "Position": "-960,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "686ccb5f-5d37-4b02-8054-5a63b074d414",
+          "Name": "Spawn",
+          "Position": "-1152,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "72484d04-6ec3-46ad-8be8-72fc0d14dd44",
+          "Name": "Spawn",
+          "Position": "-1152,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4bf43674-c11e-4cc8-a075-98d8ebd09a68",
+          "Name": "Spawn",
+          "Position": "-1344,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1fb7b216-10f0-4ba8-8b14-f8128b84314c",
+          "Name": "Spawn",
+          "Position": "-1344,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6ea2ffeb-5357-44ee-ae6c-5a2d47cc6120",
+          "Name": "Spawn",
+          "Position": "-1504,768,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7e5cc451-02a7-4231-9d9d-a5e802c8d2ad",
+          "Name": "Spawn",
+          "Position": "-1504,1728,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7e491196-3ec9-4f26-be98-5915d3b20475",
+          "Name": "Spawn",
+          "Position": "928,1824,112",
+          "Rotation": "0,-0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "edbe5471-d11e-4b86-ba5c-4257bb903ffb",
+          "Name": "Spawn",
+          "Position": "928.0001,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "749a8f45-a99f-4f88-a0cb-a9595d87f0f3",
+          "Name": "Spawn",
+          "Position": "928.0002,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0ae2d1d5-ef4d-4aaa-bf49-07f997af2bfb",
+          "Name": "Spawn",
+          "Position": "1424,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "84c6ee0f-af26-41dd-8f74-8e35c66a01e7",
+          "Name": "Spawn",
+          "Position": "1424,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "96ed1d2d-46c0-46bd-881c-091a2473d15f",
+          "Name": "Spawn",
+          "Position": "1424,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f01d6622-c8d7-48c2-95ae-1cd8b2a252fb",
+          "Name": "Spawn",
+          "Position": "928,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "bdeecddf-462e-4e1d-91c6-1efe23c56f1a",
+          "Name": "Spawn",
+          "Position": "928.0001,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ea6da009-4b05-4b94-b986-e207334dfdee",
+          "Name": "Spawn",
+          "Position": "928.0002,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4df0a32e-bb75-4ee1-8833-d735970eca83",
+          "Name": "Spawn",
+          "Position": "1424,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3db5b082-4ded-4b4a-b930-d8310e4bc020",
+          "Name": "Spawn",
+          "Position": "1424,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "97aa9363-a404-41eb-a0ed-3ff6173ba320",
+          "Name": "Spawn",
+          "Position": "1424,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a4286f80-5921-4db1-9ad2-1871f9e153e3",
+          "Name": "Spawn",
+          "Position": "928,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "77695099-a374-4c9b-8f63-0bd813b639df",
+          "Name": "Spawn",
+          "Position": "928.0001,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7d2eff2b-5b74-449a-accc-0d082101a708",
+          "Name": "Spawn",
+          "Position": "928.0002,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e424be78-515c-4344-8578-a4380e3d3b45",
+          "Name": "Spawn",
+          "Position": "1424,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f98982d6-e661-4aa0-8082-42777ec7f206",
+          "Name": "Spawn",
+          "Position": "1424,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ee3baeba-7bf9-4f39-a4de-62314437672c",
+          "Name": "Spawn",
+          "Position": "1424,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "35c5a2e4-1ea5-44fc-845b-2d7737b3c6a3",
+          "Name": "Spawn",
+          "Position": "928,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "67f07c46-bab9-41da-8781-2673d318d818",
+          "Name": "Spawn",
+          "Position": "928.0001,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5aa87294-e307-41a6-a795-148999b2f3b0",
+          "Name": "Spawn",
+          "Position": "928.0002,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "cc794462-05f9-432a-9f87-13758b8ddc7a",
+          "Name": "Spawn",
+          "Position": "1424,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3df87ca3-db3e-4cbf-aba0-76f59f05a3ee",
+          "Name": "Spawn",
+          "Position": "1424,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4341175c-5aab-40bb-9c81-95e69407ba22",
+          "Name": "Spawn",
+          "Position": "1424,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ddb1dd8b-aef2-4c7e-9235-429fe5a400e1",
+          "Name": "Spawn",
+          "Position": "928,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "43809189-010b-4c70-9ea8-ebbb60efe427",
+          "Name": "Spawn",
+          "Position": "928.0001,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0c029f0d-2b9c-4280-ade6-5e8e01dc4920",
+          "Name": "Spawn",
+          "Position": "928.0002,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3d860553-f9a4-44b0-afc3-b0ce780cadf2",
+          "Name": "Spawn",
+          "Position": "1424,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "81ec7a71-e8dc-43b3-891a-7f1b6042b9cf",
+          "Name": "Spawn",
+          "Position": "1424,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "77319f61-cac8-405a-83f0-7730e4c9f7bc",
+          "Name": "Spawn",
+          "Position": "1424,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "096ac7ca-3712-481f-87ba-252d1a11cc8a",
+          "Name": "Spawn",
+          "Position": "928,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b2f6a4b1-0b48-440f-909e-f76b4b54356e",
+          "Name": "Spawn",
+          "Position": "928.0001,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b55575d6-7785-4b69-a081-04a396b67e80",
+          "Name": "Spawn",
+          "Position": "928.0002,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f585ace0-2866-4f36-84d1-755462fc26f5",
+          "Name": "Spawn",
+          "Position": "1424,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7ad74a65-3982-4416-b5f5-175470e434dc",
+          "Name": "Spawn",
+          "Position": "1424,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "43a69b35-f209-42be-86e4-0c5d37bb65c3",
+          "Name": "Spawn",
+          "Position": "1424,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3710cb4a-b137-484e-8246-a206a741416a",
+          "Name": "Spawn",
+          "Position": "1024,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f9540987-0778-40e6-afda-4398436b3b2c",
+          "Name": "Spawn",
+          "Position": "1024,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c6874ef4-1e1a-47bd-8566-7ccca397e595",
+          "Name": "Spawn",
+          "Position": "1024,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a2dc7afb-c726-4407-9803-c5f562677608",
+          "Name": "Spawn",
+          "Position": "1520,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "87e723b5-1f44-4b2b-a1b0-e1bcce585538",
+          "Name": "Spawn",
+          "Position": "1520,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3dd60f6a-2c02-4185-9247-3cf4510a6f57",
+          "Name": "Spawn",
+          "Position": "1520,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "75e43cef-8c75-464e-9b00-c22b955e70ee",
+          "Name": "Spawn",
+          "Position": "1024,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "45817195-e70a-4ec2-b69d-ad2ddfc50427",
+          "Name": "Spawn",
+          "Position": "1024,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "6822557e-c227-49db-ad5a-9e8f1d4aa819",
+          "Name": "Spawn",
+          "Position": "1024,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "08e54df3-5f59-45cc-9c60-9d7b316567af",
+          "Name": "Spawn",
+          "Position": "1520,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "79897122-e9e9-4b3a-bdb0-fe5ead98b5a7",
+          "Name": "Spawn",
+          "Position": "1520,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d664ff2d-746b-47be-8d62-ff74e669f365",
+          "Name": "Spawn",
+          "Position": "1520,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2e7863b3-469d-46a2-85e0-508652b9c319",
+          "Name": "Spawn",
+          "Position": "1024,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "52a93717-fc40-4672-b522-840bf51b09c1",
+          "Name": "Spawn",
+          "Position": "1024,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "39860f2c-031a-40ea-ab1e-b3a4d382f2a1",
+          "Name": "Spawn",
+          "Position": "1024,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0ebd16b4-4015-4505-898c-85127015e4d0",
+          "Name": "Spawn",
+          "Position": "1520,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4245ade7-8be3-4412-b4f7-773c97da5e38",
+          "Name": "Spawn",
+          "Position": "1520,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b51f888e-f149-4897-b087-002adff24a84",
+          "Name": "Spawn",
+          "Position": "1520,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4746366a-2874-448a-b51b-6e4d3dc9fca9",
+          "Name": "Spawn",
+          "Position": "1024,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3b5cef31-c4c5-406c-80c7-5f9c6bda6ac7",
+          "Name": "Spawn",
+          "Position": "1024,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5d9214b8-7479-4fe5-93b6-c7697dd71cbe",
+          "Name": "Spawn",
+          "Position": "1024,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "92176328-d367-42ae-9165-a4dfb8d8289b",
+          "Name": "Spawn",
+          "Position": "1520,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "36994f5b-ac89-4ed0-bc14-83a37b4af4a8",
+          "Name": "Spawn",
+          "Position": "1520,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a97b781b-155a-48d8-ac09-4c9baac79506",
+          "Name": "Spawn",
+          "Position": "1520,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1a4496f5-e72f-440c-b446-fceeae66841d",
+          "Name": "Spawn",
+          "Position": "1024,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "78e95efe-0e53-4730-96fd-4d1a1795b1f5",
+          "Name": "Spawn",
+          "Position": "1024,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3fe903a6-345e-478f-9f20-0012673eedc7",
+          "Name": "Spawn",
+          "Position": "1024,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "91cba967-839c-4372-8c05-00b6cefbfa6b",
+          "Name": "Spawn",
+          "Position": "1520,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "db05107c-09c4-4c72-94f0-e3e478735fd8",
+          "Name": "Spawn",
+          "Position": "1520,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "437a45c1-14d6-4566-9c48-34dfdef41bf5",
+          "Name": "Spawn",
+          "Position": "1520,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e36b8a32-8092-48cf-83c8-dadac6030d4d",
+          "Name": "Spawn",
+          "Position": "1024,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a23714cb-0a85-4693-9437-f35972a38c52",
+          "Name": "Spawn",
+          "Position": "1024,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e5a05a5a-ba17-4175-a871-e0610e77ce36",
+          "Name": "Spawn",
+          "Position": "1024,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a03ff11f-4dc9-40b7-8874-a19b1ab99b40",
+          "Name": "Spawn",
+          "Position": "1520,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "dbcb9c71-1a13-4c2c-9854-0692721f1046",
+          "Name": "Spawn",
+          "Position": "1520,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1323bda5-ef11-4c1d-a151-5a3e71d852c2",
+          "Name": "Spawn",
+          "Position": "1520,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7f44814b-6da4-431d-bb9c-72784989ae15",
+          "Name": "Spawn",
+          "Position": "1120,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1c1d5ede-539f-4403-b2f9-276820b455fc",
+          "Name": "Spawn",
+          "Position": "1120,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a1f71918-21f0-479a-aff6-872b42333b10",
+          "Name": "Spawn",
+          "Position": "1120,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "37ba2b93-ca91-4ea7-beb8-804c26a0d62c",
+          "Name": "Spawn",
+          "Position": "1616,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e657747d-d105-429d-be13-2874e72125f3",
+          "Name": "Spawn",
+          "Position": "1616,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7bf98f97-6ecd-4924-9d9e-a2c3883d8c01",
+          "Name": "Spawn",
+          "Position": "1616,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f919d4b4-ed51-4fad-829d-cddddf56a9db",
+          "Name": "Spawn",
+          "Position": "1120,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "01ed44ea-6516-4c1f-a4c9-525da9703839",
+          "Name": "Spawn",
+          "Position": "1120,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f37ea435-3b65-420a-bdfb-d8493a6f999e",
+          "Name": "Spawn",
+          "Position": "1120,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8a3806e3-099f-4920-9128-c832e82ad668",
+          "Name": "Spawn",
+          "Position": "1616,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ffa92ad2-1389-44b7-9c78-b32489e96f70",
+          "Name": "Spawn",
+          "Position": "1616,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "def33e92-e8cf-4128-9289-337063b23700",
+          "Name": "Spawn",
+          "Position": "1616,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "02da361f-7336-430c-a9ad-d2a4b30572e0",
+          "Name": "Spawn",
+          "Position": "1120,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "919321fc-73c3-4119-8a8e-7660c71017e5",
+          "Name": "Spawn",
+          "Position": "1120,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "21c04a7d-ab06-46da-8cf3-065a6f7c528c",
+          "Name": "Spawn",
+          "Position": "1120,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f4da922e-13ac-4f86-9891-224106cf2bcd",
+          "Name": "Spawn",
+          "Position": "1616,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ba4292cf-cf05-4f76-8197-f94c74e142f2",
+          "Name": "Spawn",
+          "Position": "1616,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "56399994-a1dd-4d5c-bac7-87f0187e291e",
+          "Name": "Spawn",
+          "Position": "1616,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9b9f7582-3416-45fd-bd10-febe83e7fb9b",
+          "Name": "Spawn",
+          "Position": "1120,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "26235a0e-d945-4535-a002-b3fb43e7f88f",
+          "Name": "Spawn",
+          "Position": "1120,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "56165ec5-a888-4624-87f7-8c51f36c8142",
+          "Name": "Spawn",
+          "Position": "1120,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fd582e7c-b937-4b27-b988-ae237d11b594",
+          "Name": "Spawn",
+          "Position": "1616,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "24e3a2bb-609e-459a-9a7c-7b89ea698246",
+          "Name": "Spawn",
+          "Position": "1616,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4dce216b-d998-4004-a6d3-6bab2e8cfa72",
+          "Name": "Spawn",
+          "Position": "1616,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7d5cc15c-d560-4af4-b84d-46a5781f924a",
+          "Name": "Spawn",
+          "Position": "1120,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f5434493-8a75-4548-8587-427189371572",
+          "Name": "Spawn",
+          "Position": "1120,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a1a6c2bf-ca50-4dd0-b669-a0638e217224",
+          "Name": "Spawn",
+          "Position": "1120,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "907fcb5a-74f7-425c-bfa0-79f747fdb5a7",
+          "Name": "Spawn",
+          "Position": "1616,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5c2c1304-e352-4cfd-ad83-00397da79922",
+          "Name": "Spawn",
+          "Position": "1616,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "255e8e35-6ceb-4d52-992d-091a30738317",
+          "Name": "Spawn",
+          "Position": "1616,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "befbbc2f-dbfc-4bf2-9700-8ec5eb067614",
+          "Name": "Spawn",
+          "Position": "1120,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "04532ad3-9bc4-45fa-a10d-c4a991199eb4",
+          "Name": "Spawn",
+          "Position": "1120,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5432dfdb-2b01-4ef7-a2c1-1852b65185a8",
+          "Name": "Spawn",
+          "Position": "1120,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3201b925-1658-407b-a241-40777453dc18",
+          "Name": "Spawn",
+          "Position": "1616,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "af08f2d1-454b-4f79-9f74-43e248a87168",
+          "Name": "Spawn",
+          "Position": "1616,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "229ce28c-91b6-47b1-a40b-4d54f357afec",
+          "Name": "Spawn",
+          "Position": "1616,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f995dd13-9e1d-44db-b313-4f6e488651c4",
+          "Name": "Spawn",
+          "Position": "1232,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e6ee0fd8-1341-4a4c-96d4-21d10621b1d3",
+          "Name": "Spawn",
+          "Position": "1232,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "729dd1d4-195f-4af7-baa8-8329ec340771",
+          "Name": "Spawn",
+          "Position": "1232,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "67732bd2-f962-4a6f-9415-2f7be42db2a6",
+          "Name": "Spawn",
+          "Position": "1728,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1fcb8587-cd5f-4a73-a335-ec20415e9865",
+          "Name": "Spawn",
+          "Position": "1728,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "bf9bb61a-88dd-4e4f-b8a4-ad34e6bccdfe",
+          "Name": "Spawn",
+          "Position": "1728,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "508edef9-6b3f-4e3a-9e6b-b98dc739dadb",
+          "Name": "Spawn",
+          "Position": "1232,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "46ee0526-a436-4463-9863-e85331ae98a0",
+          "Name": "Spawn",
+          "Position": "1232,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "abc75dba-a0e1-4452-b328-379daa3bd3c1",
+          "Name": "Spawn",
+          "Position": "1232,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f2ec7974-d803-41e8-a167-f5f5cc915542",
+          "Name": "Spawn",
+          "Position": "1728,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "18ed1c14-32e5-425b-8837-16fc36b113c0",
+          "Name": "Spawn",
+          "Position": "1728,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "fde5c413-e520-416d-bbea-dd606ea089f6",
+          "Name": "Spawn",
+          "Position": "1728,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8421b415-8718-4516-ae8b-55dcb2295244",
+          "Name": "Spawn",
+          "Position": "1232,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "67452346-6b4b-4f20-9c0a-286a7d5cf254",
+          "Name": "Spawn",
+          "Position": "1232,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4f25ae4b-9416-4a2c-8b5f-05919f2db863",
+          "Name": "Spawn",
+          "Position": "1232,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a57c6a55-50d9-40fb-9201-4a68a879f354",
+          "Name": "Spawn",
+          "Position": "1728,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "958bd472-f62f-4701-862c-a77ce7ac7a00",
+          "Name": "Spawn",
+          "Position": "1728,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "18426a8b-a7c9-4b1f-a84d-a51b87ffcebd",
+          "Name": "Spawn",
+          "Position": "1728,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a7d24709-3a83-453d-9b85-ef4bb23635f5",
+          "Name": "Spawn",
+          "Position": "1232,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0ad216da-4d81-4dfd-83f1-7aff24956ff7",
+          "Name": "Spawn",
+          "Position": "1232,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d1c98013-8bed-4088-9c84-e694c909cc04",
+          "Name": "Spawn",
+          "Position": "1232,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5b60c33c-a83f-4882-8366-818ea034c420",
+          "Name": "Spawn",
+          "Position": "1728,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "04c0529c-c4ed-4431-b4b0-6c7983aa669e",
+          "Name": "Spawn",
+          "Position": "1728,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e29a2beb-851a-4d46-a9a9-5261312a39c7",
+          "Name": "Spawn",
+          "Position": "1728,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "e08fb318-b55b-4ec5-9fea-d52a411e5c3d",
+          "Name": "Spawn",
+          "Position": "1232,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3cc03617-a8cc-42d6-abac-aa0967408fa6",
+          "Name": "Spawn",
+          "Position": "1232,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "81a32da3-c6fa-44a2-813d-7dc0754e8481",
+          "Name": "Spawn",
+          "Position": "1232,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "08633a3a-b022-48ac-ad71-ed9541fcb350",
+          "Name": "Spawn",
+          "Position": "1728,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8c9af085-4fbd-496f-ae40-9e255a48e5a0",
+          "Name": "Spawn",
+          "Position": "1728,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ee30ade4-5f2e-4f02-95bd-a25fedbdc24d",
+          "Name": "Spawn",
+          "Position": "1728,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "44dcd905-cc55-4cf9-acf4-a24dbe8ae9b1",
+          "Name": "Spawn",
+          "Position": "1232,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "62dd8a89-33a7-4e34-adc6-0a81aff6f10c",
+          "Name": "Spawn",
+          "Position": "1232,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d917bfe5-2d82-4d8e-8631-339852d62c65",
+          "Name": "Spawn",
+          "Position": "1232,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8b9697a8-12eb-4047-a1d6-5fb2368e0e3e",
+          "Name": "Spawn",
+          "Position": "1728,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7e4d18e1-4603-4354-9f4e-e0035f636a1a",
+          "Name": "Spawn",
+          "Position": "1728,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "995f94ed-6761-4d82-83e2-1af717bc06c9",
+          "Name": "Spawn",
+          "Position": "1728,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "d694de05-26a8-4f7a-8b8b-d63b0ad1c5bc",
+          "Name": "Spawn",
+          "Position": "1312,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5e0c73e9-c827-4ddc-8a0f-656ea76a919d",
+          "Name": "Spawn",
+          "Position": "1312,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9603b314-8e58-4b8e-9835-783cbf031624",
+          "Name": "Spawn",
+          "Position": "1312,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b2215e40-b3e3-4835-9579-5d8cbcf90a43",
+          "Name": "Spawn",
+          "Position": "1808,1824,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "a6ddc55c-72f7-44f5-982e-0fa71ec65a58",
+          "Name": "Spawn",
+          "Position": "1808,2432,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0be99b0b-6a36-41b1-82e6-fa5fa0abd879",
+          "Name": "Spawn",
+          "Position": "1808,3072,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "04021747-dddc-495b-8da8-4720f1ba3ab0",
+          "Name": "Spawn",
+          "Position": "1312,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4b84e277-7140-4d6f-8666-e5ff7f66a453",
+          "Name": "Spawn",
+          "Position": "1312,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "58bd8e91-1689-4ffd-b8c0-a10d77de0aca",
+          "Name": "Spawn",
+          "Position": "1312,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "120760ac-e55e-439f-b13b-33d34f096995",
+          "Name": "Spawn",
+          "Position": "1808,1888,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ee1dea1c-3255-44fe-bc0f-9c41ec258986",
+          "Name": "Spawn",
+          "Position": "1808,2496,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "ed5663e1-2474-4c66-84eb-741a30550602",
+          "Name": "Spawn",
+          "Position": "1808,3136,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "9dd78ac6-bdf6-404d-8c82-a997dbde0223",
+          "Name": "Spawn",
+          "Position": "1312,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7ce0fb6f-2529-41f4-8a78-502acb15119b",
+          "Name": "Spawn",
+          "Position": "1312,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "c103fa31-fffe-44f7-8fde-d4e055bb8ae3",
+          "Name": "Spawn",
+          "Position": "1312,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2080a637-b2ba-4ec3-9a39-bdcd8d1d6a69",
+          "Name": "Spawn",
+          "Position": "1808,1968,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "1936a8f4-8108-4741-8bd8-dd48b9556b8d",
+          "Name": "Spawn",
+          "Position": "1808,2576,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7275ecb9-2a7c-488c-91e9-b25f17a2f355",
+          "Name": "Spawn",
+          "Position": "1808,3216,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "5297c16a-8cd0-43b4-8485-8f941c962521",
+          "Name": "Spawn",
+          "Position": "1312,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "40b43c9a-decd-4c75-b3a2-084ee00be8f9",
+          "Name": "Spawn",
+          "Position": "1312,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "174aa071-a17a-4a76-8fc0-0971c2f8bcb9",
+          "Name": "Spawn",
+          "Position": "1312,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3e002675-8e5a-4544-b8ab-89923b757b8f",
+          "Name": "Spawn",
+          "Position": "1808,2080,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "62c000a4-8b8d-4f0b-8c7e-6c23923366bd",
+          "Name": "Spawn",
+          "Position": "1808,2688,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "70be8a6f-280f-4d76-8ac4-a81f72e44916",
+          "Name": "Spawn",
+          "Position": "1808,3328,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "abfc44e6-3016-4444-9b26-0bff9f1a7d3d",
+          "Name": "Spawn",
+          "Position": "1312,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "7c1f1e3d-55b5-48e1-9146-1c530f962d70",
+          "Name": "Spawn",
+          "Position": "1312,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "8a5a743e-43ad-4979-96f7-3921636b0cde",
+          "Name": "Spawn",
+          "Position": "1312,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "f264c475-9a7c-481a-8cae-c3c9dd9f250f",
+          "Name": "Spawn",
+          "Position": "1808,2208,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "3422e331-259d-4d12-949c-f61ef1561916",
+          "Name": "Spawn",
+          "Position": "1808,2816,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4da982a8-2c28-4a82-aa14-ef458d412ef8",
+          "Name": "Spawn",
+          "Position": "1808,3456,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "45e2032b-fa86-4fab-9256-b89ebf04267d",
+          "Name": "Spawn",
+          "Position": "1312,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0f36c917-7723-40df-ab3e-dbdcdc80f2aa",
+          "Name": "Spawn",
+          "Position": "1312,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "0ae2399e-e92b-4732-8d86-608b90599c36",
+          "Name": "Spawn",
+          "Position": "1312,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b0368471-8a11-4ea5-8180-2eab6367af2c",
+          "Name": "Spawn",
+          "Position": "1808,2336,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "2545dab3-53d8-47c2-8220-f29930fe1a6d",
+          "Name": "Spawn",
+          "Position": "1808,2944,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "4d1667a0-de4d-42c5-90f9-2f9fc59238bb",
+          "Name": "Spawn",
+          "Position": "1808,3584,112",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
         }
       ]
     }
@@ -181,6 +5960,6 @@
   },
   "Title": "testground",
   "Description": "",
-  "LastSaved": "2024-02-10T20:33:48.1968551-05:00",
+  "LastSaved": "2024-02-11T12:37:06.3614972-05:00",
   "__references": []
 }

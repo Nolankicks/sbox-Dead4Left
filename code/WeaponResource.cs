@@ -4,7 +4,7 @@ using Sandbox;
 public class Item : GameResource
 {
 	public PrefabFile weaponPrefab { get; set; }
-
+	public string weaponName { get; set; }
 	
 
 }
