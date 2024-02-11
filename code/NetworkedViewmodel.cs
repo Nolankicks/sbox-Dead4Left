@@ -21,7 +21,7 @@ public sealed class NetworkedViewmodel : Component
 		StartPos = GameObject.Transform.LocalPosition;
 		ArmsPos = new Vector3(3.4f, 6.3f, -2f);
 	}
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		var cam = GameManager.ActiveScene.GetAllComponents<CameraComponent>().FirstOrDefault(x => !x.IsProxy);
 		
