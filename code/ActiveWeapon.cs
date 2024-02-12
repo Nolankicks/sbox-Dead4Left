@@ -8,8 +8,7 @@ public sealed class ActiveWeapon : Component
 	public bool NeedsChange = true;
 	protected override void OnUpdate()
 	{
-		Log.Info(NeedsChange);
-		if (NeedsChange)
+		if (NeedsChange && Item != null)
 		{
 		if (Item is null) return;
 		var weapon = SceneUtility.GetPrefabScene(Item.weaponPrefab);

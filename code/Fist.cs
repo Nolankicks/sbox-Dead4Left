@@ -12,7 +12,7 @@ public sealed class Fist : Component
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		viewModel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
 	}
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		if (Input.Pressed("attack1"))
 		{
@@ -23,7 +23,8 @@ public sealed class Fist : Component
 
 	void Trace()
 	{
-		var tr = Scene.Trace.Ray( playerController.Transform.Position, playerController.Transform.Position + playerController.EyeAngles.Forward * 100).WithoutTags("player").Run();
+		var eyePos = playerController.Transform.Position + Vector3.Up * 64;
+		var tr = Scene.Trace.Ray( eyePos, eyePos + playerController.EyeAngles.Forward * 100).WithoutTags("player").Run();
 
 		if (tr.Hit)
 		{
@@ -32,6 +33,7 @@ public sealed class Fist : Component
 			{
 				tr.GameObject.Parent.Destroy();
 				playerController.AddScore(5);
+				Log.Info("Hit");
 			}
 		}
 	}

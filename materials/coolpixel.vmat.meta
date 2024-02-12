@@ -6,7 +6,7 @@
       "Title": "Pixelated Brick",
       "Type": "material",
       "Org": "nolankicks",
-      "Ident": "pixelbrick",
+      "Ident": "coolpixel",
       "Tags": null,
       "Schema": 0,
       "HasAssets": false,
@@ -18,7 +18,7 @@
       "PackageReferences": null,
       "EditorReferences": null,
       "Metadata": {
-        "SingleAssetSource": "textures/pixelbrick.vmat"
+        "SingleAssetSource": "materials/coolpixel.vmat"
       }
     }
   }

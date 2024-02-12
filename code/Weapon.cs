@@ -77,7 +77,6 @@ public sealed class Weapon : Component
 		{
 			HasViewModel = true;
 		}
-
 		if (Inventory[ActiveSlot] == "")
 		{
 			activeWeapon.Item = items[1];
