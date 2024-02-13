@@ -20,10 +20,10 @@ public sealed class NetworkedViewmodel : Component
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		StartPos = GameObject.Transform.LocalPosition;
 		ArmsPos = new Vector3(3.4f, 6.3f, -2f);
+		
 	}
 	protected override void OnUpdate()
 	{
-		var cam = GameManager.ActiveScene.GetAllComponents<CameraComponent>().FirstOrDefault(x => !x.IsProxy);
 		
 		//Update Viewmodel Position and Rotation
 		
@@ -41,7 +41,7 @@ public sealed class NetworkedViewmodel : Component
 			gun.Transform.LocalPosition = new Vector3(0, 0, 0);
 			arms.Transform.LocalPosition = new Vector3(0, 0, 0);
 		}
-		else
+		if (weapon.Inventory[weapon.ActiveSlot] == "")
 		{
 			gun.Enabled = false;
 			arms.BoneMergeTarget = null;

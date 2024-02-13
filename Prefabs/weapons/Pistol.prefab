@@ -1,0 +1,38 @@
+{
+  "RootObject": {
+    "Id": "a8ccb566-3a79-4e52-b8e0-0bb92637875f",
+    "Name": "pistol",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Pistol",
+        "ammo": 60,
+        "decalGo": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal_bullet_default.prefab"
+        },
+        "fullAmmo": 120,
+        "gunSound": "sounds/smg1_shoot.sound",
+        "impact": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact_default (1).prefab"
+        },
+        "reloadSound": "sounds/reload/mp5.mag.sound",
+        "ShootDamage": 10,
+        "zombieParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
+        "zombieRagdoll": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

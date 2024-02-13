@@ -115,34 +115,6 @@
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
-        },
-        {
-          "__type": "Bloom",
-          "BloomColor": {
-            "color": [
-              {
-                "c": "1,1,1,1"
-              },
-              {
-                "t": 1,
-                "c": "1,1,1,1"
-              }
-            ],
-            "alpha": []
-          },
-          "BloomCurve": [
-            {
-              "y": 0.5
-            },
-            {
-              "x": 1,
-              "y": 1
-            }
-          ],
-          "Mode": "Additive",
-          "Strength": 0.2,
-          "Threshold": 0.5,
-          "ThresholdWidth": 0
         }
       ]
     },
@@ -5991,6 +5963,10 @@
   },
   "Title": "testground",
   "Description": "",
+<<<<<<< Filesystem-Staging
+  "LastSaved": "2024-02-12T21:16:43.6170992-05:00",
+=======
   "LastSaved": "2024-02-12T15:39:00.7692795-05:00",
+>>>>>>> main
   "__references": []
 }

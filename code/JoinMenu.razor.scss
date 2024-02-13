@@ -127,7 +127,7 @@ JoinMenu
 }
 	.maintext
 	{
-		font-size: 120px;
+		font-size: 95px;
 		font-weight: bolder;
 		color: white;
 		text-stroke: 16px black;
@@ -143,6 +143,65 @@ JoinMenu
 		{
 			color: red;
 			margin: 10px;
+		}
+	}
+	.themeHolder {
+		width: 40%;
+		height: 10%;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		bottom: 35%;
+		flex-direction: column;
+		.button-label {
+			font-family: Poppins;
+			height: 100%;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			
+		}
+
+		.DropDown {
+			width: 5%;
+			height: 10%;
+			border: 1px solid;
+			border-radius: 15px;
+			align-items: center;
+			color: white;
+			justify-content: space-around;
+		}
+		.DropDownText
+		{
+			font-size: 64px;
+			color: white;
+			position: absolute;
+			bottom: 100%;
+			color: white;
+			text-stroke: 16px black;
+			font-weight: bolder;
+		}
+
+		.button {
+			justify-content: center;
+			align-items: center;
+			background-color: rgb(139, 61, 61);
+			width: 50%;
+			height: 100%;
+			flex-direction: row;
+			border: 1px solid;
+			border-radius: 15px;
+			color: white;
+			border-color: white;
+			pointer-events: all;
+
+			&:hover {
+				background-color: lightcoral;
+			}
+
+			&:active {
+				sound-in: ui.popup.message.close;
+			}
 		}
 	}
 
