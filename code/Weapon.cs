@@ -31,9 +31,11 @@ public sealed class Weapon : Component
 	protected override void OnStart()
 	{
 		activeWeapon = GameManager.ActiveScene.GetAllComponents<ActiveWeapon>().FirstOrDefault( x => !x.IsProxy);
-	}
-	protected override void OnAwake()
-	{
+		activeWeapon.Item = null;
+		var playertext = Sandbox.FileSystem.Data.ReadAllText( "player.txt" ).ToInt();
+		Log.Info( playertext );
+		if (playertext == 1)
+		{
 		if (IsProxy) return;
 		for (int i = 0; i < Inventory.Length; i++)
 		{
@@ -48,9 +50,30 @@ public sealed class Weapon : Component
 		Inventory[6] = "";
 		Inventory[7] = "";
 		Inventory[8] = "";
+
+	}
+	if (playertext == 2)
+		{
+		if (IsProxy) return;
+		for (int i = 0; i < Inventory.Length; i++)
+		{
+			Inventory[i] = "weapon_fists";
+		}
+		Inventory[0] = "weapon_pistol";
+		Inventory[1] = "";
+		Inventory[2] = "";
+		Inventory[3] = "";
+		Inventory[4] = "";
+		Inventory[5] = "";
+		Inventory[6] = "";
+		Inventory[7] = "";
+		Inventory[8] = "";
+		
+	}
 	}
 	protected override void OnUpdate()
 	{
+
 		if (IsProxy) return;
 		if (Input.MouseWheel.y != 0)
 		{
@@ -68,18 +91,14 @@ public sealed class Weapon : Component
 		{
 			activeWeapon.Item = items[0];
 		}
-		else
-		{
-			activeWeapon.Item = null;
-		}
-
-		if (Inventory[ActiveSlot] != "")
-		{
-			HasViewModel = true;
-		}
-		if (Inventory[ActiveSlot] == "")
+		if (Inventory[ActiveSlot] == "weapon_pistol")
 		{
 			activeWeapon.Item = items[1];
+		}
+	
+		if (Inventory[ActiveSlot] == "")
+		{
+			activeWeapon.Item = items[2];
 		}
 	}
 }

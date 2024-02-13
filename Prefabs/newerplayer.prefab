@@ -52,10 +52,11 @@
         "__type": "Weapon",
         "InventoryImages": [
           "assets/w_mp5.vmdl_c.vtex",
-          "assets/w_spaghellim4.vmdl_c.vtex"
+          "textures/w_usp.vmdl_c.vtex"
         ],
         "items": [
           "weapons/mp5.item",
+          "weapons/pistol.item",
           "weapons/fist.item"
         ],
         "Weapons": [
@@ -923,6 +924,7 @@
               "component_type": "SkinnedModelRenderer"
             },
             "normalGraph": "models/first_person/first_person_arms_base.vanmgrph",
+            "pistolModel": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
             "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph",
             "smgModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
             "weapon": {
@@ -984,6 +986,7 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "facepunch.v_mp5"
+    "facepunch.v_mp5",
+    "facepunch.v_usp"
   ]
 }

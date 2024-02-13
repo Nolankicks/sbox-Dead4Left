@@ -4,9 +4,8 @@ using Kicks;
 using Sandbox;
 using Sandbox.Citizen;
 
-public sealed class MP5 : Component
+public sealed class Pistol : Component
 {
-	
 	CitizenAnimationHelper animationHelper;
 	[Property] public GameObject impact { get; set; }
 	private PlayerController playerController;
@@ -24,7 +23,7 @@ public sealed class MP5 : Component
 	Manager manager;
 	Weapon weapon;
 	PlayerController player;
-	float AmmoNeeded = 30;
+		float AmmoNeeded = 60;
 	protected override void OnStart()
 	{
 		//networking
@@ -38,11 +37,9 @@ public sealed class MP5 : Component
 	bool ableToShoot;
 	bool reloading;
 	public TimeSince timeSinceReload = 3;
-
 	protected override void OnUpdate()
 	{
-
-		if (IsProxy) return;
+			if (IsProxy) return;
 		if (fullAmmo < 0)
 		{
 			fullAmmo = 0;
@@ -57,12 +54,10 @@ public sealed class MP5 : Component
 			var gun = viewmodel.gun;
 			gun.Set("b_reload", true);
 		}
-
 	}
 	protected override void OnFixedUpdate()
 	{
-		if (IsProxy) return;
-		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
+		if (Input.Pressed("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
 		{
 			var gun = viewmodel.gun;
 			Shoot();
@@ -70,12 +65,12 @@ public sealed class MP5 : Component
 			gun.Set("b_attack", true);
 		}
 	}
+
 	void Shoot()
 	{
 		var eyePos = playerController.Transform.Position + Vector3.Up * 64;
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
 		var tr = Scene.Trace.Ray( eyePos, eyePos + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();
-		
 		if (tr.Hit)
 		{
 			

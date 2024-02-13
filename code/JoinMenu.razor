@@ -5,7 +5,7 @@
 @using Sandbox;
 @using Sandbox.Network
 @inherits PanelComponent
-
+@using Sandbox.UI
 <root>
 	<div class="left">
 		<h1>LOBBY-LIST</h1>
@@ -43,17 +43,18 @@
 		<div class="red">4</div>
 		<div class="normal">LEFT</div>
 	</div>
-	
+	<div class="themeholder">
+		<div class="DropDownText">STARTING GUN</div>
+	<DropDown @ref=Themes></DropDown>
+	</div>
 </root>
 
 
 @code
 {
-
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
-
+	DropDown Themes { get; set; }
 	[Property] public SceneFile GameScene { get; set; }
-		private bool IsRefreshing { get; set; }
+	private bool IsRefreshing { get; set; }
 	private List<LobbyInformation> List { get; set; } = new();
 		protected override void OnEnabled()
 	{
@@ -62,11 +63,23 @@
 		_ = RefreshLobbyList();
 	}
 
-	protected override void OnUpdate()
+
+	protected override void OnTreeFirstBuilt()
 	{
+		//base.OnTreeFirstBuilt();
+
+		Themes.Options = new()
+		{
+			new Option("MP5", 1),
+			new Option("USP", 2),
+		};
+		
+		Themes.Selected = Themes.Options.First();
 		
 	}
-	private async Task RefreshLobbyList()
+
+    
+        private async Task RefreshLobbyList()
 	{
 		while ( true )
 		{
@@ -90,6 +103,11 @@
 	void CreateLobby()
 	{
 	GameManager.ActiveScene.Load(GameScene);
+	FileSystem.Data.WriteAllText("player.txt", Themes.Selected.Value.ToString());
+	}
+	protected override void OnUpdate()
+	{
+		
 	}
 
 
