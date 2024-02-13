@@ -17,9 +17,6 @@ public sealed class Manager : Component
 	[Property] public bool testBool {get; set;}
 	[Property] public bool ableToInput { get; set; } = false;
 	public bool ShouldAddScore { get; set; } = false;
-	[Property] public MenuUi deadMenu { get; set; }
-	[Property] public PauseMenu pauseMenu { get; set; }
-	[Property] public GameObject ragdoll { get; set; }
 	//[Property] public PlayerController playerController { get; set; }
 	PlayerController playerController;
 
