@@ -112,7 +112,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
-          "SpawnPoints": [],
+          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -5924,6 +5924,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-12T21:35:46.0600274-05:00",
+  "LastSaved": "2024-02-13T09:46:50.7176117-05:00",
   "__references": []
 }

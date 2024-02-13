@@ -34,6 +34,24 @@ public sealed class Weapon : Component
 		activeWeapon.Item = null;
 		var playertext = Sandbox.FileSystem.Data.ReadAllText( "player.txt" ).ToInt();
 		Log.Info( playertext );
+		if (playertext == 0)
+		{
+			if (IsProxy) return;
+		for (int i = 0; i < Inventory.Length; i++)
+		{
+			Inventory[i] = "weapon_fists";
+		}
+		Inventory[0] = "weapon_smg";
+		Inventory[1] = "";
+		Inventory[2] = "";
+		Inventory[3] = "";
+		Inventory[4] = "";
+		Inventory[5] = "";
+		Inventory[6] = "";
+		Inventory[7] = "";
+		Inventory[8] = "";
+
+		}
 		if (playertext == 1)
 		{
 		if (IsProxy) return;
