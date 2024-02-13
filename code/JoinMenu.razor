@@ -47,6 +47,25 @@
 		<div class="DropDownText">STARTING GUN</div>
 	<DropDown @ref=Themes></DropDown>
 	</div>
+
+	<div class="bottomright">
+			<div class="notes">
+				<div class="notesbutton" onclick=@( () => ShowNotes = true)>
+					<div class="title">Notes</div>
+				</div>
+			</div>
+	</div>
+	<div class="notespopup @(ShowNotes ? "" : "hide")">
+		<h2>Notes:</h2>
+		<div class="notes">Currently Viewmodels are broken</div>
+		<p></p>
+		<div class="notes">Tony Says He is Working On Them</div>
+		<p></p>
+		<img class="img" src="https://i.imgur.com/fDuWhDN.jpeg" alt="Tony" width="200" height="200">
+		<div class="closebutton" onclick=@(() => ShowNotes = false)>
+			<div class="title">Close</div>
+		</div>
+	</div>
 </root>
 
 
@@ -56,6 +75,7 @@
 	[Property] public SceneFile GameScene { get; set; }
 	private bool IsRefreshing { get; set; }
 	private List<LobbyInformation> List { get; set; } = new();
+	[Property] public bool ShowNotes { get; set; }
 		protected override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -108,6 +128,10 @@
 	protected override void OnUpdate()
 	{
 		
+	}
+	void Credits()
+	{
+		Log.Info("Credits");
 	}
 
 

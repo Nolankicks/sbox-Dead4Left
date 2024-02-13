@@ -107,7 +107,7 @@ JoinMenu
 		background-color: rgb(153, 32, 52);
 		padding: 32px;
 		transition: all 0.1s ease;
-		.title
+		>.title
 		{
 			font-weight: bolder;
 			font-size: 42;
@@ -202,6 +202,119 @@ JoinMenu
 			&:active {
 				sound-in: ui.popup.message.close;
 			}
+		}
+	}
+	.bottomright
+	{
+		position: absolute;
+		bottom: 32px;
+		right: 32px;
+		justify-content: center;
+		align-items: center;
+
+		.notes
+		{
+			.notesbutton
+			{
+				background-color: rgb(153, 32, 52);
+				font-size: 64;
+				width: 200px;
+				height: 75px;
+				border-radius: 16px;
+				align-items: center;
+				justify-content: center;
+				pointer-events: all;
+				transition: all 0.1s ease;
+				&:hover
+				{
+					background-color: rgb(104, 39, 39);
+					transform: scale(1.1);
+				}
+				&:active
+				{
+					sound-in: ui.popup.message.close;
+				}
+				>.title
+				{
+					font-weight: bolder;
+					font-size: 42;
+				}
+
+			}
+		}
+	}
+
+	.notespopup
+	{
+		height: 100%;
+		width: 100%;
+		background-color: black;
+		opacity: 0.9;
+		transition: opacity 0.2s ease;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		font-weight: bold;
+		flex-direction: column;
+		h2
+		{
+			font-size: 120px;
+			color: white;
+			text-stroke: 16px black;
+			font-weight: bolder;
+		}
+		>.img
+		{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			right: 42px;
+
+			opacity: 1;
+		}
+		>.notes
+		{
+			font-size: 64px;
+			color: white;
+			text-stroke: 16px black;
+			font-weight: bolder;
+		}
+		.closebutton
+		{
+			
+			position: absolute;
+			bottom: 32px;
+			left: 32px;
+			background-color: rgb(32, 84, 153);
+			font-size: 64;
+			width: 200px;
+			height: 75px;
+			border-radius: 16px;
+			align-items: center;
+			justify-content: center;
+			pointer-events: all;
+			transition: all 0.1s ease;
+			pointer-events: all;
+
+			&:hover
+			{
+				background-color: rgb(33, 156, 165);
+				transform: scale(1.1);
+			}
+			&:active
+			{
+				sound-in: ui.popup.message.close;
+			}
+			>.title
+			{
+				font-weight: bolder;
+				font-size: 42;
+			}
+		}
+
+		&.hide
+		{
+			opacity: 0;
 		}
 	}
 

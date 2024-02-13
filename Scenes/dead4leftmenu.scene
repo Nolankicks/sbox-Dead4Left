@@ -49,7 +49,8 @@
           "Components": [
             {
               "__type": "JoinMenu",
-              "GameScene": "scenes/finalmain.scene"
+              "GameScene": "scenes/finalmain.scene",
+              "ShowNotes": false
             }
           ]
         }
@@ -129,6 +130,6 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-02-12T20:22:47.4435396-05:00",
+  "LastSaved": "2024-02-13T11:22:35.7663281-05:00",
   "__references": []
 }

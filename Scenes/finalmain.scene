@@ -5899,6 +5899,13 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "bcbdd65d-1d63-4c8a-9f42-5840ca21a0f9",
+      "Name": "soccer",
+      "Position": "0,1568,96",
+      "Rotation": "0.00184761,0.005145848,-0.3379278,0.9411561",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -5924,6 +5931,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-13T09:46:50.7176117-05:00",
+  "LastSaved": "2024-02-13T09:52:14.055991-05:00",
   "__references": []
 }
