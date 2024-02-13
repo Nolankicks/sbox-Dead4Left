@@ -26,6 +26,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public Weapon weapon { get; set; }
 	public bool WishCrouch;
+	public CameraComponent camera;
 	[Property] public float EyeHight = 64;
 	protected override void OnUpdate()
 	{
@@ -137,7 +138,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 
 		private void UpdateCamera()
 	{
-		var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
+		camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		if ( camera is null ) return;
 		
 		var targetEyeHeight = Crouching ? 28 : 64;
@@ -150,7 +151,6 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		eye.Transform.Rotation = EyeAngles;
 		camera.Transform.Position = targetCameraPos;
 		camera.Transform.Rotation = EyeAngles;
-		camera.FieldOfView = Preferences.FieldOfView;
 	}
 	protected override void OnPreRender()
 	{

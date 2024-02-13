@@ -4,20 +4,33 @@ using Sandbox;
 
 public sealed class Fist : Component
 {
-	public NetworkedViewmodel viewModel;
+	public ActiveWeapon viewModel;
 	PlayerController playerController;
-
+	[Property] public AnimationGraph punchGraph { get; set; }
+	[Property] public SkinnedModelRenderer arms { get; set; }
+	public bool PushViewModel;
 	protected override void OnStart()
 	{
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-		viewModel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
+		arms.SceneModel.AnimationGraph = punchGraph;
+		GameObject.Transform.LocalPosition = new Vector3(8f, 0f, 63.7f);
+	}
+	protected override void OnUpdate()
+	{
+		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 20);
+		
+		
+
+		
+
+
 	}
 	protected override void OnFixedUpdate()
 	{
 		if (Input.Pressed("attack1"))
 		{
 			Trace();
-			//viewModel.arms.Set("b_attack", true);
+			arms.Set("b_attack", true);
 		}
 	}
 

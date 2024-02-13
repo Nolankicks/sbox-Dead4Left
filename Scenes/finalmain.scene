@@ -72,7 +72,7 @@
           "__type": "CameraComponent",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
-          "FieldOfView": 60,
+          "FieldOfView": 80,
           "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 1204,
@@ -121,7 +121,6 @@
       "Id": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -5899,13 +5898,6 @@
           ]
         }
       ]
-    },
-    {
-      "Id": "bcbdd65d-1d63-4c8a-9f42-5840ca21a0f9",
-      "Name": "soccer",
-      "Position": "0,1568,96",
-      "Rotation": "0.00184761,0.005145848,-0.3379278,0.9411561",
-      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -5931,6 +5923,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-13T09:52:14.055991-05:00",
+  "LastSaved": "2024-02-13T16:53:09.0792564-05:00",
   "__references": []
 }

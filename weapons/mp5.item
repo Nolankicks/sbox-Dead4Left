@@ -1,5 +1,6 @@
 {
   "weaponPrefab": "prefabs/weapons/mp5.prefab",
+  "viewmodelPrefab": "prefabs/weapons/mp5viewmodel.prefab",
   "weaponName": "weapon_smg",
   "__references": []
 }

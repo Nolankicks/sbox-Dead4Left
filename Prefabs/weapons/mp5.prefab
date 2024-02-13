@@ -1,22 +1,10 @@
 {
   "RootObject": {
-    "Id": "06954846-6119-45b0-afd9-b562fef977c4",
+    "Id": "dfcb79a9-c195-434b-b96e-58670897582c",
     "Name": "mp5",
     "Networked": true,
     "Enabled": true,
     "Components": [
-      {
-        "__type": "SkinnedModelRenderer",
-        "__enabled": false,
-        "BodyGroups": 11,
-        "BoneMergeTarget": null,
-        "CreateBoneObjects": false,
-        "MaterialGroup": null,
-        "MaterialOverride": null,
-        "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
-      },
       {
         "__type": "MP5",
         "ammo": 30,
@@ -25,6 +13,11 @@
           "prefab": "prefabs/decal_bullet_default.prefab"
         },
         "fullAmmo": 60,
+        "gun": {
+          "_type": "component",
+          "go": "ac4f34a8-4c6e-49f2-8695-84838e1803a7",
+          "component_type": "SkinnedModelRenderer"
+        },
         "gunSound": "sounds/smg1_shoot.sound",
         "impact": {
           "_type": "gameobject",
@@ -42,7 +35,48 @@
         }
       }
     ],
-    "Children": []
+    "Children": [
+      {
+        "Id": "82a4e675-c11f-4ccf-aa89-b705282eee7a",
+        "Name": "arms",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 21,
+            "BoneMergeTarget": {
+              "_type": "component",
+              "go": "ac4f34a8-4c6e-49f2-8695-84838e1803a7",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/first_person/first_person_arms.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "ac4f34a8-4c6e-49f2-8695-84838e1803a7",
+        "Name": "gun",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 11,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,

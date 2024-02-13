@@ -1,5 +1,6 @@
 {
   "weaponPrefab": "prefabs/weapons/fists.prefab",
+  "viewmodelPrefab": "prefabs/weapons/fistprefab.prefab",
   "weaponName": "",
   "__references": []
 }

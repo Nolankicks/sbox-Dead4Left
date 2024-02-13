@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@if ( Network.OwnerConnection is Connection owner)
+{
+<root>
+	<div class="title">@owner.DisplayName</div>
+	 <div class="avatar" style="background-image: url( avatar:@owner.SteamId )"></div>
+</root>
+}
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Network.OwnerConnection );
+}
