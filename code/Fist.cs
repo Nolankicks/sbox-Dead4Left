@@ -17,7 +17,7 @@ public sealed class Fist : Component
 		if (Input.Pressed("attack1"))
 		{
 			Trace();
-			viewModel.arms.Set("b_attack", true);
+			//viewModel.arms.Set("b_attack", true);
 		}
 	}
 

@@ -51,18 +51,18 @@ public sealed class Pistol : Component
 			ammo = 30;
 			timeSinceReload = 1;
 			Sound.Play(reloadSound, GameObject.Transform.Position);
-			var gun = viewmodel.gun;
-			gun.Set("b_reload", true);
+			//var gun = viewmodel.gun;
+			//gun.Set("b_reload", true);
 		}
 	}
 	protected override void OnFixedUpdate()
 	{
 		if (Input.Pressed("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
 		{
-			var gun = viewmodel.gun;
+			//var gun = viewmodel.gun;
 			Shoot();
 			timeSinceShoot = 0;
-			gun.Set("b_attack", true);
+			//gun.Set("b_attack", true);
 		}
 	}
 

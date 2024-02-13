@@ -54,8 +54,8 @@ public sealed class MP5 : Component
 			ammo = 30;
 			timeSinceReload = 1;
 			Sound.Play(reloadSound, GameObject.Transform.Position);
-			var gun = viewmodel.gun;
-			gun.Set("b_reload", true);
+			//var gun = viewmodel.gun;
+			//gun.Set("b_reload", true);
 		}
 
 	}
@@ -64,10 +64,10 @@ public sealed class MP5 : Component
 		if (IsProxy) return;
 		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
 		{
-			var gun = viewmodel.gun;
+			//var gun = viewmodel.gun;
 			Shoot();
 			timeSinceShoot = 0;
-			gun.Set("b_attack", true);
+			//gun.Set("b_attack", true);
 		}
 	}
 	void Shoot()

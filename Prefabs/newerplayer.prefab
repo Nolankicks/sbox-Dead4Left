@@ -876,7 +876,6 @@
         "Name": "viewmodel",
         "Position": "4.636,-6.474,63.917",
         "Rotation": "0,0,0.04449119,0.9990098",
-        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -893,6 +892,7 @@
           },
           {
             "__type": "CameraComponent",
+            "__enabled": false,
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 78,
@@ -909,6 +909,7 @@
           },
           {
             "__type": "NetworkedViewmodel",
+            "__enabled": false,
             "arms": {
               "_type": "component",
               "go": "46dc1418-9f38-4ef6-8e51-b91000f77358",
@@ -924,7 +925,6 @@
               "component_type": "SkinnedModelRenderer"
             },
             "normalGraph": "models/first_person/first_person_arms_base.vanmgrph",
-            "pistolModel": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
             "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph",
             "smgModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
             "weapon": {
@@ -940,8 +940,6 @@
             "Name": "arms",
             "Position": "0,0,0",
             "Tags": "viewmodel",
-            "Networked": true,
-            "Enabled": true,
             "Components": [
               {
                 "__type": "SkinnedModelRenderer",
@@ -960,8 +958,6 @@
                 "Id": "9c0aa4ac-71e3-455b-8c50-1c7306ed67f1",
                 "Name": "gun",
                 "Position": "0,0,0",
-                "Networked": true,
-                "Enabled": true,
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
@@ -986,7 +982,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "facepunch.v_mp5",
-    "facepunch.v_usp"
+    "facepunch.v_mp5"
   ]
 }

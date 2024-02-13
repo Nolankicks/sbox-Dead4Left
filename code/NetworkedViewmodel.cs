@@ -12,7 +12,6 @@ public sealed class NetworkedViewmodel : Component
 	[Property] public AnimationGraph punchGraph { get; set; }
 	[Property] public AnimationGraph normalGraph { get; set; }
 	[Property] public Model smgModel { get; set; }
-	[Property] public Model pistolModel { get; set; }
 	PlayerController playerController;
 	public Vector3 StartPos;
 	public Vector3 ArmsPos;
@@ -21,10 +20,10 @@ public sealed class NetworkedViewmodel : Component
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		StartPos = GameObject.Transform.LocalPosition;
 		ArmsPos = new Vector3(3.4f, 6.3f, -2f);
+		
 	}
 	protected override void OnUpdate()
 	{
-		var cam = GameManager.ActiveScene.GetAllComponents<CameraComponent>().FirstOrDefault(x => !x.IsProxy);
 		
 		//Update Viewmodel Position and Rotation
 		
@@ -42,18 +41,7 @@ public sealed class NetworkedViewmodel : Component
 			gun.Transform.LocalPosition = new Vector3(0, 0, 0);
 			arms.Transform.LocalPosition = new Vector3(0, 0, 0);
 		}
-		else if (weapon.Inventory[weapon.ActiveSlot] == "weapon_pistol")
-		{
-			gun.Model = pistolModel;
-			arms.BoneMergeTarget = gun;
-			arms.SceneModel.AnimationGraph = normalGraph;
-			GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.EyeAngles, Time.Delta * 100f);
-			gun.Enabled = true;
-			GameObject.Transform.LocalPosition = StartPos;
-			gun.Transform.LocalPosition = new Vector3(0, 0, 0);
-			arms.Transform.LocalPosition = new Vector3(0, 0, 0);
-		}
-		else
+		if (weapon.Inventory[weapon.ActiveSlot] == "")
 		{
 			gun.Enabled = false;
 			arms.BoneMergeTarget = null;
