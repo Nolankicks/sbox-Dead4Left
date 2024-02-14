@@ -17,6 +17,7 @@ public sealed class Pistol : Component
 	[Property] public float ShootDamage { get; set; } = 10;
 	[Property] public GameObject zombieRagdoll { get; set; }
 	[Property] public GameObject zombieParticle { get; set; }
+	[Property] public SkinnedModelRenderer gun { get; set; }
 	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	public NetworkedViewmodel viewmodel;
@@ -33,6 +34,7 @@ public sealed class Pistol : Component
 		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		viewmodel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
+		GameObject.Transform.LocalPosition = new Vector3(3.302f, -7.1f, 63.7f);
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -44,9 +46,10 @@ public sealed class Pistol : Component
 		{
 			fullAmmo = 0;
 		}
-		
+		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 60);
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
 		{
+			gun.Set("b_reload", true);
 			fullAmmo -= AmmoNeeded;
 			ammo = 30;
 			timeSinceReload = 1;
@@ -62,7 +65,7 @@ public sealed class Pistol : Component
 			//var gun = viewmodel.gun;
 			Shoot();
 			timeSinceShoot = 0;
-			//gun.Set("b_attack", true);
+			gun.Set("b_attack", true);
 		}
 	}
 
