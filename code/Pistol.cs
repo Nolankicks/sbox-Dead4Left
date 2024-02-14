@@ -18,6 +18,7 @@ public sealed class Pistol : Component
 	[Property] public GameObject zombieRagdoll { get; set; }
 	[Property] public GameObject zombieParticle { get; set; }
 	[Property] public SkinnedModelRenderer gun { get; set; }
+	[Property] public SkinnedModelRenderer arms { get; set; }
 	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	public NetworkedViewmodel viewmodel;
@@ -46,6 +47,11 @@ public sealed class Pistol : Component
 		if (fullAmmo < 0)
 		{
 			fullAmmo = 0;
+		}
+		if (IsProxy)
+		{
+			gun.GameObject.Enabled = false;
+			arms.GameObject.Enabled = false;
 		}
 		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 60);
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)

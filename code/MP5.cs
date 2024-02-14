@@ -19,6 +19,7 @@ public sealed class MP5 : Component
 	[Property] public GameObject zombieRagdoll { get; set; }
 	[Property] public GameObject zombieParticle { get; set; }
 	[Property] public SkinnedModelRenderer gun { get; set; }
+	[Property] public SkinnedModelRenderer arms { get; set; }
 	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	public ActiveWeapon viewmodel;
@@ -58,6 +59,12 @@ public sealed class MP5 : Component
 			timeSinceReload = 1;
 			Sound.Play(reloadSound, GameObject.Transform.Position);
 			gun.Set("b_reload", true);
+		}
+
+		if (IsProxy)
+		{
+			gun.GameObject.Enabled = false;
+			arms.GameObject.Enabled = false;
 		}
 
 	}
