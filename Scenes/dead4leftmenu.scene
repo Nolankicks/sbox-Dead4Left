@@ -50,6 +50,12 @@
             {
               "__type": "JoinMenu",
               "GameScene": "scenes/finalmain.scene",
+              "manager": {
+                "_type": "component",
+                "go": "a07047b8-8edf-464a-89e8-bbf79716d4d6",
+                "component_type": "Manager"
+              },
+              "ShowMaps": false,
               "ShowNotes": false
             }
           ]
@@ -105,6 +111,20 @@
           "Tint": "1,0.15349,0.15349,1"
         }
       ]
+    },
+    {
+      "Id": "a07047b8-8edf-464a-89e8-bbf79716d4d6",
+      "Name": "Manager",
+      "Position": "282.8316,142.7897,-230.4725",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Manager",
+          "ableToInput": false,
+          "menuScene": null,
+          "testBool": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -130,6 +150,6 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-02-13T11:22:35.7663281-05:00",
+  "LastSaved": "2024-02-13T21:13:31.7481425-05:00",
   "__references": []
 }

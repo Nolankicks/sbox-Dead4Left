@@ -12,7 +12,7 @@
           "MapName": "facepunch.construct23",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
-          "UseMapFromLaunch": false
+          "UseMapFromLaunch": true
         }
       ],
       "Children": []
@@ -136,7 +136,6 @@
       "Id": "0087d722-47c5-44e6-92a0-a12b4c230876",
       "Name": "Spawns",
       "Position": "314.7554,625.4451,801.6364",
-      "Enabled": true,
       "Children": [
         {
           "Id": "6e3f2518-e723-48b9-934e-b7a3d7db3eef",
@@ -5924,6 +5923,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-13T19:26:24.8873172-05:00",
+  "LastSaved": "2024-02-13T21:17:59.7809844-05:00",
   "__references": []
 }

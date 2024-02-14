@@ -27,7 +27,7 @@ public sealed class Pistol : Component
 		float AmmoNeeded = 60;
 	protected override void OnStart()
 	{
-		//networking
+
 		animationHelper = GameObject.Components.GetInDescendantsOrSelf<CitizenAnimationHelper>();
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
@@ -35,13 +35,14 @@ public sealed class Pistol : Component
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		viewmodel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
 		GameObject.Transform.LocalPosition = new Vector3(3.302f, -7.1f, 63.7f);
+		
 	}
 	bool ableToShoot;
 	bool reloading;
 	public TimeSince timeSinceReload = 3;
 	protected override void OnUpdate()
 	{
-			if (IsProxy) return;
+		if (IsProxy) return;
 		if (fullAmmo < 0)
 		{
 			fullAmmo = 0;
@@ -60,6 +61,7 @@ public sealed class Pistol : Component
 	}
 	protected override void OnFixedUpdate()
 	{
+		if (IsProxy) return;
 		if (Input.Pressed("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
 		{
 			//var gun = viewmodel.gun;
@@ -71,6 +73,7 @@ public sealed class Pistol : Component
 
 	void Shoot()
 	{
+		if (IsProxy) return;
 		var eyePos = playerController.Transform.Position + Vector3.Up * 64;
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
 		var tr = Scene.Trace.Ray( eyePos, eyePos + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();

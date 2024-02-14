@@ -28,6 +28,12 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	public bool WishCrouch;
 	public CameraComponent camera;
 	[Property] public float EyeHight = 64;
+	protected override void OnStart()
+	{
+		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
+		var randomSpawnPoint = Random.Shared.FromArray( spawnPoints );
+		GameObject.Transform.Position = randomSpawnPoint.Transform.Position;
+	}
 	protected override void OnUpdate()
 	{
 		if (!IsProxy)
@@ -39,6 +45,8 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		var eyeRot = eye.Transform.Rotation.Angles();
 		eyeRot.pitch = Input.MouseDelta.y;
 		eyeRot.yaw = Input.MouseDelta.x;
+
+		
 	}
 
 	protected override void OnFixedUpdate()

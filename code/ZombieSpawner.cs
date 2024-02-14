@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Sandbox;
+using Sandbox.Navigation;
 
 public sealed class ZombieSpawner : Component
 {
@@ -13,9 +14,9 @@ public sealed class ZombieSpawner : Component
 	void SpawnZombie()
 	{
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
-		var randomSpawnPoint = Random.Shared.FromArray( spawnPoints ).Transform.World;
+		var randomSpawnPoint = Scene.NavMesh.GetRandomPoint().GetValueOrDefault();
 		var zombie = ZombiePrefab.Clone( randomSpawnPoint );
-		zombie.Network.Spawn();
+		zombie.NetworkSpawn();
 
 	}
 
@@ -27,7 +28,7 @@ public sealed class ZombieSpawner : Component
 			var random = GetRandom();
 			GetRandom();
 
-			if (random >= 70f)
+			if (random >= 80f)
 			{
 				SpawnZombie();
 			}

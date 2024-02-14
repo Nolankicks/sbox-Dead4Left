@@ -124,6 +124,7 @@ hud
 				font-size: 42px;
 				font-weight: bolder;
 				text-stroke: 8px black;
+				
 			}
 
 			> .entries
@@ -155,6 +156,7 @@ hud
 						{
 							width: 32px;
 							height: 32px;
+							border-radius: 5px;
 						}
 
 						label
@@ -168,6 +170,7 @@ hud
 					&.me
 					{
 						background-color: rgba( white, 0.1 );
+						border-radius: 16px;
 					}
 				}
 			}
@@ -179,8 +182,8 @@ hud
 		position: absolute;
 		font-size: 54;
 		color: rgb(253, 99, 99);
-		bottom: 0;
-		left: 0;
+		bottom: 2px;
+		left: 2px;
 		font-weight: bolder;
 		text-stroke: 16px black;
 		backdrop-filter: blur( 24px );
@@ -207,13 +210,15 @@ hud
 	.ammo
 	{
 		position: absolute;
-		font-size: 64;
+		font-size: 54;
 		bottom: 0;
 		right: 0;
 		text-stroke: 16px black;
 		font-weight: bolder;
-		
-
+		//background-color: #000000;
+		padding: 2.5px;
+		border-radius: 16px;
+		backdrop-filter: blur( 24px );
 	}
 
 

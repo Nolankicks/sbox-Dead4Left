@@ -10,7 +10,7 @@ JoinMenu
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	.left {
+	>.left {
 		display: flex;
 		flex-direction: column;
 		text-align: center;
@@ -218,7 +218,7 @@ JoinMenu
 			{
 				background-color: rgb(153, 32, 52);
 				font-size: 64;
-				width: 200px;
+				width: 300px;
 				height: 75px;
 				border-radius: 16px;
 				align-items: center;
@@ -317,5 +317,46 @@ JoinMenu
 			opacity: 0;
 		}
 	}
+	> .mapselect
+	{
+		width: 1000px;
+		height: 100%;
+		backdrop-filter: blur( 100000px );
+		border-radius: 16px;
+		pointer-events: all;
+		color: white;
 
-}
+		&.hide
+		{
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	button
+	{
+		background-color: rgb(153, 32, 52);
+				font-size: 64;
+				width: 200px;
+				height: 75px;
+				border-radius: 16px;
+				align-items: center;
+				justify-content: center;
+				pointer-events: all;
+				transition: all 0.1s ease;
+				&:hover
+				{
+					background-color: rgb(104, 39, 39);
+					transform: scale(1.1);
+				}
+				&:active
+				{
+					sound-in: ui.popup.message.close;
+				}
+				>.title
+				{
+					font-weight: bolder;
+					font-size: 42;
+				}
+
+			}
+	}

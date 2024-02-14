@@ -1,0 +1,53 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Linq
+@attribute [StyleSheet]
+@inherits Panel
+
+<root>
+    @if(!loaded) return;
+    <div class="header">
+        <p class="title">@Package.Title</p>
+        <p class="author">@Package.Org.Title</p>
+    </div>
+    <div class="thumbnail">
+        <img src=@thumbnail onclick=@StartGame />
+    </div>
+</root>
+
+@code
+{
+    bool loaded = false;
+
+    public string Map { get; set; } = "facepunch.construct";
+    public Package Package { get; set; } = null;
+	public SceneFile mainScene { get; set; }
+
+    string thumbnail = "";
+
+    protected override void OnAfterTreeRender(bool firstTime)
+    {
+        base.OnAfterTreeRender(firstTime);
+
+        if(firstTime)
+        {
+            LoadMap();
+        }
+    }
+
+    async void LoadMap()
+    {
+        Package = await Package.FetchAsync(Map, true);
+        thumbnail = Package.VideoThumb ?? Package.Screenshots.FirstOrDefault()?.Url ?? Package.Thumb;
+        loaded = true;
+    }
+    
+    void StartGame()
+    {
+        LaunchArguments.Map = Map;
+        
+    }
+
+	
+    protected override int BuildHash() => System.HashCode.Combine(loaded);
+}

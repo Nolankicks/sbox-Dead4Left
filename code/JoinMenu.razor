@@ -1,11 +1,11 @@
-@using System
-@using System.Collections.Generic
-@using System.Linq
-@using System.Threading.Tasks
 @using Sandbox;
-@using Sandbox.Network
+@using Sandbox.UI;
+@using Sandbox.Network;
+@using Sandbox.Diagnostics;
+@using System.Collections.Generic;
+@using System.Threading.Tasks;
+@using System.Linq;
 @inherits PanelComponent
-@using Sandbox.UI
 <root>
 	<div class="left">
 		<h1>LOBBY-LIST</h1>
@@ -36,8 +36,8 @@
 				}
 			}
 		</div>
+		
 	</div>
-
 	<div class="MainText">
 		<div class="normal">DEAD</div>
 		<div class="red">4</div>
@@ -47,17 +47,19 @@
 		<div class="DropDownText">STARTING GUN</div>
 	<DropDown @ref=Themes></DropDown>
 	</div>
-
+	
 	<div class="bottomright">
 			<div class="notes">
-				<div class="notesbutton" onclick=@( () => ShowNotes = true)>
-					<div class="title">Notes</div>
+				<div class="notesbutton" onclick=@ToggleMaps>
+					<div class="title">Select Map</div>
 				</div>
 			</div>
 	</div>
 	<div class="notespopup @(ShowNotes ? "" : "hide")">
 		<h2>Notes:</h2>
-		<div class="notes">Currently viewmodels are broken</div>
+		<div class="notes">Currently viewmodels semi broken</div>
+		<p></p>
+		<div class="notes">You may recieve clipping issues</div>
 		<p></p>
 		<div class="notes">Tony says he is working on them</div>
 		<p></p>
@@ -66,6 +68,12 @@
 			<div class="title">Close</div>
 		</div>
 	</div>
+	
+		<div class="mapselect @(ShowMaps ? "" : "hide")">
+			<PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(50)></PackageList>
+		</div>
+
+	
 </root>
 
 
@@ -76,6 +84,10 @@
 	private bool IsRefreshing { get; set; }
 	private List<LobbyInformation> List { get; set; } = new();
 	[Property] public bool ShowNotes { get; set; }
+	[Property] public bool ShowMaps { get; set; } = false;
+	public long HighScore { get; private set; } = 0;
+	[Property] public Manager manager { get; set; }
+
 		protected override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -83,7 +95,7 @@
 		_ = RefreshLobbyList();
 	}
 
-
+	
 	protected override void OnTreeFirstBuilt()
 	{
 		//base.OnTreeFirstBuilt();
@@ -119,7 +131,7 @@
     {
         GameNetworkSystem.Connect( lobby.LobbyId );
     }
-
+	
 	void CreateLobby()
 	{
 	GameManager.ActiveScene.Load(GameScene);
@@ -134,10 +146,30 @@
 		Log.Info("Credits");
 	}
 
+	  string IsMe(Sandbox.Services.Leaderboards.Entry entry)
+    {
+        return entry.Me ? "me" : "";
+    }
+
+
+	string AvatarTexture(Sandbox.Services.Leaderboards.Entry entry)
+    {
+        return $"avatar:{entry.SteamId}";
+    }
+
+	void OnPackageSelected(Package package)
+	{
+		LaunchArguments.Map = package.FullIdent;
+		GameManager.ActiveScene.Load(GameScene);
+	}
+	void ToggleMaps()
+	{
+		ShowMaps = !ShowMaps;
+	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine(RealTime.Now);
+	protected override int BuildHash() => System.HashCode.Combine(RealTime.Now, ShowMaps);
 }
 

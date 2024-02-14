@@ -24,6 +24,7 @@ Inventory
 		gap: 8px;
 		justify-content: center;
 		align-items: flex-end;
+		flex-direction: row;
 		> .slot
 		{
 			width: 92px;
