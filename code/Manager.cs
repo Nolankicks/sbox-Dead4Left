@@ -7,6 +7,7 @@ using System.Linq;
 using Kicks;
 using Sandbox.Network;
 using System;
+using Sandbox.Navigation;
 
 public sealed class Manager : Component
 {
@@ -26,6 +27,7 @@ public sealed class Manager : Component
 	protected override void OnStart()
 	{
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		Scene.NavMesh.SetDirty();
 	}
 	protected override void OnAwake()
 	{
