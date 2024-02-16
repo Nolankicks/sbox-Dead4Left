@@ -25,11 +25,13 @@ public sealed class ZombieSpawner : Component
 	TimeUntil nextSecond = 0f;
 	protected override void OnFixedUpdate()
 	{
+		float time = GetRandom();
 		if (zombies is null) return;
-		if (nextSecond && zombies.Length <= 30)
+		if (nextSecond && zombies.Length <= 30 && time > 80f)
 		{
 			SpawnZombie();
 			nextSecond = 1;
+			GetRandom();
 		}
 		}
 	}

@@ -105,6 +105,10 @@ public sealed class Zombie : Component
 		}
 
 	}
+	protected override void OnDestroy()
+	{
+		ragdollGameObject.Clone(body.Transform.Position, body.Transform.Rotation);
+	}
 
 
 }

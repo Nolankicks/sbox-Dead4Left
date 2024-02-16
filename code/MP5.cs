@@ -3,6 +3,7 @@ using System.Linq;
 using Kicks;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.ModelEditor.Nodes;
 
 public sealed class MP5 : Component
 {
@@ -27,6 +28,7 @@ public sealed class MP5 : Component
 	Weapon weapon;
 	PlayerController player;
 	float AmmoNeeded = 30;
+	Vector3 startPos;
 	protected override void OnStart()
 	{
 		//networking
@@ -38,6 +40,8 @@ public sealed class MP5 : Component
 		GameObject.Transform.LocalPosition = new Vector3(3.302f, -7.1f, 63.7f);
 		gun.RenderType = ModelRenderer.ShadowRenderType.Off;
 		arms.RenderType = ModelRenderer.ShadowRenderType.Off;
+		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		startPos = GameObject.Transform.LocalPosition;
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -45,13 +49,19 @@ public sealed class MP5 : Component
 
 	protected override void OnUpdate()
 	{
-		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 60);
 		if (IsProxy) return;
+		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 100);
 		if (fullAmmo < 0)
 		{
 			fullAmmo = 0;
 		}
+
+					var crouchVector = new Vector3(0, 0, 32);
+			
+		var target = startPos - (Input.Down( "duck" ) ? crouchVector : 0);
+		Transform.LocalPosition = Transform.LocalPosition.LerpTo( target, Time.Delta * 10f );
 		
+			Log.Info("Standing");
 		
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
 		{
@@ -77,15 +87,18 @@ public sealed class MP5 : Component
 		{
 			Shoot();
 			timeSinceShoot = 0;
-			gun.Set("b_attack", true);
-		}
+			
+
+
+
+
 	}
 	void Shoot()
 	{
-		var eyePos = playerController.Transform.Position + Vector3.Up * 64;
+		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
 		var tr = Scene.Trace.Ray( eyePos, eyePos + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();
-		
+		gun.Set("b_attack", true);
 		if (tr.Hit)
 		{
 			
@@ -94,9 +107,9 @@ public sealed class MP5 : Component
 			Log.Info(tr.GameObject);
 			var impactClone = impact.Clone(tr.HitPosition);
 			Sound.Play(gunSound, GameObject.Transform.Position);
-			var decal = decalGo.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal, Vector3.Random), Random.Shared.Float(0.8f, 1.2f)));
-			decal.SetParent( tr.GameObject );
-			decal.NetworkSpawn();
+			//var decal = decalGo.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal, Vector3.Random), Random.Shared.Float(0.8f, 1.2f)));
+			//decal.SetParent( tr.GameObject );
+			//decal.NetworkSpawn();
 			impactClone.NetworkSpawn();
 			if (tr.GameObject.Tags.Has("bad"))
 			{
@@ -104,9 +117,9 @@ public sealed class MP5 : Component
 				playerController.AddScore(5);
 				fullAmmo += 15;
 				var zombieParticleClone = zombieParticle.Clone(tr.HitPosition);
-				var zombieRagdollClone = zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
+				//var zombieRagdollClone = zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);
 				zombieParticleClone.NetworkSpawn();
-				zombieRagdollClone.NetworkSpawn();
+				//zombieRagdollClone.NetworkSpawn();
 			}
 			var damage = new DamageInfo( ShootDamage, GameObject, GameObject );
 			
@@ -121,4 +134,5 @@ public sealed class MP5 : Component
 		}
 		}
 	}
+}
 }

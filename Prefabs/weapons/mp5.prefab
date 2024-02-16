@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "8a79304f-ab70-4749-9cb0-3f0aabdc134c",
+    "Id": "b061ca40-7724-474c-8072-836b430b4394",
     "Name": "mp5",
     "Networked": true,
     "Enabled": true,
@@ -10,7 +10,7 @@
         "ammo": 30,
         "arms": {
           "_type": "component",
-          "go": "0c4665e2-1e94-43d4-8f34-83b6cb908bdd",
+          "go": "8afba58a-5f44-432d-a8fe-2dac848a2bdc",
           "component_type": "SkinnedModelRenderer"
         },
         "decalGo": {
@@ -20,7 +20,7 @@
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "542b0e1a-de61-4ffc-95f1-e370791067f1",
+          "go": "6490890d-8f4f-4557-b4d6-a844f4ad1eb2",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -42,7 +42,7 @@
     ],
     "Children": [
       {
-        "Id": "0c4665e2-1e94-43d4-8f34-83b6cb908bdd",
+        "Id": "8afba58a-5f44-432d-a8fe-2dac848a2bdc",
         "Name": "arms",
         "Enabled": true,
         "Components": [
@@ -52,7 +52,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "542b0e1a-de61-4ffc-95f1-e370791067f1",
+              "go": "6490890d-8f4f-4557-b4d6-a844f4ad1eb2",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
@@ -65,7 +65,7 @@
         ]
       },
       {
-        "Id": "542b0e1a-de61-4ffc-95f1-e370791067f1",
+        "Id": "6490890d-8f4f-4557-b4d6-a844f4ad1eb2",
         "Name": "gun",
         "Enabled": true,
         "Components": [

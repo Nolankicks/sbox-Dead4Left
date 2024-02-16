@@ -1,11 +1,12 @@
 {
   "RootObject": {
-    "Id": "a6ea8bf9-3755-45ab-9216-6bf0856edc75",
+    "Id": "0e5e4005-3c4f-4d46-a45a-c4b83c177a1b",
     "Name": "ragdoll",
     "Enabled": true,
     "Components": [
       {
         "__type": "SkinnedModelRenderer",
+        "AnimationGraph": null,
         "BodyGroups": 341,
         "BoneMergeTarget": null,
         "CreateBoneObjects": false,
@@ -21,48 +22,45 @@
         "Model": "models/citizen/citizen.vmdl",
         "Renderer": {
           "_type": "component",
-          "go": "a6ea8bf9-3755-45ab-9216-6bf0856edc75",
+          "go": "0e5e4005-3c4f-4d46-a45a-c4b83c177a1b",
           "component_type": "SkinnedModelRenderer"
         },
         "RigidbodyFlags": 0
       },
       {
-        "__type": "UpdateActionComponent",
+        "__type": "FixedUpdateActionComponent",
         "Action": {
-          "Kind": "Action",
-          "Version": 3,
-          "Variables": [
-            {
-              "Name": "_this",
-              "Type": "Sandbox.Game/Sandbox.Component",
-              "Default": {
-                "_type": "component",
-                "go": "a6ea8bf9-3755-45ab-9216-6bf0856edc75",
-                "component_type": "UpdateActionComponent"
-              }
-            }
-          ],
+          "Version": 5,
+          "UserData": {
+            "Title": "Action",
+            "id": "b9eb7871-cf7f-4b04-857a-5ed66ba7d83a",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
           "Nodes": [
             {
-              "Id": 0,
-              "Type": "input"
-            },
-            {
               "Id": 1,
-              "Type": "time.delay",
+              "Type": "input",
               "UserData": {
-                "Position": "240,64"
+                "Position": "-16,48"
               }
             },
             {
               "Id": 2,
-              "Type": "scene.getobject",
+              "Type": "time.delay",
               "UserData": {
-                "Position": "176,192"
+                "Position": "224,112"
               }
             },
             {
               "Id": 3,
+              "Type": "scene.getobject",
+              "UserData": {
+                "Position": "160,240"
+              }
+            },
+            {
+              "Id": 4,
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
@@ -70,40 +68,35 @@
                 "_name": "Destroy"
               },
               "UserData": {
-                "Position": "512,80"
+                "Position": "496,128"
               }
             }
           ],
           "Links": [
             {
-              "SrcId": 0,
+              "SrcId": 1,
               "SrcName": "_signal",
-              "DstId": 1,
+              "DstId": 2,
               "DstName": "_signal"
             },
             {
-              "Value": 10,
-              "DstId": 1,
+              "Value": 5,
+              "DstId": 2,
               "DstName": "seconds"
             },
             {
-              "SrcId": 1,
+              "SrcId": 2,
               "SrcName": "_signal",
-              "DstId": 3,
+              "DstId": 4,
               "DstName": "_signal"
             },
             {
-              "SrcId": 2,
+              "SrcId": 3,
               "SrcName": "_result",
-              "DstId": 3,
+              "DstId": 4,
               "DstName": "_target"
             }
-          ],
-          "UserData": {
-            "Title": "Action",
-            "id": "f3b3408e-3f46-4d6e-9912-f8138fcb11d1",
-            "ReferencedComponentTypes": []
-          }
+          ]
         }
       }
     ],

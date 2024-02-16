@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "688f8035-da58-4318-b89e-461a40c5d25e",
+    "Id": "33f4b7b8-fdfc-4b5a-b24d-6fff7b0fe64e",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
+          "go": "b2db7267-a27d-4479-b2d8-e76001c27876",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -27,7 +27,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "2638873c-2ce4-484b-953a-7c32aece3873"
+          "go": "b8e4456c-6d1f-40fc-840b-4bb7ec1f0c90"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -40,7 +40,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
+          "go": "b2db7267-a27d-4479-b2d8-e76001c27876",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -48,20 +48,20 @@
         "__type": "Zombie",
         "animationHelper": {
           "_type": "component",
-          "go": "688f8035-da58-4318-b89e-461a40c5d25e",
+          "go": "33f4b7b8-fdfc-4b5a-b24d-6fff7b0fe64e",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "de52a0a9-b0c0-4202-a973-119cf1670637"
+          "go": "b2db7267-a27d-4479-b2d8-e76001c27876"
         },
         "eye": {
           "_type": "gameobject",
-          "go": "2638873c-2ce4-484b-953a-7c32aece3873"
+          "go": "b8e4456c-6d1f-40fc-840b-4bb7ec1f0c90"
         },
         "hair": {
           "_type": "component",
-          "go": "40a288ed-928c-44a2-9dd2-23d5328a4005",
+          "go": "0b91abb1-49ab-450f-b2b2-21f79a794323",
           "component_type": "SkinnedModelRenderer"
         },
         "hairList": [
@@ -111,7 +111,7 @@
     ],
     "Children": [
       {
-        "Id": "de52a0a9-b0c0-4202-a973-119cf1670637",
+        "Id": "b2db7267-a27d-4479-b2d8-e76001c27876",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -142,7 +142,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
+              "go": "b2db7267-a27d-4479-b2d8-e76001c27876",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -156,13 +156,13 @@
         ]
       },
       {
-        "Id": "2638873c-2ce4-484b-953a-7c32aece3873",
+        "Id": "b8e4456c-6d1f-40fc-840b-4bb7ec1f0c90",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
       },
       {
-        "Id": "40a288ed-928c-44a2-9dd2-23d5328a4005",
+        "Id": "0b91abb1-49ab-450f-b2b2-21f79a794323",
         "Name": "hair",
         "Enabled": true,
         "Components": [
@@ -172,7 +172,7 @@
             "BodyGroups": 18446744073709551615,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
+              "go": "b2db7267-a27d-4479-b2d8-e76001c27876",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,

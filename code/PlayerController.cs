@@ -53,6 +53,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	{
 		if (IsProxy) return;
 		Movement();
+		Crouch();
 	}
 	private void MouseInput()
 	{
@@ -81,6 +82,26 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 
 		// air friction
 		return 0.2f;
+	}
+	bool CanUnCrouch()
+	{
+		if ( !Crouching ) return true;
+		
+		var tr = controller.TraceDirection( Vector3.Up * 32 );
+		return !tr.Hit;
+	}
+	void Crouch()
+	{
+		if (Input.Down("duck") && CanUnCrouch())
+		{
+		 controller.Height = 36;
+		 Crouching = true;
+		}
+		else
+		{
+			Crouching = false;
+			controller.Height = 64;
+		}
 	}
 	public RealTimeSince jumpTime;
 	private void Movement()
@@ -149,7 +170,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		if ( camera is null ) return;
 		
-		var targetEyeHeight = Crouching ? 28 : 64;
+		var targetEyeHeight = Crouching ? 32 : 64;
 		EyeHight = EyeHight.LerpTo( targetEyeHeight, RealTime.Delta * 10.0f );
 
 		var targetCameraPos = Transform.Position + new Vector3( 0, 0, EyeHight );

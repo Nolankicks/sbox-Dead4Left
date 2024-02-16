@@ -1,14 +1,11 @@
 {
   "RootObject": {
-    "Id": "ca31de13-7c30-46a4-a333-ebc2b4d3f033",
-    "Name": "Decal",
-    "Position": "904.9703,-417.4653,-1628.978",
-    "Rotation": "-0.00000000000003087897,0.7164715,0.00000004158126,0.6976173",
+    "Id": "eb83be91-de78-4ff7-8fa8-2dfb0bab5b73",
+    "Name": "decal_bullet_default",
     "Enabled": true,
     "Components": [
       {
         "__type": "DecalRenderer",
-        "__enabled": true,
         "CutoffAngle": 60,
         "CutoffAngleSoftness": 5,
         "Material": "materials/decals/bullethole.vmat",
@@ -16,8 +13,81 @@
         "Size": "5,5,5",
         "TintColor": "1,1,1,1",
         "TriPlanar": false
+      },
+      {
+        "__type": "FixedUpdateActionComponent",
+        "Action": {
+          "Version": 5,
+          "UserData": {
+            "Title": "Action",
+            "id": "624a34a1-a105-43df-91f3-0fd99d5a7cff",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 4,
+              "Type": "input",
+              "UserData": {
+                "Position": "64,16"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "304,80"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "scene.getobject",
+              "UserData": {
+                "Position": "240,208"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Destroy"
+              },
+              "UserData": {
+                "Position": "576,96"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 4,
+              "SrcName": "_signal",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 10,
+              "DstId": 5,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "_target"
+            }
+          ]
+        }
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
