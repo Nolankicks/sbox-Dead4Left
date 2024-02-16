@@ -57,6 +57,14 @@
               },
               "ShowMaps": false,
               "ShowNotes": false
+            },
+            {
+              "__type": "EasterEggTrace",
+              "bloodParticle": {
+                "_type": "gameobject",
+                "prefab": "prefabs/bloodparticle.prefab"
+              },
+              "soundEvent": "sounds/impacts/impact-bullet-flesh.sound"
             }
           ]
         }
@@ -67,6 +75,7 @@
       "Name": "Zombie",
       "Position": "339.1876,112.2668,-282.767",
       "Rotation": "0,0,0.9762965,0.2164372",
+      "Tags": "zombie",
       "Enabled": true,
       "Components": [
         {
@@ -107,6 +116,24 @@
             "go": "5b448f8a-ce20-4097-b475-0b0b197352db",
             "component_type": "CitizenAnimationHelper"
           }
+        }
+      ],
+      "Children": [
+        {
+          "Id": "1a219ad2-4c3f-4f52-b71b-9b9615c16d9c",
+          "Name": "Collider",
+          "Position": "0,0,37.90939",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "46.29996,51.09998,82.7006",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         }
       ]
     },
@@ -178,6 +205,6 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-02-15T19:33:07.0936584-05:00",
+  "LastSaved": "2024-02-15T19:52:02.1995187-05:00",
   "__references": []
 }
