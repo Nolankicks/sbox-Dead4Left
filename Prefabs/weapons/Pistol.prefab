@@ -7,6 +7,11 @@
       {
         "__type": "Pistol",
         "ammo": 60,
+        "arms": {
+          "_type": "component",
+          "go": "2a7872fb-38d0-4782-ab90-cee7d09338de",
+          "component_type": "SkinnedModelRenderer"
+        },
         "decalGo": {
           "_type": "gameobject",
           "prefab": "prefabs/decal_bullet_default.prefab"
@@ -42,6 +47,7 @@
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
             "BodyGroups": 17685,
             "BoneMergeTarget": null,
             "CreateBoneObjects": false,
@@ -60,6 +66,7 @@
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
@@ -80,7 +87,5 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.v_usp"
-  ]
+  "__references": []
 }

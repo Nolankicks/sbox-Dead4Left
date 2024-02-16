@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "4769b68a-3564-4a9a-b40d-546f4a0368c4",
+    "Id": "688f8035-da58-4318-b89e-461a40c5d25e",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "12dad220-95b9-42d4-ae30-20de33fb2a88",
+          "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -27,7 +27,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "f2b5bc35-ba10-422b-8155-2247a83b9e8c"
+          "go": "2638873c-2ce4-484b-953a-7c32aece3873"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -40,7 +40,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "12dad220-95b9-42d4-ae30-20de33fb2a88",
+          "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -48,17 +48,60 @@
         "__type": "Zombie",
         "animationHelper": {
           "_type": "component",
-          "go": "4769b68a-3564-4a9a-b40d-546f4a0368c4",
+          "go": "688f8035-da58-4318-b89e-461a40c5d25e",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "12dad220-95b9-42d4-ae30-20de33fb2a88"
+          "go": "de52a0a9-b0c0-4202-a973-119cf1670637"
         },
         "eye": {
           "_type": "gameobject",
-          "go": "f2b5bc35-ba10-422b-8155-2247a83b9e8c"
+          "go": "2638873c-2ce4-484b-953a-7c32aece3873"
         },
+        "hair": {
+          "_type": "component",
+          "go": "40a288ed-928c-44a2-9dd2-23d5328a4005",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "hairList": [
+          "models/citizen_clothes/hair/big_scruffy_bread/models/big_scruffy_beard.vmdl",
+          "models/citizen_clothes/hair/decorated_beard/models/decorated_beard.vmdl",
+          "models/citizen_clothes/hair/eyebrows/models/eyebrows.vmdl",
+          "models/citizen_clothes/hair/eyebrows_bushy/models/eyebrows_bushy.vmdl",
+          "models/citizen_clothes/hair/eyebrows_drawn/models/eyebrows_drawn.vmdl",
+          "models/citizen_clothes/hair/eyebrows_monobrow/models/monobrow.vmdl",
+          "models/citizen_clothes/hair/eyebrows_styled/models/eyebrows_styled.vmdl",
+          "models/citizen_clothes/hair/eyelashes/models/eyelashes.vmdl",
+          "models/citizen_clothes/hair/goatee/models/goatee.vmdl",
+          "models/citizen_clothes/hair/hair_balding/models/hair_baldingbrown.vmdl",
+          "models/citizen_clothes/hair/hair_bobcut/models/hair_bobcut.vmdl",
+          "models/citizen_clothes/hair/hair_dreaded/models/hair_dreaded.vmdl",
+          "models/citizen_clothes/hair/hair_fade/models/hair_fade.vmdl",
+          "models/citizen_clothes/hair/hair_flower/models/hair_flower.vmdl",
+          "models/citizen_clothes/hair/hair_longbob/models/hair_longbob.vmdl",
+          "models/citizen_clothes/hair/hair_longbrown/models/hair_longbrown.vmdl",
+          "models/citizen_clothes/hair/hair_longcurly/models/hair_longcurly_brown.vmdl",
+          "models/citizen_clothes/hair/hair_looseblonde/hair_looseblonde.vmdl",
+          "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
+          "models/citizen_clothes/hair/hair_oldcurly/models/hair_oldcurly.vmdl",
+          "models/citizen_clothes/hair/hair_ponytail/models/hair_ponytail.vmdl",
+          "models/citizen_clothes/hair/hair_scruffy_shaved_sides/models/scruffy_shaved_sides.vmdl",
+          "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
+          "models/citizen_clothes/hair/hair_slickedback/models/hair_slickedback.vmdl",
+          "models/citizen_clothes/hair/hair_thinning_short/models/thinning_short.vmdl",
+          "models/citizen_clothes/hair/hair_tight_ponytail/models/hair_tight_ponytail_brown.vmdl",
+          "models/citizen_clothes/hair/hair_wavyblack/model/hair_wavyblack.vmdl",
+          "models/citizen_clothes/hair/moustache/models/moustache_brown.vmdl",
+          "models/citizen_clothes/hair/mutton_chops/models/mutton_chops.vmdl",
+          "models/citizen_clothes/hair/scruffy_beard/models/scruffy_beard_brown.vmdl",
+          "models/citizen_clothes/hair/stubble/model/stubble.vmdl",
+          "models/citizen_clothes/hat/hair_net/models/hair_net.vmdl",
+          "models/citizen_clothes/hair/hair_short_dreadlocks/models/hair_short_dreadlocks.vmdl",
+          "models/citizen_clothes/hair/hair_short_dreadlocks/models/hair_short_dreadlocks.vmdl",
+          "models/citizen_clothes/hair/hair_long_dreadlocks/models/hair_long_dreadlocks.vmdl",
+          "models/citizen_clothes/hair/hair_tied_dreads/models/hair_tied_dreads.vmdl"
+        ],
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "ragdollGameObject": {
           "_type": "gameobject",
@@ -68,12 +111,13 @@
     ],
     "Children": [
       {
-        "Id": "12dad220-95b9-42d4-ae30-20de33fb2a88",
+        "Id": "de52a0a9-b0c0-4202-a973-119cf1670637",
         "Name": "body",
         "Enabled": true,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
             "BodyGroups": 341,
             "BoneMergeTarget": null,
             "CreateBoneObjects": false,
@@ -98,7 +142,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "12dad220-95b9-42d4-ae30-20de33fb2a88",
+              "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -112,10 +156,33 @@
         ]
       },
       {
-        "Id": "f2b5bc35-ba10-422b-8155-2247a83b9e8c",
+        "Id": "2638873c-2ce4-484b-953a-7c32aece3873",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
+      },
+      {
+        "Id": "40a288ed-928c-44a2-9dd2-23d5328a4005",
+        "Name": "hair",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": {
+              "_type": "component",
+              "go": "de52a0a9-b0c0-4202-a973-119cf1670637",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": null,
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
       }
     ]
   },

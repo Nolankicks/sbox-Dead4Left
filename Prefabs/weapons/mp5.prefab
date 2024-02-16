@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "a7eff6ab-e357-4b7b-94a7-fb5efae9e5cc",
+    "Id": "8a79304f-ab70-4749-9cb0-3f0aabdc134c",
     "Name": "mp5",
     "Networked": true,
     "Enabled": true,
@@ -10,7 +10,7 @@
         "ammo": 30,
         "arms": {
           "_type": "component",
-          "go": "54371bd6-8930-45a0-88b9-4f94f766bb5d",
+          "go": "0c4665e2-1e94-43d4-8f34-83b6cb908bdd",
           "component_type": "SkinnedModelRenderer"
         },
         "decalGo": {
@@ -20,7 +20,7 @@
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "70a54084-369a-4617-865a-52832bc4b441",
+          "go": "542b0e1a-de61-4ffc-95f1-e370791067f1",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -28,7 +28,7 @@
           "_type": "gameobject",
           "prefab": "prefabs/impact_default (1).prefab"
         },
-        "reloadSound": "sounds/reload/mp5.mag.load.sound",
+        "reloadSound": "sounds/reload/mp5.mag.sound",
         "ShootDamage": 10,
         "zombieParticle": {
           "_type": "gameobject",
@@ -42,7 +42,7 @@
     ],
     "Children": [
       {
-        "Id": "54371bd6-8930-45a0-88b9-4f94f766bb5d",
+        "Id": "0c4665e2-1e94-43d4-8f34-83b6cb908bdd",
         "Name": "arms",
         "Enabled": true,
         "Components": [
@@ -52,7 +52,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "70a54084-369a-4617-865a-52832bc4b441",
+              "go": "542b0e1a-de61-4ffc-95f1-e370791067f1",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
@@ -65,7 +65,7 @@
         ]
       },
       {
-        "Id": "70a54084-369a-4617-865a-52832bc4b441",
+        "Id": "542b0e1a-de61-4ffc-95f1-e370791067f1",
         "Name": "gun",
         "Enabled": true,
         "Components": [

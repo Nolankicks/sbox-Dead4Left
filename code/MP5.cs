@@ -35,8 +35,9 @@ public sealed class MP5 : Component
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		manager = GameManager.ActiveScene.GetAllComponents<Manager>().FirstOrDefault();
 		viewmodel = GameManager.ActiveScene.GetAllComponents<ActiveWeapon>().FirstOrDefault(x => !x.IsProxy);
-		
 		GameObject.Transform.LocalPosition = new Vector3(3.302f, -7.1f, 63.7f);
+		gun.RenderType = ModelRenderer.ShadowRenderType.Off;
+		arms.RenderType = ModelRenderer.ShadowRenderType.Off;
 	}
 	bool ableToShoot;
 	bool reloading;

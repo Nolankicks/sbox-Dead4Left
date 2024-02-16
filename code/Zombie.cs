@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Kicks;
 using Sandbox;
@@ -6,20 +7,33 @@ using Sandbox.Citizen;
 
 public sealed class Zombie : Component
 {
+	[Property] public List<Model> hairList { get; set; } = new List<Model>()
+	{
+
+	};
 	[Property] public GameObject body { get; set; }
 	[Property] public GameObject eye { get; set; }
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public GameObject ragdollGameObject { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
+	[Property] public SkinnedModelRenderer hair { get; set; }
 	private NavMeshAgent agent;
 	public TimeSince timeSinceHit = 0;
 	private Vector3 target;
 	private PlayerController targetPlayer;
+	
 	protected override void OnStart()
 	{
 		agent = Components.Get<NavMeshAgent>();
         var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
         targetPlayer = Game.Random.FromList(playerControllers); //you can pick it like this
+
+		hair.Model = hairList[Random.Shared.Int(0, hairList.Count)];
+		
+		if (hair.Model == null)
+		{
+			hair.GameObject.Destroy();
+		}
 	}
 	protected override void OnUpdate()
 	{

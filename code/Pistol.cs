@@ -28,7 +28,6 @@ public sealed class Pistol : Component
 		float AmmoNeeded = 60;
 	protected override void OnStart()
 	{
-
 		animationHelper = GameObject.Components.GetInDescendantsOrSelf<CitizenAnimationHelper>();
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
@@ -36,7 +35,8 @@ public sealed class Pistol : Component
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		viewmodel = GameManager.ActiveScene.GetAllComponents<NetworkedViewmodel>().FirstOrDefault(x => !x.IsProxy);
 		GameObject.Transform.LocalPosition = new Vector3(3.302f, -7.1f, 63.7f);
-		
+		gun.RenderType = ModelRenderer.ShadowRenderType.Off;
+		arms.RenderType = ModelRenderer.ShadowRenderType.Off;
 	}
 	bool ableToShoot;
 	bool reloading;

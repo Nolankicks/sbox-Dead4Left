@@ -7,9 +7,10 @@ public sealed class ZombieSpawner : Component
 {
 	[Property] public GameObject ZombiePrefab { get; set; }
 	public float GetRandom() => Random.Shared.Float(1, 100);
+	public Zombie[] zombies;
 	protected override void OnUpdate()
 	{
-		
+		zombies = Scene.GetAllComponents<Zombie>().ToArray();
 	}
 	void SpawnZombie()
 	{
@@ -23,20 +24,12 @@ public sealed class ZombieSpawner : Component
 	TimeUntil nextSecond = 0f;
 	protected override void OnFixedUpdate()
 	{
-		if (nextSecond)
+		if (nextSecond && zombies.Length <= 30)
 		{
-			var random = GetRandom();
-			GetRandom();
-
-			if (random >= 80f)
-			{
-				SpawnZombie();
-			}
+			SpawnZombie();
 			nextSecond = 1;
-			Log.Info(random);
 		}
-		
-		
+		}
 	}
 
-}
+
