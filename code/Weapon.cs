@@ -37,10 +37,7 @@ public sealed class Weapon : Component
 		if (playertext == 0)
 		{
 			if (IsProxy) return;
-		for (int i = 0; i < Inventory.Length; i++)
-		{
-			Inventory[i] = "weapon_fists";
-		}
+
 		Inventory[0] = "weapon_smg";
 		Inventory[1] = "";
 		Inventory[2] = "";
@@ -55,10 +52,6 @@ public sealed class Weapon : Component
 		if (playertext == 1)
 		{
 		if (IsProxy) return;
-		for (int i = 0; i < Inventory.Length; i++)
-		{
-			Inventory[i] = "weapon_fists";
-		}
 		Inventory[0] = "weapon_smg";
 		Inventory[1] = "";
 		Inventory[2] = "";
@@ -73,10 +66,6 @@ public sealed class Weapon : Component
 	if (playertext == 2)
 		{
 		if (IsProxy) return;
-		for (int i = 0; i < Inventory.Length; i++)
-		{
-			Inventory[i] = "weapon_fists";
-		}
 		Inventory[0] = "weapon_pistol";
 		Inventory[1] = "";
 		Inventory[2] = "";

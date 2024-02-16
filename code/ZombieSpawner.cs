@@ -11,6 +11,7 @@ public sealed class ZombieSpawner : Component
 	protected override void OnUpdate()
 	{
 		zombies = Scene.GetAllComponents<Zombie>().ToArray();
+		
 	}
 	void SpawnZombie()
 	{
@@ -24,6 +25,7 @@ public sealed class ZombieSpawner : Component
 	TimeUntil nextSecond = 0f;
 	protected override void OnFixedUpdate()
 	{
+		if (zombies is null) return;
 		if (nextSecond && zombies.Length <= 30)
 		{
 			SpawnZombie();
