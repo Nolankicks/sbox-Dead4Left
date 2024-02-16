@@ -80,13 +80,11 @@
 				<div class="header">LEADERBOARD</div>
 				@foreach (var entry in manager.Leaderboard.Entries)
 				{
-					<div class="entry @IsMe(entry)">
+					<div class="entry">
 					<div class="ranking">@entry.Rank</div>
-					
-					<div class="name">
+					<div class="name  @IsMe(entry)">
 						<image class="image" texture=@AvatarTexture(entry)/>
 					<div class="displayname">@entry.DisplayName</div>
-					
 					<div class="score">@entry.FormattedValue</div>
 					</div>
 					</div>
@@ -161,7 +159,11 @@
 	}
 	protected override void OnUpdate()
 	{
+		if(Input.EscapePressed && ShowMaps)
+		{
+			ShowMaps = !ShowMaps;
 		
+		}
 	}
 	void Credits()
 	{

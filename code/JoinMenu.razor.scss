@@ -208,7 +208,7 @@ JoinMenu
 	{
 		position: absolute;
 		bottom: 32px;
-		right: 32px;
+		
 		justify-content: center;
 		align-items: center;
 
@@ -402,6 +402,7 @@ JoinMenu
 						flex-direction: row;
 						width: 100%;
 						padding: 4px 8px;
+						
 						>.ranking
 						{
 							font-size: 42px;
@@ -414,6 +415,12 @@ JoinMenu
 							flex-grow: 1;
 							gap: 16px;
 							flex-direction: row;
+							&.me
+							{
+								background-color: rgba( white, 0.1 );
+								border-radius: 16px;
+
+							}
 							>.score
 							{
 								position: absolute;
@@ -431,7 +438,9 @@ JoinMenu
 								flex-direction: column;
 
 							}
+
 						}
+
 					}
 				}
 			}
