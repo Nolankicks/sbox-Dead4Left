@@ -73,7 +73,29 @@
 			<PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(50)></PackageList>
 		</div>
 
-	
+	<div class="right">
+		<div class="leaderboard">
+			@if (manager.Leaderboard is not null)
+			{
+				<div class="header">LEADERBOARD</div>
+				@foreach (var entry in manager.Leaderboard.Entries)
+				{
+					<div class="entry @IsMe(entry)">
+					<div class="ranking">@entry.Rank</div>
+					
+					<div class="name">
+						<image class="image" texture=@AvatarTexture(entry)/>
+					<div class="displayname">@entry.DisplayName</div>
+					
+					<div class="score">@entry.FormattedValue</div>
+					</div>
+					</div>
+				}
+			}
+
+			</div>
+		</div>
+	</div>
 </root>
 
 
@@ -87,7 +109,7 @@
 	[Property] public bool ShowMaps { get; set; } = false;
 	public long HighScore { get; private set; } = 0;
 	[Property] public Manager manager { get; set; }
-
+	public Sandbox.Services.Leaderboards.Board Leaderboard;
 		protected override void OnEnabled()
 	{
 		base.OnEnabled();

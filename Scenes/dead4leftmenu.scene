@@ -65,12 +65,13 @@
     {
       "Id": "5b448f8a-ce20-4097-b475-0b0b197352db",
       "Name": "Zombie",
-      "Position": "320,96,-256",
-      "Rotation": "0,0,0.9659258,0.258819",
+      "Position": "339.1876,112.2668,-282.767",
+      "Rotation": "0,0,0.9762965,0.2164372",
       "Enabled": true,
       "Components": [
         {
           "__type": "SkinnedModelRenderer",
+          "AnimationGraph": null,
           "BodyGroups": 341,
           "BoneMergeTarget": null,
           "CreateBoneObjects": false,
@@ -79,6 +80,33 @@
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "CitizenAnimationHelper",
+          "BodyWeight": 1,
+          "EyeSource": null,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "IkLeftFoot": null,
+          "IkLeftHand": null,
+          "IkRightFoot": null,
+          "IkRightHand": null,
+          "LookAt": null,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "go": "5b448f8a-ce20-4097-b475-0b0b197352db",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "MainMenuZombiePoser",
+          "AnimationHelper": {
+            "_type": "component",
+            "go": "5b448f8a-ce20-4097-b475-0b0b197352db",
+            "component_type": "CitizenAnimationHelper"
+          }
         }
       ]
     },
@@ -150,6 +178,6 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-02-13T21:29:16.0676488-05:00",
+  "LastSaved": "2024-02-15T19:16:04.6250149-05:00",
   "__references": []
 }

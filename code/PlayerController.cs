@@ -141,7 +141,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		var tr = controller.TraceDirection(Vector3.Up * CrouchHeight);
 		return !tr.Hit;
 	}
-
+	
 	
 
 		private void UpdateCamera()
