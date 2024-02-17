@@ -26,9 +26,9 @@ public sealed class MP5 : Component
 	public ActiveWeapon viewmodel;
 	Manager manager;
 	Weapon weapon;
-	PlayerController player;
 	float AmmoNeeded = 30;
 	Vector3 startPos;
+	CharacterController characterController;
 	protected override void OnStart()
 	{
 		//networking
@@ -40,8 +40,8 @@ public sealed class MP5 : Component
 		GameObject.Transform.LocalPosition = new Vector3(3.302f, -7.1f, 63.7f);
 		gun.RenderType = ModelRenderer.ShadowRenderType.Off;
 		arms.RenderType = ModelRenderer.ShadowRenderType.Off;
-		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		startPos = GameObject.Transform.LocalPosition;
+		characterController = GameManager.ActiveScene.GetAllComponents<CharacterController>().FirstOrDefault(x => !x.IsProxy);
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -49,6 +49,7 @@ public sealed class MP5 : Component
 
 	protected override void OnUpdate()
 	{
+		Animations();
 		if (IsProxy) return;
 		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 100);
 		if (fullAmmo < 0)
@@ -61,7 +62,6 @@ public sealed class MP5 : Component
 		var target = startPos - (Input.Down( "duck" ) ? crouchVector : 0);
 		Transform.LocalPosition = Transform.LocalPosition.LerpTo( target, Time.Delta * 10f );
 		
-			Log.Info("Standing");
 		
 		if (Input.Pressed("reload") && fullAmmo != 0 && ammo != 30)
 		{
@@ -99,9 +99,9 @@ public sealed class MP5 : Component
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
 		var tr = Scene.Trace.Ray( eyePos, eyePos + playerController.EyeAngles.Forward * 8000).WithoutTags("player").Run();
 		gun.Set("b_attack", true);
+	
 		if (tr.Hit)
 		{
-			
 			ammo -= 1;
 			AmmoNeeded -= 1;
 			Log.Info(tr.GameObject);
@@ -134,5 +134,23 @@ public sealed class MP5 : Component
 		}
 		}
 	}
+}
+
+void Animations()
+{
+	if (characterController.IsOnGround)
+	{
+		gun.Set("b_grounded", true);
+	}
+	else
+	{
+		gun.Set("b_grounded", false);
+	}
+
+	if (Input.Pressed("jump"))
+	{
+		gun.Set("b_jump", true);
+	}
+	
 }
 }

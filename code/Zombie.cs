@@ -1,114 +1,84 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using Kicks;
+using Microsoft.VisualBasic;
 using Sandbox;
 using Sandbox.Citizen;
 
 public sealed class Zombie : Component
 {
-	[Property] public List<Model> hairList { get; set; } = new List<Model>()
-	{
 
-	};
+	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property] public NavMeshAgent NavMeshAgent { get; set; }
 	[Property] public GameObject body { get; set; }
-	[Property] public GameObject eye { get; set; }
-	[Property] public CitizenAnimationHelper animationHelper { get; set; }
-	[Property] public GameObject ragdollGameObject { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
-	[Property] public SkinnedModelRenderer hair { get; set; }
-	private NavMeshAgent agent;
-	public TimeSince timeSinceHit = 0;
-	private Vector3 target;
-	private PlayerController targetPlayer;
-	
+	public PlayerController targetPlayer;
 	protected override void OnStart()
 	{
-		agent = Components.Get<NavMeshAgent>();
-        var playerControllers = Scene.GetAllComponents<PlayerController>().ToList();
-        targetPlayer = Game.Random.FromList(playerControllers); //you can pick it like this
-
-		hair.Model = hairList[Random.Shared.Int(0, hairList.Count)];
-		
-		if (hair.Model == null)
-		{
-			hair.GameObject.Destroy();
-		}
+		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
+		AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
+		var players = GameManager.ActiveScene.GetAllComponents<PlayerController>().ToList();
+		targetPlayer = Game.Random.FromList(players);
+		Log.Info( $"Targeting {targetPlayer}" );
 	}
 	protected override void OnUpdate()
 	{
-		if (targetPlayer is not null)
+		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, body.Transform.Position ) < 150f)
 		{
-		target = targetPlayer.Transform.Position;
-		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
-		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
-		
+			NavMeshAgent.Stop();
+		}
+		else
+		{
+			NavMeshAgent.MoveTo(targetPlayer.Transform.Position);
+		}
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, GameObject.Transform.Position ) < 150f)
 		{
-			agent.Stop();
+			NavMeshAgent.Stop();
 		}
-		else
-		{
-			agent.MoveTo(target);
-		}
+		var target = targetPlayer.Transform.Position;
+		
+		UpdateAnimations();
 		if (target.z > GameObject.Transform.Position.z + 50)
 		{
-			UpwardTrace();
+			UpWardTrace();
 		}
 		else
 		{
-			NormalTrace();
+			FowardTrace();
 		}
 	}
-	UpdateAnimtions();
-	}
-	
-	protected override void OnFixedUpdate()
-	{
 
-		
-	}
-
-	void UpdateAnimtions()
+	void UpdateAnimations()
 	{
-		var bodyRot = body.Transform.Rotation.Angles();
-		animationHelper.WithWishVelocity(agent.WishVelocity);
-		animationHelper.WithVelocity(agent.Velocity);
-		var targetRot = Rotation.LookAt(target.WithZ(Transform.Position.z) - body.Transform.Position);
-		body.Transform.Rotation = Rotation.Slerp(body.Transform.Rotation, targetRot, Time.Delta * 5.0f);
+		var target = targetPlayer.Transform.Position;
+		var bodyRot = AnimationHelper.Transform.Rotation.Angles();
+		AnimationHelper.WithWishVelocity( NavMeshAgent.WishVelocity );
+		AnimationHelper.WithVelocity(NavMeshAgent.WishVelocity);
+		var targetRot = Rotation.LookAt(target.WithZ(Transform.Position.z) - Transform.Position);
+		body.Transform.Rotation = Rotation.Slerp( body.Transform.Rotation, targetRot, Time.Delta * 5 );
 	}
-	void NormalTrace()
+	public TimeSince lastAttack = 0;
+	void FowardTrace()
 	{
-		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + body.Transform.Rotation.Forward * 75).WithTag("player").Run();
+		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + Vector3.Up * 64 + body.Transform.Rotation.Forward * 150).Run();
 
-		if (tr.Hit && timeSinceHit > 1.0f && GameObject is not null)
+		if (tr.Hit && tr.GameObject.Tags.Has("player") && lastAttack > 1.5f)
 		{
-			targetPlayer.TakeDamage(25);
-			animationHelper.Target.Set("b_attack", true);
-			timeSinceHit = 0;
+			AnimationHelper.Target.Set("b_attack" , true);
+			targetPlayer.TakeDamage(10);
+			lastAttack = 0;
 			Sound.Play(hitSound);
 		}
-
 	}
-
-	void UpwardTrace()
+	void UpWardTrace()
 	{
-		var tr = Scene.Trace.Ray(eye.Transform.Position, eye.Transform.Position + eye.Transform.Rotation.Up * 50).Run();
+		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + Vector3.Up * 64 + body.Transform.Rotation.Up * 200).Run();
 
-		if (tr.Hit && tr.GameObject.Tags.Has("player") && timeSinceHit > 1.0f && GameObject is not null)
+		if (tr.Hit && tr.GameObject.Tags.Has("player") && lastAttack > 1.5f)
 		{
-			targetPlayer.TakeDamage(25);
-			animationHelper.Target.Set("b_attack", true);
-			timeSinceHit = 0;
+			AnimationHelper.Target.Set("b_attack" , true);
+			targetPlayer.TakeDamage(10);
+			lastAttack = 0;
 			Sound.Play(hitSound);
-			Log.Info("Hit");
 		}
-
 	}
-	protected override void OnDestroy()
-	{
-		ragdollGameObject.Clone(body.Transform.Position, body.Transform.Rotation);
-	}
-
-
 }

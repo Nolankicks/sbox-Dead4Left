@@ -65,7 +65,7 @@
     {
       "Id": "b6d59cf1-c0e3-4b1c-9315-bbb968d970e3",
       "Name": "camera",
-      "Position": "449.5116,51.34442,17.14901",
+      "Position": "511.9753,-544.0217,123.9913",
       "Tags": "particles",
       "Enabled": true,
       "Components": [
@@ -116,7 +116,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/newerplayer.prefab"
           },
-          "SpawnPoints": [],
+          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -125,6 +125,7 @@
       "Id": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -159,6 +160,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-16T20:55:55.6436971-05:00",
+  "LastSaved": "2024-02-17T12:32:19.0802498-05:00",
   "__references": []
 }
