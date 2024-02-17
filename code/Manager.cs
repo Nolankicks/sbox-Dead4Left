@@ -20,6 +20,7 @@ public sealed class Manager : Component
 	public bool ShouldAddScore { get; set; } = false;
 	//[Property] public PlayerController playerController { get; set; }
 	PlayerController playerController;
+	Weapon weapon;
 
 
 	public Sandbox.Services.Leaderboards.Board Leaderboard;
@@ -27,6 +28,7 @@ public sealed class Manager : Component
 	protected override void OnStart()
 	{
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		Scene.NavMesh.SetDirty();
 	}
 	protected override void OnAwake()

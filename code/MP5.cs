@@ -77,7 +77,11 @@ public sealed class MP5 : Component
 			gun.GameObject.Enabled = false;
 			arms.GameObject.Enabled = false;
 		}
-
+		if (playerController.Health <= 0)
+		{
+			fullAmmo = 60;
+			ammo = 30;
+		}
 	}
 	protected override void OnFixedUpdate()
 	{
