@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "4297162b-c35a-4fb0-a38f-247fe10ad56d",
+    "Id": "08c6f6c1-17e1-404e-8277-c20f8b2bdccf",
     "Name": "mp5",
     "Networked": true,
     "Enabled": true,
@@ -10,7 +10,7 @@
         "ammo": 30,
         "arms": {
           "_type": "component",
-          "go": "e828e35c-a218-409d-b735-43ae7ea2431f",
+          "go": "9e3d2d6d-1524-4a97-a1eb-8093ceb05d1e",
           "component_type": "SkinnedModelRenderer"
         },
         "decalGo": {
@@ -20,7 +20,7 @@
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "294c2238-2a78-4e19-9ce3-4181e8472e82",
+          "go": "61c247d5-ca14-497e-9e28-610faed65e66",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -28,9 +28,9 @@
           "_type": "gameobject",
           "prefab": "prefabs/impact_default (1).prefab"
         },
-        "MuzzleFlash": "fireparticle.vpcf",
         "reloadSound": "sounds/reload/mp5.mag.sound",
         "ShootDamage": 10,
+        "weaponDamage": 50,
         "zombieParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/bloodparticle.prefab"
@@ -43,7 +43,7 @@
     ],
     "Children": [
       {
-        "Id": "e828e35c-a218-409d-b735-43ae7ea2431f",
+        "Id": "9e3d2d6d-1524-4a97-a1eb-8093ceb05d1e",
         "Name": "arms",
         "Enabled": true,
         "Components": [
@@ -53,7 +53,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "294c2238-2a78-4e19-9ce3-4181e8472e82",
+              "go": "61c247d5-ca14-497e-9e28-610faed65e66",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
@@ -66,7 +66,7 @@
         ]
       },
       {
-        "Id": "294c2238-2a78-4e19-9ce3-4181e8472e82",
+        "Id": "61c247d5-ca14-497e-9e28-610faed65e66",
         "Name": "gun",
         "Enabled": true,
         "Components": [
@@ -90,7 +90,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "facepunch.v_mp5",
-    "sugmagaming.fireparticle"
+    "facepunch.v_mp5"
   ]
 }

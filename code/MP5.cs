@@ -21,6 +21,8 @@ public sealed class MP5 : Component
 	[Property] public GameObject zombieParticle { get; set; }
 	[Property] public SkinnedModelRenderer gun { get; set; }
 	[Property] public SkinnedModelRenderer arms { get; set; }
+	[Property, Range(0, 100)] public float weaponDamage { get; set; }
+	
 	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
 	public ActiveWeapon viewmodel;
@@ -42,6 +44,7 @@ public sealed class MP5 : Component
 		arms.RenderType = ModelRenderer.ShadowRenderType.Off;
 		startPos = GameObject.Transform.LocalPosition;
 		characterController = GameManager.ActiveScene.GetAllComponents<CharacterController>().FirstOrDefault(x => !x.IsProxy);
+
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -117,8 +120,9 @@ public sealed class MP5 : Component
 			impactClone.NetworkSpawn();
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-				tr.GameObject.Parent.Destroy();
-				playerController.AddScore(5);
+				var zombie = tr.GameObject.Parent.Components?.Get<Zombie>();
+				zombie.TakeDamage(weaponDamage);
+				if (zombie.Health <= 0) playerController.AddScore(5);
 				fullAmmo += 15;
 				var zombieParticleClone = zombieParticle.Clone(tr.HitPosition);
 				//var zombieRagdollClone = zombieRagdoll.Clone(tr.GameObject.Transform.Position, tr.GameObject.Transform.Rotation);

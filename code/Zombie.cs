@@ -1,16 +1,17 @@
 using System.Linq;
 using Kicks;
-using Microsoft.VisualBasic;
 using Sandbox;
 using Sandbox.Citizen;
 
-public sealed class Zombie : Component
+public sealed class Zombie : Component, IHealthComponent
 {
 
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public NavMeshAgent NavMeshAgent { get; set; }
 	[Property] public GameObject body { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
+	[Sync] public float Health { get; set; } = 100;
+	[Sync] public float MaxHealth { get; set; } = 100;
 	public PlayerController targetPlayer;
 	protected override void OnStart()
 	{
@@ -79,6 +80,16 @@ public sealed class Zombie : Component
 			targetPlayer.TakeDamage(10);
 			lastAttack = 0;
 			Sound.Play(hitSound);
+		}
+	}
+	public void TakeDamage(float damage)
+	{
+		Health -= damage;
+		if (Health <= 0)
+		{
+			Health = 0;
+			//GameManager.ActiveScene.RemoveComponent(this);
+			GameObject.Destroy();
 		}
 	}
 }

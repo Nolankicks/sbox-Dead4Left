@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "993db95d-3452-4fee-9495-d7755ca08592",
+    "Id": "6381358d-950d-46d6-ac68-b43c26d17ba0",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "1bdb93b8-ef43-4923-bbda-1ec2a47d8523",
+          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -27,7 +27,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "c3ce3dc7-8e59-4a96-8185-c086e96adae8"
+          "go": "d4403b84-be92-4a3b-8e99-b83b77e01553"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -40,7 +40,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "1bdb93b8-ef43-4923-bbda-1ec2a47d8523",
+          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -48,24 +48,24 @@
         "__type": "Zombie",
         "AnimationHelper": {
           "_type": "component",
-          "go": "1bdb93b8-ef43-4923-bbda-1ec2a47d8523",
+          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "1bdb93b8-ef43-4923-bbda-1ec2a47d8523"
+          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "NavMeshAgent": {
           "_type": "component",
-          "go": "993db95d-3452-4fee-9495-d7755ca08592",
+          "go": "6381358d-950d-46d6-ac68-b43c26d17ba0",
           "component_type": "NavMeshAgent"
         }
       }
     ],
     "Children": [
       {
-        "Id": "1bdb93b8-ef43-4923-bbda-1ec2a47d8523",
+        "Id": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -96,7 +96,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "1bdb93b8-ef43-4923-bbda-1ec2a47d8523",
+              "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -110,7 +110,7 @@
         ]
       },
       {
-        "Id": "c3ce3dc7-8e59-4a96-8185-c086e96adae8",
+        "Id": "d4403b84-be92-4a3b-8e99-b83b77e01553",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true

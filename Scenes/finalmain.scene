@@ -84,9 +84,6 @@
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
-        },
-        {
-          "__type": "Highlight"
         }
       ]
     },
@@ -160,6 +157,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-17T12:34:50.089991-05:00",
+  "LastSaved": "2024-02-17T22:02:25.0350335-05:00",
   "__references": []
 }
