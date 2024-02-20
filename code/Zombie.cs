@@ -23,7 +23,7 @@ public sealed class Zombie : Component, IHealthComponent
 		var players = GameManager.ActiveScene.GetAllComponents<PlayerController>().ToList();
 		targetPlayer = Game.Random.FromList(players);
 		Log.Info( $"Targeting {targetPlayer}" );
-		//CharacterController.Enabled = false;
+		CharacterController.Enabled = false;
 	}
 	protected override void OnUpdate()
 	{
