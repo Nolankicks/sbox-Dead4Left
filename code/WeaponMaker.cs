@@ -21,10 +21,11 @@ public sealed class MP5 : Component
 	[Property] public GameObject zombieParticle { get; set; }
 	[Property] public SkinnedModelRenderer gun { get; set; }
 	[Property] public SkinnedModelRenderer arms { get; set; }
-	[Property, Range(0, 100)] public float weaponDamage { get; set; }
+	[Property, Range(0, 100)] public float weaponDamage { get; set; } = 50;
 	
 	//[Property] public Weapon weapon { get; set; }
 	public TimeSince timeSinceShoot = 0;
+	[Property] public float fireRate { get; set; } = 0.1f;
 	public ActiveWeapon viewmodel;
 	Manager manager;
 	Weapon weapon;
@@ -90,7 +91,7 @@ public sealed class MP5 : Component
 	{
 		if (IsProxy) return;
 		
-		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > 0.1)
+		if (Input.Down("attack1") && ammo > 0 && timeSinceReload > 3 && timeSinceShoot > fireRate)
 		{
 			Shoot();
 			timeSinceShoot = 0;

@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "91419739-eb23-4e25-9073-7b405189ab07",
+    "Id": "21b94e71-0e72-45cb-9907-e7f025226c52",
     "Name": "impact_default (1)",
     "Tags": "particles",
     "Enabled": true,
@@ -170,10 +170,9 @@
     ],
     "Children": [
       {
-        "Id": "b8a1aceb-df05-41f3-9776-ff91660f698d",
+        "Id": "32ba1cbd-c094-49d6-96c0-9fb9a7aa0458",
         "Name": "Smoke",
         "Position": "2.014441,0,0",
-        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {
@@ -362,9 +361,8 @@
         ]
       },
       {
-        "Id": "1ec5ab0b-c249-4533-a71e-2b92342c9ea8",
+        "Id": "fadc5882-72c7-47cc-8ece-5d3e0ef0009d",
         "Name": "Spark",
-        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {

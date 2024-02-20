@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "08c6f6c1-17e1-404e-8277-c20f8b2bdccf",
+    "Id": "f119c945-39a2-4638-b87a-92aeb96208c2",
     "Name": "mp5",
     "Networked": true,
     "Enabled": true,
@@ -10,17 +10,18 @@
         "ammo": 30,
         "arms": {
           "_type": "component",
-          "go": "9e3d2d6d-1524-4a97-a1eb-8093ceb05d1e",
+          "go": "325a5812-e27a-43c6-b5ca-e43c3779b98e",
           "component_type": "SkinnedModelRenderer"
         },
         "decalGo": {
           "_type": "gameobject",
           "prefab": "prefabs/decal_bullet_default.prefab"
         },
+        "fireRate": 0.1,
         "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "61c247d5-ca14-497e-9e28-610faed65e66",
+          "go": "caaf86a2-6572-413e-aec4-32316ec9d45f",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -43,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "9e3d2d6d-1524-4a97-a1eb-8093ceb05d1e",
+        "Id": "325a5812-e27a-43c6-b5ca-e43c3779b98e",
         "Name": "arms",
         "Enabled": true,
         "Components": [
@@ -53,7 +54,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "61c247d5-ca14-497e-9e28-610faed65e66",
+              "go": "caaf86a2-6572-413e-aec4-32316ec9d45f",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
@@ -66,7 +67,7 @@
         ]
       },
       {
-        "Id": "61c247d5-ca14-497e-9e28-610faed65e66",
+        "Id": "caaf86a2-6572-413e-aec4-32316ec9d45f",
         "Name": "gun",
         "Enabled": true,
         "Components": [
