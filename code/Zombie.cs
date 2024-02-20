@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using Kicks;
 using Sandbox;
 using Sandbox.Citizen;
@@ -8,11 +9,13 @@ public sealed class Zombie : Component, IHealthComponent
 
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public NavMeshAgent NavMeshAgent { get; set; }
+	[Property] public CharacterController CharacterController { get; set; }
 	[Property] public GameObject body { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	[Sync] public float Health { get; set; } = 100;
 	[Sync] public float MaxHealth { get; set; } = 100;
 	public PlayerController targetPlayer;
+	public bool NeedsToJump = false;
 	protected override void OnStart()
 	{
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
@@ -20,24 +23,25 @@ public sealed class Zombie : Component, IHealthComponent
 		var players = GameManager.ActiveScene.GetAllComponents<PlayerController>().ToList();
 		targetPlayer = Game.Random.FromList(players);
 		Log.Info( $"Targeting {targetPlayer}" );
+		//CharacterController.Enabled = false;
 	}
 	protected override void OnUpdate()
 	{
-		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, body.Transform.Position ) < 150f)
+
+		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, body.Transform.Position) < 150f)
 		{
-			NavMeshAgent.Stop();
+			NavMeshAgent?.Stop();
 		}
 		else
 		{
-			NavMeshAgent.MoveTo(targetPlayer.Transform.Position);
+			MoveToTarget();
 		}
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, GameObject.Transform.Position ) < 150f)
 		{
-			NavMeshAgent.Stop();
+			NavMeshAgent?.Stop();
 		}
-		var target = targetPlayer.Transform.Position;
 		
-		UpdateAnimations();
+		var target = targetPlayer.Transform.Position;
 		if (target.z > GameObject.Transform.Position.z + 50)
 		{
 			UpWardTrace();
@@ -46,14 +50,20 @@ public sealed class Zombie : Component, IHealthComponent
 		{
 			FowardTrace();
 		}
+		
+		//JumpTrace();
+		UpdateAnimations();
 	}
-
+	void MoveToTarget()
+	{
+		NavMeshAgent?.MoveTo(targetPlayer.Transform.Position);
+	}
 	void UpdateAnimations()
 	{
+		var velocity = NavMeshAgent.Enabled ? NavMeshAgent.Velocity : CharacterController.Velocity;
 		var target = targetPlayer.Transform.Position;
 		var bodyRot = AnimationHelper.Transform.Rotation.Angles();
-		AnimationHelper.WithWishVelocity( NavMeshAgent.WishVelocity );
-		AnimationHelper.WithVelocity(NavMeshAgent.WishVelocity);
+		AnimationHelper?.WithVelocity(velocity);
 		var targetRot = Rotation.LookAt(target.WithZ(Transform.Position.z) - Transform.Position);
 		body.Transform.Rotation = Rotation.Slerp( body.Transform.Rotation, targetRot, Time.Delta * 5 );
 	}
@@ -90,6 +100,21 @@ public sealed class Zombie : Component, IHealthComponent
 			Health = 0;
 			//GameManager.ActiveScene.RemoveComponent(this);
 			GameObject.Destroy();
+		}
+	}
+
+	void JumpTrace()
+	{
+		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + Vector3.Up * 10 + body.Transform.Rotation.Forward * 5).WithoutTags("player").Run();
+
+		if (tr.Hit)
+		{
+			NeedsToJump = true;
+			Log.Info("Needs to jump");
+		}
+		else
+		{
+			NeedsToJump = false;
 		}
 	}
 }

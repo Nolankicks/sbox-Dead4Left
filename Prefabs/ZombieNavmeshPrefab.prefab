@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "6381358d-950d-46d6-ac68-b43c26d17ba0",
+    "Id": "d009dc55-00c9-4b94-8f81-9130f9d386c8",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
+          "go": "775e37db-a488-4186-a9d2-ab785e209020",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -27,7 +27,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "d4403b84-be92-4a3b-8e99-b83b77e01553"
+          "go": "1cad5245-bc5a-4aac-9d54-3a81a001752e"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -40,7 +40,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
+          "go": "775e37db-a488-4186-a9d2-ab785e209020",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -48,24 +48,39 @@
         "__type": "Zombie",
         "AnimationHelper": {
           "_type": "component",
-          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
+          "go": "775e37db-a488-4186-a9d2-ab785e209020",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c"
+          "go": "775e37db-a488-4186-a9d2-ab785e209020"
+        },
+        "CharacterController": {
+          "_type": "component",
+          "go": "d009dc55-00c9-4b94-8f81-9130f9d386c8",
+          "component_type": "CharacterController"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "NavMeshAgent": {
           "_type": "component",
-          "go": "6381358d-950d-46d6-ac68-b43c26d17ba0",
+          "go": "d009dc55-00c9-4b94-8f81-9130f9d386c8",
           "component_type": "NavMeshAgent"
         }
+      },
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
       }
     ],
     "Children": [
       {
-        "Id": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
+        "Id": "775e37db-a488-4186-a9d2-ab785e209020",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -96,7 +111,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "611bce3d-a711-4b6d-91f2-b5ea8c1dfe5c",
+              "go": "775e37db-a488-4186-a9d2-ab785e209020",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -110,7 +125,7 @@
         ]
       },
       {
-        "Id": "d4403b84-be92-4a3b-8e99-b83b77e01553",
+        "Id": "1cad5245-bc5a-4aac-9d54-3a81a001752e",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true
