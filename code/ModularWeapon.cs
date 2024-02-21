@@ -53,11 +53,17 @@ public sealed class ModularWeapon : Component
 		weaponDamage = item.weaponDamage;
 		gun.Model = item.weaponModel;
 		Log.Info(weaponDamage);
-
-
-		ammo = float.Parse(FileSystem.Data.ReadAllText("mp5ammo.txt"));
-		fullAmmo = float.Parse(FileSystem.Data.ReadAllText("mp5maxammo.txt"));
-
+		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg")
+		{
+		var fileammo = ammo = float.Parse(FileSystem.Data.ReadAllText("mp5ammo.txt"));
+		var filefullammo = fullAmmo = float.Parse(FileSystem.Data.ReadAllText("mp5maxammo.txt"));
+		}
+		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_pistol")
+		{
+		ammo = float.Parse(FileSystem.Data.ReadAllText("pistolammo.txt"));
+		fullAmmo = float.Parse(FileSystem.Data.ReadAllText("pistolmaxammo.txt"));
+		}
+		
 	}
 	bool ableToShoot;
 	bool reloading;
@@ -65,8 +71,16 @@ public sealed class ModularWeapon : Component
 
 	protected override void OnUpdate()
 	{
+		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_smg")
+		{
 		FileSystem.Data.WriteAllText("mp5ammo.txt", ammo.ToString());
 		FileSystem.Data.WriteAllText("mp5maxammo.txt", fullAmmo.ToString());
+		}
+		if (weapon.Inventory[weapon.ActiveSlot] == "weapon_pistol")
+		{
+		FileSystem.Data.WriteAllText("pistolammo.txt", ammo.ToString());
+		FileSystem.Data.WriteAllText("pistolmaxammo.txt", fullAmmo.ToString());
+		}
 		Animations();
 		if (IsProxy) return;
 		GameObject.Transform.Rotation = Rotation.Lerp(GameObject.Transform.Rotation, playerController.eye.Transform.Rotation, Time.Delta * 100);
