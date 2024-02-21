@@ -15,14 +15,12 @@
 			@LocalPlayer.Health
 		</div>
 		</div>
-				@if (mp5 != null && weapon.Inventory[weapon.ActiveSlot] == "weapon_smg")
+			<div class="ammo">
+				@if (modularWeapon != null)
 				{
-				<div class="ammo">@mp5.ammo / @mp5.fullAmmo</div>
+					<div>@modularWeapon.ammo / @modularWeapon.fullAmmo</div>
 				}
-				@if (pistol != null && weapon.Inventory[weapon.ActiveSlot] == "weapon_pistol")
-				{
-				<div class="ammo">@pistol.ammo / @pistol.fullAmmo</div>
-				}
+			</div>
 
 	<div class="center">
 		<div class="crosshair"></div>
@@ -72,6 +70,7 @@
 	public static Pistol pistol;
 	[Property] public Manager manager { get; set; }
 	[Property] public bool IsVisible { get; set; } = false;
+	public ModularWeapon modularWeapon;
 	protected override void OnStart()
 	{
 		
@@ -82,6 +81,7 @@
         {
             mp5 = GameManager.ActiveScene.GetAllComponents<MP5>().FirstOrDefault(x => !x.IsProxy);
 			pistol = GameManager.ActiveScene.GetAllComponents<Pistol>().FirstOrDefault(x => !x.IsProxy);
+			modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
         }
 
         string IsMe(Sandbox.Services.Leaderboards.Entry entry)
@@ -101,6 +101,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health, mp5?.ammo, mp5?.fullAmmo, pistol?.ammo, pistol?.fullAmmo);
+	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health, modularWeapon?.ammo, modularWeapon?.fullAmmo);
 	}
 }

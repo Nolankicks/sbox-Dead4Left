@@ -1,27 +1,24 @@
 {
   "RootObject": {
-    "Id": "f119c945-39a2-4638-b87a-92aeb96208c2",
-    "Name": "mp5",
+    "Id": "fff74750-7ff0-45f4-9cb5-27876c7f9c79",
+    "Name": "mainweapon",
     "Networked": true,
     "Enabled": true,
     "Components": [
       {
-        "__type": "MP5",
-        "ammo": 30,
+        "__type": "ModularWeapon",
         "arms": {
           "_type": "component",
-          "go": "325a5812-e27a-43c6-b5ca-e43c3779b98e",
+          "go": "0237c602-e5db-4587-9972-3e46b32c0179",
           "component_type": "SkinnedModelRenderer"
         },
         "decalGo": {
           "_type": "gameobject",
           "prefab": "prefabs/decal_bullet_default.prefab"
         },
-        "fireRate": 0.1,
-        "fullAmmo": 60,
         "gun": {
           "_type": "component",
-          "go": "caaf86a2-6572-413e-aec4-32316ec9d45f",
+          "go": "cb733b73-ed0c-4b71-9b98-4854887e8bc5",
           "component_type": "SkinnedModelRenderer"
         },
         "gunSound": "sounds/smg1_shoot.sound",
@@ -30,8 +27,6 @@
           "prefab": "prefabs/impact_default (1).prefab"
         },
         "reloadSound": "sounds/reload/mp5.mag.sound",
-        "ShootDamage": 10,
-        "weaponDamage": 50,
         "zombieParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/bloodparticle.prefab"
@@ -44,8 +39,29 @@
     ],
     "Children": [
       {
-        "Id": "325a5812-e27a-43c6-b5ca-e43c3779b98e",
+        "Id": "cb733b73-ed0c-4b71-9b98-4854887e8bc5",
+        "Name": "gun",
+        "Networked": true,
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
+            "BodyGroups": 21,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": null,
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "0237c602-e5db-4587-9972-3e46b32c0179",
         "Name": "arms",
+        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -54,7 +70,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "caaf86a2-6572-413e-aec4-32316ec9d45f",
+              "go": "cb733b73-ed0c-4b71-9b98-4854887e8bc5",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
@@ -65,32 +81,11 @@
             "Tint": "1,1,1,1"
           }
         ]
-      },
-      {
-        "Id": "caaf86a2-6572-413e-aec4-32316ec9d45f",
-        "Name": "gun",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
-            "BodyGroups": 11,
-            "BoneMergeTarget": null,
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          }
-        ]
       }
     ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "facepunch.v_mp5"
-  ]
+  "__references": []
 }

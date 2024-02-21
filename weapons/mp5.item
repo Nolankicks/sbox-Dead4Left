@@ -1,6 +1,12 @@
 {
-  "weaponPrefab": "prefabs/weapons/mp5.prefab",
-  "viewmodelPrefab": "prefabs/weapons/mp5viewmodel.prefab",
+  "weaponPrefab": "prefabs/weapons/mainweapon.prefab",
   "weaponName": "weapon_smg",
-  "__references": []
+  "weaponDamage": 50,
+  "weaponModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+  "ammo": 30,
+  "fullAmmo": 60,
+  "fireRate": 0.1,
+  "__references": [
+    "facepunch.v_mp5"
+  ]
 }

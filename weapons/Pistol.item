@@ -1,5 +1,12 @@
 {
-  "weaponPrefab": "prefabs/weapons/pistol.prefab",
+  "weaponPrefab": "prefabs/weapons/mainweapon.prefab",
   "weaponName": "weapon_pistol",
-  "__references": []
+  "weaponDamage": 50,
+  "weaponModel": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
+  "ammo": 30,
+  "fullAmmo": 60,
+  "fireRate": 0.1,
+  "__references": [
+    "facepunch.v_usp"
+  ]
 }

@@ -6,10 +6,7 @@ using Sandbox;
 using Sandbox.UI;
 
 public sealed class Weapon : Component
-{
-	[Property] public Image WeaponImage {get; set;}
-	public bool HasViewModel;
-	
+{	
 	[Property] public List<Texture> InventoryImages {get; set;} = new List<Texture>()
 	{
 
@@ -18,7 +15,7 @@ public sealed class Weapon : Component
 	{
 		"weapon_smg"
 	};
-	[Property] public List<Item> items {get; set;} = new List<Item>()
+	[Property, ResourceType("item")] public List<Item> items {get; set;} = new List<Item>()
 	{
 		
 	};
@@ -102,7 +99,6 @@ public sealed class Weapon : Component
 		{
 			activeWeapon.Item = items[1];
 		}
-	
 		if (Inventory[ActiveSlot] == "")
 		{
 			activeWeapon.Item = items[2];

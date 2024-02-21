@@ -1,40 +1,5 @@
 {
-  "RootObject": {
-    "Id": "59fad8f1-46a2-4cf3-b3f7-2f16ae7e256c",
-    "Name": "fists",
-    "Components": [
-      {
-        "__type": "Fist",
-        "__enabled": false,
-        "arms": {
-          "_type": "component",
-          "go": "df8e7217-827d-403a-a16b-41213c599f35",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "punchGraph": "models/first_person/first_person_arms_punching.vanmgrph"
-      }
-    ],
-    "Children": [
-      {
-        "Id": "df8e7217-827d-403a-a16b-41213c599f35",
-        "Name": "Object",
-        "Enabled": true,
-        "Components": [
-          {
-            "__type": "SkinnedModelRenderer",
-            "BodyGroups": 21,
-            "BoneMergeTarget": null,
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/first_person/first_person_arms.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          }
-        ]
-      }
-    ]
-  },
+  "RootObject": null,
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,

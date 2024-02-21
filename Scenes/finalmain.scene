@@ -9,7 +9,7 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "facepunch.construct",
+          "MapName": "facepunch.construct23",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": true
@@ -109,11 +109,11 @@
       "Components": [
         {
           "__type": "NetworkHelper",
-          "menuScene": null,
           "PlayerPrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/newerplayer.prefab"
+            "prefab": "prefabs/player.prefab"
           },
+          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -157,6 +157,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-20T10:29:17.9662939-05:00",
+  "LastSaved": "2024-02-20T21:52:30.0531858-05:00",
   "__references": []
 }

@@ -1,0 +1,10 @@
+{
+  "weaponPrefab": null,
+  "weaponName": null,
+  "weaponDamage": 50,
+  "weaponModel": null,
+  "ammo": 30,
+  "fullAmmo": 60,
+  "fireRate": 0.1,
+  "__references": []
+}
