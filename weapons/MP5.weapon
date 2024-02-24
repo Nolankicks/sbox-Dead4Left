@@ -1,7 +1,11 @@
 {
   "Name": "MP5",
   "MaxAmmo": 32,
-  "Ammo": 0,
+  "Ammo": 19,
+  "Damage": 50,
   "FireRate": 0.1,
-  "__references": []
+  "WeaponModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+  "__references": [
+    "facepunch.v_mp5"
+  ]
 }

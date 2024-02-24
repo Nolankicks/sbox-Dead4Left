@@ -31,37 +31,54 @@ public sealed class Weapon : Component
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
 			NeedsChange = true;
-			
+			Log.Info(Inventory[ActiveSlot]);
 		}
 		if (ActiveSlot < 0)
 		{
 			ActiveSlot = Slots - 1;
 		}
+
 }
 
 public partial class WeaponFunction : Component
 {
-	 public int Ammo { get; set; }
-
+	
+	public SkinnedModelRenderer gun { get; set; }
     private WeaponData _data;
-
+	private TimeSince _lastFired = 0;
+	public int ShotsFired = 0;
     public void Init( WeaponData data )
     {
         _data = data;
 
-        Ammo = _data.MaxAmmo;
+
     }
 	private PlayerController playerController;
 		protected override void OnStart()
 		{
 			playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+			gun.Set("b_deploy", true);
+			gun.Model = _data.WeaponModel;
 		}
 		protected override void OnUpdate()
 		{
-			if (Input.Pressed("attack1"))
+			Log.Info(_data.Ammo);
+			if (Input.Pressed("attack1") &&_lastFired > _data.FireRate && _data.Ammo > 0)
 			{
 				Shoot();
-				Log.Info(Ammo);
+				gun.Set("b_attack", true);
+			}
+
+			if (_data.Ammo <= 0)
+			{
+				_data.Ammo = 0;
+			}
+
+			if (Input.Pressed("reload") && _data.Ammo < _data.MaxAmmo && ShotsFired > 0 && _data.Ammo != 0)
+			{
+				var ammoNeeded = _data.MaxAmmo - ShotsFired;
+				_data.Ammo = ammoNeeded;
+				gun.Set("b_reload", true);
 			}
 		}
 
@@ -69,13 +86,15 @@ public partial class WeaponFunction : Component
 	{
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
 		var tr = Scene.Trace.Ray(eyePos, eyePos + playerController.EyeAngles.Forward * 5000).WithoutTags("player").Run();
-		Ammo--;
+		_data.Ammo--;
+		ShotsFired++;
 		if (tr.Hit)
 		{
 			Log.Info("Hit " + tr.GameObject.Name);
 			if (tr.GameObject.Tags.Has("zombie"))
 			{
-
+				var zombie = tr.GameObject.Components.Get<Zombie>();
+				zombie.Health -= _data.Damage;
 			}
 		}
 
@@ -88,7 +107,9 @@ public partial class WeaponData : GameResource
     public string Name { get; set; } = "MP5";
     public int MaxAmmo { get; set; } = 32;
     public int Ammo { get; set; }
+	public int Damage { get; set; } = 50;
     public float FireRate { get; set; } = 0.1f;
+	public Model WeaponModel { get; set; }
 }
 
 public partial class Switcher : Component
@@ -108,7 +129,7 @@ public partial class Switcher : Component
 
 		protected override void OnUpdate()
 		{
-			if (weapon.NeedsChange && weapon.Inventory[weapon.ActiveSlot] != null)
+			if (weapon.NeedsChange)
 			{
 				_currentlyEquiped.Destroy();
 				_currentlyEquiped = weaponPrefab.Clone();
@@ -118,7 +139,6 @@ public partial class Switcher : Component
 				weapon.NeedsChange = false;
 			}
 		}
-
 	}
 }
 
