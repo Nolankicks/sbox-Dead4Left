@@ -1,0 +1,7 @@
+{
+  "Name": "MP5",
+  "MaxAmmo": 32,
+  "Ammo": 0,
+  "FireRate": 0.1,
+  "__references": []
+}

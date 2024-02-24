@@ -53,24 +53,7 @@
         "InventoryImages": [
           "assets/w_mp5.vmdl_c.vtex",
           "textures/w_usp.vmdl_c.vtex"
-        ],
-        "items": [
-          "weapons/mp5.item",
-          "weapons/pistol.item",
-          "weapons/fists.item"
-        ],
-        "Weapons": [
-          "weapon_smg"
         ]
-      },
-      {
-        "__type": "ActiveWeapon",
-        "body": {
-          "_type": "component",
-          "go": "4715fa29-8211-4153-8996-a15bb13793c9",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "Item": "weapons/mp5.item"
       },
       {
         "__type": "Voice",
@@ -86,6 +69,13 @@
         },
         "Volume": 1,
         "WorldspacePlayback": true
+      },
+      {
+        "__type": "Switcher",
+        "weaponPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/mainweapon.prefab"
+        }
       }
     ],
     "Children": [

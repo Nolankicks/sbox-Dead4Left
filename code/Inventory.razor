@@ -14,18 +14,7 @@
 			
 			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
 
-					@if(weaponData.Inventory[i] == "weapon_smg")
-					{
-						<img class="img" src="@weaponData.InventoryImages[0]">
-					}
-					@if(weaponData.Inventory[i] == "weapon_pistol")
-					{
-						<img class="img" src="@weaponData.InventoryImages[1]">
-					}
-					@if(weaponData.Inventory[i] == "")
-					{
-						<img class="img" src="">
-					}
+					
 			</div>
 		}
 	</div>

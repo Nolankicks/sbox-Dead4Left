@@ -6,35 +6,7 @@
     "Enabled": true,
     "Components": [
       {
-        "__type": "ModularWeapon",
-        "arms": {
-          "_type": "component",
-          "go": "0237c602-e5db-4587-9972-3e46b32c0179",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "decalGo": {
-          "_type": "gameobject",
-          "prefab": "prefabs/decal_bullet_default.prefab"
-        },
-        "gun": {
-          "_type": "component",
-          "go": "cb733b73-ed0c-4b71-9b98-4854887e8bc5",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "gunSound": "sounds/smg1_shoot.sound",
-        "impact": {
-          "_type": "gameobject",
-          "prefab": "prefabs/impact_default (1).prefab"
-        },
-        "reloadSound": "sounds/reload/mp5.mag.sound",
-        "zombieParticle": {
-          "_type": "gameobject",
-          "prefab": "prefabs/bloodparticle.prefab"
-        },
-        "zombieRagdoll": {
-          "_type": "gameobject",
-          "prefab": "prefabs/ragdoll.prefab"
-        }
+        "__type": "WeaponFunction"
       }
     ],
     "Children": [

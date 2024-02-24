@@ -28,6 +28,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	public bool WishCrouch;
 	public CameraComponent camera;
 	[Property] public float EyeHight = 64;
+
 	protected override void OnStart()
 	{
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
