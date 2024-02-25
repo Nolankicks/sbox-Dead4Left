@@ -17,41 +17,57 @@ public sealed class Weapon : Component
 	public int ActiveSlot = 0;
 	public int Slots => 9;
 	public int Img => 9;
-	public WeaponData[] Inventory = new WeaponData[9];
-	[Property] public PrefabScene WeaponPrefab { get; set; }
-	[Property] public GameObject WeaponHolder { get; set; }
 	public bool NeedsChange = true;
+	public WeaponData[] Inventory = new WeaponData[9];
+	public GameObject[] WeaponList = new GameObject[9];
+	[Property] public PrefabScene weaponPrefab { get; set; }
+	[Property] public GameObject LastWeapon;
+	[Property] public GameObject CurrentWeapon;
 	protected override void OnStart()
 	{
+		if (IsProxy) return;
 		var weaponList = ResourceLibrary.GetAll<WeaponData>();
 		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
-		
-		foreach(WeaponData weapon in Inventory)
-		{
-			if (weapon is not null)
-			{
-			var weaponData = WeaponPrefab.Clone().Components.Get<WeaponFunction>();
-			weaponData.data = weapon;
-			weaponData.GameObject.Parent = WeaponHolder;
-			weaponData.GameObject.Name = weapon.Name;
-			}
-		}
+	}
+	public void AddWeapon(WeaponData weapon, int slot)
+	{
+		Inventory[slot] = weapon;
+		NeedsChange = true;
 	}
 	protected override void OnUpdate()
 	{
-
 		if (IsProxy) return;
 		if (Input.MouseWheel.y != 0)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
-			NeedsChange = true;
-			Log.Info(Inventory[ActiveSlot]);
+			
+			if (WeaponList[ActiveSlot + Math.Sign(Input.MouseWheel.y)] is not null)
+			{
+				LastWeapon = WeaponList[ActiveSlot + 1];
+			}
 		}
 		if (ActiveSlot < 0)
 		{
-			ActiveSlot = Slots - 1;
+			ActiveSlot = Inventory.Length - 1;
 		}
-
+		if (NeedsChange)
+		{
+		foreach (WeaponData weapon in Inventory)
+		{
+			if (weapon is not null)
+			{
+			var gameObj = weaponPrefab.Clone();
+			var weaponData = gameObj.Components.Get<WeaponFunction>();
+			weaponData.data = weapon;
+			gameObj.Name = weapon.Name;
+			Log.Info(weapon.Name);
+			WeaponList[Array.IndexOf(Inventory, weapon)] = gameObj;
+			Log.Info(WeaponList.ToString());
+			gameObj.Parent = GameObject;
+			}
+		}
+		NeedsChange = false;
+		}
 }
 
 
@@ -66,7 +82,9 @@ public partial class WeaponFunction : Component
 	[Property] public int MaxAmmo;
 	public int Damage;
 	public float FireRate;
+	public SoundEvent ShootSound;
 	private PlayerController playerController;
+	
 		protected override void OnStart()
 		{
 			if (IsProxy) return;
@@ -77,16 +95,18 @@ public partial class WeaponFunction : Component
 			MaxAmmo = data.MaxAmmo;
 			Damage = data.Damage;
 			FireRate = data.FireRate;
+			ShootSound = data.ShootSound;
 		}
 		protected override void OnUpdate()
 		{
 			if (IsProxy) return;
-			if (Input.Down("attack1") && Ammo > 0)
+			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate)
 			{
 				Log.Info("Shooting");
 				Shoot();
 				gun.Set("b_attack", true);
 				_lastFired = 0;
+				Sound.Play(ShootSound);
 			}
 
 			if (Ammo < 0)
@@ -130,6 +150,7 @@ public partial class WeaponData : GameResource
 	public int Damage { get; set; } = 50;
     public float FireRate { get; set; } = 0.1f;
 	public Model WeaponModel { get; set; }
+	public SoundEvent ShootSound { get; set; }
 }
 
 public partial class Switcher : Component
@@ -145,10 +166,7 @@ public partial class Switcher : Component
 
 		protected override void OnUpdate()
 		{
-			if (weapon.NeedsChange)
-			{
 
-			}
 		}
 	}
 }

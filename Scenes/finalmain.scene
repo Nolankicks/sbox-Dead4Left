@@ -113,7 +113,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
           },
-          "SpawnPoints": [],
+          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -129,6 +129,39 @@
             "_type": "gameobject",
             "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
+        }
+      ]
+    },
+    {
+      "Id": "a749c84c-05ab-47fa-b4c3-5c3bf303ca12",
+      "Name": "WeaponPickup",
+      "Position": "384,-413.7954,32",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": null,
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "HullCollider",
+          "BoxSize": "50,50,50",
+          "Center": "0,0,0",
+          "Height": 50,
+          "IsTrigger": true,
+          "Radius": 25,
+          "Radius2": 0,
+          "Slices": 16,
+          "Static": false,
+          "Surface": null,
+          "Type": "Box"
+        },
+        {
+          "__type": "WeaponPickup"
         }
       ]
     }
@@ -156,6 +189,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-25T10:56:09.2392615-05:00",
+  "LastSaved": "2024-02-25T16:21:47.6259469-05:00",
   "__references": []
 }
