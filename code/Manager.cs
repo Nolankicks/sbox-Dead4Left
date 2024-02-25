@@ -1,13 +1,10 @@
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-
 using Sandbox;
-using Sandbox.UI;
 using System.Linq;
 using Kicks;
 using Sandbox.Network;
 using System;
 using Sandbox.Navigation;
+using static Weapon;
 
 public sealed class Manager : Component
 {
@@ -30,15 +27,6 @@ public sealed class Manager : Component
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		Scene.NavMesh.SetDirty();
-		//Delete ammo files
-		FileSystem.Data.DeleteFile("mp5ammo.txt");
-		FileSystem.Data.DeleteFile("mp5maxammo.txt");
-		FileSystem.Data.DeleteFile("pistolammo.txt");
-		FileSystem.Data.DeleteFile("pistolmaxammo.txt");
-		FileSystem.Data.WriteAllText("mp5ammo.txt", "30");
-		FileSystem.Data.WriteAllText("mp5maxammo.txt", "60");
-		FileSystem.Data.WriteAllText("pistolammo.txt", "60");
-		FileSystem.Data.WriteAllText("pistolmaxammo.txt", "120");
 	}
 	protected override void OnAwake()
 	{

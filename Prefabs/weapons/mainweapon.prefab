@@ -1,56 +1,93 @@
 {
   "RootObject": {
-    "Id": "fff74750-7ff0-45f4-9cb5-27876c7f9c79",
+    "Id": "dd427bde-c5f5-4ee3-9a13-927f8b7920b5",
     "Name": "mainweapon",
     "Networked": true,
     "Enabled": true,
     "Components": [
       {
-        "__type": "WeaponFunction"
+        "__type": "WeaponFunction",
+        "Ammo": 0,
+        "data": null,
+        "MaxAmmo": 0,
+        "gun": {
+          "_type": "component",
+          "go": "187f0631-8c21-4980-8b3b-b76e46e19ef8",
+          "component_type": "SkinnedModelRenderer"
+        }
       }
     ],
     "Children": [
       {
-        "Id": "cb733b73-ed0c-4b71-9b98-4854887e8bc5",
-        "Name": "gun",
-        "Networked": true,
+        "Id": "77b8ceee-9665-43f9-83e7-0ff87f585fbe",
+        "Name": "viewmodel",
+        "Tags": "maincamera",
         "Enabled": true,
         "Components": [
           {
-            "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
-            "BodyGroups": 21,
-            "BoneMergeTarget": null,
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": null,
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "__type": "CameraComponent",
+            "__enabled": false,
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 60,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
           }
-        ]
-      },
-      {
-        "Id": "0237c602-e5db-4587-9972-3e46b32c0179",
-        "Name": "arms",
-        "Networked": true,
-        "Enabled": true,
-        "Components": [
+        ],
+        "Children": [
           {
-            "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
-            "BodyGroups": 21,
-            "BoneMergeTarget": {
-              "_type": "component",
-              "go": "cb733b73-ed0c-4b71-9b98-4854887e8bc5",
-              "component_type": "SkinnedModelRenderer"
-            },
-            "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Model": "models/first_person/first_person_arms.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Id": "2a8f106e-5a00-4ab0-9128-d4246587a95b",
+            "Name": "arms",
+            "Position": "189.7122,23.75327,18.52387",
+            "Networked": true,
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "AnimationGraph": null,
+                "BodyGroups": 21,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "go": "187f0631-8c21-4980-8b3b-b76e46e19ef8",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/first_person/first_person_arms.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "187f0631-8c21-4980-8b3b-b76e46e19ef8",
+            "Name": "gun",
+            "Position": "189.7122,23.75327,18.52387",
+            "Networked": true,
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "AnimationGraph": null,
+                "BodyGroups": 21,
+                "BoneMergeTarget": null,
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": null,
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
           }
         ]
       }

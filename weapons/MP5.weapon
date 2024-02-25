@@ -1,7 +1,7 @@
 {
   "Name": "MP5",
   "MaxAmmo": 32,
-  "Ammo": 19,
+  "Ammo": 16,
   "Damage": 50,
   "FireRate": 0.1,
   "WeaponModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
