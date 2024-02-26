@@ -12,7 +12,7 @@
         "MaxAmmo": 0,
         "bloodParticle": {
           "_type": "gameobject",
-          "prefab": "prefabs/muzzleflash.prefab"
+          "prefab": "prefabs/bloodparticle.prefab"
         },
         "gun": {
           "_type": "component",
@@ -45,7 +45,7 @@
       {
         "Id": "b843af56-425c-43a5-96ae-4535467b482e",
         "Name": "gun",
-        "Position": "17.7,-9.2,-4.2",
+        "Position": "17.7,-9.2,-0.2",
         "Tags": "viewmodel",
         "Enabled": true,
         "Components": [

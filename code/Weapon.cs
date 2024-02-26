@@ -39,20 +39,20 @@ public sealed class Weapon : Component
 	{
 		if (IsProxy) return;
 		CurrentWeapon = WeaponList[ActiveSlot];
-		if (Input.MouseWheel.y != 0)
+		if (Input.MouseWheel.y != 0 && !IsProxy)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
 			LastWeapon = WeaponList[ActiveSlot + 1];
 		}
-		if (CurrentWeapon == LastWeapon)
+		if (CurrentWeapon == LastWeapon && !IsProxy)
 		{
 			LastWeapon = null;
 		}
-		if (ActiveSlot < 0)
+		if (ActiveSlot < 0 && !IsProxy)
 		{
 			ActiveSlot = 8;
 		}
-		if (NeedsChange)
+		if (NeedsChange && !IsProxy)
 		{
 		foreach (WeaponData weapon in Inventory)
 		{
@@ -72,11 +72,11 @@ public sealed class Weapon : Component
 		}
 		foreach (GameObject weapon in WeaponList)
 		{
-			if (weapon is not null && weapon == WeaponList[ActiveSlot])
+			if (weapon is not null && weapon == WeaponList[ActiveSlot] && !IsProxy)
 			{
 				weapon.Enabled = true;
 			}
-			if (weapon is not null && weapon != WeaponList[ActiveSlot])
+			if (weapon is not null && weapon != WeaponList[ActiveSlot] && !IsProxy)
 			{
 				weapon.Enabled = false;
 			}
@@ -119,7 +119,7 @@ public partial class WeaponFunction : Component
 		protected override void OnUpdate()
 		{
 			if (IsProxy) return;
-			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f)
+			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f && !IsProxy)
 			{
 				Shoot();
 				gun.Set("b_attack", true);
@@ -130,8 +130,12 @@ public partial class WeaponFunction : Component
 			{
 				Ammo = 0;
 			}
+			if (MaxAmmo < 0)
+			{
+				MaxAmmo = 0;
+			}
 
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0)
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
 			{
 				
 				Ammo = MaxAmmo -= ShotsFired;
@@ -140,11 +144,11 @@ public partial class WeaponFunction : Component
 				ShotsFired = 0;
 				timeSinceReload = 0;
 			}
-			if (Input.Pressed("jump"))
+			if (Input.Pressed("jump") && !IsProxy)
 			{
 				gun.Set("b_jump", true);
 			}
-			if (!characterController.IsOnGround)
+			if (!characterController.IsOnGround && !IsProxy)
 			{
 				gun.Set("b_grounded", false);
 			}
@@ -164,17 +168,17 @@ public partial class WeaponFunction : Component
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
 
-		muzzleFlash.Clone(muzzle.Value.Position + Vector3.Up * 64, playerController.body.Transform.Rotation);
+		muzzleFlash.Clone(muzzle.Value.Position + Vector3.Up * 62, playerController.EyeAngles);
 		if (tr.Hit)
 		{
 			Sound.Play(ShootSound, tr.EndPosition);
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-				
 				var zombie = tr.GameObject.Parent.Components.Get<Zombie>();
 				zombie.TakeDamage(Damage);
 				Log.Info(tr.GameObject.Parent);
 				bloodParticle.Clone(tr.HitPosition);
+				Ammo += 5;
 			}
 		}
 

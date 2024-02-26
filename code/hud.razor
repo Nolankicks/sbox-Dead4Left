@@ -16,9 +16,12 @@
 			@LocalPlayer.Health
 		</div>
 		</div>
-			<div class="ammo">
-				@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo
-			</div>
+			
+				@if (weaponFunction != null)
+				{
+				<div class="ammo">@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo</div>
+				}
+			
 
 	<div class="center">
 		<div class="crosshair"></div>
