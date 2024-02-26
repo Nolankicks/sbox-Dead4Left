@@ -1,0 +1,30 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Courtyard Island",
+      "Type": "map",
+      "Org": "nolankicks",
+      "Ident": "coolmap",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.metal_trim_rust_blend_01#43488",
+        "saandy.caged_light01_ceil#35995",
+        "facepunch.floor_grass_dirt_weed_blend_a#18756",
+        "semxy.bluecloudskybox#24832"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/coolmap.vmap"
+      }
+    }
+  }
+}
