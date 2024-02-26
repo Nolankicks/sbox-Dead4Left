@@ -9,12 +9,15 @@
 	<div class="hotbar">
 		@for(int i=0; i<weaponData.Slots; i++ )
 		{
-				
-				//<img class="img" src="@image">
-			
 			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
-
-					
+					@if (i == 0)
+					{
+						<img src="assets/w_mp5.vmdl_c.vtex" class="icon"></img>
+					}
+					@if (i == 1)
+					{
+						<img src="textures/w_usp.vmdl_c.vtex" class="icon"></img>
+					}
 			</div>
 		}
 	</div>
@@ -24,7 +27,8 @@
 @code
 {
 	public static Weapon weaponData;
-
+	[Property] public Texture MP5 { get; set; }
+	[Property] public Texture Pistol { get; set; }
         protected override void OnStart()
         {
             weaponData = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);

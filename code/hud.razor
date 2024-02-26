@@ -3,6 +3,7 @@
 @inherits PanelComponent
 @namespace Kicks
 @using System.Linq;
+@using static Weapon;
 <root>
 	@if (LocalPlayer == null)
 	{
@@ -16,6 +17,7 @@
 		</div>
 		</div>
 			<div class="ammo">
+				@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo
 			</div>
 
 	<div class="center">
@@ -61,19 +63,20 @@
 	//public static  Manager manager;
 	public static  PlayerController LocalPlayer;
 	public static Weapon weapon;
-
 	[Property] public Manager manager { get; set; }
 	[Property] public bool IsVisible { get; set; } = false;
+	private WeaponFunction weaponFunction;
 	//public ModularWeapon modularWeapon;
 	protected override void OnStart()
 	{
-		
 		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		
 	}
         protected override void OnUpdate()
         {
 			//modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
+			weaponFunction = GameManager.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
         }
 
         string IsMe(Sandbox.Services.Leaderboards.Entry entry)
@@ -93,6 +96,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health);
+	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health, weaponFunction?.Ammo, weaponFunction?.MaxAmmo);
 	}
 }

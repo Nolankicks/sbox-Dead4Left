@@ -1,0 +1,97 @@
+{
+  "RootObject": {
+    "Id": "14a2bcfe-b8ac-45f7-8447-739812656be5",
+    "Name": "muzzleflash",
+    "Tags": "particles",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "LegacyParticleSystem",
+        "ControlPoints": [
+          {
+            "GameObjectValue": {
+              "_type": "gameobject",
+              "go": "1888249a-e369-4579-b1f2-eed8e205a4f3"
+            }
+          }
+        ],
+        "Looped": false,
+        "Particles": "particles/pistol_muzzleflash.vpcf",
+        "PlaybackSpeed": 1
+      },
+      {
+        "__type": "UpdateActionComponent",
+        "Action": {
+          "Version": 5,
+          "UserData": {
+            "Title": "Action",
+            "id": "80f8821c-dfdf-4d17-8ac5-03c132d0b619",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "224,48"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_isStatic": false,
+                "_name": "Destroy"
+              },
+              "UserData": {
+                "Position": "496,192"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 0.5,
+              "DstId": 1,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 2,
+              "DstName": "_target"
+            }
+          ]
+        }
+      }
+    ],
+    "Children": [
+      {
+        "Id": "1888249a-e369-4579-b1f2-eed8e205a4f3",
+        "Name": "Object",
+        "Enabled": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

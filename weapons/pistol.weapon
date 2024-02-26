@@ -1,0 +1,12 @@
+{
+  "Name": "pistol",
+  "MaxAmmo": 128,
+  "Ammo": 64,
+  "Damage": 50,
+  "FireRate": 0.4,
+  "WeaponModel": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
+  "ShootSound": "sounds/smg1_shoot.sound",
+  "__references": [
+    "facepunch.v_usp"
+  ]
+}

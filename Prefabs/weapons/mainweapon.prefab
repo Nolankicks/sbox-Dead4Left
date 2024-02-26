@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "dd427bde-c5f5-4ee3-9a13-927f8b7920b5",
+    "Id": "138da5bb-09bf-4969-8127-5868a3005c93",
     "Name": "mainweapon",
     "Networked": true,
     "Enabled": true,
@@ -10,84 +10,80 @@
         "Ammo": 0,
         "data": null,
         "MaxAmmo": 0,
+        "bloodParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/muzzleflash.prefab"
+        },
         "gun": {
           "_type": "component",
-          "go": "187f0631-8c21-4980-8b3b-b76e46e19ef8",
+          "go": "b843af56-425c-43a5-96ae-4535467b482e",
           "component_type": "SkinnedModelRenderer"
+        },
+        "muzzleFlash": {
+          "_type": "gameobject",
+          "prefab": "prefabs/muzzleflash.prefab"
         }
+      },
+      {
+        "__type": "CameraComponent",
+        "BackgroundColor": "0.33333,0.46275,0.52157,1",
+        "ClearFlags": "Depth, Stencil",
+        "FieldOfView": 60,
+        "IsMainCamera": true,
+        "Orthographic": false,
+        "OrthographicHeight": 1204,
+        "Priority": 1,
+        "RenderExcludeTags": "",
+        "RenderTags": "viewmodel,light",
+        "TargetEye": "None",
+        "Viewport": "0,0,1,1",
+        "ZFar": 10000,
+        "ZNear": 10
       }
     ],
     "Children": [
       {
-        "Id": "77b8ceee-9665-43f9-83e7-0ff87f585fbe",
-        "Name": "viewmodel",
-        "Tags": "maincamera",
+        "Id": "b843af56-425c-43a5-96ae-4535467b482e",
+        "Name": "gun",
+        "Position": "17.7,-9.2,-4.2",
+        "Tags": "viewmodel",
         "Enabled": true,
         "Components": [
           {
-            "__type": "CameraComponent",
-            "__enabled": false,
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "All",
-            "FieldOfView": 60,
-            "IsMainCamera": false,
-            "Orthographic": false,
-            "OrthographicHeight": 1204,
-            "Priority": 1,
-            "RenderExcludeTags": "",
-            "RenderTags": "",
-            "TargetEye": "None",
-            "Viewport": "0,0,1,1",
-            "ZFar": 10000,
-            "ZNear": 10
+            "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
+            "BodyGroups": 11,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
           }
-        ],
-        "Children": [
+        ]
+      },
+      {
+        "Id": "12d6f6a9-fa88-4d9a-bd94-ca082ce5e303",
+        "Name": "arms",
+        "Tags": "viewmodel",
+        "Enabled": true,
+        "Components": [
           {
-            "Id": "2a8f106e-5a00-4ab0-9128-d4246587a95b",
-            "Name": "arms",
-            "Position": "189.7122,23.75327,18.52387",
-            "Networked": true,
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "SkinnedModelRenderer",
-                "AnimationGraph": null,
-                "BodyGroups": 21,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "go": "187f0631-8c21-4980-8b3b-b76e46e19ef8",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "MaterialGroup": null,
-                "MaterialOverride": null,
-                "Model": "models/first_person/first_person_arms.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
-          },
-          {
-            "Id": "187f0631-8c21-4980-8b3b-b76e46e19ef8",
-            "Name": "gun",
-            "Position": "189.7122,23.75327,18.52387",
-            "Networked": true,
-            "Enabled": true,
-            "Components": [
-              {
-                "__type": "SkinnedModelRenderer",
-                "AnimationGraph": null,
-                "BodyGroups": 21,
-                "BoneMergeTarget": null,
-                "CreateBoneObjects": false,
-                "MaterialGroup": null,
-                "MaterialOverride": null,
-                "Model": null,
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
+            "__type": "SkinnedModelRenderer",
+            "AnimationGraph": null,
+            "BodyGroups": 21,
+            "BoneMergeTarget": {
+              "_type": "component",
+              "go": "b843af56-425c-43a5-96ae-4535467b482e",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/first_person/first_person_arms.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
           }
         ]
       }
@@ -96,5 +92,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "facepunch.v_mp5"
+  ]
 }

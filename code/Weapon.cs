@@ -6,7 +6,7 @@ using System.Reflection;
 using Kicks;
 using Sandbox;
 using Sandbox.UI;
-
+using Sandbox.Citizen;
 public sealed class Weapon : Component
 {	
 	[Property] public List<Texture> InventoryImages {get; set;} = new List<Texture>()
@@ -28,6 +28,7 @@ public sealed class Weapon : Component
 		if (IsProxy) return;
 		var weaponList = ResourceLibrary.GetAll<WeaponData>();
 		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
+		Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "pistol");
 	}
 	public void AddWeapon(WeaponData weapon, int slot)
 	{
@@ -37,18 +38,19 @@ public sealed class Weapon : Component
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
+		CurrentWeapon = WeaponList[ActiveSlot];
 		if (Input.MouseWheel.y != 0)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
-			
-			if (WeaponList[ActiveSlot + Math.Sign(Input.MouseWheel.y)] is not null)
-			{
-				LastWeapon = WeaponList[ActiveSlot + 1];
-			}
+			LastWeapon = WeaponList[ActiveSlot + 1];
+		}
+		if (CurrentWeapon == LastWeapon)
+		{
+			LastWeapon = null;
 		}
 		if (ActiveSlot < 0)
 		{
-			ActiveSlot = Inventory.Length - 1;
+			ActiveSlot = 8;
 		}
 		if (NeedsChange)
 		{
@@ -68,6 +70,19 @@ public sealed class Weapon : Component
 		}
 		NeedsChange = false;
 		}
+		foreach (GameObject weapon in WeaponList)
+		{
+			if (weapon is not null && weapon == WeaponList[ActiveSlot])
+			{
+				weapon.Enabled = true;
+			}
+			if (weapon is not null && weapon != WeaponList[ActiveSlot])
+			{
+				weapon.Enabled = false;
+			}
+
+		}
+		
 }
 
 
@@ -84,14 +99,18 @@ public partial class WeaponFunction : Component
 	public float FireRate;
 	public SoundEvent ShootSound;
 	private PlayerController playerController;
-	
+	private CharacterController characterController;
+	public TimeSince timeSinceReload = 1.5f;
+	[Property] public GameObject bloodParticle { get; set; }
+	[Property] public GameObject muzzleFlash { get; set; }
 		protected override void OnStart()
 		{
 			if (IsProxy) return;
 			playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+			characterController = GameManager.ActiveScene.GetAllComponents<CharacterController>().FirstOrDefault(x => !x.IsProxy);
 			gun.Model = data.WeaponModel;
 			gun.Set("b_deploy", true);
-			Ammo = data.MaxAmmo;
+			Ammo = data.Ammo;
 			MaxAmmo = data.MaxAmmo;
 			Damage = data.Damage;
 			FireRate = data.FireRate;
@@ -100,13 +119,11 @@ public partial class WeaponFunction : Component
 		protected override void OnUpdate()
 		{
 			if (IsProxy) return;
-			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate)
+			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f)
 			{
-				Log.Info("Shooting");
 				Shoot();
 				gun.Set("b_attack", true);
 				_lastFired = 0;
-				Sound.Play(ShootSound);
 			}
 
 			if (Ammo < 0)
@@ -114,11 +131,26 @@ public partial class WeaponFunction : Component
 				Ammo = 0;
 			}
 
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired > 0)
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0)
 			{
-				var ammoNeeded = MaxAmmo - ShotsFired;
-				Ammo = ammoNeeded;
+				
+				Ammo = MaxAmmo -= ShotsFired;
+				Ammo = data.Ammo;
 				gun.Set("b_reload", true);
+				ShotsFired = 0;
+				timeSinceReload = 0;
+			}
+			if (Input.Pressed("jump"))
+			{
+				gun.Set("b_jump", true);
+			}
+			if (!characterController.IsOnGround)
+			{
+				gun.Set("b_grounded", false);
+			}
+			else
+			{
+				gun.Set("b_grounded", true);
 			}
 		}
 
@@ -129,13 +161,20 @@ public partial class WeaponFunction : Component
 		var tr = Scene.Trace.Ray(eyePos, eyePos + playerController.EyeAngles.Forward * 5000).WithoutTags("player").Run();
 		Ammo--;
 		ShotsFired++;
+		Log.Info(ShotsFired);
+		var muzzle = gun.SceneModel.GetAttachment("muzzle");
+
+		muzzleFlash.Clone(muzzle.Value.Position + Vector3.Up * 64, playerController.body.Transform.Rotation);
 		if (tr.Hit)
 		{
-			Log.Info("Hit " + tr.GameObject.Name);
-			if (tr.GameObject.Tags.Has("zombie"))
+			Sound.Play(ShootSound, tr.EndPosition);
+			if (tr.GameObject.Tags.Has("bad"))
 			{
-				var zombie = tr.GameObject.Components.Get<Zombie>();
-				zombie.Health -= Damage;
+				
+				var zombie = tr.GameObject.Parent.Components.Get<Zombie>();
+				zombie.TakeDamage(Damage);
+				Log.Info(tr.GameObject.Parent);
+				bloodParticle.Clone(tr.HitPosition);
 			}
 		}
 

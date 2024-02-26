@@ -39,7 +39,9 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Inventory"
+              "__type": "Inventory",
+              "MP5": "assets/w_mp5.vmdl_c.vtex",
+              "Pistol": "textures/w_usp.vmdl_c.vtex"
             }
           ]
         },
@@ -78,7 +80,7 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "",
+          "RenderExcludeTags": "viewmodel",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
@@ -109,11 +111,11 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "menuScene": null,
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
           },
-          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -129,39 +131,6 @@
             "_type": "gameobject",
             "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
-        }
-      ]
-    },
-    {
-      "Id": "a749c84c-05ab-47fa-b4c3-5c3bf303ca12",
-      "Name": "WeaponPickup",
-      "Position": "384,-413.7954,32",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": null,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "HullCollider",
-          "BoxSize": "50,50,50",
-          "Center": "0,0,0",
-          "Height": 50,
-          "IsTrigger": true,
-          "Radius": 25,
-          "Radius2": 0,
-          "Slices": 16,
-          "Static": false,
-          "Surface": null,
-          "Type": "Box"
-        },
-        {
-          "__type": "WeaponPickup"
         }
       ]
     }
@@ -189,6 +158,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-25T16:21:47.6259469-05:00",
+  "LastSaved": "2024-02-25T21:17:28.0501169-05:00",
   "__references": []
 }
