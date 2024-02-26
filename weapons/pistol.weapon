@@ -1,6 +1,6 @@
 {
   "Name": "pistol",
-  "MaxAmmo": 128,
+  "MaxAmmo": 32,
   "Ammo": 64,
   "Damage": 50,
   "FireRate": 0.4,

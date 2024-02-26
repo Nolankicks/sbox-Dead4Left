@@ -22,7 +22,8 @@
         "muzzleFlash": {
           "_type": "gameobject",
           "prefab": "prefabs/muzzleflash.prefab"
-        }
+        },
+        "ShootSound": "sounds/smg1_shoot.sound"
       },
       {
         "__type": "CameraComponent",

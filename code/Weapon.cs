@@ -97,7 +97,7 @@ public partial class WeaponFunction : Component
 	[Property] public int MaxAmmo;
 	public int Damage;
 	public float FireRate;
-	public SoundEvent ShootSound;
+	[Property] public SoundEvent ShootSound { get; set; }
 	private PlayerController playerController;
 	private CharacterController characterController;
 	public TimeSince timeSinceReload = 1.5f;
@@ -114,7 +114,6 @@ public partial class WeaponFunction : Component
 			MaxAmmo = data.MaxAmmo;
 			Damage = data.Damage;
 			FireRate = data.FireRate;
-			ShootSound = data.ShootSound;
 		}
 		protected override void OnUpdate()
 		{
@@ -188,8 +187,8 @@ public partial class WeaponFunction : Component
 [GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes" ) ]
 public partial class WeaponData : GameResource
 {
-    public string Name { get; private set; } = "MP5";
-    public int MaxAmmo { get; private set; } = 32;
+    public string Name { get; set; } = "MP5";
+    public int MaxAmmo { get; set; } = 32;
     public int Ammo { get; set; }
 	public int Damage { get; set; } = 50;
     public float FireRate { get; set; } = 0.1f;
