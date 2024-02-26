@@ -177,7 +177,8 @@ public partial class WeaponFunction : Component
 				var zombie = tr.GameObject.Parent.Components.Get<Zombie>();
 				zombie.TakeDamage(Damage);
 				Log.Info(tr.GameObject.Parent);
-				bloodParticle.Clone(tr.HitPosition);
+				var blood = bloodParticle.Clone(tr.HitPosition);
+				blood.NetworkSpawn();
 				Ammo += 5;
 			}
 		}
