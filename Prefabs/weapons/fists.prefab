@@ -1,5 +1,15 @@
 {
-  "RootObject": null,
+  "RootObject": {
+    "Id": "67085a01-bd7b-4487-8638-3f5aaa6f4da1",
+    "Name": "fists",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "HealthKit"
+      }
+    ],
+    "Children": []
+  },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,

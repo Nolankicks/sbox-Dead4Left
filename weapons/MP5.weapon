@@ -1,11 +1,14 @@
 {
   "Name": "MP5",
-  "MaxAmmo": 64,
-  "Ammo": 32,
-  "Damage": 50,
+  "MaxAmmo": 32,
+  "Ammo": 64,
+  "Damage": 64,
   "FireRate": 0.1,
   "WeaponModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
-  "ShootSound": "sounds/smg1_shoot.sound",
+  "ShootSound": null,
+  "InventoryImage": "assets/w_mp5.vmdl_c.vtex",
+  "IsWeapon": true,
+  "IsItem": false,
   "__references": [
     "facepunch.v_mp5"
   ]

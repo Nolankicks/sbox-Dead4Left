@@ -1,0 +1,14 @@
+{
+  "Name": "healthkit",
+  "MaxAmmo": 32,
+  "Ammo": 0,
+  "Damage": 50,
+  "FireRate": 0.1,
+  "WeaponModel": null,
+  "ShootSound": null,
+  "PatchUptime": 5,
+  "InventoryImage": null,
+  "IsWeapon": false,
+  "IsItem": true,
+  "__references": []
+}

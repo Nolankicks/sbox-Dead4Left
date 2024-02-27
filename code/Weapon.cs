@@ -21,6 +21,7 @@ public sealed class Weapon : Component
 	public WeaponData[] Inventory = new WeaponData[9];
 	public GameObject[] WeaponList = new GameObject[9];
 	[Property] public PrefabScene weaponPrefab { get; set; }
+	[Property] public PrefabScene itemPrefab { get; set; }
 	[Property] public GameObject LastWeapon;
 	[Property] public GameObject CurrentWeapon;
 	protected override void OnStart()
@@ -29,6 +30,7 @@ public sealed class Weapon : Component
 		var weaponList = ResourceLibrary.GetAll<WeaponData>();
 		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
 		Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "pistol");
+		Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
 	}
 	public void AddWeapon(WeaponData weapon, int slot)
 	{
@@ -58,6 +60,8 @@ public sealed class Weapon : Component
 		{
 			if (weapon is not null)
 			{
+			if (weapon.IsWeapon)
+			{
 			var gameObj = weaponPrefab.Clone();
 			var weaponData = gameObj.Components.Get<WeaponFunction>();
 			weaponData.data = weapon;
@@ -66,6 +70,16 @@ public sealed class Weapon : Component
 			WeaponList[Array.IndexOf(Inventory, weapon)] = gameObj;
 			Log.Info(WeaponList.ToString());
 			gameObj.Parent = GameObject;
+			}
+			if (weapon.IsItem)
+			{
+			var gameObj = itemPrefab.Clone();
+			var HealthKit = gameObj.Components.Get<HealthKit>();
+			HealthKit.PatchUptime = weapon.PatchUptime;
+			gameObj.Name = weapon.Name;
+			Log.Info(weapon.Name);
+			WeaponList[Array.IndexOf(Inventory, weapon)] = gameObj;
+			}
 			}
 		}
 		NeedsChange = false;
@@ -188,12 +202,16 @@ public partial class WeaponFunction : Component
 public partial class WeaponData : GameResource
 {
     public string Name { get; set; } = "MP5";
-    public int MaxAmmo { get; set; } = 32;
-    public int Ammo { get; set; }
-	public int Damage { get; set; } = 50;
-    public float FireRate { get; set; } = 0.1f;
-	public Model WeaponModel { get; set; }
-	public SoundEvent ShootSound { get; set; }
+    [Property, Category("Weapon")] public int MaxAmmo { get; set; } = 32;
+    [Property, Category("Weapon")] public int Ammo { get; set; }
+	[Property, Category("Weapon")] public int Damage { get; set; } = 50;
+    [Property, Category("Weapon")] public float FireRate { get; set; } = 0.1f;
+	[Property, Category("Weapon")] public Model WeaponModel { get; set; }
+	[Property, Category("Weapon")] public SoundEvent ShootSound { get; set; }
+	[Property, Category("Item")] public int PatchUptime { get; set; } = 5;
+	public Texture InventoryImage { get; set; }
+	public bool IsWeapon { get; set; } = true;
+	public bool IsItem { get; set; }
 }
 
 public partial class Switcher : Component

@@ -1,4 +1,5 @@
 @using Sandbox;
+@using System;
 @using Sandbox.UI;
 @inherits PanelComponent
 @namespace Kicks
@@ -18,17 +19,22 @@
 					{
 						<img src="textures/w_usp.vmdl_c.vtex" class="icon"></img>
 					}
+					@if (i == 2)
+					{
+						<img src="textures/medkit.vtex" class="icon"></img>
+					}
 			</div>
 		}
 	</div>
-	
 </root>
 
 @code
 {
 	public static Weapon weaponData;
-	[Property] public Texture MP5 { get; set; }
-	[Property] public Texture Pistol { get; set; }
+	[Property] public bool IsHealing { get; set; }
+	[Property, Range(0,100)] public float fill { get; set; }
+	[Property] public HealthKit healthKit { get; set; }
+	public TimeUntil healTimer;
         protected override void OnStart()
         {
             weaponData = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
@@ -36,11 +42,10 @@
 
         //private Weapon weaponData;
 
-        protected override void OnAwake()
+        protected override void OnUpdate()
         {
-         
-			
+
         }
 
-        protected override int BuildHash() => System.HashCode.Combine( weaponData?.ActiveSlot, weaponData?.Inventory, weaponData?.InventoryImages, weaponData?.Slots );
+        protected override int BuildHash() => System.HashCode.Combine( Time.Now );
 }
