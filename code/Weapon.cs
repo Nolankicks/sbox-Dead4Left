@@ -40,7 +40,7 @@ public sealed class Weapon : Component
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
-		
+		Log.Info(WeaponList[2]);
 		CurrentWeapon = WeaponList[ActiveSlot];
 		if (Input.MouseWheel.y != 0 && !IsProxy)
 		{
@@ -114,6 +114,7 @@ public partial class WeaponFunction : Component
 	private PlayerController playerController;
 	private CharacterController characterController;
 	public TimeSince timeSinceReload = 1.5f;
+	public Weapon weapon;
 	[Property] public GameObject bloodParticle { get; set; }
 	[Property] public GameObject muzzleFlash { get; set; }
 		protected override void OnStart()
@@ -121,6 +122,7 @@ public partial class WeaponFunction : Component
 			if (IsProxy) return;
 			playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 			characterController = GameManager.ActiveScene.GetAllComponents<CharacterController>().FirstOrDefault(x => !x.IsProxy);
+			weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 			gun.Model = data.WeaponModel;
 			gun.Set("b_deploy", true);
 			Ammo = data.Ammo;
@@ -168,9 +170,13 @@ public partial class WeaponFunction : Component
 			{
 				gun.Set("b_grounded", true);
 			}
+			
 		}
-
-	void Shoot()
+		protected override void OnDestroy()
+		{
+			 weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
+		}
+		void Shoot()
 	{
 		if (IsProxy) return;
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;

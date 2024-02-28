@@ -17,9 +17,11 @@ public sealed class HealthKit : Component
 	public bool Healing = false;
 	public bool CanHeal = true;
 	public TimeUntil HealCooldown;
+	public Weapon weapon;
 	protected override void OnStart()
 	{
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 	}
 	protected override void OnUpdate()
 	{
@@ -30,6 +32,8 @@ public sealed class HealthKit : Component
 			CanHeal = false;
 			HealCooldown = PatchUptime;
 		}
+		
+
 	}
 
 	async Task Heal()
@@ -38,5 +42,9 @@ public sealed class HealthKit : Component
 		
 		player.Health += 25;
 		GameObject.Destroy();
+	}
+protected override void OnDestroy()
+	{
+			 weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
 	}
 }
