@@ -40,6 +40,7 @@ public sealed class Weapon : Component
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
+		
 		CurrentWeapon = WeaponList[ActiveSlot];
 		if (Input.MouseWheel.y != 0 && !IsProxy)
 		{
@@ -95,9 +96,7 @@ public sealed class Weapon : Component
 			{
 				weapon.Enabled = false;
 			}
-
 		}
-		
 }
 
 

@@ -62,6 +62,17 @@
               }
             }
           ]
+        },
+        {
+          "Id": "c9654ad3-2c40-4b7b-bcc6-4f286b6aa937",
+          "Name": "healingui",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "HealingPanel"
+            }
+          ]
         }
       ]
     },
@@ -159,6 +170,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-27T21:09:40.4464465-05:00",
+  "LastSaved": "2024-02-27T21:25:17.2312208-05:00",
   "__references": []
 }

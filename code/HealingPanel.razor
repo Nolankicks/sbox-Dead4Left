@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@using Kicks
+@using System.Linq;
+<root>
+	@if (HealthKit is not null && HealthKit.Healing)
+	{
+		<div>@HealthKit.HealCooldown</div>
+	}
+</root>
+
+@code
+{
+	public HealthKit HealthKit;
+
+        protected override void OnUpdate()
+        {
+            HealthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+        }
+
+        /// <summary>
+        /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+        /// </summary>
+        protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}
