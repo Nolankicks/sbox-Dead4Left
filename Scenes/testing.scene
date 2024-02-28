@@ -9,7 +9,7 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "facepunch/construct23",
+          "MapName": "maps/devmap.vmap",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": true
@@ -159,6 +159,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-27T21:09:40.4464465-05:00",
+  "LastSaved": "2024-02-27T21:11:45.8965041-05:00",
   "__references": []
 }

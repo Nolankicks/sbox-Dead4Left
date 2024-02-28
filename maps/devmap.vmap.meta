@@ -1,0 +1,29 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Dead 4 Left Dev Map",
+      "Type": "map",
+      "Org": "nolankicks",
+      "Ident": "devmap",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "fpopium.dev_grid_01a#48402",
+        "semxy.bluecloudskybox#24832",
+        "fpopium.blood_wipe_01#48400"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/devmap.vmap"
+      }
+    }
+  }
+}

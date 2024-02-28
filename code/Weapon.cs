@@ -77,6 +77,7 @@ public sealed class Weapon : Component
 			var HealthKit = gameObj.Components.Get<HealthKit>();
 			HealthKit.PatchUptime = weapon.PatchUptime;
 			gameObj.Name = weapon.Name;
+			gameObj.Parent = GameObject;
 			Log.Info(weapon.Name);
 			WeaponList[Array.IndexOf(Inventory, weapon)] = gameObj;
 			}

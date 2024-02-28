@@ -8,7 +8,7 @@
   "ShootSound": null,
   "PatchUptime": 5,
   "InventoryImage": null,
-  "IsWeapon": false,
-  "IsItem": true,
+  "IsWeapon": true,
+  "IsItem": false,
   "__references": []
 }

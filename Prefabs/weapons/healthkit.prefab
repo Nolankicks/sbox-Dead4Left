@@ -1,5 +1,15 @@
 {
-  "RootObject": null,
+  "RootObject": {
+    "Id": "1c3b836d-ee49-4018-9112-a83cc034ef3d",
+    "Name": "healthkit",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "HealthKit"
+      }
+    ],
+    "Children": []
+  },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
