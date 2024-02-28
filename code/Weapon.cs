@@ -45,7 +45,6 @@ public sealed class Weapon : Component
 		if (Input.MouseWheel.y != 0 && !IsProxy)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
-			LastWeapon = WeaponList[ActiveSlot + 1];
 		}
 		if (CurrentWeapon == LastWeapon && !IsProxy)
 		{
