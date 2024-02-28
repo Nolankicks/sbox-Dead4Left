@@ -34,11 +34,12 @@
 	public static Weapon weaponData;
 	[Property] public bool IsHealing { get; set; }
 	[Property, Range(0,100)] public float fill { get; set; }
-	[Property] public HealthKit healthKit { get; set; }
+	public HealthKit healthKit { get; set; }
 	public TimeUntil healTimer;
         protected override void OnStart()
         {
             weaponData = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+			healthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
         }
 
         //private Weapon weaponData;

@@ -40,7 +40,6 @@ public sealed class Weapon : Component
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
-		Log.Info(WeaponList[2]);
 		CurrentWeapon = WeaponList[ActiveSlot];
 		if (Input.MouseWheel.y != 0 && !IsProxy)
 		{
@@ -203,20 +202,23 @@ public partial class WeaponFunction : Component
 
 	}
 }
-[GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes" ) ]
+[GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes") ]
 public partial class WeaponData : GameResource
 {
-    public string Name { get; set; } = "MP5";
-    [Property, Category("Weapon")] public int MaxAmmo { get; set; } = 32;
-    [Property, Category("Weapon")] public int Ammo { get; set; }
-	[Property, Category("Weapon")] public int Damage { get; set; } = 50;
-    [Property, Category("Weapon")] public float FireRate { get; set; } = 0.1f;
-	[Property, Category("Weapon")] public Model WeaponModel { get; set; }
-	[Property, Category("Weapon")] public SoundEvent ShootSound { get; set; }
-	[Property, Category("Item")] public int PatchUptime { get; set; } = 5;
-	public Texture InventoryImage { get; set; }
-	public bool IsWeapon { get; set; } = true;
+	public bool IsWeapon { get; set; }
 	public bool IsItem { get; set; }
+	public bool IsCustom { get; set; }
+    public string Name { get; set; } = "";
+    [Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int MaxAmmo { get; set; } = 32;
+    [Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int Ammo { get; set; }
+	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int Damage { get; set; } = 50;
+    [Property, Category("Weapon"), ShowIf("IsWeapon", true)] public float FireRate { get; set; } = 0.1f;
+	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public Model WeaponModel { get; set; }
+	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public SoundEvent ShootSound { get; set; }
+	[Property, Category("Item"), ShowIf("IsItem", true)] public int PatchUptime { get; set; } = 5;
+	[Property, Category("Custom"), ShowIf("IsCustom", true)] public PrefabScene CustomPrefab { get; set; }
+	public Texture InventoryImage { get; set; }
+
 }
 
 public partial class Switcher : Component

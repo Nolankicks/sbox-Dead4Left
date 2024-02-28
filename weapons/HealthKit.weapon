@@ -1,4 +1,6 @@
 {
+  "IsWeapon": false,
+  "IsItem": true,
   "Name": "healthkit",
   "MaxAmmo": 32,
   "Ammo": 0,
@@ -8,7 +10,5 @@
   "ShootSound": null,
   "PatchUptime": 5,
   "InventoryImage": null,
-  "IsWeapon": false,
-  "IsItem": true,
   "__references": []
 }

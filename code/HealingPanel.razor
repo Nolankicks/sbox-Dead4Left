@@ -3,21 +3,29 @@
 @inherits PanelComponent
 @using Kicks
 @using System.Linq;
+@using System;
 <root>
-	@if (HealthKit is not null && HealthKit.Healing)
+	@if (HealthKit is not null)
 	{
-		<div>@HealthKit.HealCooldown</div>
+		<div class="timer">
+			<div class="inner" style="width">hi</div>
+		</div>
 	}
 </root>
 
 @code
 {
 	public HealthKit HealthKit;
-
+	public PlayerController PlayerController;
         protected override void OnUpdate()
         {
             HealthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+			PlayerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
         }
+		string GetTime()
+		{
+			return Math.Floor(HealthKit.HealCooldown).ToString();
+		}
 
         /// <summary>
         /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt

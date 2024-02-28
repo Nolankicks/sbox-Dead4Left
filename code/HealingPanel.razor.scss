@@ -16,4 +16,19 @@ HealingPanel
 		font-family: Poppins;
 		color: #fff;
 	}
+
+	.timer
+	{
+		font-size: 64px;
+		font-family: Poppins;
+		color: #fff;
+		background-color: pink;
+		border-radius: 20px;
+		width: 1000px;
+		.inner
+		{
+			flex-grow: 0.9;
+			background-color: blue;
+		}
+	}
 }
