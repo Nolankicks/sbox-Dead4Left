@@ -91,7 +91,6 @@
 
 			</div>
 		</div>
-	</div>
 </root>
 
 
@@ -114,22 +113,9 @@
 	}
 
 	
-	protected override void OnTreeFirstBuilt()
-	{
-		//base.OnTreeFirstBuilt();
-
-		Themes.Options = new()
-		{
-			new Option("MP5", 1),
-			new Option("USP", 2),
-		};
-		
-		Themes.Selected = Themes.Options.First();
-		
-	}
 
     
-        private async Task RefreshLobbyList()
+    private async Task RefreshLobbyList()
 	{
 		while ( true )
 		{
