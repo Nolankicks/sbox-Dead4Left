@@ -50,8 +50,8 @@ public sealed class HealthKit : Component
 		Healing = false;
 		weapon.AbleToSwitch = true;
 	}
-			protected override void OnDestroy()
+			/*protected override void OnDestroy()
 			{
 			 weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
-			}
+			}*/
 }

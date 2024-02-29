@@ -9,7 +9,6 @@ public sealed class Zombie : Component, IHealthComponent
 
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public NavMeshAgent NavMeshAgent { get; set; }
-	[Property] public CharacterController CharacterController { get; set; }
 	[Property] public GameObject body { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	[Sync] public float Health { get; set; } = 100;
@@ -24,13 +23,11 @@ public sealed class Zombie : Component, IHealthComponent
 		var players = GameManager.ActiveScene.GetAllComponents<PlayerController>().ToList();
 		targetPlayer = Game.Random.FromList(players);
 		Log.Info( $"Targeting {targetPlayer}" );
-		CharacterController.Enabled = false;
-		localPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 	}
 	protected override void OnUpdate()
 	{
 
-		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, body.Transform.Position) < 150f)
+		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
 		{
 			NavMeshAgent?.Stop();
 		}
@@ -38,13 +35,13 @@ public sealed class Zombie : Component, IHealthComponent
 		{
 			MoveToTarget();
 		}
-		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, GameObject.Transform.Position ) < 150f)
+		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position ) < 150f && targetPlayer is not null)
 		{
 			NavMeshAgent?.Stop();
 		}
 		
 		var target = targetPlayer.Transform.Position;
-		if (target.z > GameObject.Transform.Position.z + 50)
+		if (target.z > GameObject.Transform.Position.z + 50 && targetPlayer is not null)
 		{
 			UpWardTrace();
 		}
@@ -54,7 +51,10 @@ public sealed class Zombie : Component, IHealthComponent
 		}
 		
 		//JumpTrace();
+		if (targetPlayer is not null)
+		{
 		UpdateAnimations();
+		}
 	}
 	void MoveToTarget()
 	{
@@ -62,12 +62,9 @@ public sealed class Zombie : Component, IHealthComponent
 	}
 	void UpdateAnimations()
 	{
-		var velocity = NavMeshAgent.Enabled ? NavMeshAgent.Velocity : CharacterController.Velocity;
 		var target = targetPlayer.Transform.Position;
 		var bodyRot = AnimationHelper.Transform.Rotation.Angles();
-		AnimationHelper?.WithVelocity(velocity);
-		var targetRot = Rotation.LookAt(target.WithZ(Transform.Position.z) - Transform.Position);
-		body.Transform.Rotation = Rotation.Slerp( body.Transform.Rotation, targetRot, Time.Delta * 5 );
+		AnimationHelper?.WithVelocity(NavMeshAgent.Velocity);
 	}
 	public TimeSince lastAttack = 0;
 	void FowardTrace()

@@ -173,11 +173,13 @@ public partial class WeaponFunction : Component
 			}
 			
 		}
-		protected override void OnDestroy()
+		/*protected override void OnDestroy()
 		{
-			if (IsProxy) return;
-			 weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
-		}
+			if (!IsProxy)
+			{
+			weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
+			}
+		}*/
 		void Shoot()
 	{
 		if (IsProxy) return;
@@ -194,7 +196,6 @@ public partial class WeaponFunction : Component
 			Sound.Play(ShootSound, tr.EndPosition);
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-				var zombie = tr.GameObject.Parent.Components.Get<Zombie>();
 				tr.GameObject.Destroy();
 				playerController.AddScore(5);
 				Log.Info(tr.GameObject.Parent);
