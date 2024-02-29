@@ -175,6 +175,7 @@ public partial class WeaponFunction : Component
 		}
 		protected override void OnDestroy()
 		{
+			if (IsProxy) return;
 			 weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
 		}
 		void Shoot()
@@ -194,7 +195,8 @@ public partial class WeaponFunction : Component
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				var zombie = tr.GameObject.Parent.Components.Get<Zombie>();
-				zombie.TakeDamage(Damage);
+				tr.GameObject.Destroy();
+				playerController.AddScore(5);
 				Log.Info(tr.GameObject.Parent);
 				var blood = bloodParticle.Clone(tr.HitPosition);
 				blood.NetworkSpawn();

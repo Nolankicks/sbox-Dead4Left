@@ -16,6 +16,7 @@ public sealed class Zombie : Component, IHealthComponent
 	[Sync] public float MaxHealth { get; set; } = 100;
 	public PlayerController targetPlayer;
 	public bool NeedsToJump = false;
+	private PlayerController localPlayer;
 	protected override void OnStart()
 	{
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
@@ -24,6 +25,7 @@ public sealed class Zombie : Component, IHealthComponent
 		targetPlayer = Game.Random.FromList(players);
 		Log.Info( $"Targeting {targetPlayer}" );
 		CharacterController.Enabled = false;
+		localPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 	}
 	protected override void OnUpdate()
 	{
