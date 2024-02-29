@@ -21,14 +21,12 @@ HealingPanel
 	{
 		font-size: 64px;
 		font-family: Poppins;
-		color: #fff;
-		background-color: pink;
+		color: black;
+		background-color: #fff;
+		align-items: center;
+		justify-content: center;
 		border-radius: 20px;
-		width: 1000px;
-		.inner
-		{
-			flex-grow: 0.9;
-			background-color: blue;
-		}
+		padding: 16px;
+		width: 200px;
 	}
 }

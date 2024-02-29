@@ -20,6 +20,7 @@ public sealed class Weapon : Component
 	public bool NeedsChange = true;
 	public WeaponData[] Inventory = new WeaponData[9];
 	public GameObject[] WeaponList = new GameObject[9];
+	public bool AbleToSwitch = true;
 	[Property] public PrefabScene weaponPrefab { get; set; }
 	[Property] public PrefabScene itemPrefab { get; set; }
 	[Property] public GameObject LastWeapon;
@@ -41,7 +42,7 @@ public sealed class Weapon : Component
 	{
 		if (IsProxy) return;
 		CurrentWeapon = WeaponList[ActiveSlot];
-		if (Input.MouseWheel.y != 0 && !IsProxy)
+		if (Input.MouseWheel.y != 0 && !IsProxy && AbleToSwitch)
 		{
 			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Inventory.Length;
 		}
@@ -77,6 +78,7 @@ public sealed class Weapon : Component
 			HealthKit.PatchUptime = weapon.PatchUptime;
 			gameObj.Name = weapon.Name;
 			gameObj.Parent = GameObject;
+			HealthKit.weaponData = weapon;
 			Log.Info(weapon.Name);
 			WeaponList[Array.IndexOf(Inventory, weapon)] = gameObj;
 			}
@@ -185,7 +187,7 @@ public partial class WeaponFunction : Component
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
 
-		muzzleFlash.Clone(muzzle.Value.Position + Vector3.Up * 62, playerController.EyeAngles);
+		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		if (tr.Hit)
 		{
 			Sound.Play(ShootSound, tr.EndPosition);
@@ -216,6 +218,7 @@ public partial class WeaponData : GameResource
 	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public Model WeaponModel { get; set; }
 	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public SoundEvent ShootSound { get; set; }
 	[Property, Category("Item"), ShowIf("IsItem", true)] public int PatchUptime { get; set; } = 5;
+	[Property, Category("Custom"), ShowIf("IsCustom", true)] public int Count { get; set; } = 1;
 	[Property, Category("Custom"), ShowIf("IsCustom", true)] public PrefabScene CustomPrefab { get; set; }
 	public Texture InventoryImage { get; set; }
 

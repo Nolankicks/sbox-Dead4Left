@@ -17,12 +17,14 @@
 		</div>
 		</div>
 			
-				@if (weaponFunction != null)
+				@if (weaponFunction is not null)
 				{
 				<div class="ammo">@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo</div>
 				}
-			
-
+				@if (healthKit is not null)
+				{
+				<div class="ammo">@healthKit.Amount / 0</div>
+				}
 	<div class="center">
 		<div class="crosshair"></div>
 	</div>
@@ -69,6 +71,7 @@
 	[Property] public Manager manager { get; set; }
 	[Property] public bool IsVisible { get; set; } = false;
 	private WeaponFunction weaponFunction;
+	private HealthKit healthKit;
 	//public ModularWeapon modularWeapon;
 	protected override void OnStart()
 	{
@@ -80,6 +83,7 @@
         {
 			//modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
 			weaponFunction = GameManager.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
+			healthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
         }
 
         string IsMe(Sandbox.Services.Leaderboards.Entry entry)

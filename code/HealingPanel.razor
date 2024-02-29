@@ -5,10 +5,10 @@
 @using System.Linq;
 @using System;
 <root>
-	@if (HealthKit is not null)
+	@if (HealthKit is not null && HealthKit.Healing)
 	{
 		<div class="timer">
-			<div class="inner" style="width">hi</div>
+			@GetTime()
 		</div>
 	}
 </root>
@@ -17,6 +17,7 @@
 {
 	public HealthKit HealthKit;
 	public PlayerController PlayerController;
+	[Property, Range(0, 100)] public int Width { get; set; } = 100;
         protected override void OnUpdate()
         {
             HealthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
@@ -30,5 +31,5 @@
         /// <summary>
         /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
         /// </summary>
-        protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+        protected override int BuildHash() => System.HashCode.Combine( Time.Now, Width );
 }

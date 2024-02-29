@@ -41,8 +41,8 @@
             {
               "__type": "Inventory",
               "fill": 0,
-              "healthKit": null,
-              "IsHealing": false
+              "IsHealing": false,
+              "Medkit": "textures/medkit.vtex"
             }
           ]
         },
@@ -70,7 +70,8 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "HealingPanel"
+              "__type": "HealingPanel",
+              "Width": 100
             }
           ]
         }
@@ -136,6 +137,7 @@
       "Id": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -170,6 +172,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-28T10:48:17.3662554-05:00",
+  "LastSaved": "2024-02-28T20:51:49.4979741-05:00",
   "__references": []
 }

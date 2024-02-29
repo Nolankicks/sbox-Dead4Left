@@ -3,6 +3,7 @@
     "Id": "078ad8f2-f686-4151-a09b-ce8027f94d8a",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
+    "Networked": true,
     "Enabled": true,
     "Components": [
       {
@@ -83,6 +84,7 @@
       {
         "Id": "02785c29-e076-4d61-a1c1-eebaf9028aae",
         "Name": "body",
+        "Networked": true,
         "Enabled": true,
         "Components": [
           {
@@ -129,6 +131,7 @@
         "Id": "871f14a7-3bbc-46b0-8707-3b21cfe9f846",
         "Name": "eye",
         "Position": "0,0,64",
+        "Networked": true,
         "Enabled": true
       }
     ]

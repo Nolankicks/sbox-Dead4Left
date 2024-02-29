@@ -19,7 +19,7 @@
 					{
 						<img src="textures/w_usp.vmdl_c.vtex" class="icon"></img>
 					}
-					@if (i == 2 && healthKit is not null)
+					@if (i == 2)
 					{
 
 						<img src="textures/medkit.vtex" class="icon"></img>
@@ -35,19 +35,20 @@
 	[Property] public bool IsHealing { get; set; }
 	[Property, Range(0,100)] public float fill { get; set; }
 	public HealthKit healthKit { get; set; }
+	[Property] public Texture Medkit { get; set; }
 	public TimeUntil healTimer;
         protected override void OnStart()
         {
             weaponData = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-			healthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+			
         }
 
         //private Weapon weaponData;
 
         protected override void OnUpdate()
         {
-
+			healthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
         }
-
+		
         protected override int BuildHash() => System.HashCode.Combine( Time.Now );
 }

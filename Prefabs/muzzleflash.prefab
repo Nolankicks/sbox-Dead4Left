@@ -1,8 +1,8 @@
 {
   "RootObject": {
-    "Id": "14a2bcfe-b8ac-45f7-8447-739812656be5",
+    "Id": "cd53c9e4-6543-459d-8d7a-9865a342cf83",
     "Name": "muzzleflash",
-    "Tags": "particles",
+    "Tags": "particles,viewmodel",
     "Enabled": true,
     "Components": [
       {
@@ -11,7 +11,7 @@
           {
             "GameObjectValue": {
               "_type": "gameobject",
-              "go": "1888249a-e369-4579-b1f2-eed8e205a4f3"
+              "go": "b6a8b17f-9025-47a3-ac47-3f8595ee0aef"
             }
           }
         ],
@@ -38,16 +38,16 @@
               "Id": 1,
               "Type": "time.delay",
               "UserData": {
-                "Position": "224,48"
+                "Position": "256,48"
               }
             },
             {
               "Id": 2,
               "Type": "call",
               "Properties": {
+                "_name": "Destroy",
                 "_type": "Sandbox.Game/Sandbox.GameObject",
-                "_isStatic": false,
-                "_name": "Destroy"
+                "_isStatic": false
               },
               "UserData": {
                 "Position": "496,192"
@@ -84,7 +84,7 @@
     ],
     "Children": [
       {
-        "Id": "1888249a-e369-4579-b1f2-eed8e205a4f3",
+        "Id": "b6a8b17f-9025-47a3-ac47-3f8595ee0aef",
         "Name": "Object",
         "Enabled": true
       }

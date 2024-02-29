@@ -10,6 +10,7 @@ using Kicks;
 using Sandbox;
 using Sandbox.UI;
 using Sandbox.Citizen;
+using static Weapon;
 public sealed class HealthKit : Component
 {
 	public PlayerController player;
@@ -18,19 +19,24 @@ public sealed class HealthKit : Component
 	public bool CanHeal = true;
 	public TimeUntil HealCooldown;
 	public Weapon weapon;
+	public int Amount = 1;
+	public WeaponData weaponData;
 	protected override void OnStart()
 	{
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		Amount = 1;
 	}
 	protected override void OnUpdate()
 	{
-		if (Input.Pressed("attack1") && !IsProxy && CanHeal)
+		if (Input.Pressed("attack1") && !IsProxy && CanHeal && Amount > 0 && GameObject.Enabled == true)
 		{
 			_ = Heal();
 			Healing = true;
 			CanHeal = false;
 			HealCooldown = PatchUptime;
+			Amount -= 0;
+			weapon.AbleToSwitch = false;
 		}
 		
 
@@ -41,10 +47,11 @@ public sealed class HealthKit : Component
 		await Task.DelayRealtimeSeconds(PatchUptime);
 		
 		player.Health += 25;
-		GameObject.Destroy();
+		Healing = false;
+		weapon.AbleToSwitch = true;
 	}
-protected override void OnDestroy()
-	{
+			protected override void OnDestroy()
+			{
 			 weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
-	}
+			}
 }
