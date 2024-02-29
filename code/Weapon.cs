@@ -171,6 +171,8 @@ public partial class WeaponFunction : Component
 			{
 				gun.Set("b_grounded", true);
 			}
+			gun.Set("move_groundspeed", characterController.Velocity.Length);
+			
 			
 		}
 		/*protected override void OnDestroy()
@@ -214,8 +216,8 @@ public partial class WeaponData : GameResource
 	public bool IsItem { get; set; }
 	public bool IsCustom { get; set; }
     public string Name { get; set; } = "";
+	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int Ammo { get; set; }
     [Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int MaxAmmo { get; set; } = 32;
-    [Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int Ammo { get; set; }
 	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public int Damage { get; set; } = 50;
     [Property, Category("Weapon"), ShowIf("IsWeapon", true)] public float FireRate { get; set; } = 0.1f;
 	[Property, Category("Weapon"), ShowIf("IsWeapon", true)] public Model WeaponModel { get; set; }

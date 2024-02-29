@@ -1,14 +1,18 @@
 {
+  "IsWeapon": true,
+  "IsItem": false,
+  "IsCustom": false,
   "Name": "pistol",
-  "MaxAmmo": 32,
-  "Ammo": 64,
+  "MaxAmmo": 64,
+  "Ammo": 32,
   "Damage": 100,
   "FireRate": 0.3,
   "WeaponModel": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
   "ShootSound": "sounds/smg1_shoot.sound",
+  "PatchUptime": 5,
+  "Count": 1,
+  "CustomPrefab": null,
   "InventoryImage": "textures/w_usp.vmdl_c.vtex",
-  "IsWeapon": true,
-  "IsItem": false,
   "__references": [
     "facepunch.v_usp"
   ]
