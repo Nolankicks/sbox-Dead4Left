@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "138da5bb-09bf-4969-8127-5868a3005c93",
+    "Id": "8c9726db-1a18-4451-8510-9a993059345d",
     "Name": "mainweapon",
     "Networked": true,
     "Enabled": true,
@@ -16,7 +16,7 @@
         },
         "gun": {
           "_type": "component",
-          "go": "b843af56-425c-43a5-96ae-4535467b482e",
+          "go": "63256c37-5748-4655-96fb-19370ba81078",
           "component_type": "SkinnedModelRenderer"
         },
         "muzzleFlash": {
@@ -40,11 +40,15 @@
         "Viewport": "0,0,1,1",
         "ZFar": 10000,
         "ZNear": 10
+      },
+      {
+        "__type": "Pixelate",
+        "Scale": 5
       }
     ],
     "Children": [
       {
-        "Id": "b843af56-425c-43a5-96ae-4535467b482e",
+        "Id": "63256c37-5748-4655-96fb-19370ba81078",
         "Name": "gun",
         "Position": "17.7,-9.2,-0.2",
         "Tags": "viewmodel",
@@ -65,7 +69,7 @@
         ]
       },
       {
-        "Id": "12d6f6a9-fa88-4d9a-bd94-ca082ce5e303",
+        "Id": "baa0ce96-56d1-45fb-b901-8bdfe43b2148",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -76,7 +80,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "b843af56-425c-43a5-96ae-4535467b482e",
+              "go": "63256c37-5748-4655-96fb-19370ba81078",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
