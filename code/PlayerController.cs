@@ -163,14 +163,9 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	{
 		camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		if ( camera is null ) return;
-		
 		var targetEyeHeight = Crouching ? 32 : 64;
 		EyeHight = EyeHight.LerpTo( targetEyeHeight, RealTime.Delta * 10.0f );
-
 		var targetCameraPos = Transform.Position + new Vector3( 0, 0, EyeHight );
-
-		// smooth view z, so when going up and down stairs or ducking, it's smooth af
-		
 		eye.Transform.Rotation = EyeAngles;
 		camera.Transform.Position = targetCameraPos;
 		camera.Transform.Rotation = EyeAngles;
