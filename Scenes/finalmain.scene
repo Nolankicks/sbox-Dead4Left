@@ -80,7 +80,7 @@
     {
       "Id": "b6d59cf1-c0e3-4b1c-9315-bbb968d970e3",
       "Name": "camera",
-      "Position": "511.9753,-544.0217,123.9913",
+      "Position": "928,-64,64",
       "Tags": "particles",
       "Enabled": true,
       "Components": [
@@ -171,6 +171,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-29T18:01:38.2457181-05:00",
+  "LastSaved": "2024-02-29T18:24:42.1065574-05:00",
   "__references": []
 }
