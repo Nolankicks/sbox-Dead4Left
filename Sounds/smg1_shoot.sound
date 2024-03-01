@@ -1,5 +1,5 @@
 {
-  "UI": false,
+  "UI": true,
   "Volume": "1.00,1.00,0",
   "Pitch": "1.00,1.00,0",
   "Decibels": 140,
@@ -9,5 +9,8 @@
     "sounds/smg1_shoot2.vsnd",
     "sounds/smg1_shoot3.vsnd"
   ],
+  "Occlusion": false,
+  "OcclusionRadius": 64,
+  "DistanceAttenuation": true,
   "__references": []
 }

@@ -203,7 +203,8 @@ public partial class WeaponFunction : Component
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		if (tr.Hit)
 		{
-			Sound.Play(ShootSound, tr.EndPosition);
+			var sound = Sound.Play(ShootSound);
+			sound.SpacialBlend = 0;
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Destroy();
