@@ -155,14 +155,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 			cc.Velocity = cc.Velocity.WithZ( 0 );
 		}
 	}
-	float CrouchHeight = (64 - 36);
-	bool CanUncrouch()
-	{
-		if (!Crouching) return true;
 
-		var tr = controller.TraceDirection(Vector3.Up * CrouchHeight);
-		return !tr.Hit;
-	}
 	
 	
 
