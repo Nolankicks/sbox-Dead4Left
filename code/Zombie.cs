@@ -26,7 +26,7 @@ public sealed class Zombie : Component, IHealthComponent
 	}
 	protected override void OnUpdate()
 	{
-
+		if (targetPlayer is null) return;
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
 		{
 			NavMeshAgent?.Stop();

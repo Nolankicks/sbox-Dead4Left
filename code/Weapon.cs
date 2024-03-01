@@ -32,7 +32,7 @@ public sealed class Weapon : Component
 		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
 		Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "pistol");
 		Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
-		Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
+		//Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
 	}
 	public void AddWeapon(WeaponData weapon, int slot)
 	{
