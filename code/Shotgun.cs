@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Kicks;
 using Sandbox;
@@ -34,8 +35,10 @@ public sealed class Shotgun : Component
 	{
 		if (IsProxy) return;
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
+		var angles = playerController.EyeAngles.Forward * Random.Shared.Float(1, 5);
+		var random = Random.Shared.Float(-1, 1);
 		var tr = Scene.Trace.Ray(eyePos, eyePos + playerController.EyeAngles.Forward * 500).WithoutTags("player").Run();
 		var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));
-		decalVar.Parent = tr.GameObject;
+		//decalVar.Parent = tr.GameObject;
 	}
 }
