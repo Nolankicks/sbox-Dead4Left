@@ -10,7 +10,7 @@
 	<div class="left">
 		<h1>LOBBY-LIST</h1>
 		<div class="inner">
-			<div class="button" onclick=@CreateLobby>
+			<div class="button" onclick=@ToggleMaps>
 				<div class="title">Create Lobby</div>
 			</div>
 			@if (IsRefreshing)
@@ -46,26 +46,7 @@
 
 	</div>
 	
-	<div class="bottomright">
-			<div class="notes">
-				<div class="notesbutton" onclick=@ToggleMaps>
-					<div class="title">Select Map</div>
-				</div>
-			</div>
-	</div>
-	<div class="notespopup @(ShowNotes ? "" : "hide")">
-		<h2>Notes:</h2>
-		<div class="notes">Currently viewmodels semi broken</div>
-		<p></p>
-		<div class="notes">You may recieve clipping issues</div>
-		<p></p>
-		<div class="notes">Tony says he is working on them</div>
-		<p></p>
-		<img class="img" src="https://i.imgur.com/fDuWhDN.jpeg" alt="Tony" width="200" height="200">
-		<div class="closebutton" onclick=@(() => ShowNotes = false)>
-			<div class="title">Close</div>
-		</div>
-	</div>
+	
 	
 		<div class="mapselect @(ShowMaps ? "" : "hide")">
 			<PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(50)></PackageList>

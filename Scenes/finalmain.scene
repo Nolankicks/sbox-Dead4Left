@@ -124,11 +124,11 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "menuScene": null,
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
           },
-          "SpawnPoints": null,
           "StartServer": true
         }
       ]
@@ -172,6 +172,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-01T10:58:30.7728328-05:00",
+  "LastSaved": "2024-03-01T17:17:10.0201561-05:00",
   "__references": []
 }

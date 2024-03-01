@@ -199,12 +199,13 @@ public partial class WeaponFunction : Component
 		ShotsFired++;
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
-
+		var sound = Sound.Play(ShootSound);
+		sound.SpacialBlend = 0;
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		if (tr.Hit)
 		{
-			var sound = Sound.Play(ShootSound);
-			sound.SpacialBlend = 0;
+			
+			
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 				tr.GameObject.Destroy();
