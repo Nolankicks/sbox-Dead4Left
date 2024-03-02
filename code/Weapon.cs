@@ -146,7 +146,6 @@ public partial class WeaponFunction : Component
 			{
 				Shoot();
 				gun.Set("b_attack", true);
-				gun.Set("fire", true);
 				_lastFired = 0;
 			}
 
@@ -165,7 +164,6 @@ public partial class WeaponFunction : Component
 				Ammo = MaxAmmo -= ShotsFired;
 				Ammo = data.Ammo;
 				gun.Set("b_reload", true);
-				gun.Set("reload", true);
 				ShotsFired = 0;
 				timeSinceReload = 0;
 			}
