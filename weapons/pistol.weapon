@@ -3,17 +3,17 @@
   "IsItem": false,
   "IsCustom": false,
   "Name": "pistol",
-  "MaxAmmo": 64,
   "Ammo": 32,
+  "MaxAmmo": 64,
   "Damage": 100,
   "FireRate": 0.3,
-  "WeaponModel": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
+  "WeaponModel": "weapons/rust_pistol/v_rust_pistol.vmdl",
   "ShootSound": "sounds/smg1_shoot.sound",
   "PatchUptime": 5,
   "Count": 1,
   "CustomPrefab": null,
   "InventoryImage": "textures/w_usp.vmdl_c.vtex",
   "__references": [
-    "facepunch.v_usp"
+    "rust.v_rust_pistol"
   ]
 }
