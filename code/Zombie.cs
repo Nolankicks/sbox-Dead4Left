@@ -26,7 +26,7 @@ public sealed class Zombie : Component, IHealthComponent
 		bodyRenderer.SetMaterial(randomMaterial);
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
 		AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
-		var players = GameManager.ActiveScene.GetAllComponents<PlayerController>().ToList();
+		var players = Game.ActiveScene.GetAllComponents<PlayerController>().ToList();
 		targetPlayer = Game.Random.FromList(players);
 		Log.Info( $"Targeting {targetPlayer}" );
 	}
@@ -103,7 +103,7 @@ public sealed class Zombie : Component, IHealthComponent
 		if (Health <= 0)
 		{
 			Health = 0;
-			//GameManager.ActiveScene.RemoveComponent(this);
+			//Game.ActiveScene.RemoveComponent(this);
 			GameObject.Destroy();
 		}
 	}

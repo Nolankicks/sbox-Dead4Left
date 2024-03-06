@@ -12,7 +12,7 @@ public sealed class Mover : Component
 	protected override void OnStart()
 	{
 		if (IsProxy) return;
-		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 	}
 	protected override void OnUpdate()
 	{

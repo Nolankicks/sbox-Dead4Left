@@ -27,7 +27,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	public Connection Host = null;
 	[Sync] public long HostSteamId { get; set; }
 
-	public List<PlayerController> Players => GameManager.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
+	public List<PlayerController> Players => Game.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
 
 	protected override void OnAwake()
 	{
@@ -77,7 +77,6 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	}
 
 	[Broadcast]
-	[Obsolete]
 	public async void SpawnPlayer(Connection channel)
 	{
 
@@ -101,10 +100,9 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 	}
 
-	[Obsolete]
 	public void OnDisconnected(Connection channel)
 	{
-		GameManager.ActiveScene.Load(menuScene);
+		Game.ActiveScene.Load(menuScene);
 
 	}
 

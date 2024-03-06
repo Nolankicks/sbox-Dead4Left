@@ -26,7 +26,7 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 	[Sync] public long HostSteamId { get; set; }
 
 
-	public List<PlayerController> Players => GameManager.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
+	public List<PlayerController> Players => Game.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
 	protected override async Task OnLoad()
 	{
 		if (StartServer && !GameNetworkSystem.IsActive)
@@ -95,6 +95,6 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 	[Obsolete]
 	public void DestroyServer()
 	{
-		GameManager.ActiveScene.Load(menuScene);
+		Game.ActiveScene.Load(menuScene);
 	}
 }

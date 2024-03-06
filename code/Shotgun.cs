@@ -19,7 +19,7 @@ public sealed class Shotgun : Component
 	protected override void OnStart()
 	{
 		if (IsProxy) return;
-		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		timeSinceShoot = FireRate;
 	}
 	protected override void OnUpdate()

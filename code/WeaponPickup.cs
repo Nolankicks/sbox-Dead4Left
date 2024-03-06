@@ -10,7 +10,7 @@ public sealed class WeaponPickup : Component
 
 	protected override void OnStart()
 	{
-		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		weapon.AddWeapon(data, 2);
 	}
 	protected override void OnUpdate()

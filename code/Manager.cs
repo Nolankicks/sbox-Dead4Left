@@ -24,8 +24,8 @@ public sealed class Manager : Component
 
 	protected override void OnStart()
 	{
-		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		Scene.NavMesh.SetDirty();
 	}
 	protected override void OnAwake()
@@ -97,7 +97,7 @@ public sealed class Manager : Component
 	{
 		playerController.Score = 0;
 		playerController.Health = 100;
-		var Spawns = GameManager.ActiveScene.GetAllComponents<SpawnPoint>().ToArray();
+		var Spawns = Game.ActiveScene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Random.Shared.FromArray(Spawns);
 		playerController.Transform.Position = randomSpawnPoint.Transform.Position;
 	}

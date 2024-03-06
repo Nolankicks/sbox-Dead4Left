@@ -13,7 +13,7 @@ public sealed class PhysGun : Component
 
 	protected override void OnStart()
 	{
-		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 	
 	}
 	protected override void OnFixedUpdate()
