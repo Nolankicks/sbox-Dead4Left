@@ -56,7 +56,16 @@
           "_type": "gameobject",
           "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00"
         },
+        "bodyRenderer": {
+          "_type": "component",
+          "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+          "component_type": "SkinnedModelRenderer"
+        },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
+        "materials": [
+          "models/citizen/skin/citizen_skin_zombie.vmat",
+          "models/citizen/skin/citizen_skin_zombie_02.vmat"
+        ],
         "NavMeshAgent": {
           "_type": "component",
           "go": "4f3f4117-054c-4c1c-a233-6fd4e5349c94",

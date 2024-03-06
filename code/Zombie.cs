@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Kicks;
@@ -10,15 +11,19 @@ public sealed class Zombie : Component, IHealthComponent
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public NavMeshAgent NavMeshAgent { get; set; }
 	[Property] public GameObject body { get; set; }
+	[Property] public SkinnedModelRenderer bodyRenderer { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	[Sync] public float Health { get; set; } = 100;
 	[Sync] public float MaxHealth { get; set; } = 100;
 	public PlayerController targetPlayer;
 	public bool NeedsToJump = false;
 	private PlayerController localPlayer;
+	[Property] public List<Material> materials { get; set; } = new List<Material>();
 
 	protected override void OnStart()
 	{
+		var randomMaterial = Game.Random.FromList(materials);
+		bodyRenderer.SetMaterial(randomMaterial);
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
 		AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
 		var players = GameManager.ActiveScene.GetAllComponents<PlayerController>().ToList();
