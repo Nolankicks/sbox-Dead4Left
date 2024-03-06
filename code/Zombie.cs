@@ -16,6 +16,7 @@ public sealed class Zombie : Component, IHealthComponent
 	public PlayerController targetPlayer;
 	public bool NeedsToJump = false;
 	private PlayerController localPlayer;
+
 	protected override void OnStart()
 	{
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;

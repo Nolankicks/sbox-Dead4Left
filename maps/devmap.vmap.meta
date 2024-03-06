@@ -19,7 +19,8 @@
       "EditorReferences": [
         "fpopium.dev_grid_01a#48402",
         "semxy.bluecloudskybox#24832",
-        "fpopium.blood_wipe_01#48400"
+        "fpopium.blood_wipe_01#48400",
+        "facepunch.rust_trim#43489"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/devmap.vmap"

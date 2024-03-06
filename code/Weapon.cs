@@ -126,6 +126,8 @@ public partial class WeaponFunction : Component
 	public Weapon weapon;
 	[Property] public GameObject bloodParticle { get; set; }
 	[Property] public GameObject muzzleFlash { get; set; }
+	public GameObject trGameObject;
+
 		protected override void OnStart()
 		{
 			if (IsProxy) return;
@@ -190,6 +192,7 @@ public partial class WeaponFunction : Component
 			weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
 			}
 		}*/
+		[Broadcast]
 		void Shoot()
 	{
 		if (IsProxy) return;
@@ -208,7 +211,9 @@ public partial class WeaponFunction : Component
 			
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-				tr.GameObject.Destroy();
+				
+				trGameObject = tr.GameObject;
+				Destroy();
 				playerController.AddScore(5);
 				Log.Info(tr.GameObject.Parent);
 				var blood = bloodParticle.Clone(tr.HitPosition);
@@ -218,6 +223,12 @@ public partial class WeaponFunction : Component
 		}
 
 	}
+	[Broadcast]
+	void Destroy()
+	{
+		trGameObject.Destroy();
+	}
+
 }
 [GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes") ]
 public partial class WeaponData : GameResource

@@ -14,6 +14,8 @@ public sealed class Shotgun : Component
 	private PlayerController playerController;
 	public float FireRate { get; set; } = 0.5f;
 	public TimeSince timeSinceShoot;
+
+	
 	protected override void OnStart()
 	{
 		if (IsProxy) return;

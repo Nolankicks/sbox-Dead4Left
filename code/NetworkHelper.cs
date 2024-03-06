@@ -24,6 +24,8 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 	public List<Connection> Connections = new();
 	public Connection Host = null;
 	[Sync] public long HostSteamId { get; set; }
+
+
 	public List<PlayerController> Players => GameManager.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
 	protected override async Task OnLoad()
 	{
@@ -90,6 +92,7 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 	}
 
 	[Broadcast]
+	[Obsolete]
 	public void DestroyServer()
 	{
 		GameManager.ActiveScene.Load(menuScene);

@@ -21,6 +21,7 @@ public sealed class HealthKit : Component
 	public Weapon weapon;
 	public int Amount = 1;
 	public WeaponData weaponData;
+
 	protected override void OnStart()
 	{
 		player = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);

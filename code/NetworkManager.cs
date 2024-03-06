@@ -77,8 +77,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	}
 
 	[Broadcast]
-
-
+	[Obsolete]
 	public async void SpawnPlayer(Connection channel)
 	{
 
@@ -102,6 +101,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 	}
 
+	[Obsolete]
 	public void OnDisconnected(Connection channel)
 	{
 		GameManager.ActiveScene.Load(menuScene);

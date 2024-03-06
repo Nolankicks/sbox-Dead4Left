@@ -9,6 +9,8 @@ public sealed class PhysGun : Component
 	public bool AddOutline = false;
 	public GameObject PhysObject;
 	[Property] public Color Color { get; set; } = Color.White;
+
+
 	protected override void OnStart()
 	{
 		playerController = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);

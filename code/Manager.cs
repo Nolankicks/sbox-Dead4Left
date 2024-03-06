@@ -92,6 +92,7 @@ public sealed class Manager : Component
 			}
 		}
 	}
+
 	void Respawn()
 	{
 		playerController.Score = 0;
