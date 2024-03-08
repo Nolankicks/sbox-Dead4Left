@@ -2,87 +2,44 @@
   "Id": "d147b5af-68fb-46d6-a59f-ed7fa169432c",
   "GameObjects": [
     {
-      "Id": "5fca0545-4522-47b7-b608-214a103ab8e1",
-      "Name": "Map",
-      "Position": "146.4271,-516.4172,352.9507",
+      "Id": "83544787-15bb-4183-9d6a-dbb1be99283f",
+      "Name": "Sun",
+      "Position": "-421.9183,576.5154,1472",
+      "Rotation": "0,0.3826834,0,0.9238796",
+      "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
         {
-          "__type": "MapInstance",
-          "MapName": "maps/devmap.vmap",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
-          "UseMapFromLaunch": true
-        }
-      ],
-      "Children": []
-    },
-    {
-      "Id": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
-      "Name": "Screen",
-      "Position": "449.5116,51.34442,17.14901",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ScreenPanel",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
-        }
-      ],
-      "Children": [
-        {
-          "Id": "acb85c16-99b9-4426-ae6f-10fe9bc6a9ae",
-          "Name": "Inv",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Inventory",
-              "fill": 0,
-              "healthKit": null,
-              "IsHealing": false
-            }
-          ]
-        },
-        {
-          "Id": "eda31c6e-785f-4bbf-94b4-2e03b06bb79e",
-          "Name": "hud",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "hud",
-              "IsVisible": false,
-              "manager": {
-                "_type": "component",
-                "go": "f44fc300-9035-46f5-abb8-f95d86f47a86",
-                "component_type": "Manager"
-              }
-            }
-          ]
-        },
-        {
-          "Id": "22e8b33b-0bb4-4af5-9484-fbb5f5125d3a",
-          "Name": "",
-          "Position": "0,0,0",
-          "Enabled": true
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
         }
       ]
     },
     {
-      "Id": "b6d59cf1-c0e3-4b1c-9315-bbb968d970e3",
-      "Name": "camera",
-      "Position": "511.9753,-544.0217,123.9913",
-      "Tags": "particles",
+      "Id": "44dfc16c-53fc-4780-9757-9f78c558fba1",
+      "Name": "player",
+      "Position": "3335.999,3296.003,1936",
+      "Rotation": "0,0,0.7071069,0.7071068",
+      "Tags": "player",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "6ac0298e-c988-474b-b0a2-e7d1f58e9cf2",
+      "Name": "Camera",
+      "Position": "3335.999,3296.003,2000",
+      "Tags": "maincamera",
       "Enabled": true,
       "Components": [
         {
           "__type": "CameraComponent",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
-          "FieldOfView": 80,
+          "FieldOfView": 60,
           "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 1204,
@@ -97,47 +54,25 @@
       ]
     },
     {
-      "Id": "f44fc300-9035-46f5-abb8-f95d86f47a86",
-      "Name": "Manager",
-      "Position": "449.5116,51.34442,17.14901",
+      "Id": "2fbb08f2-33f0-483c-ae44-f1bab46627ff",
+      "Name": "Terrain",
+      "Position": "3704.899,597.0699,4957.632",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Manager",
-          "ableToInput": false,
-          "menuScene": "scenes/dead4leftmenu.scene",
-          "testBool": false
-        }
-      ]
-    },
-    {
-      "Id": "91a9106c-969c-45d8-b07f-0efd87b5690c",
-      "Name": "Network",
-      "Position": "-867.759,64,56.56348",
-      "Enabled": true,
-      "Components": [
+          "__type": "Terrain",
+          "ClipMapLodExtentTexels": 128,
+          "ClipMapLodLevels": 7,
+          "DebugView": "None",
+          "RenderType": "Off",
+          "TerrainDataFile": "main.terrain",
+          "TerrainMaterial": "materials/core/terrain.vmat"
+        },
         {
-          "__type": "NetworkHelper",
-          "menuScene": null,
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/player.prefab"
-          },
-          "StartServer": true
-        }
-      ]
-    },
-    {
-      "Id": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
-      "Name": "ZombieSpawner",
-      "Position": "449.5116,51.34442,17.14901",
-      "Components": [
-        {
-          "__type": "ZombieSpawner",
-          "ZombiePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombienavmeshprefab.prefab"
-          }
+          "__type": "TerrainCollider",
+          "IsTrigger": false,
+          "Static": true,
+          "Surface": null
         }
       ]
     }
@@ -165,6 +100,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-02-27T21:15:08.1687582-05:00",
+  "LastSaved": "2024-03-07T20:48:43.5708328-05:00",
   "__references": []
 }
