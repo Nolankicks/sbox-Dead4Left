@@ -37,11 +37,10 @@ public sealed class Shotgun : Component
 	{
 		if (IsProxy) return;
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
-		var angles = playerController.EyeAngles.Forward;
-		var finalEyePos = eyePos += Random.Shared.Float(-10, 10);
+		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
+		ray.Forward += Vector3.Random * 0.05f;
 		
-		var random = Random.Shared.Float(-1, 1);
-		var tr = Scene.Trace.Ray(eyePos, finalEyePos + angles * 500).WithoutTags("player").Run();
+		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 		var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));
 		
 		//decalVar.Parent = tr.GameObject;
