@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "eb83be91-de78-4ff7-8fa8-2dfb0bab5b73",
+    "Id": "71328eee-a60a-42e0-ab6b-3016ca7c09b9",
     "Name": "decal_bullet_default",
     "Enabled": true,
     "Components": [
@@ -67,7 +67,7 @@
               "DstName": "_signal"
             },
             {
-              "Value": 10,
+              "Value": 3,
               "DstId": 5,
               "DstName": "seconds"
             },

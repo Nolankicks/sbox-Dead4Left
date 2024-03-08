@@ -220,8 +220,14 @@ public partial class WeaponFunction : Component
 				var blood = bloodParticle.Clone(tr.HitPosition);
 				blood.NetworkSpawn();
 				Ammo += 5;
+				
 			}
 		}
+		if (tr.Body is not null)
+		{
+			tr.Body.ApplyImpulseAt(tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp(0, 200));
+		}
+
 
 	}
 	[Broadcast]
