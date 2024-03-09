@@ -14,6 +14,7 @@ public sealed class Zombie : Component, IHealthComponent
 	[Property] public GameObject body { get; set; }
 	[Property] public SkinnedModelRenderer bodyRenderer { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
+	[Property] public GameObject gibs { get; set; }
 	[Sync] public float Health { get; set; } = 100;
 	[Sync] public float MaxHealth { get; set; } = 100;
 	public PlayerController targetPlayer;
@@ -107,7 +108,7 @@ public sealed class Zombie : Component, IHealthComponent
 		{
 			Health = 0;
 			attacker.AddScore(5);
-			
+			var gib = gibs.Clone(GameObject.Transform.World).Components.Get<Prop>();
 			GameObject.Destroy();
 		}
 	}
