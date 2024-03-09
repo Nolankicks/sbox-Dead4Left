@@ -209,7 +209,6 @@ public partial class WeaponFunction : Component
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
 		var sound = Sound.Play(ShootSound);
-		sound.SpacialBlend = 0;
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		if (tr.Hit)
 		{

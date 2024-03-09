@@ -27,7 +27,11 @@
           "prefab": "prefabs/impact_default (1).prefab"
         },
         "MaxAmmo": 32,
-        "muzzleFlash": null
+        "muzzleFlash": {
+          "_type": "gameobject",
+          "prefab": "prefabs/muzzleflash.prefab"
+        },
+        "shootSound": "sounds/smg1_shoot.sound"
       },
       {
         "__type": "CameraComponent",

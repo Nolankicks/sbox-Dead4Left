@@ -13,6 +13,7 @@ public sealed class Shotgun : Component
 	[Property, Category("Particles and Decals")] public GameObject decal { get; set; }
 	[Property, Category("Particles and Decals")] public GameObject muzzleFlash { get; set; }
 	[Property, Category("Particles and Decals")] public GameObject impactEffect { get; set; }
+	[Property, Category("Particles and Decals")] public SoundEvent shootSound { get; set; }
 	public int ShotsFired = 0;
 	private PlayerController playerController;
 	private CharacterController characterController;
@@ -43,6 +44,7 @@ public sealed class Shotgun : Component
 			Shoot();
 			}
 			gun.Set("b_attack", true);
+			Sound.Play(shootSound);
 			timeSinceShoot = 0;
 		}
 		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
@@ -64,6 +66,7 @@ public sealed class Shotgun : Component
 		ShotsFired++;
 		Ammo--;
 		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
+		
 		if (tr.Hit)
 		{
 		//var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));
@@ -72,7 +75,7 @@ public sealed class Shotgun : Component
 		if (zombie is not null)
 		{
 			zombie.TakeDamage(10, playerController);
-			Ammo += 5;
+			MaxAmmo += 5;
 		}
 		//decalVar.Parent = tr.GameObject;
 		}
