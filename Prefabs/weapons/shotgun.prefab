@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "8292f6a6-ce38-4fa1-819b-1b73467498f9",
+    "Id": "65e75ffb-608a-4c2b-aa87-f71b13988d64",
     "Name": "shotgun",
     "Enabled": true,
     "Components": [
@@ -9,7 +9,7 @@
         "Ammo": 0,
         "arms": {
           "_type": "component",
-          "go": "e47577d2-5e56-4394-bd20-42d3c4217bd0",
+          "go": "47c3d9ab-8d8f-4d0d-b999-3342ae7ea626",
           "component_type": "SkinnedModelRenderer"
         },
         "decal": {
@@ -18,10 +18,15 @@
         },
         "gun": {
           "_type": "component",
-          "go": "8f6c0d4c-dde8-413c-ab56-1e5b1c5b1678",
+          "go": "57caa9f9-513f-4942-8272-27f5a2c48314",
           "component_type": "SkinnedModelRenderer"
         },
-        "MaxAmmo": 32
+        "impactEffect": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact_default (1).prefab"
+        },
+        "MaxAmmo": 32,
+        "muzzleFlash": null
       },
       {
         "__type": "CameraComponent",
@@ -42,7 +47,7 @@
     ],
     "Children": [
       {
-        "Id": "8f6c0d4c-dde8-413c-ab56-1e5b1c5b1678",
+        "Id": "57caa9f9-513f-4942-8272-27f5a2c48314",
         "Name": "gun",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -62,7 +67,7 @@
         ]
       },
       {
-        "Id": "e47577d2-5e56-4394-bd20-42d3c4217bd0",
+        "Id": "47c3d9ab-8d8f-4d0d-b999-3342ae7ea626",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -73,7 +78,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "8f6c0d4c-dde8-413c-ab56-1e5b1c5b1678",
+              "go": "57caa9f9-513f-4942-8272-27f5a2c48314",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,

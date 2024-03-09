@@ -32,6 +32,7 @@ public sealed class Weapon : Component
 		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
 		Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "pistol");
 		Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
+		Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
 		//Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
 	}
 	public void AddWeapon(WeaponData weapon, int slot)
@@ -208,25 +209,23 @@ public partial class WeaponFunction : Component
 		if (tr.Hit)
 		{
 			
-			
+			tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-				
-				trGameObject = tr.GameObject;
-				Destroy();
-				playerController.AddScore(5);
-				Log.Info(tr.GameObject.Parent);
+
+				zombie.TakeDamage(Damage, playerController);
 				var blood = bloodParticle.Clone(tr.HitPosition);
 				blood.NetworkSpawn();
 				Ammo += 5;
+				
 			}
 		}
+		if (tr.Body is not null)
+		{
+			tr.Body.ApplyImpulseAt(tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp(0, 200));
+		}
 
-	}
-	[Broadcast]
-	void Destroy()
-	{
-		trGameObject.Destroy();
+
 	}
 
 }
@@ -249,22 +248,4 @@ public partial class WeaponData : GameResource
 	public Texture InventoryImage { get; set; }
 
 }
-
-public partial class Switcher : Component
-{
-	[Property] public GameObject weaponPrefab { get; set; }
-	WeaponData[] _weapons;
-	GameObject _currentlyEquiped;
-	public Weapon weapon;
-		protected override void OnStart()
-		{
-
-		}
-
-		protected override void OnUpdate()
-		{
-
-		}
-	}
 }
-

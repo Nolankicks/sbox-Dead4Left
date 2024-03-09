@@ -10,6 +10,8 @@ public sealed class Shotgun : Component
 	[Property, Category("Weapon Data")] public int Ammo { get; set; }
 	[Property, Category("Weapon Data")] public int MaxAmmo { get; set; } = 32;
 	[Property, Category("Particles and Decals")] public GameObject decal { get; set; }
+	[Property, Category("Particles and Decals")] public GameObject muzzleFlash { get; set; }
+	[Property, Category("Particles and Decals")] public GameObject impactEffect { get; set; }
 	public int ShotsFired { get; set; }
 	private PlayerController playerController;
 	public float FireRate { get; set; } = 0.5f;
@@ -27,7 +29,10 @@ public sealed class Shotgun : Component
 		if (IsProxy) return;
 		if (Input.Down("attack1") && !IsProxy && timeSinceShoot >= FireRate)
 		{
+			for (int i = 0; i < 8; i++)
+			{
 			Shoot();
+			}
 			gun.Set("b_attack", true);
 			timeSinceShoot = 0;
 		}
@@ -37,10 +42,12 @@ public sealed class Shotgun : Component
 	{
 		if (IsProxy) return;
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
-		var angles = playerController.EyeAngles.Forward * Random.Shared.Float(1, 5);
-		var random = Random.Shared.Float(-1, 1);
-		var tr = Scene.Trace.Ray(eyePos, eyePos + playerController.EyeAngles.Forward * 500).WithoutTags("player").Run();
+		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
+		ray.Forward += Vector3.Random * 0.05f;
+		
+		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 		var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));
+		impactEffect.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
 		//decalVar.Parent = tr.GameObject;
 	}
 }

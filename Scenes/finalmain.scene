@@ -1,22 +1,6 @@
 {
-  "Id": "d147b5af-68fb-46d6-a59f-ed7fa169432c",
+  "Id": "ee545a91-e4aa-4022-bacf-0db1af645776",
   "GameObjects": [
-    {
-      "Id": "5fca0545-4522-47b7-b608-214a103ab8e1",
-      "Name": "Map",
-      "Position": "146.4271,-516.4172,352.9507",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "MapInstance",
-          "MapName": "maps/devmap.vmap",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
-          "UseMapFromLaunch": true
-        }
-      ],
-      "Children": []
-    },
     {
       "Id": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
       "Name": "Screen",
@@ -113,17 +97,9 @@
           "ableToInput": false,
           "menuScene": "scenes/dead4leftmenu.scene",
           "testBool": false
-        }
-      ]
-    },
-    {
-      "Id": "91a9106c-969c-45d8-b07f-0efd87b5690c",
-      "Name": "Network",
-      "Position": "-867.759,64,56.56348",
-      "Enabled": true,
-      "Components": [
+        },
         {
-          "__type": "NetworkHelper",
+          "__type": "NetworkManager",
           "menuScene": null,
           "PlayerPrefab": {
             "_type": "gameobject",
@@ -137,7 +113,6 @@
       "Id": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -147,6 +122,298 @@
           }
         }
       ]
+    },
+    {
+      "Id": "28966212-2527-4ed4-83b2-361146365599",
+      "Name": "Sun",
+      "Position": "-1062.02,291.5929,250.4746",
+      "Rotation": "0,0.258819,0,0.9659258",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "7c01b1a0-fafa-4ec9-adcf-11435db182c0",
+      "Name": "Box",
+      "Position": "-959.9999,-80,0.0002334945",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MeshComponent",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
+            "TextureOrigin": "-959.9999,-80,0.0002334945",
+            "Positions": [
+              "-320,-304,0",
+              "320,-304,0",
+              "320,304,0",
+              "-320,304,0"
+            ],
+            "TextureUAxis": [
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0
+            ],
+            "MaterialIndex": [
+              0
+            ],
+            "Materials": [
+              "materials/grass/floor_grass_dirt_weed_blend_a.vmat"
+            ]
+          },
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "747faac6-6fec-4206-89bd-6d4ebe07c564",
+      "Name": "Object",
+      "Position": "-896.4567,-64,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "8b570ed3-93b5-4c5b-84a9-48bb1199fd75",
+      "Name": "Spawns",
+      "Position": "-896.4567,-256,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "6abd7945-011f-43c0-b126-0bbf663bb2fe",
+      "Name": "Spawns (5)",
+      "Position": "-1120,-256,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "3aa3049c-3007-4fe2-b777-d550f4bcc656",
+      "Name": "Spawns",
+      "Position": "-896.4567,96,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "1a3b648b-22ff-495a-99ee-110f84b4bc99",
+      "Name": "Spawns (4)",
+      "Position": "-1120,96,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "078b5456-dbe8-4abe-88d5-68198caca5af",
+      "Name": "Spawns",
+      "Position": "-1024,96,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "5ccc54b3-e99e-4d85-811a-64f77e244b3d",
+      "Name": "Spawns (3)",
+      "Position": "-1248,96,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "26ee81ab-f27f-440f-a16a-dbd39b4bf366",
+      "Name": "Spawns",
+      "Position": "-1024,-64,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "8c19be45-0ef8-4c02-8e6f-ccaf76584f1a",
+      "Name": "Spawns (2)",
+      "Position": "-1248,-64,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "1a2c1a23-e6b1-4111-81c4-5d39b62565f1",
+      "Name": "Spawns",
+      "Position": "-1024,-256,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "91a94fac-d9ba-4423-ae74-ad2f9a46ad01",
+      "Name": "Spawns (1)",
+      "Position": "-1248,-256,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "Id": "5ebd115a-21bf-43b2-95d4-aaa7dc228588",
+      "Name": "Box",
+      "Position": "-192,-64,0.00006269039",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MeshComponent",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
+            "TextureOrigin": "-304,-64,0.00006269039",
+            "Positions": [
+              "-160,-192.0001,0",
+              "240,-192,0",
+              "240,192,0",
+              "-160,191.9999,0"
+            ],
+            "TextureUAxis": [
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0
+            ],
+            "MaterialIndex": [
+              0
+            ],
+            "Materials": [
+              "materials/grass/floor_grass_dirt_weed_blend_a.vmat"
+            ]
+          },
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "ce014037-ddf2-4fab-80d6-29c9c9cb0253",
+      "Name": "Object",
+      "Position": "-1111.823,163.7936,343.819",
+      "Enabled": true
+    },
+    {
+      "Id": "b7e8b531-1796-4ed5-a542-c10c2adab164",
+      "Name": "zombienavmeshprefab",
+      "Position": "-153.6895,-155.5066,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "__Prefab": "prefabs/zombienavmeshprefab.prefab"
+    },
+    {
+      "Id": "f209b327-163e-492b-b19a-3a1176320606",
+      "Name": "zombienavmeshprefab (1)",
+      "Position": "-153.6895,-64,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "__Prefab": "prefabs/zombienavmeshprefab.prefab"
+    },
+    {
+      "Id": "e12fc354-9959-4aca-bde8-ac39c5dd75f9",
+      "Name": "zombienavmeshprefab (2)",
+      "Position": "-153.6895,40,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "__Prefab": "prefabs/zombienavmeshprefab.prefab"
+    },
+    {
+      "Id": "c21dc3b1-9967-4ed7-b0d3-97f53c76b20b",
+      "Name": "zombienavmeshprefab (3)",
+      "Position": "-24,40,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "__Prefab": "prefabs/zombienavmeshprefab.prefab"
+    },
+    {
+      "Id": "04e5c741-7ae4-4151-8ae6-ca2d5756d5e0",
+      "Name": "zombienavmeshprefab (4)",
+      "Position": "-24,-64,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "__Prefab": "prefabs/zombienavmeshprefab.prefab"
+    },
+    {
+      "Id": "ca5432ba-b5a7-4df4-b56f-f4bf5005452e",
+      "Name": "zombienavmeshprefab (5)",
+      "Position": "-24,-152,0",
+      "Tags": "bad",
+      "Enabled": true,
+      "__Prefab": "prefabs/zombienavmeshprefab.prefab"
     }
   ],
   "SceneProperties": {
@@ -172,6 +439,8 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-07T15:53:18.5048986-05:00",
-  "__references": []
+  "LastSaved": "2024-03-08T18:47:11.8684983-05:00",
+  "__references": [
+    "facepunch.floor_grass_dirt_weed_blend_a"
+  ]
 }

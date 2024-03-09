@@ -211,7 +211,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		var lookDir = EyeAngles.ToRotation().Forward * 1024;
 		animationHelper.WithLook( lookDir, 1, 0.5f, 0.25f );
 	}
-	public void TakeDamage(float damage)
+	public void TakeDamage(float damage, PlayerController attacker = null)
 	{
 		
 		Health -= damage;
