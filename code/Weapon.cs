@@ -216,7 +216,7 @@ public partial class WeaponFunction : Component
 				zombie.TakeDamage(Damage, playerController);
 				var blood = bloodParticle.Clone(tr.HitPosition);
 				blood.NetworkSpawn();
-				Ammo += 5;
+				MaxAmmo += 5;
 				
 			}
 					if (tr.Body is not null)
