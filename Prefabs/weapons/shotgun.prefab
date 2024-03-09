@@ -1,15 +1,15 @@
 {
   "RootObject": {
-    "Id": "65e75ffb-608a-4c2b-aa87-f71b13988d64",
+    "Id": "225e6176-886f-472a-835b-6637f7fcdd91",
     "Name": "shotgun",
     "Enabled": true,
     "Components": [
       {
         "__type": "Shotgun",
-        "Ammo": 0,
+        "Ammo": 16,
         "arms": {
           "_type": "component",
-          "go": "47c3d9ab-8d8f-4d0d-b999-3342ae7ea626",
+          "go": "425b3748-ace1-478b-993f-12a17735f28d",
           "component_type": "SkinnedModelRenderer"
         },
         "decal": {
@@ -18,7 +18,7 @@
         },
         "gun": {
           "_type": "component",
-          "go": "57caa9f9-513f-4942-8272-27f5a2c48314",
+          "go": "0445f644-8af1-495a-a53f-a7531373d9f4",
           "component_type": "SkinnedModelRenderer"
         },
         "impactEffect": {
@@ -47,7 +47,7 @@
     ],
     "Children": [
       {
-        "Id": "57caa9f9-513f-4942-8272-27f5a2c48314",
+        "Id": "0445f644-8af1-495a-a53f-a7531373d9f4",
         "Name": "gun",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "Id": "47c3d9ab-8d8f-4d0d-b999-3342ae7ea626",
+        "Id": "425b3748-ace1-478b-993f-12a17735f28d",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -78,7 +78,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "57caa9f9-513f-4942-8272-27f5a2c48314",
+              "go": "0445f644-8af1-495a-a53f-a7531373d9f4",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,

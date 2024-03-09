@@ -153,31 +153,53 @@
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
+            "Topology": "H4sIAAAAAAAACuNiYGCQAmIWIGYHYkYgZgZiViD\u002BjwMApcCACaoeJAbTywA1iwkqzghlgwAb1GyQOIgGYWQAEsdn71AHMD/CAACIJpERfAEAAA==",
             "TextureOrigin": "-959.9999,-80,0.0002334945",
             "Positions": [
               "-320,-304,0",
               "320,-304,0",
               "320,304,0",
-              "-320,304,0"
+              "-320,304,0",
+              "-320,303.9995,551.9998",
+              "-320,-304.0005,551.9998",
+              "319.9999,303.9993,551.9998",
+              "319.9999,-304.0007,551.9998",
+              "319.9998,304,-0.0001220703",
+              "319.9998,303.9995,551.9996"
             ],
             "TextureUAxis": [
-              "1,0,0"
+              "1,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
             ],
             "TextureVAxis": [
-              "0,-1,0"
+              "0,-1,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
             ],
             "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
               "0.25,0.25"
             ],
             "TextureAngle": [
+              0,
+              0,
+              0,
               0
             ],
             "MaterialIndex": [
-              0
+              1,
+              1,
+              1,
+              1
             ],
             "Materials": [
-              "materials/grass/floor_grass_dirt_weed_blend_a.vmat"
+              "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
+              "materials/wall/concrete_damaged_b.vmat"
             ]
           },
           "Static": true,
@@ -350,10 +372,11 @@
               0
             ],
             "MaterialIndex": [
-              0
+              1
             ],
             "Materials": [
-              "materials/grass/floor_grass_dirt_weed_blend_a.vmat"
+              "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
+              "materials/wall/concrete_damaged_b.vmat"
             ]
           },
           "Static": true,
@@ -439,8 +462,9 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-08T18:47:11.8684983-05:00",
+  "LastSaved": "2024-03-08T19:58:45.5913164-05:00",
   "__references": [
-    "facepunch.floor_grass_dirt_weed_blend_a"
+    "facepunch.floor_grass_dirt_weed_blend_a",
+    "fpopium.concrete_damaged_b"
   ]
 }

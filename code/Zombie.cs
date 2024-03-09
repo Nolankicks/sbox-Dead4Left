@@ -107,6 +107,7 @@ public sealed class Zombie : Component, IHealthComponent
 		{
 			Health = 0;
 			attacker.AddScore(5);
+			
 			GameObject.Destroy();
 		}
 	}
