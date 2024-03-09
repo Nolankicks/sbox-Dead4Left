@@ -117,6 +117,7 @@
       "Components": [
         {
           "__type": "ZombieSpawner",
+          "__enabled": false,
           "ZombiePrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/zombienavmeshprefab.prefab"
@@ -164,6 +165,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-09T14:50:25.2733506-05:00",
+  "LastSaved": "2024-03-09T15:13:06.9768956-05:00",
   "__references": []
 }

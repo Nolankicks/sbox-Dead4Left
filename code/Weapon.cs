@@ -32,6 +32,8 @@ public sealed class Weapon : Component
 		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
 		Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "pistol");
 		Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
+		Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
+		//Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
 	}
 	public void AddWeapon(WeaponData weapon, int slot)
 	{
@@ -217,15 +219,20 @@ public partial class WeaponFunction : Component
 				Ammo += 5;
 				
 			}
-		}
-		if (tr.Body is not null)
+					if (tr.Body is not null)
 		{
 			tr.Body.ApplyImpulseAt(tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp(0, 200));
 		}
-
-
+		var damage = new DamageInfo(9.8f, GameObject, tr.GameObject);
+		if (damage is not null)
+		{
+			foreach(var damageable in tr.GameObject.Components.GetAll<IDamageable>())
+			{
+				damageable.OnDamage( damage );
+			}
+		}
+		}
 	}
-
 }
 [GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes") ]
 public partial class WeaponData : GameResource
