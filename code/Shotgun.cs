@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Kicks;
 using Sandbox;
+using static Weapon;
 [Category("Custon Weapon"), Icon("track_changes"), Title("Shotgun"), Description("A shotgun.")]
 public sealed class Shotgun : Component
 {
@@ -16,19 +17,25 @@ public sealed class Shotgun : Component
 	private PlayerController playerController;
 	private CharacterController characterController;
 	public float FireRate { get; set; } = 0.5f;
+	public int fullAmmo;
 	public TimeSince timeSinceShoot;
 	public TimeSince timeSinceReload = 1.5f;
+	public Weapon weapon;
 	protected override void OnStart()
 	{
 		if (IsProxy) return;
 		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		characterController = Game.ActiveScene.GetAllComponents<CharacterController>().FirstOrDefault(x => !x.IsProxy);
+		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		timeSinceShoot = FireRate;
+		gun.Set("b_deploy", true);
+		fullAmmo = Ammo;
 	}
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
 		Animations();
+		Log.Info(MaxAmmo);
 		if (Input.Down("attack1") && !IsProxy && timeSinceShoot >= FireRate && timeSinceReload >= 1.5f && Ammo != 0)
 		{
 			for (int i = 0; i < 8; i++)
@@ -38,16 +45,13 @@ public sealed class Shotgun : Component
 			gun.Set("b_attack", true);
 			timeSinceShoot = 0;
 		}
-		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && MaxAmmo >= ShotsFired)
+		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
 		{
-			
-			gun.Set("b_reload", true);
-			var finalAmmo = MaxAmmo -= ShotsFired;
-			Ammo = finalAmmo;
-			ShotsFired = 0;
-			Log.Info(MaxAmmo);
-			Log.Info(Ammo);
-			timeSinceReload = 0;
+				Ammo = MaxAmmo -= ShotsFired;
+				Ammo = fullAmmo;
+				gun.Set("b_reload", true);
+				ShotsFired = 0;
+				timeSinceReload = 0;
 		}
 	}
 
@@ -58,16 +62,17 @@ public sealed class Shotgun : Component
 		var ray = Scene.Camera.ScreenNormalToRay( 0.5f );
 		ray.Forward += Vector3.Random * 0.05f;
 		ShotsFired++;
+		Ammo--;
 		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 		if (tr.Hit)
 		{
-		var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));
+		//var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));
 		impactEffect.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
 		tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
-		Ammo += 5;
 		if (zombie is not null)
 		{
 			zombie.TakeDamage(10, playerController);
+			Ammo += 5;
 		}
 		//decalVar.Parent = tr.GameObject;
 		}

@@ -21,6 +21,10 @@
 				{
 				<div class="ammo">@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo</div>
 				}
+				@if (shotgun is not null)
+				{
+				<div class="ammo">@shotgun.Ammo / @shotgun.MaxAmmo</div>
+				}
 				@if (healthKit is not null)
 				{
 				<div class="ammo">@healthKit.Amount / 0</div>
@@ -71,20 +75,22 @@
 	[Property] public Manager manager { get; set; }
 	[Property] public bool IsVisible { get; set; } = false;
 	private WeaponFunction weaponFunction;
+	Shotgun shotgun;
 	private HealthKit healthKit;
 	public bool ShowLeaderboard = false;
 	//public ModularWeapon modularWeapon;
 	protected override void OnStart()
 	{
-		LocalPlayer = GameManager.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
-		weapon = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-		
+		LocalPlayer = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		shotgun = Game.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
 	}
         protected override void OnUpdate()
         {
 			//modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
-			weaponFunction = GameManager.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
-			healthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+			weaponFunction = Game.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
+			healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+			shotgun = Game.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
         }
 
         string IsMe(Sandbox.Services.Leaderboards.Entry entry)
@@ -104,6 +110,6 @@
 	/// </summary>
 	protected override int BuildHash() 
 	{
-	return System.HashCode.Combine(LocalPlayer?.Score, LocalPlayer?.Health, weaponFunction?.Ammo, weaponFunction?.MaxAmmo);
+	return System.HashCode.Combine(Time.Now);
 	}
 }

@@ -15,6 +15,6 @@
     "_type": "gameobject",
     "prefab": "prefabs/weapons/shotgun.prefab"
   },
-  "InventoryImage": null,
+  "InventoryImage": "assets/w_spaghellim4.vmdl_c.vtex",
   "__references": []
 }

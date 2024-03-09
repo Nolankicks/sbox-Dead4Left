@@ -1,14 +1,17 @@
 {
   "IsWeapon": false,
   "IsItem": true,
+  "IsCustom": false,
   "Name": "healthkit",
-  "MaxAmmo": 32,
   "Ammo": 0,
+  "MaxAmmo": 32,
   "Damage": 50,
   "FireRate": 0.1,
   "WeaponModel": null,
   "ShootSound": null,
   "PatchUptime": 5,
-  "InventoryImage": null,
+  "Count": 1,
+  "CustomPrefab": null,
+  "InventoryImage": "textures/medkit.vtex",
   "__references": []
 }

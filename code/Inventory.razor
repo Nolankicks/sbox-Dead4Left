@@ -5,25 +5,15 @@
 @namespace Kicks
 @using System.Linq;
 <root>
-	@if (weaponData is null) return;
 
 	<div class="hotbar">
 		@for(int i=0; i<weaponData.Slots; i++ )
 		{
 			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
-					@if (i == 0)
-					{
-						<img src="assets/w_mp5.vmdl_c.vtex" class="icon"></img>
-					}
-					@if (i == 1)
-					{
-						<img src="textures/w_usp.vmdl_c.vtex" class="icon"></img>
-					}
-					@if (i == 2)
-					{
-
-						<img src="textures/medkit.vtex" class="icon"></img>
-					}
+				@if (weaponData.InventoryImages[i] != null)
+				{
+						<img src="@weaponData?.InventoryImages[i].ResourcePath" class="icon"></img>
+						}
 			</div>
 		}
 	</div>
@@ -39,15 +29,16 @@
 	public TimeUntil healTimer;
         protected override void OnStart()
         {
-            weaponData = GameManager.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-			
+            weaponData = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+			Log.Info(weaponData.InventoryImages.ToString());
         }
 
         //private Weapon weaponData;
 
         protected override void OnUpdate()
         {
-			healthKit = GameManager.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+			healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+			
         }
 		
         protected override int BuildHash() => System.HashCode.Combine( Time.Now );

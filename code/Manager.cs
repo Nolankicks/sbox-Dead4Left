@@ -99,6 +99,13 @@ public sealed class Manager : Component
 		playerController.Health = 100;
 		var Spawns = Game.ActiveScene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Random.Shared.FromArray(Spawns);
+		if (randomSpawnPoint is not null)
+		{
 		playerController.Transform.Position = randomSpawnPoint.Transform.Position;
+		}
+		else
+		{
+			playerController.Transform.Position = new Vector3(0, 0, 0);
+		}
 	}
 }

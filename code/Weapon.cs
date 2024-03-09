@@ -9,10 +9,7 @@ using Sandbox.UI;
 using Sandbox.Citizen;
 public sealed class Weapon : Component
 {	
-	[Property] public List<Texture> InventoryImages {get; set;} = new List<Texture>()
-	{
-
-	};
+	public Texture[] InventoryImages = new Texture[9];
 	
 	public int ActiveSlot = 0;
 	public int Slots => 9;
@@ -29,10 +26,18 @@ public sealed class Weapon : Component
 	{
 		if (IsProxy) return;
 		var weaponList = ResourceLibrary.GetAll<WeaponData>();
-		Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
-		Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "pistol");
-		Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
-		Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
+		var slot1 = Inventory[0] = weaponList.FirstOrDefault(x => x.Name == "MP5");
+		var slot2 = Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
+		var slot3 = Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "pistol");
+		var slot4 = Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
+		foreach(var weapon in Inventory)
+		{
+			if (weapon is not null)
+			{
+				var image = InventoryImages[Array.IndexOf(Inventory, weapon)] = weapon.InventoryImage;
+				Log.Info(image);
+			}
+		}
 		//Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
 	}
 	public void AddWeapon(WeaponData weapon, int slot)
