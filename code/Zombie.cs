@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ public sealed class Zombie : Component, IHealthComponent
 	}
 	protected override void OnUpdate()
 	{
+		
 		if (targetPlayer is null) return;
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
 		{
@@ -97,13 +99,14 @@ public sealed class Zombie : Component, IHealthComponent
 			Sound.Play(hitSound);
 		}
 	}
-	public void TakeDamage(float damage)
+	[Broadcast]
+	public void TakeDamage(float damage, PlayerController attacker)
 	{
 		Health -= damage;
 		if (Health <= 0)
 		{
 			Health = 0;
-			//Game.ActiveScene.RemoveComponent(this);
+			attacker.AddScore(5);
 			GameObject.Destroy();
 		}
 	}
@@ -122,4 +125,5 @@ public sealed class Zombie : Component, IHealthComponent
 			NeedsToJump = false;
 		}
 	}
+
 }

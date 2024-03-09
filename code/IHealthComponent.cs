@@ -7,6 +7,6 @@ namespace Kicks
 	{
 		public float MaxHealth { get; }
 		public float Health { get; }
-		public void TakeDamage(float damage);
+		public void TakeDamage(float damage, PlayerController attacker);
 	}
 }

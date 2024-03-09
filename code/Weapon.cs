@@ -209,14 +209,11 @@ public partial class WeaponFunction : Component
 		if (tr.Hit)
 		{
 			
-			
+			tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-				
-				trGameObject = tr.GameObject;
-				Destroy();
-				playerController.AddScore(5);
-				Log.Info(tr.GameObject.Parent);
+
+				zombie.TakeDamage(Damage, playerController);
 				var blood = bloodParticle.Clone(tr.HitPosition);
 				blood.NetworkSpawn();
 				Ammo += 5;
@@ -229,11 +226,6 @@ public partial class WeaponFunction : Component
 		}
 
 
-	}
-	[Broadcast]
-	void Destroy()
-	{
-		trGameObject.Destroy();
 	}
 
 }
@@ -256,22 +248,4 @@ public partial class WeaponData : GameResource
 	public Texture InventoryImage { get; set; }
 
 }
-
-public partial class Switcher : Component
-{
-	[Property] public GameObject weaponPrefab { get; set; }
-	WeaponData[] _weapons;
-	GameObject _currentlyEquiped;
-	public Weapon weapon;
-		protected override void OnStart()
-		{
-
-		}
-
-		protected override void OnUpdate()
-		{
-
-		}
-	}
 }
-
