@@ -13,11 +13,9 @@ public sealed class Zombie : Component, IHealthComponent
 	[Property] public NavMeshAgent NavMeshAgent { get; set; }
 	[Property] public GameObject body { get; set; }
 	[Property] public SkinnedModelRenderer bodyRenderer { get; set; }
-	[Property] public GameObject Gibs { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	[Sync] public float Health { get; set; } = 100;
 	[Sync] public float MaxHealth { get; set; } = 100;
-	public Prop prop;
 	public PlayerController targetPlayer;
 	public bool NeedsToJump = false;
 	private PlayerController localPlayer;
@@ -109,9 +107,8 @@ public sealed class Zombie : Component, IHealthComponent
 		{
 			Health = 0;
 			attacker.AddScore(5);
-			var gib = Gibs.Clone(GameObject.Transform.World).Components.Get<Prop>();
-			GameObject.Destroy();
 			
+			GameObject.Destroy();
 		}
 	}
 
