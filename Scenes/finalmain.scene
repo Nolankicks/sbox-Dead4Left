@@ -1,5 +1,5 @@
 {
-  "Id": "ee545a91-e4aa-4022-bacf-0db1af645776",
+  "Id": "45b6b2fb-706b-4bd6-856c-c6779ff43890",
   "GameObjects": [
     {
       "Id": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
@@ -153,22 +153,25 @@
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACuNiYGCQAmIWIGYHYkYgZgZiViD\u002BjwMApcCACaoeJAbTywA1iwkqzghlgwAb1GyQOIgGYWQAEsdn71AHMD/CAACIJpERfAEAAA==",
+            "Topology": "H4sIAAAAAAAACtWRSQqAMBRDW0dQT\u002BBQvf8lNQ/yoRvdG3jwSTrQdEkpXaIXo8iiFYe4X3Qq20So8T6yOAN1zvCzZzT4DvLiuRbrv\u002B7/uya/fRez30mnzPj8BZ3g0zO94a\u002BCvfjRWX0u\u002BQORt0650AEAAA==",
             "TextureOrigin": "-959.9999,-80,0.0002334945",
             "Positions": [
-              "-320,-304,0",
+              "-320.0001,-304,0.00006625324",
               "320,-304,0",
-              "320,304,0",
-              "-320,304,0",
+              "320,336,0",
+              "-320,336,0",
               "-320,303.9995,551.9998",
               "-320,-304.0005,551.9998",
               "319.9999,303.9993,551.9998",
               "319.9999,-304.0007,551.9998",
               "319.9998,304,-0.0001220703",
-              "319.9998,303.9995,551.9996"
+              "319.9998,303.9995,551.9996",
+              "320,336,0",
+              "-320,336,0"
             ],
             "TextureUAxis": [
               "1,0,0",
+              "0,0,0",
               "0,0,0",
               "0,0,0",
               "0,0,0"
@@ -177,9 +180,11 @@
               "0,-1,0",
               "0,0,0",
               "0,0,0",
+              "0,0,0",
               "0,0,0"
             ],
             "TextureScale": [
+              "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
@@ -189,17 +194,22 @@
               0,
               0,
               0,
+              0,
               0
             ],
             "MaterialIndex": [
+              4,
               1,
               1,
               1,
-              1
+              4
             ],
             "Materials": [
               "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
-              "materials/wall/concrete_damaged_b.vmat"
+              "materials/wall/concrete_damaged_b.vmat",
+              "materials/tools/toolsskybox.vmat",
+              "materials/grass/floor_grass_wetdirt_blend_a.vmat",
+              "materials/wall/concrete_damaged_a.vmat"
             ]
           },
           "Static": true,
@@ -354,10 +364,10 @@
             "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
             "TextureOrigin": "-304,-64,0.00006269039",
             "Positions": [
-              "-160,-192.0001,0",
-              "240,-192,0",
-              "240,192,0",
-              "-160,191.9999,0"
+              "-319.9999,-320.0002,0",
+              "320,-319.9999,0",
+              "319.9999,320.0001,0",
+              "-320,319.9998,0"
             ],
             "TextureUAxis": [
               "1,0,0"
@@ -372,11 +382,12 @@
               0
             ],
             "MaterialIndex": [
-              1
+              2
             ],
             "Materials": [
               "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
-              "materials/wall/concrete_damaged_b.vmat"
+              "materials/wall/concrete_damaged_b.vmat",
+              "materials/wall/concrete_damaged_a.vmat"
             ]
           },
           "Static": true,
@@ -462,9 +473,11 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-08T19:58:45.5913164-05:00",
+  "LastSaved": "2024-03-09T13:13:44.215809-05:00",
   "__references": [
     "facepunch.floor_grass_dirt_weed_blend_a",
+    "facepunch.floor_grass_wetdirt_blend_a",
+    "fpopium.concrete_damaged_a",
     "fpopium.concrete_damaged_b"
   ]
 }
