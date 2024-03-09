@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "4f3f4117-054c-4c1c-a233-6fd4e5349c94",
+    "Id": "a415e3f9-31dc-4cea-b87e-98c88cd66107",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
@@ -9,7 +9,7 @@
         "__type": "PlayerFootsteps",
         "Source": {
           "_type": "component",
-          "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -28,7 +28,7 @@
         "BodyWeight": 1,
         "EyeSource": {
           "_type": "gameobject",
-          "go": "5e0594cd-1d11-45bf-b810-73a28c9267c7"
+          "go": "b9ec13b5-cff8-4fca-b8ca-4144d1e7ded5"
         },
         "EyesWeight": 1,
         "HeadWeight": 1,
@@ -41,7 +41,7 @@
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
           "component_type": "SkinnedModelRenderer"
         }
       },
@@ -49,17 +49,21 @@
         "__type": "Zombie",
         "AnimationHelper": {
           "_type": "component",
-          "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
           "component_type": "CitizenAnimationHelper"
         },
         "body": {
           "_type": "gameobject",
-          "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00"
+          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1"
         },
         "bodyRenderer": {
           "_type": "component",
-          "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
           "component_type": "SkinnedModelRenderer"
+        },
+        "Gibs": {
+          "_type": "gameobject",
+          "prefab": "prefabs/zombiegib.prefab"
         },
         "hitSound": "sounds/impacts/impact-bullet-flesh.sound",
         "materials": [
@@ -68,14 +72,14 @@
         ],
         "NavMeshAgent": {
           "_type": "component",
-          "go": "4f3f4117-054c-4c1c-a233-6fd4e5349c94",
+          "go": "a415e3f9-31dc-4cea-b87e-98c88cd66107",
           "component_type": "NavMeshAgent"
         }
       }
     ],
     "Children": [
       {
-        "Id": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+        "Id": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
         "Name": "body",
         "Enabled": true,
         "Components": [
@@ -106,7 +110,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "0aae9ad7-40d9-4380-ae95-f964d198aa00",
+              "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -120,7 +124,7 @@
         ]
       },
       {
-        "Id": "5e0594cd-1d11-45bf-b810-73a28c9267c7",
+        "Id": "b9ec13b5-cff8-4fca-b8ca-4144d1e7ded5",
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true

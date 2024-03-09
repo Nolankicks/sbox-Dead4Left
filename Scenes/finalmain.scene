@@ -132,12 +132,13 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": null,
+          "MapName": "voximity/flat_plane",
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": true
         }
-      ]
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -163,6 +164,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-08T19:31:18.3278111-05:00",
+  "LastSaved": "2024-03-09T14:50:25.2733506-05:00",
   "__references": []
 }

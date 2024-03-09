@@ -1,0 +1,32 @@
+{
+  "RootObject": {
+    "Id": "0f331747-6776-4a27-9ae7-87a69ddb9687",
+    "Name": "Prop",
+    "Position": "-256,0,0",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Prop",
+        "Health": 1,
+        "IsStatic": false,
+        "Model": "models/citizen_gibs/citizen_gib.vmdl",
+        "OnPropBreak": null,
+        "OnPropTakeDamage": null,
+        "ShowCreatedComponents": false
+      },
+      {
+        "__type": "GibManager",
+        "IsGibbing": false,
+        "prop": {
+          "_type": "component",
+          "go": "0f331747-6776-4a27-9ae7-87a69ddb9687",
+          "component_type": "Prop"
+        }
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}
