@@ -364,10 +364,10 @@
             "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
             "TextureOrigin": "-304,-64,0.00006269039",
             "Positions": [
-              "-319.9999,-320.0002,0",
-              "320,-319.9999,0",
-              "319.9999,320.0001,0",
-              "-320,319.9998,0"
+              "-64.00006,-192.0003,0",
+              "320,-191.9999,0",
+              "320,192,0",
+              "-63.99995,191.9997,0"
             ],
             "TextureUAxis": [
               "1,0,0"
@@ -387,7 +387,8 @@
             "Materials": [
               "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
               "materials/wall/concrete_damaged_b.vmat",
-              "materials/wall/concrete_damaged_a.vmat"
+              "materials/wall/concrete_damaged_a.vmat",
+              "materials/tool_water.vmat"
             ]
           },
           "Static": true,
@@ -448,6 +449,98 @@
       "Tags": "bad",
       "Enabled": true,
       "__Prefab": "prefabs/zombienavmeshprefab.prefab"
+    },
+    {
+      "Id": "766f7e81-b809-4d88-a5a1-ca7f7972a440",
+      "Name": "Terrain",
+      "Position": "-1280,256,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Terrain",
+          "ClipMapLodExtentTexels": 128,
+          "ClipMapLodLevels": 7,
+          "DebugView": "None",
+          "RenderType": "Off",
+          "TerrainDataFile": "new terrain.terrain",
+          "TerrainMaterial": "materials/core/terrain.vmat"
+        },
+        {
+          "__type": "TerrainCollider",
+          "IsTrigger": false,
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "c8db1c0d-e53d-40ed-b2d9-eeb68fee9e76",
+      "Name": "watermelon01",
+      "Position": "-904.2085,181.2957,7.460144",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 1,
+          "IsStatic": false,
+          "Model": "models/watermelon01.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "7e19f543-c0e4-4662-be8a-103d4afc50d7",
+      "Name": "citizen_gib",
+      "Position": "-951.0357,512,0",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 1,
+          "IsStatic": false,
+          "Model": "models/citizen_gibs/citizen_gib.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        },
+        {
+          "__type": "GibManager"
+        }
+      ]
+    },
+    {
+      "Id": "cb51ca17-1d5e-44d3-8972-2a7c9c056921",
+      "Name": "citizen_skeleton_gib",
+      "Position": "-1092.779,359.3786,0.06811167",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Gib",
+          "Health": 1,
+          "IsStatic": false,
+          "Model": "models/citizen_gibs/citizen_gib.vmdl",
+          "OnPropBreak": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Prop Break",
+              "id": "15c38b3b-d230-4a12-a705-b11a4a37f8a9"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -473,11 +566,13 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-09T13:13:44.215809-05:00",
+  "LastSaved": "2024-03-09T14:31:25.4356553-05:00",
   "__references": [
     "facepunch.floor_grass_dirt_weed_blend_a",
     "facepunch.floor_grass_wetdirt_blend_a",
     "fpopium.concrete_damaged_a",
-    "fpopium.concrete_damaged_b"
+    "fpopium.concrete_damaged_b",
+    "loli.tool_water",
+    "raphmap.watermelon01"
   ]
 }
