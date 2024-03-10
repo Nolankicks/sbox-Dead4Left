@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "ecea7d2e-5372-4cd4-8d57-07106731f60b",
+    "Id": "5bf7cfc9-f2a1-4550-89f8-c51f8f1aa9c7",
     "Name": "shotgun",
     "Networked": true,
     "Enabled": true,
@@ -10,16 +10,17 @@
         "Ammo": 16,
         "arms": {
           "_type": "component",
-          "go": "3052c830-f330-43c2-ba8c-10fac47f3925",
+          "go": "eb426102-a7a3-47de-a62e-76a57925ff95",
           "component_type": "SkinnedModelRenderer"
         },
+        "Damage": 10,
         "decal": {
           "_type": "gameobject",
           "prefab": "prefabs/decal_bullet_default.prefab"
         },
         "gun": {
           "_type": "component",
-          "go": "0bf3798e-873c-432f-bead-269e4a762bb8",
+          "go": "c65d047c-c7f2-4830-911f-b851f4dd5e81",
           "component_type": "SkinnedModelRenderer"
         },
         "impactEffect": {
@@ -31,7 +32,7 @@
           "_type": "gameobject",
           "prefab": "prefabs/muzzleflash.prefab"
         },
-        "shootSound": "sounds/smg1_shoot.sound"
+        "shootSound": "sounds/shootsound.sound"
       },
       {
         "__type": "CameraComponent",
@@ -52,7 +53,7 @@
     ],
     "Children": [
       {
-        "Id": "0bf3798e-873c-432f-bead-269e4a762bb8",
+        "Id": "c65d047c-c7f2-4830-911f-b851f4dd5e81",
         "Name": "gun",
         "Position": "5.5,-4.1,0",
         "Tags": "viewmodel",
@@ -73,7 +74,7 @@
         ]
       },
       {
-        "Id": "3052c830-f330-43c2-ba8c-10fac47f3925",
+        "Id": "eb426102-a7a3-47de-a62e-76a57925ff95",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -84,7 +85,7 @@
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "0bf3798e-873c-432f-bead-269e4a762bb8",
+              "go": "c65d047c-c7f2-4830-911f-b851f4dd5e81",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,

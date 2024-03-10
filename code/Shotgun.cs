@@ -10,6 +10,7 @@ public sealed class Shotgun : Component
 	[Property, Category("ModelRenders")] public SkinnedModelRenderer arms { get; set; }
 	[Property, Category("Weapon Data")] public int Ammo { get; set; } = 16;
 	[Property, Category("Weapon Data")] public int MaxAmmo { get; set; } = 32;
+	[Property, Category("Weapon Data")] public int Damage { get; set; } = 10;
 	[Property, Category("Particles and Decals")] public GameObject decal { get; set; }
 	[Property, Category("Particles and Decals")] public GameObject muzzleFlash { get; set; }
 	[Property, Category("Particles and Decals")] public GameObject impactEffect { get; set; }
@@ -74,8 +75,20 @@ public sealed class Shotgun : Component
 		tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
 		if (zombie is not null)
 		{
-			zombie.TakeDamage(10, playerController);
+			zombie.TakeDamage(Damage, playerController);
 			MaxAmmo += 5;
+		}
+		var damage = new DamageInfo(Damage, GameObject, tr.GameObject);
+		if (damage is not null)
+		{
+		foreach(var damageable in tr.GameObject.Components.GetAll<IDamageable>())
+		{
+			damageable.OnDamage(damage);
+		}
+		}
+		if (tr.Body is not null)
+		{
+			tr.Body.ApplyImpulseAt(tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp(0, 200));
 		}
 		//decalVar.Parent = tr.GameObject;
 		}
