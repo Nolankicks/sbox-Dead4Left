@@ -154,6 +154,7 @@ public partial class WeaponFunction : Component
 			{
 				Shoot();
 				gun.Set("b_attack", true);
+				
 				_lastFired = 0;
 			}
 
@@ -208,7 +209,7 @@ public partial class WeaponFunction : Component
 		ShotsFired++;
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
-		var sound = Sound.Play(ShootSound);
+		var sound = Sound.Play(ShootSound, tr.HitPosition);
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		if (tr.Hit)
 		{

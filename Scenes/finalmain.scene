@@ -100,7 +100,6 @@
         },
         {
           "__type": "NetworkManager",
-          "menuScene": null,
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -133,8 +132,6 @@
         {
           "__type": "MapInstance",
           "MapName": "facepunch.flatgrass",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
           "UseMapFromLaunch": true
         }
       ],
@@ -164,6 +161,6 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-09T18:43:45.0799599-05:00",
+  "LastSaved": "2024-03-10T12:21:41.4514324-04:00",
   "__references": []
 }

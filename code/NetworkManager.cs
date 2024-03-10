@@ -28,7 +28,11 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	[Sync] public long HostSteamId { get; set; }
 
 	public List<PlayerController> Players => Game.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
-
+	private PlayerController localPlayer;
+	protected override void OnStart()
+	{
+		localPlayer = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnAwake()
 	{
 		base.OnAwake();
@@ -102,8 +106,28 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 	public void OnDisconnected(Connection channel)
 	{
-		Game.ActiveScene.Load(menuScene);
+		foreach(var player in Players)
+		{
+			if (player.SteamId == (long)channel.SteamId)
+			{
+				player.GameObject.Destroy();
+			}
+		}
+	}
 
+	public void OnBecameHost(Connection previousHost)
+	{
+		foreach(var player in Players)
+		{
+			if (player.SteamId == (long)previousHost.SteamId)
+			{
+				player.GameObject.Destroy();
+			}
+		}
+		Host = Connections.FirstOrDefault(x => x.SteamId == (ulong)Game.SteamId);
+		HostSteamId = (long)Host.SteamId;
+
+		Log.Info($"You are now the host");
 	}
 
 	
