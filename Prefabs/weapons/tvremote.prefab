@@ -1,0 +1,17 @@
+{
+  "RootObject": {
+    "Id": "358cd269-f812-487b-8300-ae74040b8861",
+    "Name": "tvremote",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Tvremote"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

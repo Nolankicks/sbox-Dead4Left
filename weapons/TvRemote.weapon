@@ -1,0 +1,20 @@
+{
+  "IsWeapon": false,
+  "IsItem": false,
+  "IsCustom": true,
+  "Name": "tvremote",
+  "Ammo": 0,
+  "MaxAmmo": 32,
+  "Damage": 50,
+  "FireRate": 0.1,
+  "WeaponModel": null,
+  "ShootSound": null,
+  "PatchUptime": 5,
+  "Count": 1,
+  "CustomPrefab": {
+    "_type": "gameobject",
+    "prefab": "prefabs/weapons/tvremote.prefab"
+  },
+  "InventoryImage": null,
+  "__references": []
+}

@@ -48,7 +48,10 @@ public sealed class Manager : Component
 		
 		ProcessScore();
 	}
-
+	protected override void OnFixedUpdate()
+	{
+		AddDestroyer();
+	}
 	public void StartGame()
 	{
 		
@@ -106,6 +109,17 @@ public sealed class Manager : Component
 		else
 		{
 			playerController.Transform.Position = new Vector3(0, 0, 0);
+		}
+	}
+
+	void AddDestroyer()
+	{
+		foreach (var gib in Game.ActiveScene.GetAllComponents<Gib>())
+		{
+			if (gib is not null)
+			{
+				gib.Components.Create<Destroyer>();
+			}
 		}
 	}
 }

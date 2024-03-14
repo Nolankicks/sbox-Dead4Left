@@ -20,12 +20,12 @@ public sealed class Zombie : Component, IHealthComponent
 	public PlayerController targetPlayer;
 	public bool NeedsToJump = false;
 	private PlayerController localPlayer;
-	[Property] public List<Material> materials { get; set; } = new List<Material>();
+	[Property] public List<Model> materials { get; set; } = new List<Model>();
 
 	protected override void OnStart()
 	{
 		var randomMaterial = Game.Random.FromList(materials);
-		bodyRenderer.SetMaterial(randomMaterial);
+		bodyRenderer.Model = randomMaterial;
 		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
 		AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
 		var players = Game.ActiveScene.GetAllComponents<PlayerController>().ToList();

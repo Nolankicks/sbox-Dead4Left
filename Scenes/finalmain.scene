@@ -1,14 +1,16 @@
 {
-  "Id": "ee545a91-e4aa-4022-bacf-0db1af645776",
+  "__guid": "ee545a91-e4aa-4022-bacf-0db1af645776",
   "GameObjects": [
     {
-      "Id": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
+      "__guid": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
       "Name": "Screen",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ScreenPanel",
+          "__guid": "5a4aa3d6-b5a6-48b4-81a5-0a0d6385a45a",
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
@@ -17,13 +19,15 @@
       ],
       "Children": [
         {
-          "Id": "acb85c16-99b9-4426-ae6f-10fe9bc6a9ae",
+          "__guid": "acb85c16-99b9-4426-ae6f-10fe9bc6a9ae",
           "Name": "Inv",
           "Position": "0,0,0",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Inventory",
+              "__guid": "60a5b11e-0617-4dbd-8e3d-b721671e46b4",
               "fill": 0,
               "IsHealing": false,
               "Medkit": "textures/medkit.vtex"
@@ -31,16 +35,19 @@
           ]
         },
         {
-          "Id": "eda31c6e-785f-4bbf-94b4-2e03b06bb79e",
+          "__guid": "eda31c6e-785f-4bbf-94b4-2e03b06bb79e",
           "Name": "hud",
           "Position": "0,0,0",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "hud",
+              "__guid": "203404e1-bbeb-4a11-84cb-1f3a6ab714d7",
               "IsVisible": false,
               "manager": {
                 "_type": "component",
+                "component_id": "fcac6127-2527-4d66-b633-0edb3de795e0",
                 "go": "f44fc300-9035-46f5-abb8-f95d86f47a86",
                 "component_type": "Manager"
               }
@@ -48,13 +55,15 @@
           ]
         },
         {
-          "Id": "c9654ad3-2c40-4b7b-bcc6-4f286b6aa937",
+          "__guid": "c9654ad3-2c40-4b7b-bcc6-4f286b6aa937",
           "Name": "healingui",
           "Position": "0,0,0",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "HealingPanel",
+              "__guid": "7e94c629-5dc3-4228-9daa-a74048e98db7",
               "Width": 100
             }
           ]
@@ -62,14 +71,16 @@
       ]
     },
     {
-      "Id": "b6d59cf1-c0e3-4b1c-9315-bbb968d970e3",
+      "__guid": "b6d59cf1-c0e3-4b1c-9315-bbb968d970e3",
       "Name": "camera",
       "Position": "928,-64,64",
       "Tags": "particles",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "CameraComponent",
+          "__guid": "df7beb7d-e811-4da0-a901-a5c3d77fb57f",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 80,
@@ -87,19 +98,22 @@
       ]
     },
     {
-      "Id": "f44fc300-9035-46f5-abb8-f95d86f47a86",
+      "__guid": "f44fc300-9035-46f5-abb8-f95d86f47a86",
       "Name": "Manager",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Manager",
+          "__guid": "fcac6127-2527-4d66-b633-0edb3de795e0",
           "ableToInput": false,
           "menuScene": "scenes/dead4leftmenu.scene",
           "testBool": false
         },
         {
           "__type": "NetworkManager",
+          "__guid": "e80c14c9-1873-4598-93db-34fc1406647c",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -109,28 +123,36 @@
       ]
     },
     {
-      "Id": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
+      "__guid": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ZombieSpawner",
+          "__guid": "5feaabd9-986b-4724-a285-d9d8f093ff46",
           "ZombiePrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
+        },
+        {
+          "__type": "Destroyer",
+          "__guid": "78b147b6-be47-4d4c-ae79-dcf2145b2d75"
         }
       ]
     },
     {
-      "Id": "6d071a1f-0854-486c-9579-b09f1ff6a2ca",
+      "__guid": "6d071a1f-0854-486c-9579-b09f1ff6a2ca",
       "Name": "Map",
       "Position": "-423.9149,-393.5981,42.71212",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MapInstance",
+          "__guid": "70a75e63-f695-4c9a-8752-20d51542bb30",
           "MapName": "facepunch.flatgrass",
           "UseMapFromLaunch": true
         }
@@ -161,6 +183,10 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-10T12:21:41.4514324-04:00",
-  "__references": []
+  "LastSaved": "2024-03-14T18:05:49.0183032-04:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "nolankicks.2d_game_test"
+  ]
 }

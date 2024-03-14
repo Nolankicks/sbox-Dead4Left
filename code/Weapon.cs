@@ -7,6 +7,7 @@ using Kicks;
 using Sandbox;
 using Sandbox.UI;
 using Sandbox.Citizen;
+using Microsoft.VisualBasic;
 public sealed class Weapon : Component
 {	
 	public Texture[] InventoryImages = new Texture[9];
@@ -30,6 +31,7 @@ public sealed class Weapon : Component
 		var slot2 = Inventory[1] = weaponList.FirstOrDefault(x => x.Name == "shotgun");
 		var slot3 = Inventory[2] = weaponList.FirstOrDefault(x => x.Name == "pistol");
 		var slot4 = Inventory[3] = weaponList.FirstOrDefault(x => x.Name == "healthkit");
+		var slot5 = Inventory[4] = weaponList.FirstOrDefault(x => x.Name == "tvremote");
 		foreach(var weapon in Inventory)
 		{
 			if (weapon is not null)
@@ -150,6 +152,7 @@ public partial class WeaponFunction : Component
 		protected override void OnUpdate()
 		{
 			if (IsProxy) return;
+
 			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f && !IsProxy)
 			{
 				Shoot();
@@ -204,17 +207,27 @@ public partial class WeaponFunction : Component
 	{
 		if (IsProxy) return;
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
-		var tr = Scene.Trace.Ray(eyePos, eyePos + playerController.EyeAngles.Forward * 5000).WithoutTags("player").Run();
+		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 		Ammo--;
 		ShotsFired++;
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
 		var sound = Sound.Play(ShootSound, tr.HitPosition);
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
+		
+		
 		if (tr.Hit)
 		{
 			
+
 			tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
+			tr.GameObject.Parent.Components.TryGet<Sandbox.WorldPanel>(out var panel);
+			if (panel is not null)
+			{
+				Log.Info("hit panel");
+				
+			}
 			if (tr.GameObject.Tags.Has("bad"))
 			{
 
@@ -238,7 +251,7 @@ public partial class WeaponFunction : Component
 		}
 		}
 	}
-}
+	}
 [GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes") ]
 public partial class WeaponData : GameResource
 {
