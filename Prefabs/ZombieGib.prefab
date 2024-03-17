@@ -1,32 +1,35 @@
 {
   "RootObject": {
-    "Id": "0f331747-6776-4a27-9ae7-87a69ddb9687",
-    "Name": "Prop",
-    "Position": "-256,0,0",
+    "__guid": "b6ff0147-0b6b-4c77-8d2c-72e474a86f9c",
+    "Name": "zombiegib",
     "Enabled": true,
+    "NetworkMode": 0,
     "Components": [
       {
         "__type": "Prop",
+        "__guid": "c2e9571c-0105-412c-9067-8d1848fff710",
         "Health": 1,
         "IsStatic": false,
-        "Model": "models/citizen_gibs/citizen_gib.vmdl",
-        "OnPropBreak": null,
-        "OnPropTakeDamage": null,
-        "ShowCreatedComponents": false
+        "Model": "models/citizen_gibs/citizen_gib.vmdl"
       },
       {
         "__type": "GibManager",
+        "__guid": "0d1331c2-ab01-4622-b914-da9fed8d7720",
         "IsGibbing": false,
         "prop": {
           "_type": "component",
-          "go": "0f331747-6776-4a27-9ae7-87a69ddb9687",
+          "component_id": "c2e9571c-0105-412c-9067-8d1848fff710",
+          "go": "b6ff0147-0b6b-4c77-8d2c-72e474a86f9c",
           "component_type": "Prop"
         }
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }

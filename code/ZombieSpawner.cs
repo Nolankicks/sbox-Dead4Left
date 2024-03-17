@@ -13,6 +13,7 @@ public sealed class ZombieSpawner : Component
 	{
 		zombies = Scene.GetAllComponents<Zombie>().ToArray();
 		gibs = Scene.GetAllComponents<Gib>().ToArray();
+		Log.Info(zombies.Length);
 		foreach (var gib in gibs)
 		{
 			if (gib is null) return;
@@ -26,13 +27,10 @@ public sealed class ZombieSpawner : Component
 	}
 	void SpawnZombie()
 	{
-		if (zombies.Length < 15)
-		{
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Scene.NavMesh.GetRandomPoint().GetValueOrDefault();
 		var zombie = ZombiePrefab.Clone( randomSpawnPoint );
 		zombie.NetworkSpawn();
-		}
 	}
 
 	TimeUntil nextSecond = 0f;

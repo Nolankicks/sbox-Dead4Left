@@ -7,16 +7,6 @@
     "NetworkMode": 2,
     "Components": [
       {
-        "__type": "PlayerFootsteps",
-        "__guid": "edb6b256-0dda-437f-8f0a-048fe70b55f9",
-        "Source": {
-          "_type": "component",
-          "component_id": "17d81491-58c8-49a9-926f-5bb3ef681aec",
-          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
-          "component_type": "SkinnedModelRenderer"
-        }
-      },
-      {
         "__type": "NavMeshAgent",
         "__guid": "d7eabfa0-4396-4932-bbc6-cb588c4ab5db",
         "Acceleration": 500,
