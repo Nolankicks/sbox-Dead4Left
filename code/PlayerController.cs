@@ -179,7 +179,6 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 
 		UpdateCamera();
 	}
-		
 	private void UpdateBodyVisibility()
 	{
 		if ( animationHelper is null )
@@ -225,6 +224,9 @@ public void AddScore(long AddScore)
 {
 	Score += AddScore;
 }
+
+
+
 }
 
 

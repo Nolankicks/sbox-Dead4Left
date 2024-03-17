@@ -136,10 +136,6 @@
             "_type": "gameobject",
             "prefab": "prefabs/zombienavmeshprefab.prefab"
           }
-        },
-        {
-          "__type": "Destroyer",
-          "__guid": "78b147b6-be47-4d4c-ae79-dcf2145b2d75"
         }
       ]
     },
@@ -183,7 +179,7 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-14T18:05:49.0183032-04:00",
+  "LastSaved": "2024-03-17T12:11:48.9260852-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

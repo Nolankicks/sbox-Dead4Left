@@ -11,15 +11,16 @@ public sealed class ZombieSpawner : Component
 	protected override void OnUpdate()
 	{
 		zombies = Scene.GetAllComponents<Zombie>().ToArray();
-		
 	}
 	void SpawnZombie()
 	{
+		if (zombies.Length < 15)
+		{
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Scene.NavMesh.GetRandomPoint().GetValueOrDefault();
 		var zombie = ZombiePrefab.Clone( randomSpawnPoint );
 		zombie.NetworkSpawn();
-
+		}
 	}
 
 	TimeUntil nextSecond = 0f;

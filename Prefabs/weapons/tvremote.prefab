@@ -1,11 +1,13 @@
 {
   "RootObject": {
-    "Id": "358cd269-f812-487b-8300-ae74040b8861",
+    "__guid": "1a245fad-2861-4d6a-9dc7-e26154ddd8cf",
     "Name": "tvremote",
     "Enabled": true,
+    "NetworkMode": 2,
     "Components": [
       {
-        "__type": "Tvremote"
+        "__type": "Grabber",
+        "__guid": "172d4c8c-63b8-42d8-bc92-8b0f2d383dbb"
       }
     ],
     "Children": []
@@ -13,5 +15,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }
