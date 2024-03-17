@@ -118,7 +118,7 @@ public sealed class Manager : Component
 		{
 			if (gib is not null)
 			{
-				gib.Components.Create<Destroyer>();
+				//gib.Components.Create<Destroyer>();
 			}
 		}
 	}

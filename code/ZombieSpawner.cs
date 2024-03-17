@@ -8,9 +8,21 @@ public sealed class ZombieSpawner : Component
 	[Property] public GameObject ZombiePrefab { get; set; }
 	public float GetRandom() => Random.Shared.Float(1, 100);
 	public Zombie[] zombies;
+	public Gib[] gibs;
 	protected override void OnUpdate()
 	{
 		zombies = Scene.GetAllComponents<Zombie>().ToArray();
+		gibs = Scene.GetAllComponents<Gib>().ToArray();
+		foreach (var gib in gibs)
+		{
+			if (gib is null) return;
+			gib.Break();
+			gib.Components.TryGet<Rigidbody>(out var rb);
+			if (rb is not null)
+			{
+				rb.RigidbodyFlags = RigidbodyFlags.DisableCollisionSounds;
+			}
+		}
 	}
 	void SpawnZombie()
 	{
