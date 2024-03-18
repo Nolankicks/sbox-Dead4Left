@@ -30,7 +30,7 @@ public sealed class ZombieSpawner : Component
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Scene.NavMesh.GetRandomPoint().GetValueOrDefault();
 		var zombie = ZombiePrefab.Clone( randomSpawnPoint );
-		zombie.NetworkSpawn();
+		zombie.NetworkSpawn(null);
 	}
 
 	TimeUntil nextSecond = 0f;

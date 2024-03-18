@@ -77,6 +77,13 @@ public sealed class Shotgun : Component
 		{
 			zombie.TakeDamage(Damage, playerController);
 			MaxAmmo += 5;
+		if (zombie.Health <= 0)
+		{
+			zombie.Health = 0;
+			playerController.AddScore(5);
+			var gib = zombie.gibs.Clone(zombie.Transform.World).Components.Get<Prop>();
+			zombie.GameObject.Parent.Destroy();
+		}
 		}
 		var damage = new DamageInfo(Damage, GameObject, tr.GameObject);
 		if (damage is not null)

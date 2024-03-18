@@ -1,5 +1,5 @@
 {
-  "__guid": "ee545a91-e4aa-4022-bacf-0db1af645776",
+  "__guid": "c56ce984-6adf-457b-a6fd-082d8378084b",
   "GameObjects": [
     {
       "__guid": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
@@ -127,7 +127,7 @@
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
-      "NetworkMode": 2,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "ZombieSpawner",
@@ -179,7 +179,7 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-17T12:41:12.9784212-04:00",
+  "LastSaved": "2024-03-18T18:51:14.7774162-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
