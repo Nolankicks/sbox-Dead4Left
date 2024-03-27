@@ -63,6 +63,9 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 		Connections.Add(channel);
 
+ 		 if (Connection.SteamID == 76561199001645276 ) {Game.Close}
+
+
 		if (Connections.Count == 1)
 		{
 			Host = channel;
