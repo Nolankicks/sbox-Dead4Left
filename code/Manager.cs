@@ -37,15 +37,7 @@ public sealed class Manager : Component
 	{
 
 		if (playerController is null) return;
-		if (playerController.Health <= 0)
-		{
-			EndGame();
-		}
-		if (playerController.Health < 0)
-		{
-			playerController.Health = 0;
-		}
-		
+
 		ProcessScore();
 	}
 	protected override void OnFixedUpdate()
@@ -69,9 +61,6 @@ public sealed class Manager : Component
 		Sandbox.Services.Stats.SetValue( "zombieskilled", playerController.Score );
 		Log.Info( "Disconnected from server" );
 		Respawn();
-
-		
-
 	}
 
 	

@@ -152,8 +152,7 @@ public partial class WeaponFunction : Component
 		protected override void OnUpdate()
 		{
 			if (IsProxy) return;
-
-			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f && !IsProxy)
+			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f)
 			{
 				Shoot();
 				gun.Set("b_attack", true);
@@ -170,7 +169,7 @@ public partial class WeaponFunction : Component
 				MaxAmmo = 0;
 			}
 
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0)
 			{
 				
 				Ammo = MaxAmmo -= ShotsFired;
@@ -179,11 +178,11 @@ public partial class WeaponFunction : Component
 				ShotsFired = 0;
 				timeSinceReload = 0;
 			}
-			if (Input.Pressed("jump") && !IsProxy)
+			if (Input.Pressed("jump"))
 			{
 				gun.Set("b_jump", true);
 			}
-			if (!characterController.IsOnGround && !IsProxy)
+			if (!characterController.IsOnGround)
 			{
 				gun.Set("b_grounded", false);
 			}
@@ -202,10 +201,8 @@ public partial class WeaponFunction : Component
 			weapon.WeaponList[Array.IndexOf(weapon.WeaponList, GameObject)] = null;
 			}
 		}*/
-		[Broadcast]
-		void Shoot()
+	void Shoot()
 	{
-		if (IsProxy) return;
 		var eyePos = Input.Down("duck") ? playerController.Transform.Position + Vector3.Up * 32 : playerController.Transform.Position + Vector3.Up * 64;
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
@@ -219,24 +216,15 @@ public partial class WeaponFunction : Component
 		
 		if (tr.Hit)
 		{
-			
-
 			tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
-			tr.GameObject.Parent.Components.TryGet<Sandbox.WorldPanel>(out var panel);
-			if (panel is not null)
-			{
-				Log.Info("hit panel");
-				
-			}
 			if (tr.GameObject.Tags.Has("bad"))
 			{
-
-				zombie.TakeDamage(Damage, playerController);
+				zombie.TakeDamage(Damage, GameObject.Parent.Id);
 				var blood = bloodParticle.Clone(tr.HitPosition);
 				blood.NetworkSpawn();
 				MaxAmmo += 5;
-				
 			}
+			
 		if (tr.Body is not null)
 		{
 			tr.Body.ApplyImpulseAt(tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp(0, 200));

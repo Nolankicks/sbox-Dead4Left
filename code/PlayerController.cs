@@ -12,6 +12,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	[Sync] public float MaxHealth { get; set; } = 100;
 	[Sync] public long Score { get; set; } = 0;
 	[Sync] public long HighScore { get; set; } = 0;
+	public Manager manager;
 	[Property] public float CrouchSpeed { get; set; } = 64.0f;
 	[Property] public float WalkSpeed { get; set; } = 190f;
 	[Property] public float RunSpeed { get; set; } = 190f;
@@ -34,6 +35,7 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Random.Shared.FromArray( spawnPoints );
 		GameObject.Transform.Position = randomSpawnPoint.Transform.Position;
+		manager = Scene.GetAllComponents<Manager>().FirstOrDefault( x => !x.IsProxy );
 	}
 	protected override void OnUpdate()
 	{
@@ -179,6 +181,19 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 
 		UpdateCamera();
 	}
+	[Broadcast]
+	public void TakeDamage( int damage )
+	{
+		Health -= damage;
+		if ( Health <= 0 )
+		{
+			Death();
+		}
+	}
+	void Death()
+	{
+		manager.EndGame();
+	}
 	private void UpdateBodyVisibility()
 	{
 		if ( animationHelper is null )
@@ -210,10 +225,10 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		var lookDir = EyeAngles.ToRotation().Forward * 1024;
 		animationHelper.WithLook( lookDir, 1, 0.5f, 0.25f );
 	}
-	public void TakeDamage(float damage, PlayerController attacker = null)
+	public void TakeDamage(float damage, PlayerController playerController)
 	{
-		
-		Health -= damage;
+		if (IsProxy) return;
+		Health -= damage;	
 		
 		Log.Info(Health);
 

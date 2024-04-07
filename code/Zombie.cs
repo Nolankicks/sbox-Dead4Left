@@ -6,13 +6,10 @@ using Kicks;
 using Sandbox;
 using Sandbox.Citizen;
 
-public sealed class Zombie : Component, IHealthComponent
+public sealed class Zombie : Component
 {
-
-	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public NavMeshAgent NavMeshAgent { get; set; }
-	[Property] public GameObject body { get; set; }
-	[Property] public SkinnedModelRenderer bodyRenderer { get; set; }
+	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public SoundEvent hitSound { get; set; }
 	[Property] public GameObject gibs { get; set; }
 	[Sync] public float Health { get; set; } = 100;
@@ -24,17 +21,13 @@ public sealed class Zombie : Component, IHealthComponent
 
 	protected override void OnStart()
 	{
-		var randomMaterial = Game.Random.FromList(materials);
-		bodyRenderer.Model = randomMaterial;
-		AnimationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Auto;
-		AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
 		var players = Game.ActiveScene.GetAllComponents<PlayerController>().ToList();
 		targetPlayer = Game.Random.FromList(players);
 		Log.Info( $"Targeting {targetPlayer}" );
 	}
 	protected override void OnUpdate()
 	{
-		
+		if (IsProxy) return;
 		if (targetPlayer is null) return;
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
 		{
@@ -71,61 +64,83 @@ public sealed class Zombie : Component, IHealthComponent
 	}
 	void UpdateAnimations()
 	{
-		var target = targetPlayer.Transform.Position;
-		var bodyRot = AnimationHelper.Transform.Rotation.Angles();
-		AnimationHelper?.WithVelocity(NavMeshAgent.Velocity);
+		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
+		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
+		animationHelper.WithVelocity(NavMeshAgent.Velocity);
+		animationHelper.WithWishVelocity(NavMeshAgent.WishVelocity);
 	}
 	public TimeSince lastAttack = 0;
 	void FowardTrace()
 	{
-		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + Vector3.Up * 64 + body.Transform.Rotation.Forward * 150).Run();
-
+		var tr = Scene.Trace.Ray(GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Up * 64 + GameObject.Transform.Rotation.Forward * 150).Run();
 		if (tr.Hit && tr.GameObject.Tags.Has("player") && lastAttack > 1.5f)
 		{
-			AnimationHelper.Target.Set("b_attack" , true);
-			targetPlayer.TakeDamage(10);
+		
+			tr.GameObject.Parent.Components.TryGet<PlayerController>(out var player);
+			player.TakeDamage(10);
 			lastAttack = 0;
 			Sound.Play(hitSound);
 		}
 	}
 	void UpWardTrace()
 	{
-		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + Vector3.Up * 64 + body.Transform.Rotation.Up * 200).Run();
+		var tr = Scene.Trace.Ray(GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Up * 64 + GameObject.Transform.Rotation.Up * 200).Run();
 
 		if (tr.Hit && tr.GameObject.Tags.Has("player") && lastAttack > 1.5f)
 		{
-			AnimationHelper.Target.Set("b_attack" , true);
-			targetPlayer.TakeDamage(10);
+	
+			tr.GameObject.Parent.Components.TryGet<PlayerController>(out var player);
+			player.TakeDamage(10);
 			lastAttack = 0;
 			Sound.Play(hitSound);
 		}
 	}
 	[Broadcast]
-	public void TakeDamage(float damage, PlayerController attacker)
+	public void TakeDamage(float damage, Guid AttackerId)
 	{
+		if (IsProxy) return;
 		Health -= damage;
 		if (Health <= 0)
 		{
-			Health = 0;
+			Kill(AttackerId);
+		}
+	}
+	void Kill(Guid guid)
+	{
+		var gib = gibs.Clone(GameObject.Transform.World).Components.Get<Prop>();
+		AddScore( guid );
+		GameObject.Destroy();
+		
+		
+	}
+	[Broadcast]
+	public void NewTakeDamage( float damage, PlayerController attacker, GameObject zombie )
+	{
+		if (IsProxy) return;
+		if (zombie is null) return;
+		var zombiecomponent = zombie.Components.Get<Zombie>();
+		zombiecomponent.Health -= damage;
+		if (zombiecomponent.Health <= 0)
+		{
+			zombiecomponent.Health = 0;
 			attacker.AddScore(5);
 			var gib = gibs.Clone(GameObject.Transform.World).Components.Get<Prop>();
-			GameObject.Destroy();
+			zombie.Destroy();
 		}
-	}
 
-	void JumpTrace()
+	}
+	[Broadcast]
+	public void DealDamage(float damage, PlayerController attacker)
 	{
-		var tr = Scene.Trace.Ray(body.Transform.Position, body.Transform.Position + Vector3.Up * 10 + body.Transform.Rotation.Forward * 5).WithoutTags("player").Run();
-
-		if (tr.Hit)
-		{
-			NeedsToJump = true;
-			Log.Info("Needs to jump");
-		}
-		else
-		{
-			NeedsToJump = false;
-		}
+		//if (IsProxy) return;
+		attacker.TakeDamage(damage, attacker);
+		Log.Info("Dealt Damage to" + attacker.GameObject.Parent.Name);
 	}
-
+	[Broadcast]
+	void AddScore( Guid guid )
+	{
+		var attacker = Scene.Directory.FindByGuid(guid);
+		var player = attacker.Components.Get<PlayerController>();
+		player.Score += 5;
+	}
 }

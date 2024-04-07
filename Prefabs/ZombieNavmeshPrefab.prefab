@@ -1,14 +1,14 @@
 {
   "RootObject": {
-    "__guid": "a415e3f9-31dc-4cea-b87e-98c88cd66107",
+    "__guid": "bbcc69a9-ccea-4dc1-97b1-e270cf30b796",
     "Name": "zombienavmeshprefab",
     "Tags": "bad",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "NavMeshAgent",
-        "__guid": "d7eabfa0-4396-4932-bbc6-cb588c4ab5db",
+        "__guid": "ef159824-d171-442c-81e5-71954623abf7",
         "Acceleration": 500,
         "Height": 64,
         "MaxSpeed": 275,
@@ -18,42 +18,11 @@
         "UpdateRotation": true
       },
       {
-        "__type": "CitizenAnimationHelper",
-        "__guid": "18dc5d2a-54eb-4abe-b3cc-b368c35e40c4",
-        "BodyWeight": 1,
-        "EyeSource": {
-          "_type": "gameobject",
-          "go": "b9ec13b5-cff8-4fca-b8ca-4144d1e7ded5"
-        },
-        "EyesWeight": 1,
-        "HeadWeight": 1,
-        "Height": 1,
-        "LookAtEnabled": false,
-        "Target": {
-          "_type": "component",
-          "component_id": "17d81491-58c8-49a9-926f-5bb3ef681aec",
-          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
-          "component_type": "SkinnedModelRenderer"
-        }
-      },
-      {
         "__type": "Zombie",
-        "__guid": "a7af896d-f3e4-4c09-a7a1-c88c581bb425",
-        "AnimationHelper": {
-          "_type": "component",
-          "component_id": "1f8eff56-53f5-49a6-8c93-8026c3f6f505",
-          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
-          "component_type": "CitizenAnimationHelper"
-        },
+        "__guid": "ea88efef-b51f-4eed-86f7-1603471d7ba9",
         "body": {
           "_type": "gameobject",
-          "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1"
-        },
-        "bodyRenderer": {
-          "_type": "component",
-          "component_id": "247606cf-7c34-4550-9b84-17676d10b4ea",
-          "go": "d35c4df1-9964-4b78-b43d-d1a7f238674e",
-          "component_type": "SkinnedModelRenderer"
+          "go": "a02a3500-1470-495b-9d8f-8d6182321ed2"
         },
         "gibs": {
           "_type": "gameobject",
@@ -66,86 +35,13 @@
         ],
         "NavMeshAgent": {
           "_type": "component",
-          "component_id": "d7eabfa0-4396-4932-bbc6-cb588c4ab5db",
-          "go": "a415e3f9-31dc-4cea-b87e-98c88cd66107",
+          "component_id": "ef159824-d171-442c-81e5-71954623abf7",
+          "go": "bbcc69a9-ccea-4dc1-97b1-e270cf30b796",
           "component_type": "NavMeshAgent"
         }
       }
     ],
-    "Children": [
-      {
-        "__guid": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
-        "Name": "body",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "Components": [
-          {
-            "__type": "SkinnedModelRenderer",
-            "__guid": "17d81491-58c8-49a9-926f-5bb3ef681aec",
-            "BodyGroups": 0,
-            "CreateBoneObjects": false,
-            "MaterialGroup": "default",
-            "Model": "models/citizen/citizen.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "CitizenAnimationHelper",
-            "__guid": "1f8eff56-53f5-49a6-8c93-8026c3f6f505",
-            "BodyWeight": 1,
-            "EyesWeight": 1,
-            "HeadWeight": 1,
-            "Height": 1,
-            "LookAtEnabled": false,
-            "Target": {
-              "_type": "component",
-              "component_id": "17d81491-58c8-49a9-926f-5bb3ef681aec",
-              "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
-              "component_type": "SkinnedModelRenderer"
-            }
-          },
-          {
-            "__type": "ModelCollider",
-            "__guid": "b222e480-9b29-400b-a4a0-86e8507e1f87",
-            "IsTrigger": false,
-            "Model": "models/citizen/citizen.vmdl",
-            "Static": false
-          }
-        ],
-        "Children": [
-          {
-            "__guid": "d35c4df1-9964-4b78-b43d-d1a7f238674e",
-            "Name": "zombie",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "Components": [
-              {
-                "__type": "SkinnedModelRenderer",
-                "__guid": "247606cf-7c34-4550-9b84-17676d10b4ea",
-                "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "component_id": "17d81491-58c8-49a9-926f-5bb3ef681aec",
-                  "go": "8bbac047-2355-4fe3-a29e-e4ff9ae3d0d1",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "__guid": "b9ec13b5-cff8-4fca-b8ca-4144d1e7ded5",
-        "Name": "eye",
-        "Position": "0,0,64",
-        "Enabled": true,
-        "NetworkMode": 2
-      }
-    ]
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

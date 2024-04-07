@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "1a245fad-2861-4d6a-9dc7-e26154ddd8cf",
+    "__guid": "f49c2e17-010a-42ef-969f-743b7eecbd69",
     "Name": "tvremote",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Grabber",
-        "__guid": "172d4c8c-63b8-42d8-bc92-8b0f2d383dbb"
+        "__guid": "de7cd835-d9ac-46d8-92c4-3b1c8db0f441"
       }
     ],
     "Children": []

@@ -1,16 +1,18 @@
 {
   "RootObject": {
-    "Id": "5bf7cfc9-f2a1-4550-89f8-c51f8f1aa9c7",
+    "__guid": "73bd8674-eca5-4f71-bc39-48654f612407",
     "Name": "shotgun",
-    "Networked": true,
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "Shotgun",
+        "__guid": "a8b8a3ab-3f4e-4c8b-8eb3-ac6a2c0b4c2d",
         "Ammo": 16,
         "arms": {
           "_type": "component",
-          "go": "eb426102-a7a3-47de-a62e-76a57925ff95",
+          "component_id": "1799a9af-6b48-45d1-a9c3-75ed266b4c70",
+          "go": "80982246-4ac3-4501-a2b8-cbed55a7da93",
           "component_type": "SkinnedModelRenderer"
         },
         "Damage": 10,
@@ -20,7 +22,8 @@
         },
         "gun": {
           "_type": "component",
-          "go": "c65d047c-c7f2-4830-911f-b851f4dd5e81",
+          "component_id": "37669d8c-b1a2-4b99-93c1-27c6a78f545b",
+          "go": "d86f8cbe-1a8d-49f7-9dff-389a363b2ff1",
           "component_type": "SkinnedModelRenderer"
         },
         "impactEffect": {
@@ -36,9 +39,10 @@
       },
       {
         "__type": "CameraComponent",
+        "__guid": "1e40c11d-f99a-4cb8-8fc5-709d99afa538",
         "BackgroundColor": "0.33333,0.46275,0.52157,1",
         "ClearFlags": "Depth, Stencil",
-        "FieldOfView": 60,
+        "FieldOfView": 85,
         "IsMainCamera": false,
         "Orthographic": false,
         "OrthographicHeight": 1204,
@@ -48,25 +52,22 @@
         "TargetEye": "None",
         "Viewport": "0,0,1,1",
         "ZFar": 10000,
-        "ZNear": 10
+        "ZNear": 0.1
       }
     ],
     "Children": [
       {
-        "Id": "c65d047c-c7f2-4830-911f-b851f4dd5e81",
+        "__guid": "d86f8cbe-1a8d-49f7-9dff-389a363b2ff1",
         "Name": "gun",
-        "Position": "5.5,-4.1,0",
         "Tags": "viewmodel",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
+            "__guid": "37669d8c-b1a2-4b99-93c1-27c6a78f545b",
             "BodyGroups": 3,
-            "BoneMergeTarget": null,
             "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
             "Model": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
@@ -74,23 +75,23 @@
         ]
       },
       {
-        "Id": "eb426102-a7a3-47de-a62e-76a57925ff95",
+        "__guid": "80982246-4ac3-4501-a2b8-cbed55a7da93",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
+            "__guid": "1799a9af-6b48-45d1-a9c3-75ed266b4c70",
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "go": "c65d047c-c7f2-4830-911f-b851f4dd5e81",
+              "component_id": "37669d8c-b1a2-4b99-93c1-27c6a78f545b",
+              "go": "d86f8cbe-1a8d-49f7-9dff-389a363b2ff1",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
             "Model": "models/first_person/first_person_arms.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
@@ -102,7 +103,10 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
-    "facepunch.v_spaghellim4"
+    "facepunch.v_spaghellim4",
+    "nolankicks.2d_game_test"
   ]
 }

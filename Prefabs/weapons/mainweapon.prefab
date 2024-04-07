@@ -1,14 +1,14 @@
 {
   "RootObject": {
-    "Id": "158c5ae1-0e8c-43ca-8d2b-d422e48597cc",
+    "__guid": "158c5ae1-0e8c-43ca-8d2b-d422e48597cc",
     "Name": "mainweapon",
-    "Networked": true,
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "WeaponFunction",
+        "__guid": "f772694f-05dd-4974-b073-42d09c9534ca",
         "Ammo": 0,
-        "data": null,
         "MaxAmmo": 0,
         "bloodParticle": {
           "_type": "gameobject",
@@ -16,6 +16,7 @@
         },
         "gun": {
           "_type": "component",
+          "component_id": "ed18c48e-03da-4da9-83f6-7d600033a319",
           "go": "519b2625-8fb5-479e-a367-a1811503b454",
           "component_type": "SkinnedModelRenderer"
         },
@@ -27,9 +28,10 @@
       },
       {
         "__type": "CameraComponent",
+        "__guid": "e5db0b0b-64d1-4c80-902e-4e83d55c4e16",
         "BackgroundColor": "0.33333,0.46275,0.52157,1",
         "ClearFlags": "Depth, Stencil",
-        "FieldOfView": 60,
+        "FieldOfView": 85,
         "IsMainCamera": true,
         "Orthographic": false,
         "OrthographicHeight": 1204,
@@ -39,25 +41,22 @@
         "TargetEye": "None",
         "Viewport": "0,0,1,1",
         "ZFar": 10000,
-        "ZNear": 10
+        "ZNear": 0.1
       }
     ],
     "Children": [
       {
-        "Id": "519b2625-8fb5-479e-a367-a1811503b454",
+        "__guid": "519b2625-8fb5-479e-a367-a1811503b454",
         "Name": "gun",
-        "Position": "17.7,-9.2,-0.2",
         "Tags": "viewmodel",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
+            "__guid": "ed18c48e-03da-4da9-83f6-7d600033a319",
             "BodyGroups": 11,
-            "BoneMergeTarget": null,
             "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
             "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
@@ -65,23 +64,23 @@
         ]
       },
       {
-        "Id": "822dd902-d458-441a-876b-51aacf184cce",
+        "__guid": "822dd902-d458-441a-876b-51aacf184cce",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
+            "__guid": "1b1bdf7d-31b5-4117-80c7-e2cd688f3fa9",
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
+              "component_id": "ed18c48e-03da-4da9-83f6-7d600033a319",
               "go": "519b2625-8fb5-479e-a367-a1811503b454",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
             "Model": "models/first_person/first_person_arms.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
@@ -93,6 +92,8 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
     "facepunch.v_mp5"
   ]

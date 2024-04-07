@@ -102,7 +102,7 @@
       "Name": "Manager",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
-      "NetworkMode": 2,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "Manager",
@@ -134,7 +134,7 @@
           "__guid": "5feaabd9-986b-4724-a285-d9d8f093ff46",
           "ZombiePrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/zombienavmeshprefab.prefab"
+            "prefab": "prefabs/zombie.prefab"
           }
         }
       ]
@@ -179,7 +179,7 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-03-18T18:59:16.0402397-04:00",
+  "LastSaved": "2024-04-07T18:55:31.3521548-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

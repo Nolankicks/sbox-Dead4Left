@@ -75,7 +75,7 @@ public sealed class Shotgun : Component
 		tr.GameObject.Parent.Components.TryGet<Zombie>(out var zombie);
 		if (zombie is not null)
 		{
-			zombie.TakeDamage(Damage, playerController);
+			zombie.TakeDamage(Damage, GameObject.Parent.Id);
 			MaxAmmo += 5;
 		}
 		var damage = new DamageInfo(Damage, GameObject, tr.GameObject);

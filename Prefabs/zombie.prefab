@@ -1,0 +1,127 @@
+{
+  "RootObject": {
+    "__guid": "d2769dc4-8f54-4f15-9a98-cc0c830c385b",
+    "Name": "zombie",
+    "Tags": "bad",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Zombie",
+        "__guid": "c6f5bea2-94d2-4800-8de9-ca13d16ae4a7",
+        "animationHelper": {
+          "_type": "component",
+          "component_id": "65072cb5-56ba-4d09-bc83-a641cb4f70da",
+          "go": "3256d10d-878e-46df-a0d6-fc1dadd368d7",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "gibs": {
+          "_type": "gameobject",
+          "prefab": "prefabs/zombiegib.prefab"
+        },
+        "hitSound": "sounds/shootsound.sound",
+        "materials": [],
+        "NavMeshAgent": {
+          "_type": "component",
+          "component_id": "b4ffcd6f-4d8a-41cf-8f6f-f4287a627fc4",
+          "go": "d2769dc4-8f54-4f15-9a98-cc0c830c385b",
+          "component_type": "NavMeshAgent"
+        }
+      },
+      {
+        "__type": "NavMeshAgent",
+        "__guid": "b4ffcd6f-4d8a-41cf-8f6f-f4287a627fc4",
+        "Acceleration": 50,
+        "Height": 64,
+        "MaxSpeed": 120,
+        "Radius": 16,
+        "Separation": 0.25,
+        "UpdatePosition": true,
+        "UpdateRotation": true
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "3256d10d-878e-46df-a0d6-fc1dadd368d7",
+        "Name": "zombiebody",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "1d0f3228-7eb0-4352-9048-32f2df6380a4",
+            "BodyGroups": 0,
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "__guid": "65072cb5-56ba-4d09-bc83-a641cb4f70da",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "component_id": "1d0f3228-7eb0-4352-9048-32f2df6380a4",
+              "go": "3256d10d-878e-46df-a0d6-fc1dadd368d7",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "0c42def3-d2f7-403b-8798-b4cfc94ceb46",
+            "Name": "cloths",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "__guid": "f530273c-369a-4dd3-b8b6-86606f2764c3",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "1d0f3228-7eb0-4352-9048-32f2df6380a4",
+                  "go": "3256d10d-878e-46df-a0d6-fc1dadd368d7",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "fc1218f0-8a2d-440a-82a0-17325acff40b",
+        "Name": "collider",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "CapsuleCollider",
+            "__guid": "5d0fd9c2-9e3b-4733-b3b8-44a9aaf0c633",
+            "End": "0,0,49.50229",
+            "IsTrigger": false,
+            "Radius": 25,
+            "Start": "0,0,0",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "nolankicks.2d_game_test"
+  ]
+}
