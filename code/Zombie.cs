@@ -14,6 +14,8 @@ public sealed class Zombie : Component
 	[Property] public GameObject gibs { get; set; }
 	[Sync] public float Health { get; set; } = 100;
 	[Sync] public float MaxHealth { get; set; } = 100;
+	[Sync] public Vector3 Velocity { get; set; }
+	[Sync] public Vector3 WishVelocity { get; set; }
 	public PlayerController targetPlayer;
 	public bool NeedsToJump = false;
 	private PlayerController localPlayer;
@@ -28,6 +30,8 @@ public sealed class Zombie : Component
 	protected override void OnUpdate()
 	{
 		UpdateAnimations();
+		Velocity = NavMeshAgent.Velocity;
+		WishVelocity = NavMeshAgent.WishVelocity;
 		if (IsProxy) return;
 		if (targetPlayer is null) return;
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
@@ -65,8 +69,8 @@ public sealed class Zombie : Component
 	{
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 		animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Punch;
-		animationHelper.WithVelocity(NavMeshAgent.Velocity);
-		animationHelper.WithWishVelocity(NavMeshAgent.WishVelocity);
+		animationHelper.WithVelocity(Velocity);
+		animationHelper.WithWishVelocity(WishVelocity);
 	}
 	public TimeSince lastAttack = 0;
 	void FowardTrace()
