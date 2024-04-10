@@ -27,6 +27,10 @@ public sealed class Zombie : Component
 	}
 	protected override void OnUpdate()
 	{
+		if (targetPlayer is not null)
+		{
+		UpdateAnimations();
+		}
 		if (IsProxy) return;
 		if (targetPlayer is null) return;
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
@@ -53,10 +57,7 @@ public sealed class Zombie : Component
 		}
 		
 		//JumpTrace();
-		if (targetPlayer is not null)
-		{
-		UpdateAnimations();
-		}
+
 	}
 	void MoveToTarget()
 	{
@@ -108,6 +109,7 @@ public sealed class Zombie : Component
 	void Kill(Guid guid)
 	{
 		var gib = gibs.Clone(GameObject.Transform.World).Components.Get<Prop>();
+		gib.GameObject.NetworkSpawn();
 		AddScore( guid );
 		GameObject.Destroy();
 		

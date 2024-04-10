@@ -9,7 +9,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ScreenPanel",
+          "__type": "Sandbox.ScreenPanel",
           "__guid": "5a4aa3d6-b5a6-48b4-81a5-0a0d6385a45a",
           "AutoScreenScale": true,
           "Opacity": 1,
@@ -26,7 +26,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "Inventory",
+              "__type": "Kicks.Inventory",
               "__guid": "60a5b11e-0617-4dbd-8e3d-b721671e46b4",
               "fill": 0,
               "IsHealing": false,
@@ -42,7 +42,7 @@
           "NetworkMode": 2,
           "Components": [
             {
-              "__type": "hud",
+              "__type": "Kicks.hud",
               "__guid": "203404e1-bbeb-4a11-84cb-1f3a6ab714d7",
               "IsVisible": false,
               "manager": {
@@ -79,7 +79,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "CameraComponent",
+          "__type": "Sandbox.CameraComponent",
           "__guid": "df7beb7d-e811-4da0-a901-a5c3d77fb57f",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
@@ -147,7 +147,7 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MapInstance",
+          "__type": "Sandbox.MapInstance",
           "__guid": "70a75e63-f695-4c9a-8752-20d51542bb30",
           "MapName": "facepunch.flatgrass",
           "UseMapFromLaunch": true
@@ -179,7 +179,7 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-04-07T18:55:31.3521548-04:00",
+  "LastSaved": "2024-04-09T20:25:52.1760916-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

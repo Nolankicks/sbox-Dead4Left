@@ -1,18 +1,18 @@
 {
   "RootObject": {
-    "__guid": "73bd8674-eca5-4f71-bc39-48654f612407",
+    "__guid": "984da2a5-c1ea-4693-bef2-33e9c9143ce6",
     "Name": "shotgun",
     "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
         "__type": "Shotgun",
-        "__guid": "a8b8a3ab-3f4e-4c8b-8eb3-ac6a2c0b4c2d",
+        "__guid": "d6626da8-65bb-41b5-b50c-78c65eeb833c",
         "Ammo": 16,
         "arms": {
           "_type": "component",
-          "component_id": "1799a9af-6b48-45d1-a9c3-75ed266b4c70",
-          "go": "80982246-4ac3-4501-a2b8-cbed55a7da93",
+          "component_id": "86eb54ef-b0ca-4395-aed9-9d04d3012633",
+          "go": "9e588e62-e800-4a27-9875-99e2a081155b",
           "component_type": "SkinnedModelRenderer"
         },
         "Damage": 10,
@@ -22,8 +22,8 @@
         },
         "gun": {
           "_type": "component",
-          "component_id": "37669d8c-b1a2-4b99-93c1-27c6a78f545b",
-          "go": "d86f8cbe-1a8d-49f7-9dff-389a363b2ff1",
+          "component_id": "cff43af5-91f4-4913-8549-520afa2fe15a",
+          "go": "ee7e22c1-b4c5-4cf0-8d09-d31bc0ede9c2",
           "component_type": "SkinnedModelRenderer"
         },
         "impactEffect": {
@@ -38,8 +38,8 @@
         "shootSound": "sounds/shootsound.sound"
       },
       {
-        "__type": "CameraComponent",
-        "__guid": "1e40c11d-f99a-4cb8-8fc5-709d99afa538",
+        "__type": "Sandbox.CameraComponent",
+        "__guid": "41a8dd83-b56c-4ea4-a553-7136ae1f20d1",
         "BackgroundColor": "0.33333,0.46275,0.52157,1",
         "ClearFlags": "Depth, Stencil",
         "FieldOfView": 85,
@@ -57,16 +57,16 @@
     ],
     "Children": [
       {
-        "__guid": "d86f8cbe-1a8d-49f7-9dff-389a363b2ff1",
+        "__guid": "ee7e22c1-b4c5-4cf0-8d09-d31bc0ede9c2",
         "Name": "gun",
         "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
-            "__type": "SkinnedModelRenderer",
-            "__guid": "37669d8c-b1a2-4b99-93c1-27c6a78f545b",
-            "BodyGroups": 3,
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "cff43af5-91f4-4913-8549-520afa2fe15a",
+            "BodyGroups": 7,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
             "RenderType": "On",
@@ -75,20 +75,20 @@
         ]
       },
       {
-        "__guid": "80982246-4ac3-4501-a2b8-cbed55a7da93",
+        "__guid": "9e588e62-e800-4a27-9875-99e2a081155b",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
-            "__type": "SkinnedModelRenderer",
-            "__guid": "1799a9af-6b48-45d1-a9c3-75ed266b4c70",
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "86eb54ef-b0ca-4395-aed9-9d04d3012633",
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "component_id": "37669d8c-b1a2-4b99-93c1-27c6a78f545b",
-              "go": "d86f8cbe-1a8d-49f7-9dff-389a363b2ff1",
+              "component_id": "cff43af5-91f4-4913-8549-520afa2fe15a",
+              "go": "ee7e22c1-b4c5-4cf0-8d09-d31bc0ede9c2",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
