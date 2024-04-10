@@ -152,6 +152,8 @@ public partial class WeaponFunction : Component
 		protected override void OnUpdate()
 		{
 			if (IsProxy) return;
+		gun.Set( "ironsights", Input.Down("attack2") ? 2 : 0 );
+		gun.Set( "ironsights_fire_scale", Input.Down("attack2") ? 0.3f : 0f );
 			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f)
 			{
 				Shoot();

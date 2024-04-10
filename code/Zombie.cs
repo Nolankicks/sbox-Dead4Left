@@ -27,10 +27,7 @@ public sealed class Zombie : Component
 	}
 	protected override void OnUpdate()
 	{
-		if (targetPlayer is not null)
-		{
 		UpdateAnimations();
-		}
 		if (IsProxy) return;
 		if (targetPlayer is null) return;
 		if (Vector3.DistanceBetween(targetPlayer.Transform.Position, NavMeshAgent.Transform.Position) < 150f && targetPlayer is not null)
@@ -63,6 +60,7 @@ public sealed class Zombie : Component
 	{
 		NavMeshAgent?.MoveTo(targetPlayer.Transform.Position);
 	}
+	[Broadcast]
 	void UpdateAnimations()
 	{
 		animationHelper.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
