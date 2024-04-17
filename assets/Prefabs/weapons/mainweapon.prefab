@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "7999f5de-0e91-4f84-aec3-7a061b5855ab",
+    "__guid": "62f46447-07ba-4e57-90dc-eeb1d419995c",
     "Name": "mainweapon",
     "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
         "__type": "Weapon\u002BWeaponFunction",
-        "__guid": "f30d9884-f0c4-4ea2-b5dd-952f5c803a1f",
+        "__guid": "a89926af-63a4-45bf-9b88-ce2b54373daf",
         "Ammo": 0,
         "MaxAmmo": 0,
         "bloodParticle": {
@@ -16,8 +16,8 @@
         },
         "gun": {
           "_type": "component",
-          "component_id": "fb94fdd0-90f8-433d-bb41-b7b9ae060aea",
-          "go": "1b8739d7-7023-4fd3-97cc-f92dd66b9770",
+          "component_id": "4d74f77a-2019-4c73-a92f-3eaa79970d2c",
+          "go": "d30706ea-a3c7-4a7f-9a95-d9bab15972ff",
           "component_type": "SkinnedModelRenderer"
         },
         "muzzleFlash": {
@@ -28,7 +28,7 @@
       },
       {
         "__type": "Sandbox.CameraComponent",
-        "__guid": "9a9c6b43-32cf-4bb0-bb25-5865fcb5da12",
+        "__guid": "8ae3a150-c6b8-496f-ab2f-c1bcf576d278",
         "BackgroundColor": "0.33333,0.46275,0.52157,1",
         "ClearFlags": "Depth, Stencil",
         "FieldOfView": 85,
@@ -46,7 +46,7 @@
     ],
     "Children": [
       {
-        "__guid": "1b8739d7-7023-4fd3-97cc-f92dd66b9770",
+        "__guid": "d30706ea-a3c7-4a7f-9a95-d9bab15972ff",
         "Name": "gun",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -54,7 +54,7 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "fb94fdd0-90f8-433d-bb41-b7b9ae060aea",
+            "__guid": "4d74f77a-2019-4c73-a92f-3eaa79970d2c",
             "BodyGroups": 27,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -64,7 +64,7 @@
         ]
       },
       {
-        "__guid": "2b37bb00-73fe-49fe-be71-9e1abe23c3ca",
+        "__guid": "de9291a2-cf4b-444e-82ad-0de11bc2daba",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -72,12 +72,12 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "ea6609e0-3379-47d8-92bd-606936712307",
+            "__guid": "eeabf81e-6335-4805-a189-495e1e1815df",
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "component_id": "fb94fdd0-90f8-433d-bb41-b7b9ae060aea",
-              "go": "1b8739d7-7023-4fd3-97cc-f92dd66b9770",
+              "component_id": "4d74f77a-2019-4c73-a92f-3eaa79970d2c",
+              "go": "d30706ea-a3c7-4a7f-9a95-d9bab15972ff",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,

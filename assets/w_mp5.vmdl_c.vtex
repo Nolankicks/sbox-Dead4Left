@@ -1,7 +1,7 @@
 {
   "Sequences": [
     {
-      "Source": "assets/w_mp5.vmdl_c.png",
+      "Source": "w_mp5.vmdl_c.png",
       "IsLooping": true,
       "Frames": 64
     }

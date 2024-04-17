@@ -1,7 +1,7 @@
 {
   "Sequences": [
     {
-      "Source": "assets/w_spaghellim4.vmdl_c.png",
+      "Source": "w_spaghellim4.vmdl_c.png",
       "IsLooping": true,
       "Frames": 64
     }

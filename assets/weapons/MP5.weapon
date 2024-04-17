@@ -12,7 +12,9 @@
   "PatchUptime": 5,
   "Count": 1,
   "CustomPrefab": null,
-  "InventoryImage": "assets/w_mp5.vmdl_c.vtex",
+  "InventoryImage": "w_mp5.vmdl_c.vtex",
+  "ResourceVersion": 0,
+  "__version": 0,
   "__references": [
     "facepunch.v_mp5"
   ]
