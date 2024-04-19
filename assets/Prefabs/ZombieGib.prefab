@@ -1,25 +1,26 @@
 {
   "RootObject": {
-    "__guid": "b6ff0147-0b6b-4c77-8d2c-72e474a86f9c",
+    "__guid": "43fb26fb-47df-4115-a0c5-bc4026d2d601",
     "Name": "zombiegib",
     "Enabled": true,
     "NetworkMode": 0,
     "Components": [
       {
-        "__type": "Prop",
-        "__guid": "c2e9571c-0105-412c-9067-8d1848fff710",
+        "__type": "Sandbox.Prop",
+        "__guid": "5d29450e-9ba8-48f7-a0ad-389f135eca04",
+        "BodyGroups": 18446744073709551615,
         "Health": 1,
         "IsStatic": false,
         "Model": "models/citizen_gibs/citizen_gib.vmdl"
       },
       {
         "__type": "GibManager",
-        "__guid": "0d1331c2-ab01-4622-b914-da9fed8d7720",
+        "__guid": "92530e12-d182-4c90-bdef-55723679276d",
         "IsGibbing": false,
         "prop": {
           "_type": "component",
-          "component_id": "c2e9571c-0105-412c-9067-8d1848fff710",
-          "go": "b6ff0147-0b6b-4c77-8d2c-72e474a86f9c",
+          "component_id": "5d29450e-9ba8-48f7-a0ad-389f135eca04",
+          "go": "43fb26fb-47df-4115-a0c5-bc4026d2d601",
           "component_type": "Prop"
         }
       }

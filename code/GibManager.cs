@@ -8,8 +8,7 @@ public sealed class GibManager : Component
 	protected override void OnStart()
 	{
 		prop = GameObject.Components.Get<Prop>();
-		prop.CreateGibs();
-		GameObject.Destroy();
+		prop.Kill();
 	}
 	protected override void OnUpdate()
 	{

@@ -72,7 +72,11 @@
                 "_type": "gameobject",
                 "prefab": "prefabs/bloodparticle.prefab"
               },
-              "soundEvent": "sounds/impacts/impact-bullet-flesh.sound"
+              "soundEvent": "sounds/impacts/impact-bullet-flesh.sound",
+              "ZombieModel": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombieragdoll.prefab"
+              }
             }
           ]
         }
@@ -216,6 +220,90 @@
           "testBool": false
         }
       ]
+    },
+    {
+      "__guid": "99d45628-ce20-441d-97c3-dec654939b8f",
+      "Name": "Box",
+      "Position": "267.9999,120,-288",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "c62fbed4-bf8b-4a4a-8677-68201275b833",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
+            "TextureOrigin": "267.9999,120,-0.00008010864",
+            "Positions": [
+              "-156,-128,0",
+              "156,-128,0",
+              "156,128,0",
+              "-156,128,0"
+            ],
+            "TextureUAxis": [
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0
+            ],
+            "MaterialIndex": [
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "08248658-40a2-449b-a332-5d40e463824d",
+      "Name": "Envmap Probe",
+      "Position": "519.4554,120,-229.9229",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "4c426c90-1d2d-4235-82ff-8a2cec2a0918",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "Bounds": {
+            "Mins": "-1000,-1000,-1000",
+            "Maxs": "1000,1000,1000"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Box",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "EveryFrame",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -241,7 +329,7 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-04-17T10:31:33.6356186-04:00",
+  "LastSaved": "2024-04-17T20:02:32.22412-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

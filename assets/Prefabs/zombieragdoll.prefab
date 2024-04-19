@@ -1,0 +1,75 @@
+{
+  "RootObject": {
+    "__guid": "da27c7a6-10bd-493e-9b94-30411c973fbb",
+    "Name": "zombieragdoll",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "393e42f6-103e-4a45-bb30-73e7a9675f68",
+        "BodyGroups": 0,
+        "CreateBoneObjects": false,
+        "Model": "models/citizen/citizen.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.ModelPhysics",
+        "__guid": "03413998-e5f0-47d2-866b-174c7f910ce0",
+        "Locking": {},
+        "Model": "models/citizen/citizen.vmdl",
+        "Renderer": {
+          "_type": "component",
+          "component_id": "393e42f6-103e-4a45-bb30-73e7a9675f68",
+          "go": "da27c7a6-10bd-493e-9b94-30411c973fbb",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "RigidbodyFlags": 0
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "7156ba8e-cafa-45ad-a9b3-ec5906cfc612",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "ee5a4c77-5071-45c6-a887-bf1b6fe084e1",
+        "Name": "zombie",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "23234b41-e11b-4dca-8201-3e8e4c47d4f4",
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": {
+              "_type": "component",
+              "component_id": "393e42f6-103e-4a45-bb30-73e7a9675f68",
+              "go": "da27c7a6-10bd-493e-9b94-30411c973fbb",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
