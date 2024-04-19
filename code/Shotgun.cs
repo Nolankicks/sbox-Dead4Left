@@ -45,7 +45,7 @@ public sealed class Shotgun : Component
 			Shoot();
 			}
 			gun.Set("b_attack", true);
-			Sound.Play(shootSound);
+			
 			timeSinceShoot = 0;
 		}
 		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
@@ -55,6 +55,10 @@ public sealed class Shotgun : Component
 				gun.Set("b_reload", true);
 				ShotsFired = 0;
 				timeSinceReload = 0;
+			if (Input.UsingController)
+		{
+			Input.TriggerHaptics( 0.1f, 0.1f );
+		}
 		}
 	}
 
@@ -67,7 +71,14 @@ public sealed class Shotgun : Component
 		ShotsFired++;
 		Ammo--;
 		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
-		
+		var sound = Sound.Play(shootSound, tr.StartPosition);
+		sound.Volume = 0.1f;
+
+		if (Input.UsingController)
+		{
+			Input.TriggerHaptics( 0.3f, 0.3f );
+		}
+
 		if (tr.Hit)
 		{
 		//var decalVar = decal.Clone( tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt(-tr.Normal));

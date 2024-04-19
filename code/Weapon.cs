@@ -177,7 +177,7 @@ public partial class WeaponFunction : Component
 
 			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0)
 			{
-				
+				Input.TriggerHaptics( 0.1f, 0.1f );
 				Ammo = MaxAmmo -= ShotsFired;
 				Ammo = data.Ammo;
 				gun.Set("b_reload", true);
@@ -216,9 +216,14 @@ public partial class WeaponFunction : Component
 		ShotsFired++;
 		Log.Info(ShotsFired);
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
-		var sound = Sound.Play(ShootSound, tr.HitPosition);
+		var sound = Sound.Play(ShootSound, tr.StartPosition);
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		playerController.EyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
+
+		if (Input.UsingController)
+		{
+			Input.TriggerHaptics( 0.3f, 0.3f );
+		}
 		
 		if (tr.Hit)
 		{
