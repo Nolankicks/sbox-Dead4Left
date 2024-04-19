@@ -72,11 +72,7 @@
                 "_type": "gameobject",
                 "prefab": "prefabs/bloodparticle.prefab"
               },
-              "soundEvent": "sounds/impacts/impact-bullet-flesh.sound",
-              "ZombieModel": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombieragdoll.prefab"
-              }
+              "soundEvent": "sounds/impacts/impact-bullet-flesh.sound"
             }
           ]
         }
@@ -235,7 +231,7 @@
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2MiwoAIAjErOzx/z9cNzihwVBWmBFxZJPbc8gpi\u002B5\u002BRf2B9Budxg7LN\u002BhM/KHX/QdwDFPNgAAAAA==",
+            "Topology": "H4sIAAAAAAAACmNhYGDgAGJGIP4/AAAAIsfUPIAAAAA=",
             "TextureOrigin": "267.9999,120,-0.00008010864",
             "Positions": [
               "-156,-128,0",
@@ -329,7 +325,7 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-04-17T20:02:32.22412-04:00",
+  "LastSaved": "2024-04-19T19:30:43.0825409-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

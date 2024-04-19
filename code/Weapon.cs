@@ -134,8 +134,12 @@ public partial class WeaponFunction : Component
 	public Weapon weapon;
 	[Property] public GameObject bloodParticle { get; set; }
 	[Property] public GameObject muzzleFlash { get; set; }
+	[Property] public float Recoil { get; set; } = 0.5f;
 	public GameObject trGameObject;
-
+	public float GetRandomFloat()
+	{
+		return Random.Shared.Float(-1, 1);
+	}
 		protected override void OnStart()
 		{
 			if (IsProxy) return;
@@ -214,7 +218,7 @@ public partial class WeaponFunction : Component
 		var muzzle = gun.SceneModel.GetAttachment("muzzle");
 		var sound = Sound.Play(ShootSound, tr.HitPosition);
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
-		
+		playerController.EyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
 		
 		if (tr.Hit)
 		{
