@@ -135,6 +135,7 @@ public partial class WeaponFunction : Component
 	[Property] public GameObject bloodParticle { get; set; }
 	[Property] public GameObject muzzleFlash { get; set; }
 	[Property] public float Recoil { get; set; } = 0.5f;
+	[Property] public HapticEffect hapticEffect { get; set; }
 	public GameObject trGameObject;
 	public float GetRandomFloat()
 	{

@@ -47,6 +47,10 @@ public sealed class Shotgun : Component
 			gun.Set("b_attack", true);
 			
 			timeSinceShoot = 0;
+		if (Input.UsingController)
+		{
+			Input.TriggerHaptics( 0.3f, 0.3f );
+		}
 		}
 		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
 		{
@@ -55,7 +59,7 @@ public sealed class Shotgun : Component
 				gun.Set("b_reload", true);
 				ShotsFired = 0;
 				timeSinceReload = 0;
-			if (Input.UsingController)
+		if (Input.UsingController)
 		{
 			Input.TriggerHaptics( 0.1f, 0.1f );
 		}
@@ -74,10 +78,7 @@ public sealed class Shotgun : Component
 		var sound = Sound.Play(shootSound, tr.StartPosition);
 		sound.Volume = 0.1f;
 
-		if (Input.UsingController)
-		{
-			Input.TriggerHaptics( 0.3f, 0.3f );
-		}
+	
 
 		if (tr.Hit)
 		{
