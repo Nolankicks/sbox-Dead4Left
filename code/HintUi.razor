@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@if (Texture is not null)
+	{
+	<img src="@Texture.ResourcePath"/>
+	}
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	public Texture Texture { get; set; }
+
+	protected override void OnUpdate()
+	{
+		Texture = Input.GetGlyph("reload", InputGlyphSize.Large, false);
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

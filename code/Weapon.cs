@@ -133,8 +133,10 @@ public partial class WeaponFunction : Component
 	public TimeSince timeSinceReload = 1.5f;
 	public Weapon weapon;
 	[Property] public GameObject bloodParticle { get; set; }
+	[Property] public bool NeedReload { get; set; }
 	[Property] public GameObject muzzleFlash { get; set; }
 	[Property] public float Recoil { get; set; } = 0.5f;
+	[Property] public Sandbox.WorldPanel ReloadHint { get; set; }
 	public GameObject trGameObject;
 	public float GetRandomFloat()
 	{
@@ -158,6 +160,14 @@ public partial class WeaponFunction : Component
 			if (IsProxy) return;
 		gun.Set( "ironsights", Input.Down("attack2") ? 2 : 0 );
 		gun.Set( "ironsights_fire_scale", Input.Down("attack2") ? 0.3f : 0f );
+		if (Ammo == 0)
+		{
+			NeedReload = true;
+		}
+		else
+		{
+			NeedReload = false;
+		}
 			if (Input.Down("attack1") && Ammo > 0 && _lastFired > FireRate && timeSinceReload > 1.5f)
 			{
 				Shoot();
@@ -250,6 +260,28 @@ public partial class WeaponFunction : Component
 		}
 		}
 	}
+		protected override void OnFixedUpdate()
+		{	
+			if (IsProxy) return;
+			if (NeedReload)
+			{
+			ReloadHint.Enabled = true;
+			if (Input.Down("attack2"))
+			{
+				ReloadHint.Transform.LocalPosition = ReloadHint.Transform.LocalPosition.LerpTo(new Vector3(8.032f, 0, -0.3f), 0.3f);
+			}
+			else
+			{
+				ReloadHint.Transform.LocalPosition = ReloadHint.Transform.LocalPosition.LerpTo( new Vector3(8.032f, -3.556f, -0.6f), 0.3f);
+			}
+			}
+			else
+			{
+				ReloadHint.Enabled = false;
+			}
+
+			
+		}
 	}
 [GameResource( "Weapon", "weapon", "A item game resource", Icon = "track_changes") ]
 public partial class WeaponData : GameResource

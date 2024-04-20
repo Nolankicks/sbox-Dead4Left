@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "62f46447-07ba-4e57-90dc-eeb1d419995c",
+    "__guid": "9e1122da-9c14-414e-b4a7-6fb2457f4871",
     "Name": "mainweapon",
     "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
         "__type": "Weapon\u002BWeaponFunction",
-        "__guid": "a89926af-63a4-45bf-9b88-ce2b54373daf",
+        "__guid": "a75b071f-a69a-4d93-9631-d65f9e05a228",
         "Ammo": 0,
         "MaxAmmo": 0,
         "bloodParticle": {
@@ -16,19 +16,27 @@
         },
         "gun": {
           "_type": "component",
-          "component_id": "4d74f77a-2019-4c73-a92f-3eaa79970d2c",
-          "go": "d30706ea-a3c7-4a7f-9a95-d9bab15972ff",
+          "component_id": "040abbdf-29d0-48a8-97a9-997f78b3807f",
+          "go": "d8a5397a-e599-4c2b-a5ca-dd77aa9a8c78",
           "component_type": "SkinnedModelRenderer"
         },
         "muzzleFlash": {
           "_type": "gameobject",
           "prefab": "prefabs/muzzleflash.prefab"
         },
+        "NeedReload": false,
+        "Recoil": 0.5,
+        "ReloadHint": {
+          "_type": "component",
+          "component_id": "1f0a6348-a470-4448-bf9a-19c8d8fdac0c",
+          "go": "b04820c4-4228-44d9-a964-a1a1e4a309d4",
+          "component_type": "WorldPanel"
+        },
         "ShootSound": "sounds/smg1_shoot.sound"
       },
       {
         "__type": "Sandbox.CameraComponent",
-        "__guid": "8ae3a150-c6b8-496f-ab2f-c1bcf576d278",
+        "__guid": "c789c9a5-1dd5-4d99-a29c-150b4ec9eb15",
         "BackgroundColor": "0.33333,0.46275,0.52157,1",
         "ClearFlags": "Depth, Stencil",
         "FieldOfView": 85,
@@ -46,7 +54,7 @@
     ],
     "Children": [
       {
-        "__guid": "d30706ea-a3c7-4a7f-9a95-d9bab15972ff",
+        "__guid": "d8a5397a-e599-4c2b-a5ca-dd77aa9a8c78",
         "Name": "gun",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -54,7 +62,7 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "4d74f77a-2019-4c73-a92f-3eaa79970d2c",
+            "__guid": "040abbdf-29d0-48a8-97a9-997f78b3807f",
             "BodyGroups": 27,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -64,7 +72,7 @@
         ]
       },
       {
-        "__guid": "de9291a2-cf4b-444e-82ad-0de11bc2daba",
+        "__guid": "746b9b6a-7418-4b88-826b-4e3ff12d8fb6",
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -72,18 +80,42 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "eeabf81e-6335-4805-a189-495e1e1815df",
+            "__guid": "aeb305ae-42d0-4774-8ec8-9668e7f05a4a",
             "BodyGroups": 21,
             "BoneMergeTarget": {
               "_type": "component",
-              "component_id": "4d74f77a-2019-4c73-a92f-3eaa79970d2c",
-              "go": "d30706ea-a3c7-4a7f-9a95-d9bab15972ff",
+              "component_id": "040abbdf-29d0-48a8-97a9-997f78b3807f",
+              "go": "d8a5397a-e599-4c2b-a5ca-dd77aa9a8c78",
               "component_type": "SkinnedModelRenderer"
             },
             "CreateBoneObjects": false,
             "Model": "models/first_person/first_person_arms.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "b04820c4-4228-44d9-a964-a1a1e4a309d4",
+        "Name": "WorldPanel",
+        "Rotation": "0,0,1,-0.00000004371139",
+        "Tags": "viewmodel",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "1f0a6348-a470-4448-bf9a-19c8d8fdac0c",
+            "HorizontalAlign": "Center",
+            "LookAtCamera": false,
+            "PanelSize": "20,20",
+            "RenderScale": 1,
+            "VerticalAlign": "Bottom"
+          },
+          {
+            "__type": "HintUi",
+            "__guid": "dec0c4a6-f101-4967-a868-2d9fab29619f",
+            "MyStringValue": "Hello World!"
           }
         ]
       }
