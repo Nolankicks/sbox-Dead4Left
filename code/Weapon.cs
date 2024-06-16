@@ -172,7 +172,10 @@ public partial class WeaponFunction : Component
 			{
 				Shoot();
 				gun.Set("b_attack", true);
-				
+			if (Input.UsingController)
+		{
+			Input.TriggerHaptics( 1f, 1f );
+		}
 				_lastFired = 0;
 			}
 
@@ -187,7 +190,7 @@ public partial class WeaponFunction : Component
 
 			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0)
 			{
-				Input.TriggerHaptics( 0.1f, 0.1f );
+				Input.TriggerHaptics( 0.5f, 0.5f );
 				Ammo = MaxAmmo -= ShotsFired;
 				Ammo = data.Ammo;
 				gun.Set("b_reload", true);
@@ -230,10 +233,7 @@ public partial class WeaponFunction : Component
 		muzzleFlash.Clone(muzzle.Value.Position, new Angles(0, playerController.EyeAngles.yaw, 0));
 		playerController.EyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
 
-		if (Input.UsingController)
-		{
-			Input.TriggerHaptics( 0.3f, 0.3f );
-		}
+	
 		
 		if (tr.Hit)
 		{

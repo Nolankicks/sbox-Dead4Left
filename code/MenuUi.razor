@@ -5,35 +5,35 @@
 
 <root class=@(IsDead ? "" : "hide")>
 	<div class="h2">YOU DIED</div>
-<div class="center">
-	<div class=button onclick=@PlayAgain>
-		Play Again
+	<div class="center">
+		<div class=button onclick=@PlayAgain>
+			Play Again
+		</div>
+		<div class="button" onclick=@Exit>
+			Quit
+		</div>
+
 	</div>
-	<div class="button" onclick=@Exit>
-		Quit
-	</div>
-	
-</div>
-<div class="left">
-<div class="leaderboard">
-			@if(manager.Leaderboard is not null)
+	<div class="left">
+		<div class="leaderboard">
+			@if (manager.Leaderboard is not null)
 			{
 				<div class="header">LEADERBOARD</div>
-					@foreach(var entry in manager.Leaderboard.Entries)
-					{
-				<div class="entry @IsMe(entry)">
-				<div class="ranking">@entry.Rank</div>
-				<p></p>
-				<div class="name">@entry.DisplayName</div>
-				<p></p>
-				<div class="score">@entry.FormattedValue</div>
-				<image class="image" texture=@AvatarTexture(entry)/>
-				</div>		
-					}
+				@foreach (var entry in manager.Leaderboard.Entries)
+				{
+					<div class="entry @IsMe(entry)">
+						<div class="ranking">@entry.Rank</div>
+						<p></p>
+						<div class="name">@entry.DisplayName</div>
+						<p></p>
+						<div class="score">@entry.FormattedValue</div>
+						<image class="image" texture=@AvatarTexture(entry) />
+					</div>
+				}
 			}
 		</div>
-</div>
-</div>
+	</div>
+	</div>
 
 
 
@@ -43,7 +43,7 @@
 @code
 {
 
-	
+
 	[Property] public SceneFile gameScene { get; set; }
 	public bool IsDead = false;
 	[Property] public Manager manager { get; set; }
@@ -52,7 +52,7 @@
 
 	void PlayAgain()
 	{
-		GameManager.ActiveScene.Load(gameScene);
+		Game.ActiveScene.Load(gameScene);
 	}
 	void Exit()
 	{
@@ -60,18 +60,18 @@
 	}
 
 	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
-    {
-        return entry.Me ? "me" : "";
-    }
+	{
+		return entry.Me ? "me" : "";
+	}
 
 
 	string AvatarTexture(Sandbox.Services.Leaderboards.Entry entry)
-    {
-        return $"avatar:{entry.SteamId}";
-    }	
+	{
+		return $"avatar:{entry.SteamId}";
+	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( IsDead, manager.Score );
+	protected override int BuildHash() => System.HashCode.Combine(IsDead, manager.Score);
 }
