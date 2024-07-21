@@ -34,27 +34,35 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	{
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToArray();
 		var randomSpawnPoint = Random.Shared.FromArray( spawnPoints );
-		GameObject.Transform.Position = randomSpawnPoint.Transform.Position;
+		if ( randomSpawnPoint is not null )
+		{
+			GameObject.Transform.Position = randomSpawnPoint.Transform.Position;
+		}
+		else
+		{
+			GameObject.Transform.Position = Vector3.Zero;
+		}
+
 		manager = Scene.GetAllComponents<Manager>().FirstOrDefault( x => !x.IsProxy );
 	}
 	protected override void OnUpdate()
 	{
-		if (!IsProxy)
+		if ( !IsProxy )
 		{
 			MouseInput();
-			Transform.Rotation = new Angles(0 , EyeAngles.yaw, 0);
+			Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 );
 		}
 		UpdateAnimation();
 		var eyeRot = eye.Transform.Rotation.Angles();
 		eyeRot.pitch = Input.MouseDelta.y;
 		eyeRot.yaw = Input.MouseDelta.x;
 
-		
+
 	}
 
 	protected override void OnFixedUpdate()
 	{
-		if (IsProxy) return;
+		if ( IsProxy ) return;
 		Movement();
 		Crouch();
 	}
@@ -89,16 +97,16 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	bool CanUnCrouch()
 	{
 		if ( !Crouching ) return true;
-		
+
 		var tr = controller.TraceDirection( Vector3.Up * 32 );
 		return !tr.Hit;
 	}
 	void Crouch()
 	{
-		if (Input.Down("duck") && CanUnCrouch())
+		if ( Input.Down( "duck" ) && CanUnCrouch() )
 		{
-		 controller.Height = 36;
-		 Crouching = true;
+			controller.Height = 36;
+			Crouching = true;
 		}
 		else
 		{
@@ -109,43 +117,43 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	public RealTimeSince jumpTime;
 	private void Movement()
 	{
-		if (controller is null) return;
+		if ( controller is null ) return;
 
 		var cc = controller;
 
 		Vector3 halfgrav = Scene.PhysicsWorld.Gravity * Time.Delta * 0.5f;
 
 		WishVelocity = Input.AnalogMove;
-		if (Input.Pressed("jump") && cc.IsOnGround)
+		if ( Input.Pressed( "jump" ) && cc.IsOnGround )
 		{
-			cc.Punch(Vector3.Up * 300);
-			
+			cc.Punch( Vector3.Up * 300 );
+
 		}
-		if (!WishVelocity.IsNearlyZero())
+		if ( !WishVelocity.IsNearlyZero() )
 		{
-			WishVelocity = new Angles(0, EyeAngles.yaw, 0).ToRotation() * WishVelocity;
-			WishVelocity = WishVelocity.WithZ(0);
-			WishVelocity = WishVelocity.ClampLength(1);
+			WishVelocity = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation() * WishVelocity;
+			WishVelocity = WishVelocity.WithZ( 0 );
+			WishVelocity = WishVelocity.ClampLength( 1 );
 			WishVelocity *= CurrentMoveSpeed;
 
-			if (!cc.IsOnGround)
+			if ( !cc.IsOnGround )
 			{
-				WishVelocity = WishVelocity.ClampLength(50);
+				WishVelocity = WishVelocity.ClampLength( 50 );
 			}
 		}
 
-		cc.ApplyFriction(GetFriction());
+		cc.ApplyFriction( GetFriction() );
 
-		if (cc.IsOnGround)
+		if ( cc.IsOnGround )
 		{
-			cc.Accelerate(WishVelocity);
-			cc.Velocity = controller.Velocity.WithZ(0);
+			cc.Accelerate( WishVelocity );
+			cc.Velocity = controller.Velocity.WithZ( 0 );
 			jumpTime = 0;
 		}
 		else
 		{
 			cc.Velocity += halfgrav;
-			cc.Accelerate(WishVelocity);
+			cc.Accelerate( WishVelocity );
 		}
 		cc.Move();
 		if ( !cc.IsOnGround )
@@ -158,10 +166,10 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		}
 	}
 
-	
-	
 
-		private void UpdateCamera()
+
+
+	private void UpdateCamera()
 	{
 		camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		if ( camera is null ) return;
@@ -225,20 +233,20 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 		var lookDir = EyeAngles.ToRotation().Forward * 1024;
 		animationHelper.WithLook( lookDir, 1, 0.5f, 0.25f );
 	}
-	public void TakeDamage(float damage, PlayerController playerController)
+	public void TakeDamage( float damage, PlayerController playerController )
 	{
-		if (IsProxy) return;
-		Health -= damage;	
-		
-		Log.Info(Health);
+		if ( IsProxy ) return;
+		Health -= damage;
 
-		
-}
+		Log.Info( Health );
 
-public void AddScore(long AddScore)
-{
-	Score += AddScore;
-}
+
+	}
+
+	public void AddScore( long AddScore )
+	{
+		Score += AddScore;
+	}
 
 
 

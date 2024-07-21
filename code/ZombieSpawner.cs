@@ -33,16 +33,22 @@ public sealed class ZombieSpawner : Component
 	{
 		while ( true )
 		{
-			var zombies = Scene.GetAllComponents<Zombie>().ToList();
-			if ( zombies.Count > 30 )
+			if ( Game.ActiveScene is null )
 			{
-				await Task.Frame();
-				continue;
+				break;
 			}
-
 			var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
 			var randomSpawnPoint = Game.Random.FromList( spawnPoints );
-			var zombie = ZombiePrefab.Clone( randomSpawnPoint.Transform.Position );
+			var zombie = ZombiePrefab.Clone();
+			if ( randomSpawnPoint is not null )
+			{
+				zombie.Transform.Position = randomSpawnPoint.Transform.Position;
+			}
+			else
+			{
+				zombie.Transform.Position = Vector3.Zero;
+			}
+
 			zombie.NetworkSpawn( null );
 			await GameTask.DelaySeconds( 5 );
 		}

@@ -1,6 +1,7 @@
 {
   "RootObject": {
     "__guid": "9e1122da-9c14-414e-b4a7-6fb2457f4871",
+    "Flags": 0,
     "Name": "mainweapon",
     "Enabled": true,
     "NetworkMode": 1,
@@ -55,28 +56,29 @@
     "Children": [
       {
         "__guid": "d8a5397a-e599-4c2b-a5ca-dd77aa9a8c78",
+        "Flags": 0,
         "Name": "gun",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 2,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "040abbdf-29d0-48a8-97a9-997f78b3807f",
-            "BodyGroups": 27,
+            "BodyGroups": 155,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
           }
         ]
       },
       {
         "__guid": "746b9b6a-7418-4b88-826b-4e3ff12d8fb6",
+        "Flags": 0,
         "Name": "arms",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 2,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
@@ -91,22 +93,24 @@
             "CreateBoneObjects": false,
             "Model": "models/first_person/first_person_arms.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
           }
         ]
       },
       {
         "__guid": "b04820c4-4228-44d9-a964-a1a1e4a309d4",
+        "Flags": 0,
         "Name": "WorldPanel",
         "Rotation": "0,0,1,-0.00000004371139",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 2,
         "Components": [
           {
             "__type": "Sandbox.WorldPanel",
             "__guid": "1f0a6348-a470-4448-bf9a-19c8d8fdac0c",
             "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
             "LookAtCamera": false,
             "PanelSize": "20,20",
             "RenderScale": 1,
@@ -119,14 +123,15 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.v_mp5"
-  ]
+  ],
+  "__version": 1
 }

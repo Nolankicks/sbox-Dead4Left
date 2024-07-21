@@ -5,41 +5,43 @@
 @namespace Kicks
 @using System.Linq;
 <root>
-
-	<div class="hotbar">
-		@for(int i=0; i<weaponData.Slots; i++ )
-		{
-			<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
-				@if (weaponData.InventoryImages[i] != null)
-				{
+	@if (weaponData is not null)
+	{
+		<div class="hotbar">
+			@for (int i = 0; i < weaponData.Slots; i++)
+			{
+				<div class="slot @((weaponData.ActiveSlot == i) ? "active" : "")">
+					@if (weaponData.InventoryImages[i] != null)
+					{
 						<img src="@weaponData?.InventoryImages[i].ResourcePath" class="icon">
-						}
-			</div>
-		}
-	</div>
+					}
+				</div>
+			}
+		</div>
+	}
+
 </root>
 
 @code
 {
 	public static Weapon weaponData;
 	[Property] public bool IsHealing { get; set; }
-	[Property, Range(0,100)] public float fill { get; set; }
+	[Property, Range(0, 100)] public float fill { get; set; }
 	public HealthKit healthKit { get; set; }
 	[Property] public Texture Medkit { get; set; }
 	public TimeUntil healTimer;
-        protected override void OnStart()
-        {
-            weaponData = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
-			Log.Info(weaponData.InventoryImages.ToString());
-        }
+	protected override void OnStart()
+	{
+		weaponData = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+	}
 
-        //private Weapon weaponData;
+	//private Weapon weaponData;
 
-        protected override void OnUpdate()
-        {
-			healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
-			
-        }
-		
-        protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+	protected override void OnUpdate()
+	{
+		healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
 }
