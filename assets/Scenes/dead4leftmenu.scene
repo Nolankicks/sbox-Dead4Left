@@ -160,22 +160,92 @@
       ]
     },
     {
-      "__guid": "8e267877-b11c-4d28-8fdc-1b5aab46f0dd",
+      "__guid": "f67c0863-b157-4b04-a9f0-d349b6927056",
       "Flags": 0,
-      "Name": "Sun",
-      "Position": "404.5618,-70.17838,-188.8424",
-      "Rotation": "0,0.1305262,0,0.9914449",
-      "Tags": "light_directional,light",
+      "Name": "Zombie (1)",
+      "Position": "339.1876,223.585,-282.767",
+      "Rotation": "0,0,0.9537162,-0.3007081",
+      "Tags": "zombie",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "59bac391-8d4f-4ffc-a579-24e5597bc93f",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "c568ac26-de9a-4178-91d1-941b04ccab91",
+          "BodyGroups": 0,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+          "__guid": "0be8655a-3c1d-4d0e-9262-94361ecd8016",
+          "BodyWeight": 1,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "component_id": "c568ac26-de9a-4178-91d1-941b04ccab91",
+            "go": "f67c0863-b157-4b04-a9f0-d349b6927056",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "MainMenuZombiePoser",
+          "__guid": "b979292c-b023-4cb0-8eb0-3fb6c7795e31",
+          "AnimationHelper": {
+            "_type": "component",
+            "component_id": "0be8655a-3c1d-4d0e-9262-94361ecd8016",
+            "go": "f67c0863-b157-4b04-a9f0-d349b6927056",
+            "component_type": "CitizenAnimationHelper"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "5ff6f338-2c9b-4442-b45a-3c46a31395a7",
+          "Flags": 0,
+          "Name": "Collider",
+          "Position": "0,0,37.90939",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "90d14431-cdfd-43e2-906f-88f8eb632684",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "46.29996,51.09998,82.7006",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "ef082ee2-419b-4c6f-939f-30ccf4032d3d",
+          "Flags": 0,
+          "Name": "cloths",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "7e5224ea-4a2c-4c2f-b1ed-cbdbe2211c85",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "c568ac26-de9a-4178-91d1-941b04ccab91",
+                "go": "f67c0863-b157-4b04-a9f0-d349b6927056",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            }
+          ]
         }
       ]
     },
@@ -191,7 +261,7 @@
           "__type": "Sandbox.SkyBox2D",
           "__guid": "7b8ac5f3-37bb-4f85-bf61-e9af072cc459",
           "SkyMaterial": "materials/skybox/light_test_sky_night_basic.vmat",
-          "Tint": "1,0.15349,0.15349,1"
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -254,6 +324,116 @@
           "UpdateStrategy": "EveryFrame",
           "ZFar": 4096,
           "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "58ee3338-cce1-47e9-aa0c-7d742c331eab",
+      "Flags": 0,
+      "Name": "Spot Light",
+      "Position": "1073.92,527.0543,-197.0154",
+      "Rotation": "0,0,-0.9238796,0.3826835",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "25cf4df4-770c-4e68-9677-f1a036b3b883",
+          "Attenuation": 0.16,
+          "ConeInner": 15,
+          "ConeOuter": 79.38,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1,0,0,1",
+          "Radius": 1138.8008,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "c8b405a7-332f-4385-a6ce-ab59f1581bb4",
+      "Flags": 0,
+      "Name": "Spot Light (1)",
+      "Position": "1082.626,-296.2393,-197.015",
+      "Rotation": "0,0,-0.9238796,-0.3826833",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "ab8a145f-b16e-43b3-accc-75fc2fde1489",
+          "Attenuation": 0.16,
+          "ConeInner": 15,
+          "ConeOuter": 79.38,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0,1,0,1",
+          "Radius": 1138.8008,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "821313e9-3c6b-41f0-8012-07923f15756a",
+      "Flags": 0,
+      "Name": "Spot Light (2)",
+      "Position": "282.626,-296.2393,-197.015",
+      "Rotation": "0,0,-0.3826837,-0.9238795",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "bee63b25-79f3-4bda-9599-72920d9905c7",
+          "Attenuation": 0.16,
+          "ConeInner": 15,
+          "ConeOuter": 79.38,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1,0.6,0,1",
+          "Radius": 1138.8008,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "605652f7-0319-49de-80a4-aa35cc9a038f",
+      "Flags": 0,
+      "Name": "Spot Light (3)",
+      "Position": "259.3323,527.054,-197.015",
+      "Rotation": "0,0,0.3826832,-0.9238796",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpotLight",
+          "__guid": "4cdc8f0f-b682-4dee-94ed-aad048ade494",
+          "Attenuation": 0.16,
+          "ConeInner": 15,
+          "ConeOuter": 79.38,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0,0.63333,1,1",
+          "Radius": 1138.8008,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "cfda89fe-1381-4194-ae5e-1b95ce85b99f",
+      "Flags": 0,
+      "Name": "Volumetric Fog",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.VolumetricFogVolume",
+          "__guid": "c9759663-7ea4-4456-a887-feca92c7a23d",
+          "Bounds": {
+            "Mins": "-1500,-1500,-1500",
+            "Maxs": "1500,1500,1500"
+          },
+          "FalloffExponent": 1,
+          "Strength": 1
         }
       ]
     }

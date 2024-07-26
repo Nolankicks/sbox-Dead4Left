@@ -21,6 +21,7 @@
 	{
 		if (Input.EscapePressed)
 		{
+			Input.EscapePressed = false;
 			IsPaused = !IsPaused;
 		}
 	}
@@ -34,6 +35,6 @@
 	{
 		Game.Close();
 	}
-	
-	protected override int BuildHash() => System.HashCode.Combine( IsPaused );
+
+	protected override int BuildHash() => System.HashCode.Combine(IsPaused);
 }

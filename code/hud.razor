@@ -15,20 +15,20 @@
 			<div class="icon">heart_broken</div>
 			@LocalPlayer.Health
 		</div>
-		</div>
-			
-				@if (weaponFunction is not null)
-				{
-				<div class="ammo">@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo</div>
-				}
-				@if (shotgun is not null)
-				{
-				<div class="ammo">@shotgun.Ammo / @shotgun.MaxAmmo</div>
-				}
-				@if (healthKit is not null)
-				{
-				<div class="ammo">@healthKit.Amount / 0</div>
-				}
+	</div>
+
+	@if (weaponFunction is not null)
+	{
+		<div class="ammo">@weaponFunction?.Ammo / @weaponFunction?.MaxAmmo</div>
+	}
+	@if (shotgun is not null)
+	{
+		<div class="ammo">@shotgun.Ammo / @shotgun.MaxAmmo</div>
+	}
+	@if (healthKit is not null)
+	{
+		<div class="ammo">@healthKit.Amount / 0</div>
+	}
 	<div class="center">
 		<div class="crosshair"></div>
 	</div>
@@ -44,16 +44,16 @@
 			</div>
 		</div>
 		<div class="leaderboard">
-			@if(manager.Leaderboard is not null)
+			@if (manager.Leaderboard is not null)
 			{
 				<h1>LEADERBOARD</h1>
 				<div class="entries">
-					@foreach(var entry in manager.Leaderboard.Entries)
+					@foreach (var entry in manager.Leaderboard.Entries)
 					{
 						<div class="entry @IsMe(entry)">
 							<div class="rank">@entry.Rank</div>
 							<div class="name">
-								<image texture=@AvatarTexture(entry)/>
+								<image texture=@AvatarTexture(entry) />
 								<label>@entry.DisplayName</label>
 							</div>
 							<div class="value">@entry.FormattedValue</div>
@@ -69,8 +69,8 @@
 @code
 {
 	public int i = 0;
-	//public static  Manager manager;
-	public static  PlayerController LocalPlayer;
+	//public static Manager manager;
+	public static PlayerController LocalPlayer;
 	public static Weapon weapon;
 	[Property] public Manager manager { get; set; }
 	[Property] public bool IsVisible { get; set; } = false;
@@ -81,35 +81,35 @@
 	//public ModularWeapon modularWeapon;
 	protected override void OnStart()
 	{
-		LocalPlayer = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		LocalPlayer = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		shotgun = Game.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
 	}
-        protected override void OnUpdate()
-        {
-			//modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
-			weaponFunction = Game.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
-			healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
-			shotgun = Game.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
-        }
+	protected override void OnUpdate()
+	{
+		//modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
+		weaponFunction = Game.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
+		healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
+		shotgun = Game.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
+	}
 
-        string IsMe(Sandbox.Services.Leaderboards.Entry entry)
-    {
-        return entry.Me ? "me" : "";
-    }
+	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
+	{
+		return entry.Me ? "me" : "";
+	}
 
 
 	string AvatarTexture(Sandbox.Services.Leaderboards.Entry entry)
-    {
-        return $"avatar:{entry.SteamId}";
-    }
-	
- 
+	{
+		return $"avatar:{entry.SteamId}";
+	}
+
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() 
+	protected override int BuildHash()
 	{
-	return System.HashCode.Combine(Time.Now);
+		return System.HashCode.Combine(Time.Now);
 	}
 }

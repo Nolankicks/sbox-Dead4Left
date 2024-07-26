@@ -8,35 +8,14 @@
 @inherits PanelComponent
 <root>
 	<div class="left">
-		<h1>LOBBY-LIST</h1>
+		<h1></h1>
 		<div class="inner">
 			<div class="button" onclick=@ToggleMaps>
 				<div class="title">Create Lobby</div>
 			</div>
-			@if (IsRefreshing)
-			{
-				<div>Refreshing please wait...</div>
-			}
-			else if (List.Count == 0)
-			{
-				<div>No lobbies were found</div>
-			}
-			else
-			{
-				@foreach (var lobby in List)
-				{
-					<div class="button" onclick=@( () => OpenLobby( lobby ) )>
-						<div class="title">
-							@lobby.Name
-						</div>	
-						<div class="name">
-							@lobby.Members / @lobby.MaxMembers
-						</div>
-					</div>
-				}
-			}
+
 		</div>
-		
+
 	</div>
 	<div class="MainText">
 		<div class="normal">DEAD</div>
@@ -45,12 +24,13 @@
 	</div>
 
 	</div>
-	
-	
-	
-		<div class="mapselect @(ShowMaps ? "" : "hide")">
-			<PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(50)></PackageList>
-		</div>
+
+
+
+	<div class="mapselect @(ShowMaps ? "" : "hide")">
+		<PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(50)>
+		</PackageList>
+	</div>
 
 	<div class="right">
 		<div class="leaderboard">
@@ -60,18 +40,18 @@
 				@foreach (var entry in manager.Leaderboard.Entries)
 				{
 					<div class="entry">
-					<div class="ranking">@entry.Rank</div>
-					<div class="name  @IsMe(entry)">
-						<image class="image" texture=@AvatarTexture(entry)/>
-					<div class="displayname">@entry.DisplayName</div>
-					<div class="score">@entry.FormattedValue</div>
-					</div>
+						<div class="ranking">@entry.Rank</div>
+						<div class="name  @IsMe(entry)">
+							<image class="image" texture=@AvatarTexture(entry) />
+							<div class="displayname">@entry.DisplayName</div>
+							<div class="score">@entry.FormattedValue</div>
+						</div>
 					</div>
 				}
 			}
 
-			</div>
 		</div>
+	</div>
 </root>
 
 
@@ -86,19 +66,19 @@
 	public long HighScore { get; private set; } = 0;
 	[Property] public Manager manager { get; set; }
 	public Sandbox.Services.Leaderboards.Board Leaderboard;
-		protected override void OnEnabled()
+	protected override void OnEnabled()
 	{
 		base.OnEnabled();
-		
+
 		_ = RefreshLobbyList();
 	}
 
-	
 
-    
-    private async Task RefreshLobbyList()
+
+
+	private async Task RefreshLobbyList()
 	{
-		while ( true )
+		while (true)
 		{
 			IsRefreshing = true;
 			StateHasChanged();
@@ -108,25 +88,25 @@
 			IsRefreshing = false;
 			StateHasChanged();
 
-			await Task.DelayRealtimeSeconds( 5f );
+			await Task.DelayRealtimeSeconds(5f);
 		}
 	}
 
-    void OpenLobby( LobbyInformation lobby )
-    {
-        GameNetworkSystem.Connect( lobby.LobbyId );
-    }
-	
+	void OpenLobby(LobbyInformation lobby)
+	{
+		GameNetworkSystem.Connect(lobby.LobbyId);
+	}
+
 	void CreateLobby()
 	{
-	Game.ActiveScene.Load(GameScene);
+		Game.ActiveScene.Load(GameScene);
 	}
 	protected override void OnUpdate()
 	{
-		if(Input.EscapePressed && ShowMaps)
+		if (Input.EscapePressed && ShowMaps)
 		{
 			ShowMaps = !ShowMaps;
-		
+
 		}
 	}
 	void Credits()
@@ -134,16 +114,16 @@
 		Log.Info("Credits");
 	}
 
-	  string IsMe(Sandbox.Services.Leaderboards.Entry entry)
-    {
-        return entry.Me ? "me" : "";
-    }
+	string IsMe(Sandbox.Services.Leaderboards.Entry entry)
+	{
+		return entry.Me ? "me" : "";
+	}
 
 
 	string AvatarTexture(Sandbox.Services.Leaderboards.Entry entry)
-    {
-        return $"avatar:{entry.SteamId}";
-    }
+	{
+		return $"avatar:{entry.SteamId}";
+	}
 
 	void OnPackageSelected(Package package)
 	{
@@ -160,4 +140,3 @@
 	/// </summary>
 	protected override int BuildHash() => System.HashCode.Combine(RealTime.Now, ShowMaps);
 }
-
