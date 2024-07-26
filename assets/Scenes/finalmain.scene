@@ -3,10 +3,10 @@
   "GameObjects": [
     {
       "__guid": "307b0456-2a9e-4e48-b0c7-5311902c33f5",
+      "Flags": 0,
       "Name": "Screen",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.ScreenPanel",
@@ -20,10 +20,10 @@
       "Children": [
         {
           "__guid": "acb85c16-99b9-4426-ae6f-10fe9bc6a9ae",
+          "Flags": 0,
           "Name": "Inv",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Kicks.Inventory",
@@ -36,10 +36,10 @@
         },
         {
           "__guid": "eda31c6e-785f-4bbf-94b4-2e03b06bb79e",
+          "Flags": 0,
           "Name": "hud",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Kicks.hud",
@@ -56,10 +56,10 @@
         },
         {
           "__guid": "c9654ad3-2c40-4b7b-bcc6-4f286b6aa937",
+          "Flags": 0,
           "Name": "healingui",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
               "__type": "HealingPanel",
@@ -72,11 +72,11 @@
     },
     {
       "__guid": "b6d59cf1-c0e3-4b1c-9315-bbb968d970e3",
+      "Flags": 0,
       "Name": "camera",
       "Position": "928,-64,64",
       "Tags": "particles",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.CameraComponent",
@@ -99,6 +99,7 @@
     },
     {
       "__guid": "f44fc300-9035-46f5-abb8-f95d86f47a86",
+      "Flags": 0,
       "Name": "Manager",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
@@ -114,6 +115,7 @@
         {
           "__type": "NetworkManager",
           "__guid": "e80c14c9-1873-4598-93db-34fc1406647c",
+          "menuScene": "scenes/dead4leftmenu.scene",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -124,6 +126,7 @@
     },
     {
       "__guid": "a9f0b3db-174c-4391-ac02-2bdd1602c276",
+      "Flags": 0,
       "Name": "ZombieSpawner",
       "Position": "449.5116,51.34442,17.14901",
       "Enabled": true,
@@ -141,15 +144,18 @@
     },
     {
       "__guid": "6d071a1f-0854-486c-9579-b09f1ff6a2ca",
+      "Flags": 0,
       "Name": "Map",
       "Position": "-423.9149,-393.5981,42.71212",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "70a75e63-f695-4c9a-8752-20d51542bb30",
+          "__version": 1,
+          "EnableCollision": true,
           "MapName": "facepunch.flatgrass",
+          "NoOrigin": true,
           "UseMapFromLaunch": true
         }
       ],
@@ -158,9 +164,9 @@
   ],
   "SceneProperties": {
     "FixedUpdateFrequency": 50,
-    "Lerping": true,
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
@@ -179,8 +185,9 @@
   },
   "Title": "finalmain",
   "Description": "",
-  "LastSaved": "2024-04-19T22:00:44.5792508-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [
+    "bolt.prophuntmanager"
+  ],
+  "__version": 1
 }

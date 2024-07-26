@@ -106,7 +106,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 	public void OnDisconnected(Connection channel)
 	{
-		foreach(var player in Players)
+		foreach (var player in Players)
 		{
 			if (player.SteamId == (long)channel.SteamId)
 			{
@@ -115,20 +115,5 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		}
 	}
 
-	public void OnBecameHost(Connection previousHost)
-	{
-		foreach(var player in Players)
-		{
-			if (player.SteamId == (long)previousHost.SteamId)
-			{
-				player.GameObject.Destroy();
-			}
-		}
-		Host = Connections.FirstOrDefault(x => x.SteamId == (ulong)Game.SteamId);
-		HostSteamId = (long)Host.SteamId;
 
-		Log.Info($"You are now the host");
-	}
-
-	
 }

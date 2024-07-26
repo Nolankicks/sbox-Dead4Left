@@ -3,11 +3,11 @@
   "GameObjects": [
     {
       "__guid": "088e1820-0a17-441a-80fe-61524b2a4a16",
+      "Flags": 0,
       "Name": "Camera",
       "Position": "149.995,149.995,-212.125",
       "Tags": "maincamera",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.CameraComponent",
@@ -30,10 +30,10 @@
     },
     {
       "__guid": "6c536e52-8537-4f65-bca8-2af005223ba3",
+      "Flags": 0,
       "Name": "Screen",
       "Position": "149.995,149.995,-212.125",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.ScreenPanel",
@@ -47,10 +47,10 @@
       "Children": [
         {
           "__guid": "52889423-73d2-406f-9781-bd7c1c8dae03",
+          "Flags": 0,
           "Name": "ui",
           "Position": "149.995,149.995,-212.125",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
               "__type": "JoinMenu",
@@ -64,15 +64,6 @@
               },
               "ShowMaps": false,
               "ShowNotes": false
-            },
-            {
-              "__type": "EasterEggTrace",
-              "__guid": "01fbd492-4ace-4f5e-8011-8dbc2fa086e0",
-              "bloodParticle": {
-                "_type": "gameobject",
-                "prefab": "prefabs/bloodparticle.prefab"
-              },
-              "soundEvent": "sounds/impacts/impact-bullet-flesh.sound"
             }
           ]
         }
@@ -80,12 +71,12 @@
     },
     {
       "__guid": "5b448f8a-ce20-4097-b475-0b0b197352db",
+      "Flags": 0,
       "Name": "Zombie",
       "Position": "339.1876,112.2668,-282.767",
       "Rotation": "0,0,0.9762965,0.2164372",
       "Tags": "zombie",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.SkinnedModelRenderer",
@@ -94,7 +85,8 @@
           "CreateBoneObjects": false,
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
         },
         {
           "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -125,10 +117,10 @@
       "Children": [
         {
           "__guid": "1a219ad2-4c3f-4f52-b71b-9b9615c16d9c",
+          "Flags": 0,
           "Name": "Collider",
           "Position": "0,0,37.90939",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
@@ -142,10 +134,10 @@
         },
         {
           "__guid": "345bc8f8-2c2f-4d01-8883-fe2f4b91e525",
+          "Flags": 0,
           "Name": "cloths",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Sandbox.SkinnedModelRenderer",
@@ -160,7 +152,8 @@
               "CreateBoneObjects": false,
               "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             }
           ]
         }
@@ -168,12 +161,12 @@
     },
     {
       "__guid": "8e267877-b11c-4d28-8fdc-1b5aab46f0dd",
+      "Flags": 0,
       "Name": "Sun",
       "Position": "404.5618,-70.17838,-188.8424",
       "Rotation": "0,0.1305262,0,0.9914449",
       "Tags": "light_directional,light",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.DirectionalLight",
@@ -188,11 +181,11 @@
     },
     {
       "__guid": "32d59312-8853-4c95-95db-452d3f2cc094",
+      "Flags": 0,
       "Name": "2D Skybox",
       "Position": "282.8317,142.7897,-230.4724",
       "Tags": "skybox",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.SkyBox2D",
@@ -204,10 +197,10 @@
     },
     {
       "__guid": "a07047b8-8edf-464a-89e8-bbf79716d4d6",
+      "Flags": 0,
       "Name": "Manager",
       "Position": "282.8316,142.7897,-230.4725",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Manager",
@@ -219,55 +212,18 @@
     },
     {
       "__guid": "99d45628-ce20-441d-97c3-dec654939b8f",
+      "Flags": 0,
       "Name": "Box",
       "Position": "267.9999,120,-288",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "c62fbed4-bf8b-4a4a-8677-68201275b833",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
+          "HideInGame": false,
           "IsTrigger": false,
-          "Mesh": {
-            "Topology": "H4sIAAAAAAAACmNhYGDgAGJGIP4/AAAAIsfUPIAAAAA=",
-            "TextureOrigin": "267.9999,120,-0.00008010864",
-            "Positions": [
-              "-156,-128,0",
-              "156,-128,0",
-              "156,128,0",
-              "-156,128,0"
-            ],
-            "TextureUAxis": [
-              "1,0,0"
-            ],
-            "TextureVAxis": [
-              "0,-1,0"
-            ],
-            "TextureScale": [
-              "0.25,0.25"
-            ],
-            "TextureAngle": [
-              0
-            ],
-            "MaterialIndex": [
-              0
-            ],
-            "EdgeFlags": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "Materials": [
-              "materials/dev/reflectivity_30.vmat"
-            ]
-          },
           "SmoothingAngle": 40,
           "Static": true
         }
@@ -275,10 +231,10 @@
     },
     {
       "__guid": "08248658-40a2-449b-a332-5d40e463824d",
+      "Flags": 0,
       "Name": "Envmap Probe",
       "Position": "519.4554,120,-229.9229",
       "Enabled": true,
-      "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.EnvmapProbe",
@@ -304,9 +260,9 @@
   ],
   "SceneProperties": {
     "FixedUpdateFrequency": 50,
-    "Lerping": true,
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
@@ -325,8 +281,9 @@
   },
   "Title": "dead4leftmenu",
   "Description": "",
-  "LastSaved": "2024-04-19T19:30:43.0825409-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [
+    "garry.cubemapdynamic"
+  ],
+  "__version": 1
 }
