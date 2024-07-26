@@ -44,7 +44,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	{
 		if (Scene.IsEditor)
 			return;
-
+		StartServer = false;
 		if (StartServer && !GameNetworkSystem.IsActive)
 		{
 			LoadingScreen.Title = "Creating Lobby";
