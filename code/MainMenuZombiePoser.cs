@@ -22,7 +22,7 @@ public sealed class MainMenuZombiePoser : Component
 		if (nextSecond)
 		{
 			var random = GetRandom();
-			Log.Info(random);
+
 			GetRandom();
 
 			if (random > 70)
