@@ -30,7 +30,10 @@ public sealed class Shotgun : Component
 		characterController = Game.ActiveScene.GetAllComponents<CharacterController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		timeSinceShoot = FireRate;
-		gun.Set("b_deploy", true);
+
+		if (gun.IsValid())
+			gun.Set("b_deploy", true);
+
 		fullAmmo = Ammo;
 	}
 	protected override void OnUpdate()
@@ -108,7 +111,7 @@ public sealed class Shotgun : Component
 
 	void Animations()
 	{
-		if (IsProxy) return;
+		if (IsProxy || !gun.IsValid() || !characterController.IsValid()) return;
 		if (Input.Pressed("jump") && !IsProxy)
 		{
 			gun.Set("b_jump", true);

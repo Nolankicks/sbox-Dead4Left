@@ -73,6 +73,8 @@ public sealed class Weapon : Component
 			{
 			var gameObj = weaponPrefab.Clone();
 			var weaponData = gameObj.Components.Get<WeaponFunction>();
+			if (!weaponData.IsValid())
+				return;
 			weaponData.data = weapon;
 			gameObj.Name = weapon.Name;
 			Log.Info(weapon.Name);

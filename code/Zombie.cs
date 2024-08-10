@@ -95,7 +95,7 @@ public sealed class Zombie : Component
 			tr.GameObject.Parent.Components.TryGet<PlayerController>( out var player );
 			player.TakeDamage( 10 );
 			lastAttack = 0;
-			Sound.Play( hitSound );
+			//Sound.Play( hitSound );
 		}
 	}
 	[Sync] public bool IsDead { get; set; } = false;
