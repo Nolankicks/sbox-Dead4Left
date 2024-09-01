@@ -1,12 +1,15 @@
 {
   "RootObject": {
-    "Id": "0148dfe5-f7b7-463c-ab06-f341884b17c7",
+    "__guid": "0148dfe5-f7b7-463c-ab06-f341884b17c7",
+    "Flags": 0,
     "Name": "impact_default (1)",
     "Tags": "particles",
     "Enabled": true,
     "Components": [
       {
-        "__type": "ParticleEffect",
+        "__type": "Sandbox.ParticleEffect",
+        "__guid": "c21963bc-d7f7-40c1-b78f-1c1e4f77db12",
+        "__version": 1,
         "Alpha": {
           "Type": "Curve",
           "CurveA": [
@@ -25,6 +28,7 @@
           ],
           "Constants": "1,0,0,0"
         },
+        "ApplyAlpha": true,
         "ApplyColor": true,
         "ApplyRotation": true,
         "ApplyShape": true,
@@ -38,7 +42,6 @@
           "Constants": "0.2,0,0,0"
         },
         "Collision": true,
-        "CollisionIgnore": null,
         "CollisionRadius": 0.5,
         "Damping": {},
         "DieOnCollisionChance": {},
@@ -80,9 +83,12 @@
           "Constants": "0.2,5,0,0"
         },
         "MaxParticles": 5000,
+        "OrbitalForce": {},
+        "OrbitalPull": {},
         "PerParticleTimeScale": {
           "Constants": "1,0.4,0,0"
         },
+        "Pitch": {},
         "PreWarm": 0,
         "PushStrength": {},
         "Roll": {
@@ -122,6 +128,7 @@
         },
         "SheetSequence": false,
         "Space": "World",
+        "StartDelay": {},
         "StartVelocity": {
           "Type": "Range",
           "Evaluation": "Particle",
@@ -133,11 +140,14 @@
           "Constants": "0,1,0,0"
         },
         "TimeScale": 1,
-        "Tint": "1,1,1,1"
+        "Tint": "1,1,1,1",
+        "Yaw": {}
       },
       {
-        "__type": "ParticleSpriteRenderer",
+        "__type": "Sandbox.ParticleSpriteRenderer",
+        "__guid": "14d6f3f1-9b69-4738-8e72-a319a6cd5da7",
         "Additive": false,
+        "Alignment": "LookAtCamera",
         "BlurAmount": 0.5,
         "BlurOpacity": 0.91,
         "BlurSpacing": 0.35,
@@ -145,6 +155,7 @@
         "FaceVelocity": false,
         "FogStrength": 1,
         "LeadingTrail": true,
+        "Lighting": false,
         "MotionBlur": false,
         "Opaque": true,
         "RotationOffset": 0,
@@ -154,7 +165,8 @@
         "Texture": "materials/particles/shapes/sharp2.vtex"
       },
       {
-        "__type": "ParticleConeEmitter",
+        "__type": "Sandbox.ParticleConeEmitter",
+        "__guid": "1f510972-6df1-4fde-9dc1-f8a03e32cce8",
         "Burst": 8,
         "ConeAngle": 70,
         "ConeFar": 16,
@@ -165,18 +177,22 @@
         "InVolume": false,
         "Loop": false,
         "OnEdge": false,
-        "Rate": 0
+        "Rate": 0,
+        "RateOverDistance": 0
       }
     ],
     "Children": [
       {
-        "Id": "f6eedabe-5bc3-470d-b00a-c8e8948a3ca1",
+        "__guid": "f6eedabe-5bc3-470d-b00a-c8e8948a3ca1",
+        "Flags": 0,
         "Name": "Smoke",
         "Position": "2.014441,0,0",
         "Enabled": true,
         "Components": [
           {
-            "__type": "ParticleEffect",
+            "__type": "Sandbox.ParticleEffect",
+            "__guid": "ce9988be-4101-45c9-8b2d-d2397cdd44a4",
+            "__version": 1,
             "Alpha": {
               "Type": "Curve",
               "CurveA": [
@@ -199,6 +215,7 @@
               ],
               "Constants": "1,0,0,0"
             },
+            "ApplyAlpha": true,
             "ApplyColor": true,
             "ApplyRotation": true,
             "ApplyShape": true,
@@ -210,7 +227,6 @@
             },
             "Bumpiness": {},
             "Collision": false,
-            "CollisionIgnore": null,
             "CollisionRadius": 1,
             "Damping": {
               "Type": "Curve",
@@ -274,9 +290,12 @@
               "Constants": "3,4,0,0"
             },
             "MaxParticles": 5000,
+            "OrbitalForce": {},
+            "OrbitalPull": {},
             "PerParticleTimeScale": {
               "Constants": "1,0.4,0,0"
             },
+            "Pitch": {},
             "PreWarm": 0,
             "PushStrength": {},
             "Roll": {
@@ -317,6 +336,7 @@
             },
             "SheetSequence": true,
             "Space": "World",
+            "StartDelay": {},
             "StartVelocity": {
               "Type": "Range",
               "Evaluation": "Particle",
@@ -324,11 +344,14 @@
             },
             "Stretch": {},
             "TimeScale": 1,
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "Yaw": {}
           },
           {
-            "__type": "ParticleSpriteRenderer",
+            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__guid": "65215a70-038c-4c12-b9e3-af46eeb0de79",
             "Additive": false,
+            "Alignment": "LookAtCamera",
             "BlurAmount": 0.5,
             "BlurOpacity": 0.91,
             "BlurSpacing": 0.73,
@@ -336,16 +359,18 @@
             "FaceVelocity": false,
             "FogStrength": 1,
             "LeadingTrail": true,
+            "Lighting": false,
             "MotionBlur": false,
             "Opaque": false,
             "RotationOffset": 0,
             "Scale": 1,
             "Shadows": false,
             "SortMode": "Unsorted",
-            "Texture": "materials/particles/smoke/smoke.vtex"
+            "Texture": "materials/particle/particle_smokegrenade.vtex"
           },
           {
-            "__type": "ParticleConeEmitter",
+            "__type": "Sandbox.ParticleConeEmitter",
+            "__guid": "3b5e1b51-842c-440d-a4de-2362a4654d30",
             "Burst": 16,
             "ConeAngle": 19.39,
             "ConeFar": 23.679735,
@@ -356,17 +381,21 @@
             "InVolume": false,
             "Loop": false,
             "OnEdge": false,
-            "Rate": 0
+            "Rate": 0,
+            "RateOverDistance": 0
           }
         ]
       },
       {
-        "Id": "c75b0fb5-3e82-49f8-9504-87b44daa884d",
+        "__guid": "c75b0fb5-3e82-49f8-9504-87b44daa884d",
+        "Flags": 0,
         "Name": "Spark",
         "Enabled": true,
         "Components": [
           {
-            "__type": "ParticleEffect",
+            "__type": "Sandbox.ParticleEffect",
+            "__guid": "4c14a987-62df-40fa-b421-5e59d374d04a",
+            "__version": 1,
             "Alpha": {
               "CurveA": [
                 {
@@ -378,6 +407,7 @@
               ],
               "Constants": "1,0,0,0"
             },
+            "ApplyAlpha": true,
             "ApplyColor": true,
             "ApplyRotation": true,
             "ApplyShape": true,
@@ -389,7 +419,6 @@
             },
             "Bumpiness": {},
             "Collision": false,
-            "CollisionIgnore": null,
             "CollisionRadius": 1,
             "Damping": {},
             "DieOnCollisionChance": {},
@@ -430,9 +459,12 @@
               "Constants": "0.06,0.13,0,0"
             },
             "MaxParticles": 5000,
+            "OrbitalForce": {},
+            "OrbitalPull": {},
             "PerParticleTimeScale": {
               "Constants": "1,0.4,0,0"
             },
+            "Pitch": {},
             "PreWarm": 0,
             "PushStrength": {},
             "Roll": {
@@ -466,6 +498,7 @@
             },
             "SheetSequence": false,
             "Space": "World",
+            "StartDelay": {},
             "StartVelocity": {
               "Type": "Range",
               "Evaluation": "Particle"
@@ -475,11 +508,14 @@
               "Evaluation": "Particle"
             },
             "TimeScale": 1,
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "Yaw": {}
           },
           {
-            "__type": "ParticleSpriteRenderer",
+            "__type": "Sandbox.ParticleSpriteRenderer",
+            "__guid": "ae14fcd8-a610-489b-85cf-f820cd839f71",
             "Additive": true,
+            "Alignment": "LookAtCamera",
             "BlurAmount": 0.5,
             "BlurOpacity": 0.91,
             "BlurSpacing": 0.73,
@@ -487,6 +523,7 @@
             "FaceVelocity": false,
             "FogStrength": 1,
             "LeadingTrail": true,
+            "Lighting": false,
             "MotionBlur": false,
             "Opaque": false,
             "RotationOffset": 0,
@@ -496,7 +533,8 @@
             "Texture": "materials/particles/shapes/spark2.vtex"
           },
           {
-            "__type": "ParticleSphereEmitter",
+            "__type": "Sandbox.ParticleSphereEmitter",
+            "__guid": "a854dac7-0e73-41ec-9b91-178e4df4abb5",
             "Burst": 4,
             "Delay": 0,
             "DestroyOnEnd": false,
@@ -505,14 +543,20 @@
             "OnEdge": false,
             "Radius": 0,
             "Rate": 0,
+            "RateOverDistance": 0,
             "Velocity": 0
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "ResourceVersion": 1,
+  "__references": [
+    "garry.impact_default"
+  ],
+  "__version": 1
 }

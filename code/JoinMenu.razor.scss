@@ -16,7 +16,7 @@ JoinMenu
 		text-align: center;
 		align-items: center;
 		position: absolute;
-		top : 0;
+		top : 32px;
 		left: 32px;
 		width: 612px;
 		height: 150px;
@@ -369,8 +369,8 @@ JoinMenu
 
 			>.right
 			{
-				height: 100%;
-				width: 500px;
+				height: 95%;
+				width: 600px;
 				position: absolute;
 				right: 32px;
 				background-color: rgb(104, 39, 39);
@@ -409,6 +409,7 @@ JoinMenu
 						flex-direction: row;
 						width: 100%;
 						padding: 4px 8px;
+                        font-size: 24px;
 						
 						>.ranking
 						{
@@ -417,22 +418,23 @@ JoinMenu
 							text-align: center;
 						}
 
+                        &.me
+							{
+								background-color: rgba( white, 0.1 );
+								border-radius: 16px;
+
+							}
+
 						>.name
 						{
 							flex-grow: 1;
 							gap: 16px;
 							flex-direction: row;
 							align-items: center;
-							&.me
-							{
-								background-color: rgba( white, 0.1 );
-								border-radius: 16px;
-
-							}
+                            text-overflow: ellipsis;
 							>.score
 							{
-								position: absolute;
-								right: 0;
+                                
 							}
 							>.image
 							{
@@ -442,7 +444,7 @@ JoinMenu
 							}
 							>.displayname
 							{
-								
+								flex-grow: 1;
 								flex-direction: column;
 
 							}

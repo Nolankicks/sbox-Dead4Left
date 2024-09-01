@@ -27,15 +27,7 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 
 
 	public List<PlayerController> Players => Game.ActiveScene.Components.GetAll<PlayerController>(FindMode.EnabledInSelfAndDescendants).ToList();
-	protected override async Task OnLoad()
-	{
-		if (StartServer && !GameNetworkSystem.IsActive)
-		{
-			LoadingScreen.Title = "Creating Lobby";
-			await Task.DelaySeconds(0.1f);
-			GameNetworkSystem.CreateLobby();
-		}
-	}
+
 
 	public void OnActive(Connection channel)
 	{
@@ -54,8 +46,9 @@ public sealed class NetworkHelper : Component, Component.INetworkListener
 		SpawnPlayer(channel);
 	}
 
-	public async void SpawnPlayer(Connection channel)
+	public void SpawnPlayer(Connection channel)
 	{
+		Log.Info($"Spawning player '{channel.DisplayName}'");
 		var startLocation = Transform.World;
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
 		if (spawnPoints.Count > 0)

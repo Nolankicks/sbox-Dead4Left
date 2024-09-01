@@ -39,9 +39,9 @@
 				<div class="header">LEADERBOARD</div>
 				@foreach (var entry in manager.Leaderboard.Entries)
 				{
-					<div class="entry">
+					<div class="entry  @IsMe(entry)">
 						<div class="ranking">@entry.Rank</div>
-						<div class="name  @IsMe(entry)">
+						<div class="name">
 							<image class="image" texture=@AvatarTexture(entry) />
 							<div class="displayname">@entry.DisplayName</div>
 							<div class="score">@entry.FormattedValue</div>

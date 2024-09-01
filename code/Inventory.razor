@@ -5,7 +5,7 @@
 @namespace Kicks
 @using System.Linq;
 <root>
-	@if (weaponData is not null)
+	@if (weaponData.IsValid())
 	{
 		<div class="hotbar">
 			@for (int i = 0; i < weaponData.Slots; i++)
@@ -32,15 +32,15 @@
 	public TimeUntil healTimer;
 	protected override void OnStart()
 	{
-		weaponData = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		weaponData = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault();
 	}
 
 	//private Weapon weaponData;
 
 	protected override void OnUpdate()
 	{
-		healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);
-
+		healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault();
+		weaponData = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault();
 	}
 
 	protected override int BuildHash() => System.HashCode.Combine(Time.Now);

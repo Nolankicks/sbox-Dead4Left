@@ -24,8 +24,8 @@ public sealed class Manager : Component
 
 	protected override void OnStart()
 	{
-		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
+		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault();
+		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault();
 		Scene.NavMesh.SetDirty();
 	}
 	protected override void OnAwake()
@@ -35,8 +35,10 @@ public sealed class Manager : Component
 
 	protected override void OnUpdate()
 	{
+		playerController = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault();
+		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault();
 
-		if (playerController is null) return;
+		if ( !playerController.IsValid() ) return;
 
 		ProcessScore();
 	}
@@ -58,8 +60,11 @@ public sealed class Manager : Component
 	{
 		Playing = false;
 		//deadMenu.IsDead = true;
-		Sandbox.Services.Stats.SetValue( "zombieskilled", playerController.Score );
-		Log.Info( "Disconnected from server" );
+		var player = Scene.GetAllComponents<PlayerController>().FirstOrDefault();
+		if ( player.IsValid() )
+		{
+			Sandbox.Services.Stats.SetValue( "zombieskilled", player.Score );
+		}
 		Respawn();
 	}
 
@@ -87,17 +92,25 @@ public sealed class Manager : Component
 
 	void Respawn()
 	{
-		playerController.Score = 0;
-		playerController.Health = 100;
+		var player = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault();
+		if ( !player.IsValid() )
+			return;
+		player.Score = 0;
+		player.Health = 100;
 		var Spawns = Game.ActiveScene.GetAllComponents<SpawnPoint>().ToArray();
+		if (Spawns.Length == 0)
+		{
+			player.Transform.Position = new Vector3(0, 0, 0);
+			return;
+		}
 		var randomSpawnPoint = Random.Shared.FromArray(Spawns);
 		if (randomSpawnPoint is not null)
 		{
-		playerController.Transform.Position = randomSpawnPoint.Transform.Position;
+			player.Transform.Position = randomSpawnPoint.Transform.Position;
 		}
 		else
 		{
-			playerController.Transform.Position = new Vector3(0, 0, 0);
+			player.Transform.Position = new Vector3(0, 0, 0);
 		}
 	}
 

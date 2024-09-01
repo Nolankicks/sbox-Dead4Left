@@ -79,14 +79,11 @@
 	private HealthKit healthKit;
 	public bool ShowLeaderboard = false;
 	//public ModularWeapon modularWeapon;
-	protected override void OnStart()
+	protected override void OnUpdate()
 	{
 		LocalPlayer = Game.ActiveScene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		weapon = Game.ActiveScene.GetAllComponents<Weapon>().FirstOrDefault(x => !x.IsProxy);
 		shotgun = Game.ActiveScene.GetAllComponents<Shotgun>().FirstOrDefault(x => !x.IsProxy);
-	}
-	protected override void OnUpdate()
-	{
 		//modularWeapon = GameManager.ActiveScene.GetAllComponents<ModularWeapon>().FirstOrDefault(x => !x.IsProxy);
 		weaponFunction = Game.ActiveScene.GetAllComponents<WeaponFunction>().FirstOrDefault(x => x.Enabled = true);
 		healthKit = Game.ActiveScene.GetAllComponents<HealthKit>().FirstOrDefault(x => !x.IsProxy);

@@ -31,10 +31,6 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	private PlayerController localPlayer;
 	protected override void OnStart()
 	{
-
-	}
-	protected override void OnAwake()
-	{
 		SpawnPlayer();
 		Instance = this;
 	}
@@ -50,7 +46,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
 		if ( spawnPoints.Count > 0 )
 		{
-			startLocation = spawnPoints[Random.Shared.Int( 0, spawnPoints.Count - 1 )].Transform.World;
+			startLocation = Game.Random.FromList( spawnPoints ).Transform.World;
 		}
 
 		startLocation.Scale = 1;

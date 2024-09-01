@@ -77,9 +77,8 @@ public sealed class Zombie : Component
 	void FowardTrace()
 	{
 		var tr = Scene.Trace.Ray( GameObject.Transform.Position, GameObject.Transform.Position + Vector3.Up * 64 + GameObject.Transform.Rotation.Forward * 150 ).Run();
-		if ( tr.Hit && tr.GameObject.Tags.Has( "player" ) && lastAttack > 1.5f )
+		if ( tr.Hit && tr.GameObject.Parent.Components.TryGet<PlayerController>( out var player ) && lastAttack > 1.5f )
 		{
-			tr.GameObject.Parent.Components.TryGet<PlayerController>( out var player );
 			player.TakeDamage( 10 );
 			lastAttack = 0;
 			//Sound.Play(hitSound);

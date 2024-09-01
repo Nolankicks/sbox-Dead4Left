@@ -210,6 +210,10 @@ public sealed class PlayerController : Component, IHealthComponent, IScoreCompon
 	}
 	void Death()
 	{
+		var manager = Scene.GetAllComponents<Manager>().FirstOrDefault();
+
+		if ( !manager.IsValid() ) return;
+
 		manager.EndGame();
 	}
 	private void UpdateBodyVisibility()
