@@ -1,3 +1,3 @@
 # Dead 4 Left
-This is the Repo for the s&box game, Dead 4 Left: https://asset.party/nolankicks/dead4left
-If you wish to contribute, fork the repo and send a pull request.
+This is the old repo for the s&box game, Dead 4 Left: https://asset.party/nolankicks/dead4left
+The rewritten repo can be seen here: https://github.com/Nolankicks/Dead-4-Left-Rewrite
